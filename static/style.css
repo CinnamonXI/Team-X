@@ -1,0 +1,26 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 25px 0;    
+    background-color: rgba(19, 91, 225, 0.904);
+}
+a{
+    text-decoration: none;
+}
+ul>li>a{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+h1{
+    text-align: center;
+    margin: 50px 0;
+    color: rgba(19, 91, 225, 0.904);
+}
