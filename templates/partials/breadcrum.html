@@ -1,0 +1,33 @@
+<!-- Start Page title Area -->
+<div class="page-title-area ptb-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-4">
+                <div class="page-title-content">
+                    <h2>{{ title }}</h2>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-8">
+                <div class="page-title-list">
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        {% if category %}
+                        <li>
+                            {{ category }}
+                        </li>
+                        {% endif %}
+                        {% if title %}
+                        <li class="active">
+                            {{ title }}
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page title Area -->

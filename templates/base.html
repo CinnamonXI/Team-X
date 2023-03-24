@@ -11,7 +11,21 @@
         <title>{% block title %}{% endblock %} {% if title %} {{ title }} -{% endif %} {% if category %}{{ category.title }}-{% endif %} HealthLink</title>
     </head>
     <body>
-        {% include 'partials/nav.html' %}
+        <!-- Start Preloader Area -->
+		<div class="preloader" id="loader-style">
+			<div class="preloader-wrap">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<!-- End Preloader Area -->
+        {% include 'partials/top-nav.html' %}
+        {% if title != 'Homepage' %}
+            {% include 'partials/breadcrum.html' %}
+        {% endif %}
+
         {% block content %}
 
         {% endblock %}
