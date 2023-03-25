@@ -8,48 +8,117 @@ To address the problem of access to primary healthcare, we propose building a he
 
 ## Table of Content
 1. [How to install and run the project](#1-how-to-install-and-run-the-project)
-2. [How to use the project](#2-how-to-use-the-project)
-3. [Team Members](#3-team)
+2. [Team Members](#3-team)
+3. [Pages that Requires Content](#4-pages-that-requires-content)
 
 ## 1. How to install and run the project
 
-First clone our project if you wish to run it remotely, and to achieve that change directory to location where you would like it installed e.g. to install it to Desktop and you are in the root directory run `cd Users\<user_name>\Desktop`. Once in the desired folder run `git clone https://github.com/smartjef/vsmatt.git` 
-
-**Note:** You need to have git installed in your machine to use git commands. If you dont kindly visit [https://git-scm.com/downloads](https://git-scm.com/downloads) to download and install
-
-Once you have the project cloned, you can cd into it by running command `cd vsmatt` then create a virtualenvironment by running either `python -m venv <environment_name>` or `virtualenv <environment_name>` and activate the environment.
-
-To activate environment run `<environment_name>\Scripts\activate` on windows or `source <environment_name>/bin/activate` on Linux systems. Once your environment is active run `pip install -r requirements.txt` to install requirements for this application.
-
-## 2. How to use the project
-You have installed the requirements, what next? Our next step is to makemigration and migration to create the required tables in our database. To achive that run `python manage.py makemigrations` followed by `python manage.py migrate`.
-
-We will need a superuser account for some operations such as approving businesses and for that run `python manage.py createsuperuser` and fill in the required information to create one.
-
-Upto this point you are good to run the application. By default the application will run on port 8000 when command `python manage.py runserver` is executed. And sumple of how the output should be is as below.
-
+To set up the project, you will need to have python and git installed on your computer. You can download python from https://www.python.org/downloads/ and git from https://git-scm.com/downloads.
+1. Clone the repository by typing in the following command in your terminal:
 ```bash
-Watching for file changes with StatReloader
-Performing system checks...
-
+git clone https://github.com/CinnamonXI/Team-X.git
+```
+2. Change directory into the project folder by typing in the following command in your terminal:
+```bash
+cd Team-X/
+```
+3. Assuming you have python,pip and virtualenv installed ,you will have to create a virtual environment. To do this, open your terminal and type in the following command:
+```bash
+virtualenv venv
+``` 
+or
+```bash
+python -m venv venv
+```
+or
+```bash
+python3 -m venv venv
+```
+4. Once you have created the virtual environment, you will have to activate it. To do this, type in the following command:
+For Linux and Mac:
+```bash
+source venv/bin/activate
+```
+For Windows:
+```bash
+venv\Scripts\activate
+```
+5. Once you have activated the virtual environment, you will have to install the requirements. To do this, type in the following command:
+```bash
+pip install -r requirements.txt
+```
+6. Once you have installed requirements, you may run the server. To do this, type in the following command:
+```bash
+python manage.py runserver
+```
+- If you want to run the server on a different port, you can do so by typing in the following command:
+```bash
+python manage.py runserver <port number>
+``` 
+e.g
+```bash
+python manage.py runserver 7000
+```
+- If you want to run the server on a different ip address, you can do so by typing in the following command:
+```bash
+python manage.py runserver <ip address>:<port number>
+```
+e.g
+```bash
+python manage.py runserver 192.168.100.1:8000
+```
+To confirm, you'll see a similar output to the following:
+```bash
 System check identified no issues (0 silenced).
-November 13, 2022 - 13:19:41
-Django version 4.0.8, using settings 'vsmatt.settings'
+March 25, 2023 - 07:40:18
+Django version 4.1.7, using settings 'portfolio.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 ```
-You can change the port is there is an application already using that port by passing port number as an argument e.g. `python manage.py runserver 80` to start the server at port 80 or you can provide your desired ip address and port number e.g. `python manage.py runserver 192.168.10.1:80`.
 
-Assuming you are using the default visit [127.0.0.1:8000](http://127.0.0.1:8000) to view the application. You can add businesses and product and you can as well login to admin pannel to approve them [127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
+7. You can now view site at http://127.0.0.1:8000/mlsa/ or login to the admin panel by going to http://127.0.0.1:8000/admin/ and logging in with the superuser credentials.
 
+username: admin
+password: 1234
+
+## Sample Images
+
+### Home Page
+
+### Admin Panel
+
+### Resouce Library
+
+#### Articles
+
+#### Documents
+
+#### Videos
+
+
+
+Reach out to us if you have any questions or suggestions +254795067776. Thanks for reading.
 
 ## 3. Team
-The application was designed and build by:
+The application was designed and build by `Team X`:
 
-    +-------------------+------------------------------+
-    |       Name        |       Github account         |
-    +-------------------+------------------------------+
-    | 1. Jeff Odhiambo  | https://github.com/smartjef  |
-    +-------------------+------------------------------+
-    | 2. Laurent Ouma   | https://github.com/Omoshlawi |
-    +-------------------+------------------------------+
+| Name | Role |
+| --- | --- |
+| Lateefah Belal | Team Lead |
+| Jeff Odhiambo | Backend Lead |
+| Miriam Adhiambo | Frontend Lead |
+| Miriam Mildren | Frontend |
+| - | Content Creation |
+
+## 4. Pages that Requires Content
+1. Homepage
+2. About Page
+3. Contact Page
+4. Privacy Policy Page
+5. Terms of Service Page
+6. FAQ Page
+7. Resource Library Page
+    <!-- Todo list -->
+    - [] we need to add more articles, documents and videos
+8. Team X - Blog Page
+    - [] we need to add more articles
