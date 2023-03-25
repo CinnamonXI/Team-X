@@ -42,3 +42,9 @@ def faq(request):
         'title': 'Frequently Asked Questions',
     }
     return render(request, 'faq/index.html', context)
+
+def ar(request):
+    context = {
+        'title': 'Test Page',
+    }
+    return render(request, 'resources/index.html', context)

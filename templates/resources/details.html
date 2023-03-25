@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block content %}
+		<!-- Start Mail Content Area -->
+		<div class="main-content-area ptb-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3">
+						{% include 'partials/left-sidebar.html' %}
+					</div>
+
+					<div class="col-lg-6">
+						<div class="middull-content">
+							<ul class="page-nish">
+								<li>
+									<a href="index.html">
+										<i class="ri-home-8-line"></i>
+										Home
+									</a>
+								</li>
+								<li>
+									Resources
+								</li>
+                                <li>
+									Article
+								</li>
+                                <li>
+									Category
+								</li>
+								<li class="active">
+									Title
+								</li>
+							</ul>
+							
+							<form class="aq-form">
+								<i class="ri-search-line"></i>
+								<input type="text" class="form-control" placeholder="Have a question? Ask or enter a search">
+								<button class="aq-btn">
+									Ask Question
+								</button>
+							</form>
+
+							<div class="question-details-area">
+								<div class="question-details-content like-dislike">
+									<div class="d-flex">
+										<div class="flex-grow-1 ms-3">
+											<ul class="graphic-design">
+												<li>
+													<a href="user.html">Teresa Klein</a>
+												</li>
+												<li>
+													<span>Latest Answer: 14 hours ago</span>
+												</li>
+												<li>
+													<span>In:</span>
+													<a href="tags.html" class="graphic">
+														Graphic design
+													</a>
+												</li>
+											</ul>
+
+											<h3>
+												<a href="queations-details.html">
+													If you open Illustrator by dragging the Photoshop file, why it becomes a JPG file
+												</a>
+											</h3>
+
+											<p>Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada.</p>
+
+											<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>
+
+											<p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit. Curabitur aliquet quam id posuere blandit. Sed porttitor lectus nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
+
+											<p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+
+											<ul class="tag-list">
+												<li>
+													<a href="tags.html">Discussion</a>
+												</li>
+												<li>
+													<a href="tags.html">Photoshop</a>
+												</li>
+												<li>
+													<a href="tags.html">Analytics</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-3">
+						{% include 'resources/partials/right-sidebar.html' %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Mail Content Area -->
+{% endblock %}
