@@ -1,19 +1,40 @@
 <div class="right-siderbar">
     <div class="right-siderbar-common">
-        <div class="category">
+        {% if categories %}
+        <div class="category discussions">
             <h3>
                 <i class="ri-list-unordered"></i>
                 Categories
             </h3>
-
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Select category</option>
-                <option value="1">Discussion</option>
-                <option value="2">Language</option>
-                <option value="3">Analytics</option>
-            </select>
+                <ul>
+                    {% if articles or article or r_articles %}
+                        <li><a href="{% url 'resources:articles' %}">All</a></li>
+                        {% for category in categories %}
+                        <li>
+                            <a href="{% url 'resources:articles_category' category.slug %}">{{ category }}</a>
+                        </li>
+                        {% endfor %}
+                    {% endif %}
+                    {% if videos or r_videos %}
+                        <li><a href="{% url 'resources:videos' %}">All</a></li>
+                        {% for category in categories %}
+                        <li>
+                            <a href="{% url 'resources:videos_category' category.slug %}">{{ category }}</a>
+                        </li>
+                        {% endfor %}
+                    {% endif %}
+                    {% if documents or r_documents %}
+                        <li><a href="{% url 'resources:documents' %}">All</a></li>
+                        {% for category in categories %}
+                        <li>
+                            <a href="{% url 'resources:documents_category' category.slug %}">{{ category }}</a>
+                        </li>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
         </div>
-    </div>
+        {% endif %}
 
     <div class="right-siderbar-common">
         <div class="recent-post">

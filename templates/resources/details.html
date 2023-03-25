@@ -12,22 +12,23 @@
 						<div class="middull-content">
 							<ul class="page-nish">
 								<li>
-									<a href="index.html">
+									<a href="/">
 										<i class="ri-home-8-line"></i>
 										Home
 									</a>
 								</li>
-								<li>
-									Resources
+                                <li>
+                                    <a href="{% url 'resources:articles' %}" class="m-0 p-0">
+									    Articles
+                                    </a>
 								</li>
                                 <li>
-									Article
-								</li>
-                                <li>
-									Category
+                                    <a href="{% url 'resources:articles_category' article.category.slug %}" class="m-0 p-0">
+									    {{ article.category }}
+                                    </a>
 								</li>
 								<li class="active">
-									Title
+									{{ article.title }}
 								</li>
 							</ul>
 							
@@ -45,44 +46,40 @@
 										<div class="flex-grow-1 ms-3">
 											<ul class="graphic-design">
 												<li>
-													<a href="user.html">Teresa Klein</a>
+													<a href="">{{ article.author.get_full_name|default:'No Name'}}</a>
 												</li>
 												<li>
-													<span>Latest Answer: 14 hours ago</span>
+													<span>{{ article.updated_at }}</span>
 												</li>
 												<li>
 													<span>In:</span>
-													<a href="tags.html" class="graphic">
-														Graphic design
+													<a href="{% url 'resources:articles_category' article.category.slug %}" class="graphic">
+														{{ article.category }}
 													</a>
 												</li>
 											</ul>
-
-											<h3>
-												<a href="queations-details.html">
-													If you open Illustrator by dragging the Photoshop file, why it becomes a JPG file
+                                            {% if article.image %}
+                                                <img src="{{ article.image.url }}" alt="{{ article }}" class="img-fluid">
+                                            {% endif %}
+											<h3 class="mt-3">
+												<a href="#">
+													{{ article.title }}
 												</a>
 											</h3>
 
-											<p>Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada.</p>
+											<p> 
+                                                {{ article.description|safe|linebreaks }}
+                                            </p>
 
-											<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>
-
-											<p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit. Curabitur aliquet quam id posuere blandit. Sed porttitor lectus nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
-
-											<p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
-
+                                            {% if article.tags.all %}
 											<ul class="tag-list">
-												<li>
-													<a href="tags.html">Discussion</a>
-												</li>
-												<li>
-													<a href="tags.html">Photoshop</a>
-												</li>
-												<li>
-													<a href="tags.html">Analytics</a>
-												</li>
+                                                {% for tag in article.tags.all %}
+                                                    <li>
+                                                        <a href="">{{ tag }}</a>
+                                                    </li>
+                                                {% endfor %}
 											</ul>
+                                            {% endif %}
 										</div>
 									</div>
 								</div>

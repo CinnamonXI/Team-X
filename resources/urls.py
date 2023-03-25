@@ -5,11 +5,10 @@ from django.urls import path
 app_name = 'resources'
 urlpatterns = [
     path('', views.article, name='articles'),
+    path('category/<slug:slug>/', views.article, name='articles_category'),
+    path('articles/<slug:slug>/', views.article_details, name='article_details'),
     path('videos/', views.video, name='videos'),
+    path('videos/<slug:slug>/', views.video, name='videos_category'),
     path('documents/', views.documents, name='documents'),
-    # path('terms-and-conditions/', views.terms, name='terms'),
-    # path('privacy-policy/', views.privacy, name='privacy'),
-    # path('faq/', views.faq, name='faq'),
-    # path('help/', views.help, name='help'),
-    # path('ar/', views.ar, name='help'),
+    path('documents/<slug:slug>/', views.documents, name='documents_category'),
 ]
