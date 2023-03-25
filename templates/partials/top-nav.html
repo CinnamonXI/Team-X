@@ -5,7 +5,8 @@
             <div class="mobile-responsive-menu">
                 <div class="logo">
                     <a href="/">
-                        <img src="/static/assets/images/logo.png" alt="logo">
+                        <!-- <img src="/static/assets/images/logo.png" alt="logo"> -->
+                        <h2 style="font-size: px; color: white !important;">HealthLink</h2>
                     </a>
                 </div>
             </div>
@@ -16,8 +17,9 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand" href="/">
-                    <img src="/static/assets/images/logo.png" alt="logo">
-                </a>
+                    <!-- <img src="/static/assets/images/logo.png" alt="logo"> -->
+                    <h2 style="font-size: px; color: white !important;">HealthLink</h2>
+                    </a>
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto">
@@ -33,18 +35,9 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link dropdown-toggle">
+                            <a href="#" class="nav-link">
                                 Blog
                             </a>
-
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="blog.html" class="nav-link">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="blog-details.html" class="nav-link">Blog Details</a>
-                                </li>
-                            </ul>
                         </li>
 
                         <li class="nav-item">
@@ -57,12 +50,6 @@
                             </a>
 
                             <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">Activity</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">Referrals</a>
-                                </li>
                                 <li class="nav-item">
                                     <a href="{% url 'privacy' %}" class="nav-link">Privacy Policy</a>
                                 </li>
@@ -78,7 +65,115 @@
                             </ul>
                         </li>
                     </ul>
-
+                    {% if user.is_authenticated %}
+                    <div class="others-options">
+                        <ul>
+                            <li>
+                                <form class="search-box">
+                                    <input type="text" name="Search" placeholder="Search for..." class="form-control">
+                            
+                                    <button type="submit" class="search-btn">
+                                        <i class="ri-search-line"></i>
+                                    </button>
+                                </form>
+                            </li>
+                            <li>
+                                <a href="{% url 'faq' %}" class="user-noti">
+                                    <i class="ri-question-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" class="user-notif">
+                                        <i class="ri-notification-3-fill"></i>
+                                        <span>3</span>
+                                    </button>
+                                    <ul class="dropdown-menu notif" aria-labelledby="dropdownMenuButton1">
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-mail-line"></i>
+                                                Check your mail
+                                            </a>
+                                            <p>Lorem, ipsum dolor sit amet</p>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-skype-line"></i>
+                                                Check your skype
+                                            </a>
+                                            <p>Lorem, ipsum dolor sit amet</p>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-refresh-line"></i>
+                                                Update your profile
+                                            </a>
+                                            <p>Lorem, ipsum dolor sit amet</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="/static/assets/images/user/user-48.jpg" alt="Image">
+                                        <span>{{ user.username }}</span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-user-line"></i>
+                                                User profile
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="edit-profile.html">
+                                                <i class="ri-settings-2-line"></i>
+                                                Setting
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-lightbulb-line"></i>
+                                                Activity
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-group-line"></i>
+                                                Groups
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-questionnaire-line"></i>
+                                                Ask questions
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-question-answer-line"></i>
+                                                Best Answers
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-restart-line"></i>
+                                                Referrals
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'account_logout' %}">
+                                                <i class="ri-logout-box-r-line"></i>
+                                                Log out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    {% else %}
                     <div class="others-options">
                         <ul>
                             <li>
@@ -91,18 +186,18 @@
                                 </form>
                             </li>
                             <li>
-                                <a href="log-in.html" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                    class="active">
+                                <a href="{% url 'account_login' %}" class="active">
                                     Log in
                                 </a>
                             </li>
                             <li>
-                                <a href="sign-up.html" data-bs-toggle="modal" data-bs-target="#exampleModal-2">
+                                <a href="{% url 'account_signup' %}">
                                     Sign up
                                 </a>
                             </li>
                         </ul>
                     </div>
+                    {% endif %}
                 </div>
             </nav>
         </div>
@@ -121,6 +216,7 @@
             <div class="container">
                 <div class="option-inner">
                     <div class="others-options justify-content-center d-flex align-items-center">
+                        {% if not user.is_authenticated %}
                         <ul>
                             <li>
                                 <form class="search-box">
@@ -132,17 +228,124 @@
                                 </form>
                             </li>
                             <li>
-                                <a href="log-in.html" data-bs-toggle="modal" data-bs-target="#exampleModal-3"
+                                <a href="{% url 'account_login' %}" data-bs-toggle="modal" data-bs-target="#exampleModal-3"
                                     class="active">
                                     Log in
                                 </a>
                             </li>
                             <li>
-                                <a href="sign-up.html" data-bs-toggle="modal" data-bs-target="#exampleModal-4">
+                                <a href="{% url 'account_signup' %}" data-bs-toggle="modal" data-bs-target="#exampleModal-4">
                                     Sign up
                                 </a>
                             </li>
                         </ul>
+                        {% else %}
+                        <ul>
+                            <li>
+                                <form class="search-box">
+                                    <input type="text" name="Search" placeholder="Search for..." class="form-control">
+                            
+                                    <button type="submit" class="search-btn">
+                                        <i class="ri-search-line"></i>
+                                    </button>
+                                </form>
+                            </li>
+                            <li>
+                                <a href="{% url 'faq' %}" class="user-noti">
+                                    <i class="ri-question-line"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false" class="user-notif">
+                                        <i class="ri-notification-3-fill"></i>
+                                        <span>3</span>
+                                    </button>
+                                    <ul class="dropdown-menu notif" aria-labelledby="dropdownMenuButton3">
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-mail-line"></i>
+                                                Check your mail
+                                            </a>
+                                            <p>Lorem, ipsum dolor sit amet</p>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-skype-line"></i>
+                                                Check your skype
+                                            </a>
+                                            <p>Lorem, ipsum dolor sit amet</p>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-refresh-line"></i>
+                                                Update your profile
+                                            </a>
+                                            <p>Lorem, ipsum dolor sit amet</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="/static/assets/images/user/user-48.jpg" alt="Image">
+                                        <span>{{ user.username }}</span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-user-line"></i>
+                                                User profile
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-settings-2-line"></i>
+                                                Setting
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="activity.html">
+                                                <i class="ri-lightbulb-line"></i>
+                                                Activity
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-group-line"></i>
+                                                Group
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-questionnaire-line"></i>
+                                                Ask questions
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-question-answer-line"></i>
+                                                Best Answers
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="ri-restart-line"></i>
+                                                Referrals
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'account_logout' %}">
+                                                <i class="ri-logout-box-r-line"></i>
+                                                Log out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        {% endif %}
                     </div>
                 </div>
             </div>
