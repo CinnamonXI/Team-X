@@ -23,9 +23,20 @@
                                     </a>
 								</li>
                                 {% if category %}
-                                <li>
-									{{ category }}
-								</li>
+                                    <li>
+                                        Categories
+                                    </li>
+                                    <li>
+                                        {{ category }}
+                                    </li>
+                                {% endif %}
+                                {% if tag %}
+                                    <li>
+                                        Tags
+                                    </li>
+                                    <li>
+                                        {{ tag }}
+                                    </li>
                                 {% endif %}
 							</ul>
 							<form class="aq-form">
@@ -75,7 +86,7 @@
                                                             <ul class="tag-list">
                                                                 {% for a_tag in article.tags.all %}
                                                                 <li>
-                                                                    <a href="">{{ a_tag }}</a>
+                                                                    <a href="{% url 'resources:article_tags' a_tag.slug %}">{{ a_tag }}</a>
                                                                 </li>
                                                                 {% endfor %}
                                                             </ul>

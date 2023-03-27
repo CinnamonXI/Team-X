@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from core.models import Category
+from core.models import Category, Tag
 from .models import Article, Video, Document
 from django.shortcuts import get_object_or_404
 
@@ -16,6 +16,18 @@ def article(request, slug=None):
         'categories': Category.objects.all(),
         'articles': articles,
         'category': category,
+        'r_articles': 'active',
+    }
+    return render(request, 'resources/index.html', context)
+
+def article_tags(request, slug):
+    tag = get_object_or_404(Tag, slug=slug)
+    articles = Article.objects.filter(tags=tag, is_published=True)
+    context = {
+        'title': f"Articles with tag '{tag}'",
+        'categories': Category.objects.all(),
+        'articles': articles,
+        'tag': tag,
         'r_articles': 'active',
     }
     return render(request, 'resources/index.html', context)
@@ -41,6 +53,18 @@ def video(request, slug=None):
         'categories': Category.objects.all(),
         'videos': videos,
         'category': category,
+        'r_videos': 'active',
+    }
+    return render(request, 'resources/videos.html', context)
+
+def video_tags(request, slug):
+    tag = get_object_or_404(Tag, slug=slug)
+    videos = Video.objects.filter(tags=tag, is_published=True)
+    context = {
+        'title': f"Videos with tag '{tag}'",
+        'categories': Category.objects.all(),
+        'videos': videos,
+        'tag': tag,
         'r_videos': 'active',
     }
     return render(request, 'resources/videos.html', context)

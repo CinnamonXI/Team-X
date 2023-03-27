@@ -23,8 +23,19 @@
                                     </a>
 								</li>
                                 {% if category %}
+								<li>
+									Categories
+								</li>
                                 <li>
 									{{ category }}
+								</li>
+                                {% endif %}
+								{% if tag %}
+                                <li>
+									Tags
+								</li>
+								<li>
+									{{ tag }}
 								</li>
                                 {% endif %}
 							</ul>
@@ -71,7 +82,7 @@
 												<ul class="tag-list">
                                                     {% for tag in video.tags.all %}
                                                         <li>
-                                                            <a href="">{{ tag }}</a>
+                                                            <a href="{% url 'resources:video_tags' tag.slug %}">{{ tag }}</a>
                                                         </li>
                                                     {% endfor %}
 												</ul>
