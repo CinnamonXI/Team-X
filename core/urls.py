@@ -7,5 +7,6 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('terms-and-conditions/', views.terms, name='terms'),
     path('privacy-policy/', views.privacy, name='privacy'),
-    path('faq/', views.faq, name='faq'),
+    path('faqs/', views.faq, name='faq'),
+    path('faqs/<slug:slug>/', views.faq, name='faqs_category'),
 ]

@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404
 from django.core.mail import send_mail
 from django.contrib import messages
-from .models import Contact, Faq
+from .models import Contact, Faq, Category
 from users.models import Team
 # Create your views here.
 def index(request):
@@ -48,10 +49,18 @@ def privacy(request):
     }
     return render(request, 'privacy.html', context)
 
-def faq(request):
-    faqs = Faq.objects.all()
+def faq(request, slug=None):
+    category = None
+    if not slug:
+        faqs = Faq.objects.all()
+    else:
+        category = get_object_or_404(Category, slug=slug)
+        faqs = Faq.objects.filter(category=category)
+    
     context = {
         'title': 'Frequently Asked Questions',
-        'faqs': faqs
+        'faqs': faqs,
+        'faq' : 'active',
+        'categories' : Category.objects.all(),
     }
     return render(request, 'faq/index.html', context)

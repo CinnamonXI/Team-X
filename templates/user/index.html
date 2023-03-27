@@ -1,0 +1,352 @@
+{% extends 'base.html' %}
+{% block content %}
+		<!-- Start Mail Content Area -->
+		<div class="main-content-area ptb-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3">
+						{% include 'partials/left-sidebar.html' %}
+					</div>
+
+					<div class="col-lg-9">
+						<div class="user-profile-area">
+							{% include 'user/partials/top-nav.html' %}
+							<div class="profile-achive">
+								<div class="row">
+									<div class="col-xl-3 col-sm-6">
+										<div class="single-achive">
+											<h2>1984</h2>
+											<span>Answers</span>
+										</div>
+									</div>
+
+									<div class="col-xl-3 col-sm-6">
+										<div class="single-achive">
+											<h2>507</h2>
+											<span>Question</span>
+										</div>
+									</div>
+
+									<div class="col-xl-3 col-sm-6">
+										<div class="single-achive">
+											<h2>124</h2>
+											<span>Best answers</span>
+										</div>
+									</div>
+
+									<div class="col-xl-3 col-sm-6">
+										<div class="single-achive">
+											<h2>2M</h2>
+											<span>Reached</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="about">
+								<h3>About</h3>
+								{{ user.profile.bio|linebreaksbr|default:'No About Updated' }}
+							</div>
+
+							<div class="badges">
+								<h3>Badges</h3>
+
+								<div class="row justify-content-center">
+									<div class="col-xl-3 col-sm-6">
+										<div class="single-badges-box">
+											<img src="/static/assets/images/badges/badges-3.png" alt="Image">
+											<h3>Bronze badges</h3>
+											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan.</p>
+										</div>
+									</div>
+	
+									<div class="col-xl-3 col-sm-6">
+										<div class="single-badges-box">
+											<img src="/static/assets/images/badges/badges-4.png" alt="Image">
+											<h3>Silver badges</h3>
+											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan.</p>
+										</div>
+									</div>
+	
+									<div class="col-xl-3 col-sm-6">
+										<div class="single-badges-box">
+											<img src="/static/assets/images/badges/badges-5.png" alt="Image">
+											<h3>Gold badges</h3>
+											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan.</p>
+										</div>
+									</div>
+	
+									<div class="col-xl-3 col-sm-6">
+										<div class="single-badges-box">
+											<img src="/static/assets/images/badges/badges-6.png" alt="Image">
+											<h3>Platinum badges</h3>
+											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="top-tags">
+								<div class="tag-title d-flex justify-content-between">
+									<h3>Top tags</h3>
+									<a href="" class="read-more">View all tags</a>
+								</div>
+
+								<ul>
+									<li>
+										<span class="tag-cate">discussion</span>
+										<span class="tag-score">0 score</span>
+										<span class="tag-score">0 posts</span>
+										<span class="tag-score">0 posts %</span>
+									</li>
+									<li>
+										<span class="tag-cate">language</span>
+										<span class="tag-score">0 score</span>
+										<span class="tag-score">0 posts</span>
+										<span class="tag-score">0 posts %</span>
+									</li>
+									<li>
+										<span class="tag-cate">analytics</span>
+										<span class="tag-score">0 score</span>
+										<span class="tag-score">0 posts</span>
+										<span class="tag-score">0 posts %</span>
+									</li>
+									<li>
+										<span class="tag-cate">convertion</span>
+										<span class="tag-score">0 score</span>
+										<span class="tag-score">0 posts</span>
+										<span class="tag-score">0 posts %</span>
+									</li>
+									<li>
+										<span class="tag-cate">computer</span>
+										<span class="tag-score">0 score</span>
+										<span class="tag-score">0 posts</span>
+										<span class="tag-score">0 posts %</span>
+									</li>
+									<li>
+										<span class="tag-cate">grammer</span>
+										<span class="tag-score">0 score</span>
+										<span class="tag-score">0 posts</span>
+										<span class="tag-score">0 posts %</span>
+									</li>
+								</ul>
+							</div>
+
+							<div class="top-posts">
+								<div class="d-flex justify-content-between">
+									<h3>Top posts</h3>
+
+									<ul class="nav nav-tabs" id="myTab" role="tablist">
+										<li class="nav-item" role="presentation">
+											<button class="nav-link active" id="view-all-tab" data-bs-toggle="tab" data-bs-target="#view-all" type="button" role="tab" aria-controls="view-all" aria-selected="true">View All</button>
+										</li>
+										
+										<li class="nav-item" role="presentation">
+										  	<button class="nav-link" id="question-tab" data-bs-toggle="tab" data-bs-target="#question" type="button" role="tab" aria-controls="question" aria-selected="false">Question</button>
+										</li>
+
+										<li class="nav-item" role="presentation">
+										  	<button class="nav-link" id="answers-tab" data-bs-toggle="tab" data-bs-target="#answers" type="button" role="tab" aria-controls="answers" aria-selected="false">Answers</button>
+										</li>
+
+										<li class="nav-item" role="presentation">
+										  	<button class="nav-link" id="newest-tab" data-bs-toggle="tab" data-bs-target="#newest" type="button" role="tab" aria-controls="newest" aria-selected="false">Newest</button>
+										</li>
+
+										<li class="nav-item" role="presentation">
+										  	<button class="nav-link" id="votes-tab" data-bs-toggle="tab" data-bs-target="#votes" type="button" role="tab" aria-controls="votes" aria-selected="false">Votes</button>
+										</li>
+									</ul>
+								</div>
+
+								<div class="tab-content" id="myTabContent">
+									<div class="tab-pane fade show active" id="view-all" role="tabpanel" aria-labelledby="view-all-tab">
+										<ul>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">21</span>
+													<span>What could be UX design software?</span>
+												</div>
+												<p><span>8 hours ago</span> by <a href="user-profile.html">Alan Woodson</a></p>
+											</li>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">5</span>
+													<span>What is the most important thing in learning design?</span>
+												</div>
+												<p><span>10 hours ago</span> by <a href="user-profile.html">Juan McPhail</a></p>
+											</li>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">13</span>
+													<span>All the new features that have been used in Windows 11</span>
+												</div>
+												<p><span>11 hours ago</span> by <a href="user-profile.html">Vickie White</a></p>
+											</li>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">10</span>
+													<span>Which language is the most popular in the web right now?</span>
+												</div>
+												<p><span>13 hours ago</span> by <a href="user-profile.html">Jose Merz</a></p>
+											</li>
+										</ul>
+									</div>
+
+									<div class="tab-pane fade" id="question" role="tabpanel" aria-labelledby="question-tab">
+										<ul>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">21</span>
+													<span>What could be UX design software?</span>
+												</div>
+												<p><span>8 hours ago</span> by <a href="user-profile.html">Alan Woodson</a></p>
+											</li>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">5</span>
+													<span>What is the most important thing in learning design?</span>
+												</div>
+												<p><span>10 hours ago</span> by <a href="user-profile.html">Juan McPhail</a></p>
+											</li>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">13</span>
+													<span>All the new features that have been used in Windows 11</span>
+												</div>
+												<p><span>11 hours ago</span> by <a href="user-profile.html">Vickie White</a></p>
+											</li>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">10</span>
+													<span>Which language is the most popular in the web right now?</span>
+												</div>
+												<p><span>13 hours ago</span> by <a href="user-profile.html">Jose Merz</a></p>
+											</li>
+										</ul>
+									</div>
+									<div class="tab-pane fade" id="answers" role="tabpanel" aria-labelledby="answers-tab">
+										<ul>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">21</span>
+													<span>What could be UX design software?</span>
+												</div>
+												<p><span>8 hours ago</span> by <a href="user-profile.html">Alan Woodson</a></p>
+											</li>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">5</span>
+													<span>What is the most important thing in learning design?</span>
+												</div>
+												<p><span>10 hours ago</span> by <a href="user-profile.html">Juan McPhail</a></p>
+											</li>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">13</span>
+													<span>All the new features that have been used in Windows 11</span>
+												</div>
+												<p><span>11 hours ago</span> by <a href="user-profile.html">Vickie White</a></p>
+											</li>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">10</span>
+													<span>Which language is the most popular in the web right now?</span>
+												</div>
+												<p><span>13 hours ago</span> by <a href="user-profile.html">Jose Merz</a></p>
+											</li>
+										</ul>
+									</div>
+									<div class="tab-pane fade" id="newest" role="tabpanel" aria-labelledby="newest-tab">
+										<ul>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">21</span>
+													<span>What could be UX design software?</span>
+												</div>
+												<p><span>8 hours ago</span> by <a href="user-profile.html">Alan Woodson</a></p>
+											</li>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">5</span>
+													<span>What is the most important thing in learning design?</span>
+												</div>
+												<p><span>10 hours ago</span> by <a href="user-profile.html">Juan McPhail</a></p>
+											</li>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">13</span>
+													<span>All the new features that have been used in Windows 11</span>
+												</div>
+												<p><span>11 hours ago</span> by <a href="user-profile.html">Vickie White</a></p>
+											</li>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">10</span>
+													<span>Which language is the most popular in the web right now?</span>
+												</div>
+												<p><span>13 hours ago</span> by <a href="user-profile.html">Jose Merz</a></p>
+											</li>
+										</ul>
+									</div>
+									<div class="tab-pane fade" id="votes" role="tabpanel" aria-labelledby="votes-tab">
+										<ul>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">21</span>
+													<span>What could be UX design software?</span>
+												</div>
+												<p><span>8 hours ago</span> by <a href="user-profile.html">Alan Woodson</a></p>
+											</li>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">5</span>
+													<span>What is the most important thing in learning design?</span>
+												</div>
+												<p><span>10 hours ago</span> by <a href="user-profile.html">Juan McPhail</a></p>
+											</li>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">13</span>
+													<span>All the new features that have been used in Windows 11</span>
+												</div>
+												<p><span>11 hours ago</span> by <a href="user-profile.html">Vickie White</a></p>
+											</li>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">10</span>
+													<span>Which language is the most popular in the web right now?</span>
+												</div>
+												<p><span>13 hours ago</span> by <a href="user-profile.html">Jose Merz</a></p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Mail Content Area -->
+{% endblock %}

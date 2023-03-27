@@ -6,10 +6,16 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.urls import reverse
 
+GENDER_CHOICES = (
+    ('male', 'male'),
+    ('female', 'female'),
+    ('other', 'other')
+)
 
 class Profile(models.Model):
     user = models.OneToOneField('auth.User', on_delete=models.CASCADE)
     slug = models.SlugField(max_length=158, unique=True)
+    gender = models.CharField(max_length=10, choices=GENDER_CHOICES, default='other')
     image = models.ImageField(upload_to='users/profiles/', null=True, blank=True)
     bio = models.TextField(null=True, blank=True)
     phone_number = models.CharField(max_length=15, blank=True, null=True)

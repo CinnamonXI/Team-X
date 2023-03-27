@@ -30,8 +30,8 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(Faq)
 class FaqAdmin(admin.ModelAdmin):
-    list_display = ('question', 'answer', 'created_at', 'updated_at')
-    list_filter = ('created_at', 'updated_at')
+    list_display = ('question', 'category', 'answer', 'created_at', 'updated_at')
+    list_filter = ('category', 'created_at', 'updated_at')
     search_fields = ('question', 'answer')
     date_hierarchy = 'created_at'
     ordering = ('-created_at',)

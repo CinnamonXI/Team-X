@@ -31,6 +31,14 @@
                         </li>
                         {% endfor %}
                     {% endif %}
+                    {% if faqs or faq %}
+                        <li><a href="{% url 'faq' %}">All</a></li>
+                        {% for category in categories %}
+                        <li>
+                            <a href="{% url 'faqs_category' category.slug %}">{{ category }}</a>
+                        </li>
+                        {% endfor %}
+                    {% endif %}
                 </ul>
             </div>
         </div>

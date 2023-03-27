@@ -48,6 +48,7 @@ class Contact(models.Model):
         ordering = ('-created_at',)
 
 class Faq(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     question = models.CharField(max_length=158)
     answer = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)

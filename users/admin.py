@@ -4,7 +4,7 @@ from .models import Profile, Team
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
-    list_display = ('user', 'slug', 'created_at', 'updated_at')
+    list_display = ('user', 'slug', 'gender', 'phone_number', 'created_at', 'updated_at')
     list_filter = ('created_at', 'updated_at')
     search_fields = ('user__username', 'user__email', 'slug')
     prepopulated_fields = {'slug': ('user',)}
