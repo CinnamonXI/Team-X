@@ -112,7 +112,7 @@ The application was designed and build by `Team X`:
 | Lateefah Belal | Team Lead |
 | Jeff Odhiambo | Backend Lead |
 | Miriam Adhiambo | Frontend Lead |
-| Miriam Mildren | Frontend |
+| Miriam Mildred | Frontend |
 | - | Content Creation |
 
 ## 4. Pages that Requires Content
