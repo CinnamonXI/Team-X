@@ -8,6 +8,4 @@ urlpatterns = [
     path('terms-and-conditions/', views.terms, name='terms'),
     path('privacy-policy/', views.privacy, name='privacy'),
     path('faq/', views.faq, name='faq'),
-    path('help/', views.help, name='help'),
-    path('ar/', views.ar, name='help'),
 ]

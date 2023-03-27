@@ -92,28 +92,19 @@
 			<div class="container">
 				<div class="partner-slide owl-carousel owl-theme">
 					<div class="partner-item">
-						<img src="/static/assets/images/partner/partner-1.png" alt="Image">
+						<img src="/static/partner-1.png" height="100" alt="Microsoft ADC">
 					</div>
 					<div class="partner-item">
-						<img src="/static/assets/images/partner/partner-2.png" alt="Image">
+						<img src="/static/partner-2.png" height="100" alt="Amref">
 					</div>
 					<div class="partner-item">
-						<img src="/static/assets/images/partner/partner-3.png" alt="Image">
-					</div>
-					<div class="partner-item">
-						<img src="/static/assets/images/partner/partner-4.png" alt="Image">
-					</div>
-					<div class="partner-item">
-						<img src="/static/assets/images/partner/partner-5.png" alt="Image">
-					</div>
-					<div class="partner-item">
-						<img src="/static/assets/images/partner/partner-6.png" alt="Image">
+						<img src="/static/partner-3.png" height="100" alt="PSI">
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- End Partner Area -->
-
+{% if teams %}
 		<!-- Start team Area -->
 		<div class="team-area pt-100 pb-70">
 			<div class="container">
@@ -122,25 +113,34 @@
 				</div>
 
 				<div class="row justify-content-center">
+					{% for team in teams %}
 					<div class="col-xl-3 col-md-6">
 						<div class="single-team-item">
-							<img src="/static/assets/images/team/team-1.jpg" alt="Image">
-							<h3>Guillermo Brand</h3>
-							<span>CEO</span>
+							<img src="{{ team.image.url }}" alt="{{ team.user.get_full_name|default:'No Name' }}">
+							<h3>{{ team.user.get_full_name|default:'No Name' }}</h3>
+							<span>{{ team.title }}</span>
 							<ul class="d-flex justify-content-between align-items-center">
 								<li>
-									<a href="https://www.facebook.com/" target="_blank">
+									{% if team.user.profile.facebook %}
+									<a href="{{ team.user.profile.facebook}}" target="_blank">
 										<i class="ri-facebook-fill"></i>
 									</a>
-									<a href="https://www.twitter.com/" target="_blank">
+									{% endif %}
+									{% if team.user.profile.twitter %}
+									<a href="{{ team.user.profile.twitter }}" target="_blank">
 										<i class="ri-twitter-line"></i>
 									</a>
-									<a href="https://www.linkedin.com/" target="_blank">
+									{% endif %}
+									{% if team.user.profile.linkedin %}
+									<a href="{{ team.user.profile.linkedin }}" target="_blank">
 										<i class="ri-linkedin-fill"></i>
 									</a>
-									<a href="https://www.instagram.com/" target="_blank">
+									{% endif %}
+									{% if team.user.profile.instagram %}
+									<a href="{{ team.user.profile.instagram }}" target="_blank">
 										<i class="ri-instagram-line"></i>
 									</a>
+									{% endif %}
 								</li>
 
 								<li>
@@ -149,93 +149,10 @@
 							</ul>
 						</div>
 					</div>
-
-					<div class="col-xl-3 col-md-6">
-						<div class="single-team-item">
-							<img src="/static/assets/images/team/team-2.jpg" alt="Image">
-							<h3>Phyllis Cassidy</h3>
-							<span>Writer</span>
-							<ul class="d-flex justify-content-between align-items-center">
-								<li>
-									<a href="https://www.facebook.com/" target="_blank">
-										<i class="ri-facebook-fill"></i>
-									</a>
-									<a href="https://www.twitter.com/" target="_blank">
-										<i class="ri-twitter-line"></i>
-									</a>
-									<a href="https://www.linkedin.com/" target="_blank">
-										<i class="ri-linkedin-fill"></i>
-									</a>
-									<a href="https://www.instagram.com/" target="_blank">
-										<i class="ri-instagram-line"></i>
-									</a>
-								</li>
-
-								<li>
-									<button class="default-btn">Follow</button>
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col-xl-3 col-md-6">
-						<div class="single-team-item">
-							<img src="/static/assets/images/team/team-3.jpg" alt="Image">
-							<h3>Ian Martin</h3>
-							<span>Manager</span>
-							<ul class="d-flex justify-content-between align-items-center">
-								<li>
-									<a href="https://www.facebook.com/" target="_blank">
-										<i class="ri-facebook-fill"></i>
-									</a>
-									<a href="https://www.twitter.com/" target="_blank">
-										<i class="ri-twitter-line"></i>
-									</a>
-									<a href="https://www.linkedin.com/" target="_blank">
-										<i class="ri-linkedin-fill"></i>
-									</a>
-									<a href="https://www.instagram.com/" target="_blank">
-										<i class="ri-instagram-line"></i>
-									</a>
-								</li>
-
-								<li>
-									<button class="default-btn">Follow</button>
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col-xl-3 col-md-6">
-						<div class="single-team-item">
-							<img src="/static/assets/images/team/team-4.jpg" alt="Image">
-							<h3>Regina Mccloy</h3>
-							<span>Writer</span>
-							<ul class="d-flex justify-content-between align-items-center">
-								<li>
-									<a href="https://www.facebook.com/" target="_blank">
-										<i class="ri-facebook-fill"></i>
-									</a>
-									<a href="https://www.twitter.com/" target="_blank">
-										<i class="ri-twitter-line"></i>
-									</a>
-									<a href="https://www.linkedin.com/" target="_blank">
-										<i class="ri-linkedin-fill"></i>
-									</a>
-									<a href="https://www.instagram.com/" target="_blank">
-										<i class="ri-instagram-line"></i>
-									</a>
-								</li>
-
-								<li>
-									<button class="default-btn">Follow</button>
-								</li>
-							</ul>
-						</div>
-					</div>
+					{% endfor %}
 				</div>
 			</div>
 		</div>
 		<!-- End team Area -->
-
+{% endif %}
 {% endblock %}	
