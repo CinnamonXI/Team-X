@@ -14,16 +14,14 @@
                             <a href="{% url 'resources:articles_category' category.slug %}">{{ category }}</a>
                         </li>
                         {% endfor %}
-                    {% endif %}
-                    {% if videos or r_videos %}
+                    {% elif videos or r_videos %}
                         <li><a href="{% url 'resources:videos' %}">All</a></li>
                         {% for category in categories %}
                         <li>
                             <a href="{% url 'resources:videos_category' category.slug %}">{{ category }}</a>
                         </li>
                         {% endfor %}
-                    {% endif %}
-                    {% if documents or r_documents %}
+                    {% elif documents or r_documents %}
                         <li><a href="{% url 'resources:documents' %}">All</a></li>
                         {% for category in categories %}
                         <li>
@@ -43,7 +41,7 @@
             </div>
         </div>
         {% endif %}
-
+    {% if latest_post %}
     <div class="right-siderbar-common">
         <div class="recent-post">
             <h3>
@@ -52,33 +50,20 @@
             </h3>
 
             <ul>
-                <li>
-                    <a href="most-answered.html">
-                        What could be UX design software?
-                    </a>
-                    <p>8 hours ago by <a href="user.html">Alan Woodson</a></p>
-                </li>
-                <li>
-                    <a href="most-answered.html">
-                        All the new features that have been used in Windows 11
-                    </a>
-                    <p>11 hours ago by <a href="user.html">Juan McPhail</a></p>
-                </li>
-                <li>
-                    <a href="most-answered.html">
-                        What is the most important thing in learning design?
-                    </a>
-                    <p>11 hours ago by <a href="user.html">Vickie White</a></p>
-                </li>
-                <li>
-                    <a href="most-answered.html">
-                        Which language is the most popular in the web right now?
-                    </a>
-                    <p>13 hours ago by <a href="user.html">Jose Merz</a></p>
-                </li>
+                {% for post in latest_post %}
+                    {% for pst in post %}
+                    <li>
+                        <a href="{{ pst.get_absolute_url }}">
+                            {{ pst.title }}
+                        </a>
+                        <p>{{ pst.created_at|date }} by <a href="{{ pst.author.profile.get_absolute_url }}">{{ pst.author.get_full_name }}</a></p>
+                    </li>
+                    {% endfor %}
+                {% endfor %}
             </ul>
         </div>
     </div>
+    {% endif %}
     {% if tags %}
     <div class="right-siderbar-common">
         <div class="trending-tags">

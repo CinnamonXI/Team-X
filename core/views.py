@@ -4,11 +4,15 @@ from django.core.mail import send_mail
 from django.contrib import messages
 from .models import Contact, Faq, Category, Tag
 from users.models import Team
+from resources.models import Article, Video, Document
 # Create your views here.
 def index(request):
     context = {
         'title': 'Homepage',
         'r_articles': 'active',
+        'articles': Article.objects.filter(is_published=True).order_by('-created_at')[:3],
+        'videos': Video.objects.filter(is_published=True).order_by('-created_at')[:3],
+        'documents': Document.objects.filter(is_published=True).order_by('-created_at')[:3],
     }
     return render(request, 'index.html', context)
 

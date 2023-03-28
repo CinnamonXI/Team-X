@@ -15,7 +15,6 @@ GENDER_CHOICES = (
 
 class Profile(models.Model):
     user = models.OneToOneField('auth.User', on_delete=models.CASCADE, related_name='profile')
-    slug = models.SlugField(max_length=158, unique=True)
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES, default='other')
     image = models.ImageField(upload_to='users/profiles/', null=True, blank=True)
     bio = models.TextField(null=True, blank=True)
@@ -31,7 +30,7 @@ class Profile(models.Model):
         return self.user.username
 
     def get_absolute_url(self):
-        return reverse('users:profile', kwargs={'slug': self.slug})
+        return reverse('users:user_profile', kwargs={'username': self.user.username})
 
 class Team(models.Model):
     user = models.OneToOneField('auth.User', on_delete=models.CASCADE)

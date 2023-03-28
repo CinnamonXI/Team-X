@@ -34,7 +34,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-item {% if title == 'Blogs' %}active{% endif %}">
+                        <li class="nav-item {% if title == 'Blogs' or category == 'Blogs' %}active{% endif %}">
                             <a href="{% url 'blogs:index' %}" class="nav-link">
                                 Blog
                             </a>

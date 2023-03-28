@@ -3,202 +3,68 @@
 		<!-- Start Blog Area -->
 		<div class="blog-area ptb-100">
 			<div class="container">
+				{% if blogs %}
 				<div class="row justify-content-center">
+					{% for blog in blogs %}
 					<div class="col-lg-4 col-md-6">
 						<div class="blog-single-item">
-							<a href="blog-details.html">
-								<img src="/static/assets/images/blog/blog-1.jpg" alt="Image">
+							<a href="{{ blog.get_absolute_url }}">
+								<img src="{{ blog.image.url }}" alt="{{ blog.title }}">
 							</a>
 
 							<div class="blog-content">
 								<ul>
 									<li>
-										<a href="blog.html">
-											<img src="/static/assets/images/blog/user-1.jpg" alt="Image">
-											<span>Marissa Cress</span>
+										<a href="{{ blog.author.profile.get_absolute_url }}">
+											{% if blog.author.profile.image %}
+												<img src="{{ blog.author.profile.image.url }}" style="max-height: 45px !important;" alt="{{ user.username }}">
+											{% else %}
+												{% if blog.author.profile.gender == 'other' %}
+													<img src="/static/user.png" style="max-height: 45px !important;" alt="{{ user.username }}">
+												{% elif blog.author.profile.gender == 'male' %}
+													<img src="/static/man.png" style="max-height: 45px !important;" alt="{{ user.username }}">
+												{% else %}
+													<img src="/static/woman.png" style="max-height: 45px !important;" alt="{{ user.username }}">
+												{% endif %}
+											{% endif %}
+											<span>{{ blog.author.get_full_name|default:'No Name' }}</span>
 										</a>
 									</li>
 									<li>
-										November 24, 2021
+										{{ blog.pub_date_pretty }}
 									</li>
 								</ul>
 	
 								<h3>
-									<a href="blog-details.html">
-										Top 7 server hosting platforms for everyone
+									<a href="{{ blog.get_absolute_url }}">
+										{{ blog.title }}
 									</a>
 								</h3>
 	
-								<p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur aliquet quam id dui posuere blandit.</p>
+								<p>{{ blog.summary }}</p>
 							</div>
 						</div>
 					</div>
-
-					<div class="col-lg-4 col-md-6">
-						<div class="blog-single-item">
-							<a href="blog-details.html">
-								<img src="/static/assets/images/blog/blog-2.jpg" alt="Image">
-							</a>
-
-							<div class="blog-content">
-								<ul>
-									<li>
-										<a href="blog.html">
-											<img src="/static/assets/images/blog/user-2.jpg" alt="Image">
-											<span>Marissa Cress</span>
-										</a>
-									</li>
-									<li>
-										November 23, 2021
-									</li>
-								</ul>
-	
-								<h3>
-									<a href="blog-details.html">
-										Mapping the path from the new journey 
-									</a>
-								</h3>
-	
-								<p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur aliquet quam id dui posuere blandit.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6">
-						<div class="blog-single-item">
-							<a href="blog-details.html">
-								<img src="/static/assets/images/blog/blog-3.jpg" alt="Image">
-							</a>
-
-							<div class="blog-content">
-								<ul>
-									<li>
-										<a href="blog.html">
-											<img src="/static/assets/images/blog/user-3.jpg" alt="Image">
-											<span>Marissa Cress</span>
-										</a>
-									</li>
-									<li>
-										November 22, 2021
-									</li>
-								</ul>
-	
-								<h3>
-									<a href="blog-details.html">
-										How you can write social questions and answers
-									</a>
-								</h3>
-	
-								<p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur aliquet quam id dui posuere blandit.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6">
-						<div class="blog-single-item">
-							<a href="blog-details.html">
-								<img src="/static/assets/images/blog/blog-4.jpg" alt="Image">
-							</a>
-
-							<div class="blog-content">
-								<ul>
-									<li>
-										<a href="blog.html">
-											<img src="/static/assets/images/blog/user-4.jpg" alt="Image">
-											<span>Marissa Cress</span>
-										</a>
-									</li>
-									<li>
-										November 21, 2021
-									</li>
-								</ul>
-	
-								<h3>
-									<a href="blog-details.html">
-										This is the important thing when I write social questions and answers
-									</a>
-								</h3>
-	
-								<p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur aliquet quam id dui posuere blandit.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6">
-						<div class="blog-single-item">
-							<a href="blog-details.html">
-								<img src="/static/assets/images/blog/blog-5.jpg" alt="Image">
-							</a>
-
-							<div class="blog-content">
-								<ul>
-									<li>
-										<a href="blog.html">
-											<img src="/static/assets/images/blog/user-5.jpg" alt="Image">
-											<span>Marissa Cress</span>
-										</a>
-									</li>
-									<li>
-										November 20, 2021
-									</li>
-								</ul>
-	
-								<h3>
-									<a href="blog-details.html">
-										How do we fix WordPress security issues without any hassle
-									</a>
-								</h3>
-	
-								<p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur aliquet quam id dui posuere blandit.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6">
-						<div class="blog-single-item">
-							<a href="blog-details.html">
-								<img src="/static/assets/images/blog/blog-6.jpg" alt="Image">
-							</a>
-
-							<div class="blog-content">
-								<ul>
-									<li>
-										<a href="blog.html">
-											<img src="/static/assets/images/blog/user-6.jpg" alt="Image">
-											<span>Marissa Cress</span>
-										</a>
-									</li>
-									<li>
-										November 19, 2021
-									</li>
-								</ul>
-	
-								<h3>
-									<a href="blog-details.html">
-										Adding over a million subscribers across Daily Social Questions and Answers
-									</a>
-								</h3>
-	
-								<p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur aliquet quam id dui posuere blandit.</p>
-							</div>
-						</div>
-					</div>
+					{% endfor %}
 
 					<div class="col-lg-12">
 						<div class="pagination-area mt-0 mb-0">
-							<a href="blog.html" class="next page-numbers">
+							<a href="#" class="next page-numbers">
 								<i class="ri-arrow-left-line"></i>
 							</a>
 							<span class="page-numbers current" aria-current="page">1</span>
-							<a href="blog.html" class="page-numbers">2</a>
-							<a href="blog.html" class="page-numbers">3</a>
+							<a href="#" class="page-numbers">2</a>
+							<a href="#" class="page-numbers">3</a>
 							
-							<a href="blog.html" class="next page-numbers">
+							<a href="#" class="next page-numbers">
 								<i class="ri-arrow-right-line"></i>
 							</a>
 						</div>
 					</div>
 				</div>
+				{% else %}
+					<p>No Blogs Found</p>
+				{% endif %}
 			</div>
 		</div>
 		<!-- End Blog Area -->
