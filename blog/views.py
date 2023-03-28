@@ -31,3 +31,17 @@ def detail(request, slug):
         'blog' : blog,
     }
     return render(request, 'blog-details.html', context)
+
+def search(request): 
+    try:
+        if request.method == 'GET':
+            search = request.GET.get('q')
+            blogs = Post.objects.filter(title__icontains=search) or Post.objects.filter(body__icontains=search)
+            context = {
+                'title': f"Search result for '{search}'",
+                'blogs': blogs,
+            }
+            return render(request, 'blog.html', context)
+    except ValueError:
+        return redirect('blogs:index')
+    

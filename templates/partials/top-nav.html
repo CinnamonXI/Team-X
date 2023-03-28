@@ -62,12 +62,12 @@
                             </ul>
                         </li>
                     </ul>
-                    {% if user.is_authenticated %}
+                    {% if request.user.is_authenticated %}
                     <div class="others-options">
                         <ul>
                             <li>
-                                <form class="search-box">
-                                    <input type="text" name="Search" placeholder="Search for..." class="form-control">
+                                <form class="search-box" action="{% url 'search' %}" method="GET">
+                                    <input type="text" name="q" placeholder="Search for..." class="form-control">
                             
                                     <button type="submit" class="search-btn">
                                         <i class="ri-search-line"></i>
@@ -113,18 +113,18 @@
                             <li>
                                 <div class="dropdown">
                                     <button type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                        {% if user.profile.image %}
-                                            <img src="{{ user.profile.image.url }}" style="max-height: 45px !important;" alt="{{ user.username }}">
+                                        {% if request.user.profile.image %}
+                                            <img src="{{ request.user.profile.image.url }}" style="max-height: 45px !important;" alt="{{ request.user.username }}">
                                         {% else %}
-                                            {% if user.profile.gender == 'other' %}
-                                                <img src="/static/user.png" style="max-height: 45px !important;" alt="{{ user.username }}">
-                                            {% elif user.profile.gender == 'male' %}
-                                                <img src="/static/man.png" style="max-height: 45px !important;" alt="{{ user.username }}">
+                                            {% if request.user.profile.gender == 'other' %}
+                                                <img src="/static/user.png" style="max-height: 45px !important;" alt="{{ request.user.username }}">
+                                            {% elif request.user.profile.gender == 'male' %}
+                                                <img src="/static/man.png" style="max-height: 45px !important;" alt="{{ request.user.username }}">
                                             {% else %}
-                                                <img src="/static/woman.png" style="max-height: 45px !important;" alt="{{ user.username }}">
+                                                <img src="/static/woman.png" style="max-height: 45px !important;" alt="{{ request.user.username }}">
                                             {% endif %}
                                         {% endif %}
-                                        <span>{{ user.username }}</span>
+                                        <span>{{ request.user.username }}</span>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                         <li>
@@ -184,8 +184,8 @@
                     <div class="others-options">
                         <ul>
                             <li>
-                                <form class="search-box">
-                                    <input type="text" name="Search" placeholder="Search for..." class="form-control">
+                                <form class="search-box" action="{% url 'search' %}" method="GET">
+                                    <input type="text" name="q" placeholder="Search for..." class="form-control">
 
                                     <button type="submit" class="search-btn">
                                         <i class="ri-search-line"></i>
@@ -223,11 +223,11 @@
             <div class="container">
                 <div class="option-inner">
                     <div class="others-options justify-content-center d-flex align-items-center">
-                        {% if not user.is_authenticated %}
+                        {% if not request.user.is_authenticated %}
                         <ul>
                             <li>
-                                <form class="search-box">
-                                    <input type="text" name="Search" placeholder="Search for..." class="form-control">
+                                <form class="search-box" action="{% url 'search' %}" method="GET">
+                                    <input type="text" name="q" placeholder="Search for..." class="form-control">
 
                                     <button type="submit" class="search-btn">
                                         <i class="ri-search-line"></i>
@@ -249,8 +249,8 @@
                         {% else %}
                         <ul>
                             <li>
-                                <form class="search-box">
-                                    <input type="text" name="Search" placeholder="Search for..." class="form-control">
+                                <form class="search-box" action="{% url 'search' %}" method="GET">
+                                    <input type="text" name="q" placeholder="Search for..." class="form-control">
                             
                                     <button type="submit" class="search-btn">
                                         <i class="ri-search-line"></i>
@@ -296,18 +296,18 @@
                             <li>
                                 <div class="dropdown">
                                     <button type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
-                                        {% if user.profile.image %}
-                                            <img src="{{ user.profile.image.url }}" style="max-height: 45px !important;" alt="{{ user.username }}">
+                                        {% if request.user.profile.image %}
+                                            <img src="{{ request.user.profile.image.url }}" style="max-height: 45px !important;" alt="{{ request.user.username }}">
                                         {% else %}
-                                            {% if user.profile.gender == 'other' %}
-                                                <img src="/static/user.png" style="max-height: 45px !important;" alt="{{ user.username }}">
-                                            {% elif user.profile.gender == 'male' %}
-                                                <img src="/static/man.png" style="max-height: 45px !important;" alt="{{ user.username }}">
+                                            {% if request.user.profile.gender == 'other' %}
+                                                <img src="/static/user.png" style="max-height: 45px !important;" alt="{{ request.user.username }}">
+                                            {% elif request.user.profile.gender == 'male' %}
+                                                <img src="/static/man.png" style="max-height: 45px !important;" alt="{{ request.user.username }}">
                                             {% else %}
-                                                <img src="/static/woman.png" style="max-height: 45px !important;" alt="{{ user.username }}">
+                                                <img src="/static/woman.png" style="max-height: 45px !important;" alt="{{ request.user.username }}">
                                             {% endif %}
                                         {% endif %}
-                                        <span>{{ user.username }}</span>
+                                        <span>{{ request.user.username }}</span>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
                                         <li>

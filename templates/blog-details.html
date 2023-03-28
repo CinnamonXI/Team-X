@@ -123,9 +123,9 @@
 									Search
 								</h3>
 
-								<form>
-									<input type="text" class="form-control" placeholder="Search Here">
-									<button class="src-btn">
+								<form action="{% url 'blogs:search' %}" method="GET">
+									<input type="text" class="form-control" name="q" required placeholder="Search Here">
+									<button class="src-btn" type="submit">
 										<i class="ri-search-line"></i>
 									</button>
 								</form>

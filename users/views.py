@@ -23,16 +23,29 @@ def edit_profile(request):
 @login_required
 def follow(request, username):
     user_to_follow = get_object_or_404(User, username=username, is_active=True)
-    user_to_follow.profile.followers.add(request.user)
-    messages.success(request, f'Successfully followed {user_to_follow}.')
-    return redirect('users:user_profile', username=username)
+    try:
+        follower = Follower.objects.get(user_to=user_to_follow, user_from=request.user)
+        messages.warning(request, f'You already follow {user_to_follow}.')
+        return redirect('users:user_profile', username=username)
+    except Follower.DoesNotExist:
+        follower = Follower.objects.create(user_to=user_to_follow, user_from=request.user)
+        follower.save()
+        user_to_follow.profile.followers.add(follower)
+        messages.success(request, f'Successfully followed {user_to_follow}.')
+        return redirect('users:user_profile', username=username)
 
 @login_required
 def unfollow(request, username):
     user_to_unfollow = get_object_or_404(User, username=username, is_active=True)
-    user_to_unfollow.profile.followers.remove(request.user)
-    messages.success(request, f'Successfully unfollowed {user_to_unfollow}.')
-    return redirect('users:user_profile', username=username)
+    try:
+        follower = Follower.objects.get(user_to=user_to_unfollow, user_from=request.user)
+        follower.delete()
+        user_to_unfollow.profile.followers.remove(follower)
+        messages.success(request, f'Successfully unfollowed {user_to_unfollow}.')
+        return redirect('users:user_profile', username=username)
+    except Follower.DoesNotExist:
+        messages.warning(request, f'You do not follow {user_to_unfollow}.')
+        return redirect('users:user_profile', username=username)
 
 @login_required
 def user_profile(request, username):

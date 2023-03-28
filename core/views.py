@@ -69,3 +69,20 @@ def faq(request, slug=None):
         'categories' : Category.objects.all(),
     }
     return render(request, 'faq/index.html', context)
+
+def search(request):
+    try:
+        if request.method == 'GET':
+            search = request.GET.get('q')
+            articles = Article.objects.filter(title__icontains=search) or Article.objects.filter(description__icontains=search)
+            videos = Video.objects.filter(title__icontains=search) 
+            documents = Document.objects.filter(title__icontains=search) 
+            context = {
+                'title': f"Search result for '{search}'",
+                'articles': articles,
+                'videos': videos,
+                'documents': documents,
+            }
+            return render(request, 'index.html', context)
+    except ValueError:
+        return redirect('index')
