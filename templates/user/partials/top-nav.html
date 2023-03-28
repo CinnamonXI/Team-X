@@ -20,10 +20,12 @@
     <div class="edit-btn">
         {% if user == request.user %}
             <a href="{% url 'users:edit_profile' %}" class="default-btn">Edit profile</a>
-        {% elif request.user not in user.profile.followers.all %}
-            <a href="{% url 'users:unfollow' user.username %}" class="default-btn">Unfollow</a>
         {% else %}
-            <a href="{% url 'users:follow' user.username %}" class="default-btn">Follow</a>
+            {% if is_following %}
+                <a href="{% url 'users:unfollow' user.username %}" class="default-btn">Unfollow</a>
+            {% else %}
+                <a href="{% url 'users:follow' user.username %}" class="default-btn">Follow</a>
+            {% endif %}
         {% endif %}
     </div>
 </div>

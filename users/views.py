@@ -50,8 +50,14 @@ def unfollow(request, username):
 @login_required
 def user_profile(request, username):
     user = get_object_or_404(User, username=username, is_active=True)
+    try:
+        follower = Follower.objects.get(user_to=user, user_from=request.user)
+        is_following = True
+    except Follower.DoesNotExist:
+        is_following = False
     context = {
         'user': user,
         'title': f"{user}'s Profile",
+        'is_following': is_following
     }
     return render(request, 'user/index.html', context)

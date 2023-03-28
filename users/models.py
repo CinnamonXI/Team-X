@@ -41,6 +41,7 @@ class Profile(models.Model):
 
     def get_absolute_url(self):
         return reverse('users:user_profile', kwargs={'username': self.user.username})
+    
 
 class Team(models.Model):
     user = models.OneToOneField('auth.User', on_delete=models.CASCADE)
