@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile, Team
+from .models import Profile, Team, Follower
 # Register your models here.
 
 @admin.register(Profile)
@@ -18,3 +18,11 @@ class TeamAdmin(admin.ModelAdmin):
     search_fields = ('title',)
     date_hierarchy = 'created_at'
     ordering = ('order',)
+
+@admin.register(Follower)
+class FollowerAdmin(admin.ModelAdmin):
+    list_display = ('user_from', 'user_to', 'created_at')
+    list_filter = ('created_at',)
+    search_fields = ('user_from','user_to')
+    ordering = ('-created_at',)
+    date_hierarchy = 'created_at'

@@ -1,0 +1,51 @@
+{% if articles %}
+{% for article in articles %}
+<div class="single-qa-box like-dislike">
+    <div class="d-flex">
+        <div class="flex-grow-1 ms-3">
+            <ul class="graphic-design">
+                <li>
+                    <a href="">{{ article.author.get_full_name|default:'No name' }}</a>
+                </li>
+                <li>
+                    <span>{{ article.updated_at }}</span>
+                </li>
+                <li>
+                    <span>In:</span>
+                    <a href="{% url 'resources:articles_category' article.category.slug %}" class="graphic">
+                        {{ article.category }}
+                    </a>
+                </li>
+            </ul>
+            {% if article.image %}
+            <a href="{{ article.get_absolute_url }}">
+                <img src="{{ article.image.url }}" alt="{{ article.title }}" class="img-fluid">
+            </a>
+            {% endif %}
+            <h3 class="mt-3">
+                <a href="{{ article.get_absolute_url }}">
+                    {{ article.title }}
+                </a>
+            </h3>
+
+            <p>
+                {{ article.description|truncatechars:200 }}
+            </p>
+            {% if article.tags.all %}
+            <ul class="tag-list">
+                {% for a_tag in article.tags.all %}
+                <li>
+                    <a href="{% url 'resources:article_tags' a_tag.slug %}">{{ a_tag }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<div class="alert alert-info">
+    No articles found
+</div>
+{% endif %}

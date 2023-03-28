@@ -2,12 +2,13 @@ from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from django.core.mail import send_mail
 from django.contrib import messages
-from .models import Contact, Faq, Category
+from .models import Contact, Faq, Category, Tag
 from users.models import Team
 # Create your views here.
 def index(request):
     context = {
         'title': 'Homepage',
+        'r_articles': 'active',
     }
     return render(request, 'index.html', context)
 

@@ -23,41 +23,41 @@
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto">
-                        <li class="nav-item">
+                        <li class="nav-item {% if title == 'Homepage' %}active{% endif %}">
                             <a href="/" class="nav-link">
                                 Home
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {% if title == 'About Us' %}active{% endif %}">
                             <a href="{% url 'about' %}" class="nav-link">
                                 About Us
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item {% if title == 'Blogs' %}active{% endif %}">
+                            <a href="{% url 'blogs:index' %}" class="nav-link">
                                 Blog
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item {% if title == 'Contact Us' %}active{% endif %}">
                             <a href="{% url 'contact' %}" class="nav-link">Contact Us</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link dropdown-toggle active">
+                            <a href="#" class="nav-link dropdown-toggle {% if title == 'Frequently Asked Questions' or title == 'Privacy Policy' or title == 'Terms and Conditions' %}active{% endif %}">
                                 Pages
                             </a>
 
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="{% url 'faq' %}" class="nav-link active">FAQ</a>
+                                    <a href="{% url 'faq' %}" class="nav-link {% if title == 'Frequently Asked Questions' %}active{% endif %}">FAQ</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{% url 'privacy' %}" class="nav-link">Privacy Policy</a>
+                                    <a href="{% url 'privacy' %}" class="nav-link {% if title == 'Privacy Policy' %}active{% endif %}">Privacy Policy</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{% url 'terms' %}" class="nav-link">Terms & Conditions</a>
+                                    <a href="{% url 'terms' %}" class="nav-link {% if title == 'Terms and Conditions' %}active{% endif %}">Terms & Conditions</a>
                                 </li>
                             </ul>
                         </li>

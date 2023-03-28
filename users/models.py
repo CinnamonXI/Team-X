@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils.text import slugify
+from django.contrib.auth import get_user_model
 # Create your models here.
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -13,7 +14,7 @@ GENDER_CHOICES = (
 )
 
 class Profile(models.Model):
-    user = models.OneToOneField('auth.User', on_delete=models.CASCADE)
+    user = models.OneToOneField('auth.User', on_delete=models.CASCADE, related_name='profile')
     slug = models.SlugField(max_length=158, unique=True)
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES, default='other')
     image = models.ImageField(upload_to='users/profiles/', null=True, blank=True)
@@ -47,7 +48,18 @@ class Team(models.Model):
     class Meta:
         ordering = ('order',)
 
+class Follower(models.Model):
+    user_from = models.ForeignKey('auth.User',related_name='rel_from_set', on_delete=models.CASCADE)
+    user_to = models.ForeignKey('auth.User', related_name='rel_to_set', on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+    class Meta:
+        ordering = ('-created_at',)
+    def __str__(self):
+        return f'{self.user_from} follows {self.user_to}'
 
+
+user_model = get_user_model()
+user_model.add_to_class('following',  models.ManyToManyField('self', through=Follower, related_name='followers', symmetrical=False))
 
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):

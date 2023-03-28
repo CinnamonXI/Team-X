@@ -79,4 +79,24 @@
             </ul>
         </div>
     </div>
+    {% if tags %}
+    <div class="right-siderbar-common">
+        <div class="trending-tags">
+            <h3>
+                <i class="ri-price-tag-3-line"></i>
+                Trending Tags
+            </h3>
+
+            <ul>
+                {% for tag in tags %}
+                <li>
+                    <a href="{% url 'resources:article_tags' tag.slug %}">
+                        {{ tag }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
 </div>

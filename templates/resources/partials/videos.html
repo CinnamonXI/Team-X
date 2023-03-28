@@ -1,0 +1,50 @@
+{% if videos %}
+{% for video in videos %}
+<div class="single-qa-box like-dislike">
+    <div class="d-flex">
+        <div class="flex-grow-1 ms-3">
+            <ul class="graphic-design">
+                <li>
+                    <a href="">{{ video.author.get_full_name|default:'No Name'}}</a>
+                </li>
+                <li>
+                    <span>{{ video.updated_at }}</span>
+                </li>
+                <li>
+                    <span>In:</span>
+                    <a href="{% url 'resources:videos_category' video.category.slug %}" class="graphic">
+                        {{ video.category }}
+                    </a>
+                </li>
+            </ul>
+
+            <h3>
+                <a href="">
+                    {{ video.title }}
+                </a>
+            </h3>
+
+            <p>
+                <iframe width="100%" height="315" src="{{ video.get_video_key }}" title="{{ video.title }}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </p>
+            {% if video.tags.all %}
+            <ul class="tag-list">
+                {% for tag in video.tags.all %}
+                <li>
+                    <a href="{% url 'resources:video_tags' tag.slug %}">{{ tag }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<div class="alert alert-info">
+    No videos found
+</div>
+{% endif %}

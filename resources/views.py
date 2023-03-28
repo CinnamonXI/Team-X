@@ -13,7 +13,6 @@ def article(request, slug=None):
         articles = Article.objects.filter(category=category, is_published=True)
     context = {
         'title': 'Resource Articles',
-        'categories': Category.objects.all(),
         'articles': articles,
         'category': category,
         'r_articles': 'active',
@@ -25,7 +24,6 @@ def article_tags(request, slug):
     articles = Article.objects.filter(tags=tag, is_published=True)
     context = {
         'title': f"Articles with tag '{tag}'",
-        'categories': Category.objects.all(),
         'articles': articles,
         'tag': tag,
         'r_articles': 'active',
@@ -50,24 +48,22 @@ def video(request, slug=None):
         videos = Video.objects.filter(category=category, is_published=True)
     context = {
         'title': 'Resource Videos',
-        'categories': Category.objects.all(),
         'videos': videos,
         'category': category,
         'r_videos': 'active',
     }
-    return render(request, 'resources/videos.html', context)
+    return render(request, 'resources/index.html', context)
 
 def video_tags(request, slug):
     tag = get_object_or_404(Tag, slug=slug)
     videos = Video.objects.filter(tags=tag, is_published=True)
     context = {
         'title': f"Videos with tag '{tag}'",
-        'categories': Category.objects.all(),
         'videos': videos,
         'tag': tag,
         'r_videos': 'active',
     }
-    return render(request, 'resources/videos.html', context)
+    return render(request, 'resources/index.html', context)
 
 def documents(request, slug=None):
     category = None
@@ -78,9 +74,8 @@ def documents(request, slug=None):
         documents = Document.objects.filter(category=category, is_published=True)
     context = {
         'title': 'Resource Documents',
-        'categories': Category.objects.all(),
         'documents': documents,
         'category': category,
         'r_documents': 'active',
     }
-    return render(request, 'resources/documents.html', context)
+    return render(request, 'resources/index.html', context)

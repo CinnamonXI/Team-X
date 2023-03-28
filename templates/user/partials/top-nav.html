@@ -14,11 +14,19 @@
         <h3>{{ user.get_full_name|default:'No Name' }}</h3>
         <span>Member since {{ user.date_joined }}</span>
         <span>Last seen {{ user.last_login }}</span>
-        <button class="followers-btn">45 Followers</button>
-        <button class="followers-btn">12 Following</button>
+        <button class="followers-btn">{{ user.profile.followers.all|length }} Followers</button>
+        <button class="followers-btn">{{ user.following.all|length }} Following</button>
     </div>
 
     <div class="edit-btn">
-        <a href="{% url 'users:edit_profile' %}" class="default-btn">Edit profile</a>
+        {% if user == request.user %}
+            <a href="{% url 'users:edit_profile' %}" class="default-btn">Edit profile</a>
+        {% else %}
+            {% if request.user in user.profile.followers %}
+                <a href="{% url 'users:unfollow' user.username %}" class="default-btn">Unfollow</a>
+            {% else %}
+                <a href="{% url 'users:follow' user.username %}" class="default-btn">Follow</a>
+            {% endif %}
+        {% endif %}
     </div>
 </div>

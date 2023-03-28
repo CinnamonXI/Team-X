@@ -16,7 +16,7 @@
                 <nav class="sidebar-nav" data-simplebar>
                     <ul id="sidebar-menu" class="sidebar-menu">
                         <li>
-                            <a href="/" class="box-style active">
+                            <a href="/" class="box-style {% if title == 'Homepage' %}active{% endif %}">
                                 <span class="menu-title">
                                     <i class="ri-home-8-line"></i>
                                     Home
@@ -24,7 +24,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="box-style has-arrow">
+                            <a href="#" class="box-style has-arrow {% if r_documents or r_articles or r_videos %}active{% endif %}">
                                 <span class="menu-title">
                                     <i class="ri-book-line"></i>
                                     Resources
@@ -33,17 +33,17 @@
                             <ul class="sidemenu-nav-second-level">
                                 <li>
                                     <a href="{% url 'resources:articles' %}">
-                                        <span class="menu-title">Articles</span>
+                                        <span class="menu-title {% if r_articles %}active{% endif %}">Articles</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'resources:documents' %}">
-                                        <span class="menu-title">Documents</span>
+                                        <span class="menu-title {% if r_documents %}active{% endif %}">Documents</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'resources:videos' %}">
-                                        <span class="menu-title">Videos</span>
+                                        <span class="menu-title {% if r_videos %}active{% endif %}">Videos</span>
                                     </a>
                                 </li>
                                 <!-- <li>
@@ -126,7 +126,7 @@
                             </a>
                         </li>-->
                         <li>
-                            <a href="{% url 'faq' %}" class="box-style">
+                            <a href="{% url 'faq' %}" class="box-style {% if title == 'Frequently Asked Questions' %}active{% endif %}">
                                 <span class="menu-title">
                                     <i class="ri-hq-line"></i>
                                     FAQs

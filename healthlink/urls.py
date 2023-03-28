@@ -23,7 +23,9 @@ urlpatterns = [
     path('', include('core.urls')),
     path('resources/', include('resources.urls')),
     path('accounts/', include('allauth.urls')),
-    path('users/', include('users.urls'))
+    path('users/', include('users.urls')),
+    path('api/', include('api.urls')),
+    path('blogs/', include('blog.urls')),
 ]
 
 if settings.DEBUG:
