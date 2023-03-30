@@ -29,6 +29,9 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
+    '20.120.102.239',
+    'www.healthlink.vstech.co.ke',
+    'healthlink.vstech.co.ke',
 ]
 
 
@@ -183,16 +186,18 @@ ACCOUNT_EMAIL_SUBJECT_PREFIX = 'HealthLink - '
 
 CSRF_TRUSTED_ORIGINS = [
     'http://20.120.102.239',
+    'https://healthlink.vstech.co.ke/',
+    'https://www.healthlink.vstech.co.ke/',
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'mail.vstech.co.ke'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = 'healthlink@vstech.co.ke'
-EMAIL_HOST_PASSWORD = 'A5haZXc3H2wV'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'no-reply@healthlink.vstech.co.ke'
+EMAIL_HOST_PASSWORD = 'Lawiomosh3.'
 EMAIL_USE_TLS = True
 
-DEFAULT_FROM_EMAIL = 'healthlink@vstech.co.ke'
+DEFAULT_FROM_EMAIL = 'no-reply@healthlink.vstech.co.ke'
 
 
 # Authentification Settings

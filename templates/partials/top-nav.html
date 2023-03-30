@@ -139,7 +139,7 @@
                                                 Setting
                                             </a>
                                         </li>
-                                        <li>
+                                        <!-- <li>
                                             <a href="">
                                                 <i class="ri-lightbulb-line"></i>
                                                 Activity
@@ -168,7 +168,7 @@
                                                 <i class="ri-restart-line"></i>
                                                 Referrals
                                             </a>
-                                        </li>
+                                        </li> -->
                                         <li>
                                             <a href="{% url 'account_logout' %}">
                                                 <i class="ri-logout-box-r-line"></i>
@@ -185,7 +185,7 @@
                         <ul>
                             <li>
                                 <form class="search-box" action="{% url 'search' %}" method="GET">
-                                    <input type="text" name="q" placeholder="Search for..." class="form-control">
+                                    <input type="text" required name="q" placeholder="Search for..." class="form-control">
 
                                     <button type="submit" class="search-btn">
                                         <i class="ri-search-line"></i>
@@ -235,13 +235,12 @@
                                 </form>
                             </li>
                             <li>
-                                <a href="{% url 'account_login' %}" data-bs-toggle="modal" data-bs-target="#exampleModal-3"
-                                    class="active">
+                                <a href="{% url 'account_login' %}" class="active">
                                     Log in
                                 </a>
                             </li>
                             <li>
-                                <a href="{% url 'account_signup' %}" data-bs-toggle="modal" data-bs-target="#exampleModal-4">
+                                <a href="{% url 'account_signup' %}">
                                     Sign up
                                 </a>
                             </li>
@@ -322,8 +321,8 @@
                                                 Setting
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="activity.html">
+                                        <!-- <li>
+                                            <a href="">
                                                 <i class="ri-lightbulb-line"></i>
                                                 Activity
                                             </a>
@@ -351,7 +350,7 @@
                                                 <i class="ri-restart-line"></i>
                                                 Referrals
                                             </a>
-                                        </li>
+                                        </li> -->
                                         <li>
                                             <a href="{% url 'account_logout' %}">
                                                 <i class="ri-logout-box-r-line"></i>
