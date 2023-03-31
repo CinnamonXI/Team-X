@@ -1155,7 +1155,7 @@
     border-bottom: none !important;
   }
   .mobile-responsive-nav .mobile-responsive-menu.mean-container .mean-nav ul li a.active {
-    color: #f48225 !important;
+    color: #00C2D1 !important;
   }
   .mobile-responsive-nav .mobile-responsive-menu.mean-container .mean-nav ul li li a {
     font-size: 15px;
@@ -1233,7 +1233,7 @@
   }
   .sidebar-menu-wrap .btn.btn-primary {
     display: block;
-    background-color: #f48225;
+    background-color: #00C2D1;
     border: none;
   }
   .sidebar-menu-wrap .btn.btn-primary:focus {
