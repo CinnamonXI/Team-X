@@ -61,7 +61,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: #f48225;
+  color: #00C2D1;
 }
 
 a:focus {
@@ -145,7 +145,7 @@ img {
   -webkit-box-shadow: unset;
           box-shadow: unset;
   outline: 0;
-  border: 1px solid #f48225;
+  border: 1px solid #00C2D1;
 }
 
 .form-control:hover:focus, .form-control:focus {
@@ -222,12 +222,12 @@ Default Btn Area Style*/
   display: -ms-inline-grid;
   display: inline-grid;
   padding: 12px 40px;
-  background-color: #f48225;
+  background-color: #00C2D1;
   border-radius: 5px;
 }
 
 .default-btn.active-btn {
-  background-color: #f48225;
+  background-color: #00C2D1;
   color: #ffffff;
 }
 
@@ -240,14 +240,14 @@ Default Btn Area Style*/
 Read More Btn Area Style*/
 .read-more {
   font-size: 15px;
-  color: #f48225;
+  color: #00C2D1;
   background-color: transparent;
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
 }
 
 .read-more:hover {
-  color: #f48225;
+  color: #00C2D1;
   letter-spacing: 1px;
 }
 
@@ -262,7 +262,7 @@ Section Title Area Style*/
 
 .section-title .top-title {
   font-size: 15px;
-  color: #f48225;
+  color: #00C2D1;
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
@@ -274,7 +274,7 @@ Section Title Area Style*/
 }
 
 .section-title h2 span {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .section-title h2:last-child {
@@ -287,11 +287,11 @@ Section Title Area Style*/
 }
 
 .section-title p span {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .section-title.white-title span {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .section-title.white-title h2 {
@@ -399,7 +399,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item a:hover, .desktop-nav .navbar .navbar-nav .nav-item a:focus, .desktop-nav .navbar .navbar-nav .nav-item a.active {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item a i {
@@ -418,7 +418,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item:hover a, .desktop-nav .navbar .navbar-nav .nav-item:focus a, .desktop-nav .navbar .navbar-nav .nav-item.active a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu {
@@ -472,7 +472,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:hover, .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:focus, .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li a.active {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu {
@@ -506,7 +506,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:hover, .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:focus, .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a.active {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu {
@@ -521,7 +521,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu {
@@ -536,7 +536,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu {
@@ -551,7 +551,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu {
@@ -566,7 +566,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu {
@@ -581,11 +581,11 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li.active a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li:hover .dropdown-menu {
@@ -595,7 +595,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li.active a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li:hover .dropdown-menu {
@@ -605,7 +605,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li.active a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li:hover .dropdown-menu {
@@ -615,7 +615,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li.active a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li:hover .dropdown-menu {
@@ -625,7 +625,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li.active a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li:hover .dropdown-menu {
@@ -635,7 +635,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li.active a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li:hover .dropdown-menu {
@@ -671,7 +671,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .others-options ul li a {
-  border: 1px solid #f48225;
+  border: 1px solid #00C2D1;
   display: inline-block;
   color: #ffffff;
   padding: 10px 20px;
@@ -680,13 +680,13 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .others-options ul li a:hover {
-  background-color: #f48225;
-  border-color: #f48225;
+  background-color: #00C2D1;
+  border-color: #00C2D1;
 }
 
 .desktop-nav .navbar .others-options ul li a.active {
-  background-color: #f48225;
-  border-color: #f48225;
+  background-color: #00C2D1;
+  border-color: #00C2D1;
 }
 
 .desktop-nav .navbar .others-options ul li a.user-noti {
@@ -700,7 +700,7 @@ Navbar Area Style
   position: absolute;
   top: 0;
   right: -5px;
-  background-color: #f48225;
+  background-color: #00C2D1;
   width: 12px;
   height: 12px;
   line-height: 12px;
@@ -727,7 +727,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .others-options ul li a.user-noti:hover i {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .others-options ul li .user-notif {
@@ -742,7 +742,7 @@ Navbar Area Style
   position: absolute;
   top: 0;
   right: -5px;
-  background-color: #f48225;
+  background-color: #00C2D1;
   width: 12px;
   height: 12px;
   line-height: 12px;
@@ -769,7 +769,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .others-options ul li .user-notif:hover i {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .others-options ul li .search-box {
@@ -785,7 +785,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .others-options ul li .search-box .form-control:focus {
-  border-color: #f48225;
+  border-color: #00C2D1;
 }
 
 .desktop-nav .navbar .others-options ul li .search-box .search-btn {
@@ -863,7 +863,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .others-options ul li .dropdown .dropdown-menu li a:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .others-options ul li .dropdown .dropdown-menu.notif {
@@ -884,7 +884,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .others-options ul li .dropdown .dropdown-menu.notif li a i {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .desktop-nav .navbar .others-options ul li .dropdown .dropdown-menu.notif li p {
@@ -892,7 +892,7 @@ Navbar Area Style
 }
 
 .desktop-nav .navbar .others-options ul li .dropdown .dropdown-menu.notif li:hover a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .mobile-responsive-nav {
@@ -1020,7 +1020,7 @@ Others Option For Responsive Area Style
 }
 
 .others-option-for-responsive .others-options ul li a {
-  border: 1px solid #f48225;
+  border: 1px solid #00C2D1;
   display: inline-block;
   color: #ffffff;
   padding: 10px 20px;
@@ -1029,7 +1029,7 @@ Others Option For Responsive Area Style
 }
 
 .others-option-for-responsive .others-options ul li a:hover {
-  background-color: #f48225;
+  background-color: #00C2D1;
 }
 
 .others-option-for-responsive .others-options ul li a.user-noti {
@@ -1043,7 +1043,7 @@ Others Option For Responsive Area Style
   position: absolute;
   top: 0;
   right: -5px;
-  background-color: #f48225;
+  background-color: #00C2D1;
   width: 12px;
   height: 12px;
   line-height: 12px;
@@ -1070,7 +1070,7 @@ Others Option For Responsive Area Style
 }
 
 .others-option-for-responsive .others-options ul li a.user-noti:hover i {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .others-option-for-responsive .others-options ul li .user-notif {
@@ -1085,7 +1085,7 @@ Others Option For Responsive Area Style
   position: absolute;
   top: 0;
   right: -5px;
-  background-color: #f48225;
+  background-color: #00C2D1;
   width: 12px;
   height: 12px;
   line-height: 12px;
@@ -1112,7 +1112,7 @@ Others Option For Responsive Area Style
 }
 
 .others-option-for-responsive .others-options ul li .user-notif:hover i {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .others-option-for-responsive .others-options ul li .search-box {
@@ -1129,7 +1129,7 @@ Others Option For Responsive Area Style
 }
 
 .others-option-for-responsive .others-options ul li .search-box .form-control:focus {
-  border-color: #f48225;
+  border-color: #00C2D1;
 }
 
 .others-option-for-responsive .others-options ul li .search-box .search-btn {
@@ -1207,7 +1207,7 @@ Others Option For Responsive Area Style
 }
 
 .others-option-for-responsive .others-options ul li .dropdown .dropdown-menu li a:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 /*
@@ -1248,7 +1248,7 @@ Banner Area Style
 }
 
 .banner-content h3 span {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .banner-content p {
@@ -1427,16 +1427,16 @@ Left SIdebar Area Style
 .left-sidebar .sidebar-nav .sidebar-menu li .box-style {
   background-color: #f5f5f5;
   padding: 8px 15px;
-  border-left: 2px solid #f48225;
+  border-left: 2px solid #00C2D1;
 }
 
 .left-sidebar .sidebar-nav .sidebar-menu li .box-style.active {
-  color: #f48225;
+  color: #00C2D1;
   border-color: #0c0d0e;
 }
 
 .left-sidebar .sidebar-nav .sidebar-menu li .box-style.active i {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .left-sidebar .sidebar-nav .sidebar-menu li a {
@@ -1446,7 +1446,7 @@ Left SIdebar Area Style
 }
 
 .left-sidebar .sidebar-nav .sidebar-menu li a .menu-title.active {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .left-sidebar .sidebar-nav .sidebar-menu li a i {
@@ -1476,11 +1476,11 @@ Left SIdebar Area Style
 }
 
 .left-sidebar .sidebar-nav .sidebar-menu li .sidemenu-nav-second-level li a:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .left-sidebar .sidebar-nav .sidebar-menu li .sidemenu-nav-second-level li a.active {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .left-sidebar .metismenu .has-arrow::after {
@@ -1550,7 +1550,7 @@ Middull Area Style
 }
 
 .middull-content .aq-form .form-control:focus {
-  border-color: #f48225;
+  border-color: #00C2D1;
 }
 
 .middull-content .aq-form .aq-btn {
@@ -1565,11 +1565,11 @@ Middull Area Style
 }
 
 .middull-content .aq-form .aq-btn:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .middull-content .questions-tabs {
-  border-bottom: 2px solid #f48225;
+  border-bottom: 2px solid #00C2D1;
 }
 
 .middull-content .questions-tabs .nav-item {
@@ -1587,12 +1587,12 @@ Middull Area Style
 }
 
 .middull-content .questions-tabs .nav-item .nav-link:hover {
-  background-color: #f48225;
+  background-color: #00C2D1;
   color: #ffffff;
 }
 
 .middull-content .questions-tabs .nav-item .nav-link.active {
-  background-color: #f48225;
+  background-color: #00C2D1;
   color: #ffffff;
 }
 
@@ -1682,12 +1682,12 @@ Middull Area Style
 }
 
 .single-qa-box .graphic-design li a.graphic {
-  color: #f48225;
+  color: #00C2D1;
   font-size: 14px;
 }
 
 .single-qa-box .graphic-design li a:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .single-qa-box h3 {
@@ -1700,7 +1700,7 @@ Middull Area Style
 }
 
 .single-qa-box h3 a:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .single-qa-box p {
@@ -1728,7 +1728,7 @@ Middull Area Style
 }
 
 .single-qa-box .tag-list li a:hover {
-  border-color: #f48225;
+  border-color: #00C2D1;
 }
 
 .single-qa-box .anser-list {
@@ -1781,7 +1781,7 @@ Middull Area Style
 }
 
 .single-qa-box .anser-list li .qa-share .share-option span i:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .single-qa-box .anser-list li .qa-share .share-option .social-icon {
@@ -1812,7 +1812,7 @@ Middull Area Style
   height: 30px;
   line-height: 30px;
   text-align: center;
-  background-color: #f48225;
+  background-color: #00C2D1;
   -webkit-box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
           box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   display: inline-block;
@@ -1824,7 +1824,7 @@ Middull Area Style
 }
 
 .single-qa-box .anser-list li .qa-share .share-option .social-icon li a:hover i {
-  background-color: #f48225;
+  background-color: #00C2D1;
   color: #ffffff;
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
@@ -1846,7 +1846,7 @@ Middull Area Style
 }
 
 .single-qa-box .default-btn:hover {
-  background-color: #f48225;
+  background-color: #00C2D1;
 }
 
 .single-qa-box .featured {
@@ -1854,7 +1854,7 @@ Middull Area Style
   top: 0;
   right: 0;
   background-color: rgba(244, 130, 37, 0.2);
-  color: #f48225;
+  color: #00C2D1;
   display: inline-block;
   padding: 5px 10px;
   font-size: 13px;
@@ -1889,7 +1889,7 @@ Right Sidebar Area Style
   top: -2px;
   left: 0;
   font-size: 20px;
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .right-siderbar .right-siderbar-common:last-child {
@@ -1951,12 +1951,12 @@ Right Sidebar Area Style
   left: 0;
   width: 8px;
   height: 8px;
-  background-color: #f48225;
+  background-color: #00C2D1;
   border-radius: 50px;
 }
 
 .right-siderbar .right-siderbar-common .discussions ul li a:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .right-siderbar .right-siderbar-common .answer-count ul {
@@ -2001,7 +2001,7 @@ Right Sidebar Area Style
 }
 
 .right-siderbar .right-siderbar-common .answer-count ul li:nth-child(4) .count {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .right-siderbar .right-siderbar-common .answer-count ul li:nth-child(5) .count {
@@ -2043,7 +2043,7 @@ Right Sidebar Area Style
 }
 
 .right-siderbar .right-siderbar-common .recent-post ul li a:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .right-siderbar .right-siderbar-common .recent-post ul li p {
@@ -2051,7 +2051,7 @@ Right Sidebar Area Style
 }
 
 .right-siderbar .right-siderbar-common .recent-post ul li p a {
-  color: #f48225;
+  color: #00C2D1;
   font-weight: normal;
 }
 
@@ -2090,7 +2090,7 @@ Right Sidebar Area Style
 }
 
 .right-siderbar .right-siderbar-common .top-members ul li span {
-  color: #f48225;
+  color: #00C2D1;
   font-size: 13px;
 }
 
@@ -2109,7 +2109,7 @@ Right Sidebar Area Style
 }
 
 .right-siderbar .right-siderbar-common .ads .default-btn:hover {
-  background-color: #f48225;
+  background-color: #00C2D1;
 }
 
 .right-siderbar .right-siderbar-common .trending-tags ul {
@@ -2163,7 +2163,7 @@ Right Sidebar Area Style
 }
 
 .right-siderbar .right-siderbar-common .categories ul li a:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .right-siderbar .right-siderbar-common .categories ul li p {
@@ -2171,7 +2171,7 @@ Right Sidebar Area Style
 }
 
 .right-siderbar .right-siderbar-common .categories ul li p a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .right-siderbar .right-siderbar-common .search-form form {
@@ -2189,7 +2189,7 @@ Right Sidebar Area Style
 }
 
 .right-siderbar .right-siderbar-common .search-form form .src-btn:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 /*
@@ -2216,7 +2216,7 @@ Page Nish Area Style
   right: 0;
   width: 1px;
   height: 100%;
-  background-color: #f48225;
+  background-color: #00C2D1;
   -webkit-transform: rotate(25deg);
           transform: rotate(25deg);
 }
@@ -2243,11 +2243,11 @@ Page Nish Area Style
 }
 
 .page-nish li a:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .page-nish li.active {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 /*
@@ -2290,11 +2290,11 @@ Communities Area Style
 }
 
 .single-communities-box ul li button.active {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .single-communities-box:hover {
-  border-color: #f48225;
+  border-color: #00C2D1;
 }
 
 /*
@@ -2337,7 +2337,7 @@ Page Title Area Style
 }
 
 .page-title-area .page-title-content-list li a:hover {
-  background-color: #f48225;
+  background-color: #00C2D1;
   color: #ffffff;
 }
 
@@ -2371,7 +2371,7 @@ Page Title Area Style
   color: #ffffff;
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
-  background-color: #f48225;
+  background-color: #00C2D1;
   padding: 2px 10px;
 }
 
@@ -2424,7 +2424,7 @@ Page Title Area Style
 }
 
 .page-title-area .page-title-content-list li .qa-share .share-option .social-icon li a:hover i {
-  background-color: #f48225;
+  background-color: #00C2D1;
   color: #ffffff;
 }
 
@@ -2460,7 +2460,7 @@ Page Title Area Style
   right: -17px;
   width: 1px;
   height: 100%;
-  background-color: #f48225;
+  background-color: #00C2D1;
   -webkit-transform: rotate(15deg);
           transform: rotate(15deg);
 }
@@ -2486,7 +2486,7 @@ Page Title Area Style
 }
 
 .page-title-area .page-title-list li:last-child.active {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 /*
@@ -2519,7 +2519,7 @@ FAQ Area CSS
 
 .accordion-item .accordion-header .accordion-button:not(.collapsed) {
   background-color: #fafafa;
-  color: #f48225;
+  color: #00C2D1;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -2615,7 +2615,7 @@ Group Area CSS
 }
 
 .single-group-box .group-content .group-btn:hover {
-  background-color: #f48225;
+  background-color: #00C2D1;
   color: #ffffff;
 }
 
@@ -2651,7 +2651,7 @@ Tags Area CSS
 }
 
 .single-tags-box .tag-mark li i {
-  color: #f48225;
+  color: #00C2D1;
   position: relative;
   top: 2px;
   margin-right: 5px;
@@ -2683,12 +2683,12 @@ Tags Area CSS
 }
 
 .single-tags-box .tag-btn li .default-btn:hover {
-  background-color: #f48225;
+  background-color: #00C2D1;
   color: #ffffff;
 }
 
 .single-tags-box:hover {
-  border-color: #f48225;
+  border-color: #00C2D1;
 }
 
 /*
@@ -2790,12 +2790,12 @@ Question Details Area CSS
 }
 
 .question-details-area .question-details-content .graphic-design li a.graphic {
-  color: #f48225;
+  color: #00C2D1;
   font-size: 14px;
 }
 
 .question-details-area .question-details-content .graphic-design li a:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .question-details-area .question-details-content h3 {
@@ -2808,7 +2808,7 @@ Question Details Area CSS
 }
 
 .question-details-area .question-details-content h3 a:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .question-details-area .question-details-content .tag-list {
@@ -2832,7 +2832,7 @@ Question Details Area CSS
 }
 
 .question-details-area .question-details-content .tag-list li a:hover {
-  border-color: #f48225;
+  border-color: #00C2D1;
 }
 
 .question-details-area .question-details-content .anser-list {
@@ -2885,7 +2885,7 @@ Question Details Area CSS
 }
 
 .question-details-area .question-details-content .anser-list li .qa-share .share-option span i:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .question-details-area .question-details-content .anser-list li .qa-share .share-option .social-icon {
@@ -2927,7 +2927,7 @@ Question Details Area CSS
 }
 
 .question-details-area .question-details-content .anser-list li .qa-share .share-option .social-icon li a:hover i {
-  background-color: #f48225;
+  background-color: #00C2D1;
   color: #ffffff;
 }
 
@@ -2947,7 +2947,7 @@ Question Details Area CSS
 }
 
 .question-details-area .question-details-content .default-btn:hover {
-  background-color: #f48225;
+  background-color: #00C2D1;
 }
 
 .question-details-area .question-details-content .featured {
@@ -2955,7 +2955,7 @@ Question Details Area CSS
   top: 0;
   right: 0;
   background-color: rgba(244, 130, 37, 0.2);
-  color: #f48225;
+  color: #00C2D1;
   display: inline-block;
   padding: 5px 10px;
   font-size: 13px;
@@ -3040,7 +3040,7 @@ Question Details Area CSS
 }
 
 .question-details-area .answer-question-details .latest-answer-list li a:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .your-answer-form .form-group {
@@ -3068,7 +3068,7 @@ Question Details Area CSS
 }
 
 .your-answer-form .form-group .form-control:focus {
-  border-color: #f48225;
+  border-color: #00C2D1;
 }
 
 .your-answer-form .form-group :focus-visible {
@@ -3147,7 +3147,7 @@ Question Details Area CSS
 }
 
 .your-answer-form .form-group .file-upload-account-info .inputfile:focus + label, .your-answer-form .form-group .file-upload-account-info .inputfile + label:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .your-answer-form .form-group .file-upload-account-info .inputfile + label {
@@ -3223,11 +3223,11 @@ Most Answered Details Area CSS
 }
 
 .most-answered-details .most-answered-details-content .link-unlike .like-unlink-count:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .most-answered-details .most-answered-details-content .link-unlike .like-unlink-count.active {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .most-answered-details .most-answered-details-content .graphic-design {
@@ -3253,12 +3253,12 @@ Most Answered Details Area CSS
 }
 
 .most-answered-details .most-answered-details-content .graphic-design li a.graphic {
-  color: #f48225;
+  color: #00C2D1;
   font-size: 14px;
 }
 
 .most-answered-details .most-answered-details-content .graphic-design li a:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .most-answered-details .most-answered-details-content h3 {
@@ -3291,7 +3291,7 @@ Most Answered Details Area CSS
 }
 
 .most-answered-details .most-answered-details-content .tag-list li a:hover {
-  border-color: #f48225;
+  border-color: #00C2D1;
 }
 
 .most-answered-details .most-answered-details-content .anser-list {
@@ -3344,7 +3344,7 @@ Most Answered Details Area CSS
 }
 
 .most-answered-details .most-answered-details-content .anser-list li .qa-share .share-option span i:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .most-answered-details .most-answered-details-content .anser-list li .qa-share .share-option .social-icon {
@@ -3375,7 +3375,7 @@ Most Answered Details Area CSS
   height: 30px;
   line-height: 30px;
   text-align: center;
-  background-color: #f48225;
+  background-color: #00C2D1;
   -webkit-box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
           box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   display: inline-block;
@@ -3387,7 +3387,7 @@ Most Answered Details Area CSS
 }
 
 .most-answered-details .most-answered-details-content .anser-list li .qa-share .share-option .social-icon li a:hover i {
-  background-color: #f48225;
+  background-color: #00C2D1;
   color: #ffffff;
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
@@ -3409,7 +3409,7 @@ Most Answered Details Area CSS
 }
 
 .most-answered-details .most-answered-details-content .default-btn:hover {
-  background-color: #f48225;
+  background-color: #00C2D1;
 }
 
 .most-answered-details .most-answered-details-content .featured {
@@ -3417,14 +3417,14 @@ Most Answered Details Area CSS
   top: 0;
   right: 0;
   background-color: rgba(244, 130, 37, 0.2);
-  color: #f48225;
+  color: #00C2D1;
   display: inline-block;
   padding: 5px 10px;
   font-size: 13px;
 }
 
 .most-answered-details .most-answered-details-content:hover h3 a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .most-answered-details .answer-question-details {
@@ -3469,11 +3469,11 @@ Most Answered Details Area CSS
 }
 
 .most-answered-details .answer-question-details .link-unlike .like-unlink-count:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .most-answered-details .answer-question-details .link-unlike .like-unlink-count.active {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .most-answered-details .answer-question-details .latest-answer-list {
@@ -3508,12 +3508,12 @@ Most Answered Details Area CSS
 }
 
 .most-answered-details .answer-question-details .latest-answer-list li a.replay {
-  color: #f48225;
+  color: #00C2D1;
   font-size: 14px;
 }
 
 .most-answered-details .answer-question-details .latest-answer-list li a.replay:hover {
-  color: #f48225;
+  color: #00C2D1;
   letter-spacing: 1.5px;
 }
 
@@ -3542,7 +3542,7 @@ Badges Area CSS
 .single-badges-box:hover {
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
-  border-color: #f48225;
+  border-color: #00C2D1;
 }
 
 /*
@@ -3592,7 +3592,7 @@ Single User Area CSS
 }
 
 .single-new-user:hover {
-  border-color: #f48225;
+  border-color: #00C2D1;
 }
 
 /*
@@ -3747,7 +3747,7 @@ About Area CSS
 
 .single-team-item ul li a:hover i {
   color: #ffffff;
-  background-color: #f48225;
+  background-color: #00C2D1;
 }
 
 .single-team-item ul li .default-btn {
@@ -3811,7 +3811,7 @@ About Area CSS
 }
 
 .blog-single-item:hover h3 a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .blog-details-content img {
@@ -3830,7 +3830,7 @@ About Area CSS
 
 .blog-details-content blockquote i {
   font-size: 80px;
-  color: #f48225;
+  color: #00C2D1;
   position: absolute;
   top: 0;
   left: 0;
@@ -3943,7 +3943,7 @@ Main Contact Area Style
 }
 
 .contact-form .form-group .form-control:focus {
-  border-color: #f48225;
+  border-color: #00C2D1;
 }
 
 .contact-form .form-group .form-control::-webkit-input-placeholder {
@@ -3968,7 +3968,7 @@ Main Contact Area Style
 }
 
 .contact-form .form-check a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .contact-form .default-btn {
@@ -4004,7 +4004,7 @@ Main Contact Area Style
 
 .contacts-info .address .location span {
   font-size: 16px;
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .contacts-info .address li {
@@ -4017,12 +4017,12 @@ Main Contact Area Style
 }
 
 .contacts-info .address li a:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .contacts-info .address li span {
   font-size: 16px;
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .contacts-info .address li:last-child {
@@ -4075,7 +4075,7 @@ User Area CSS
 }
 
 .user-form .login-action .form-check a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .user-form .login-action .forgot-login {
@@ -4144,7 +4144,7 @@ User Area CSS
 }
 
 .user-form .create a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .user-form .create #remember-2 {
@@ -4153,7 +4153,7 @@ User Area CSS
 }
 
 .user-form .create .form-check-input {
-  border: 1px solid #f48225;
+  border: 1px solid #00C2D1;
   border-radius: 0 !important;
 }
 
@@ -4232,7 +4232,7 @@ User Area CSS
 }
 
 .single-footer-widget .address-link li a:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .single-footer-widget .import-link {
@@ -4256,7 +4256,7 @@ User Area CSS
   left: 0;
   width: 8px;
   height: 8px;
-  background-color: #f48225;
+  background-color: #00C2D1;
   border-radius: 50px;
   -webkit-transform: scale(0);
           transform: scale(0);
@@ -4282,7 +4282,7 @@ User Area CSS
 }
 
 .single-footer-widget .import-link li:hover a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 /* Copyright Area Style
@@ -4299,7 +4299,7 @@ User Area CSS
 }
 
 .copy-right-content p a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .copy-right-content .language {
@@ -4360,7 +4360,7 @@ User Area CSS
 }
 
 .profile-content .profile-img .followers-btn:hover {
-  background-color: #f48225;
+  background-color: #00C2D1;
   color: #ffffff;
 }
 
@@ -4492,7 +4492,7 @@ User Area CSS
 
 .top-posts .nav-tabs .nav-item .nav-link.active {
   border: none;
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .top-posts .nav-tabs .nav-item .nav-link:hover {
@@ -4539,7 +4539,7 @@ User Area CSS
 }
 
 .top-posts .tab-content ul li p a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 /* Profile Area Style
@@ -4549,7 +4549,7 @@ User Area CSS
 }
 
 .edit-profile-area .profile-tabs .nav-tabs {
-  border-bottom: 2px solid #f48225;
+  border-bottom: 2px solid #00C2D1;
   margin-bottom: 30px;
 }
 
@@ -4573,12 +4573,12 @@ User Area CSS
 .edit-profile-area .profile-tabs .nav-tabs .nav-item .nav-link.active {
   border: none;
   color: #ffffff;
-  background-color: #f48225;
+  background-color: #00C2D1;
 }
 
 .edit-profile-area .profile-tabs .nav-tabs .nav-item .nav-link:hover {
   color: #ffffff;
-  background-color: #f48225;
+  background-color: #00C2D1;
 }
 
 .edit-profile-area .profile-tabs .edit-profile .public-information h3 {
@@ -4624,7 +4624,7 @@ User Area CSS
 }
 
 .edit-profile-area .profile-tabs .edit-profile .public-information .information .file-upload-account-info .inputfile:focus + label, .edit-profile-area .profile-tabs .edit-profile .public-information .information .file-upload-account-info .inputfile + label:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .edit-profile-area .profile-tabs .edit-profile .public-information .information .file-upload-account-info .inputfile + label {
@@ -4735,11 +4735,11 @@ User Area CSS
 
 .summary-area .summary-tabs .nav-tabs .nav-item .nav-link.active {
   border: none;
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .summary-area .summary-tabs .nav-tabs .nav-item .nav-link:hover {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .single-summary {
@@ -4754,7 +4754,7 @@ User Area CSS
 }
 
 .single-summary p a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 /* Referrals Area Style
@@ -4887,7 +4887,7 @@ Main Content Text Style
   position: absolute;
   top: -6px;
   left: 0;
-  color: #f48225;
+  color: #00C2D1;
   font-size: 25px;
 }
 
@@ -4900,7 +4900,7 @@ Main Content Text Style
 }
 
 .main-content-text ol li::marker {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .main-content-text ol li:last-child {
@@ -4908,7 +4908,7 @@ Main Content Text Style
 }
 
 .main-content-text a {
-  color: #f48225;
+  color: #00C2D1;
 }
 
 .main-content-text a:hover {
@@ -4990,8 +4990,8 @@ Coming Soon Area Style
 }
 
 .coming-soon-content #timer div {
-  border: 4px solid #f48225;
-  color: #f48225;
+  border: 4px solid #00C2D1;
+  color: #00C2D1;
   width: 100px;
   height: 105px;
   border-radius: 5px;
@@ -5053,7 +5053,7 @@ Coming Soon Area Style
   height: 2px;
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
-  background: #f48225;
+  background: #00C2D1;
 }
 
 .coming-soon-content form .form-group .input-newsletter {
@@ -5096,7 +5096,7 @@ Coming Soon Area Style
 }
 
 .coming-soon-content form .form-group .input-newsletter:focus {
-  border-color: #f48225;
+  border-color: #00C2D1;
   outline: 0 !important;
 }
 
@@ -5234,7 +5234,7 @@ Go Top Style*/
   cursor: pointer;
   right: 3%;
   top: 87%;
-  background-color: #f48225;
+  background-color: #00C2D1;
   z-index: 4;
   width: 40px;
   text-align: center;
@@ -5275,7 +5275,7 @@ Go Top Style*/
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-color: #f48225;
+  background-color: #00C2D1;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: 0.5s;
@@ -5284,7 +5284,7 @@ Go Top Style*/
 
 .go-top:hover {
   color: #ffffff;
-  background-color: #f48225;
+  background-color: #00C2D1;
 }
 
 .go-top:hover::before {
@@ -5345,7 +5345,7 @@ Video wave Style*/
   line-height: 80px;
   text-align: center;
   border-radius: 0;
-  color: #f48225;
+  color: #00C2D1;
   position: relative;
   top: 3px;
   z-index: 1;
@@ -5466,7 +5466,7 @@ Page-navigation Area Style*/
 
 .pagination-area .page-numbers:hover {
   color: #ffffff;
-  background-color: #f48225;
+  background-color: #00C2D1;
 }
 
 .pagination-area .page-numbers i {
@@ -5480,7 +5480,7 @@ Page-navigation Area Style*/
 
 .pagination-area .page-numbers.current {
   color: #ffffff;
-  border-color: #f48225;
-  background-color: #f48225;
+  border-color: #00C2D1;
+  background-color: #00C2D1;
 }
 /*# sourceMappingURL=style.css.map */
