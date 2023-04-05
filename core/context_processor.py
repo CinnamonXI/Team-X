@@ -1,5 +1,6 @@
 from .models import Category, Tag
 from resources.models import Document, Video, Article
+from django.contrib.auth.models import User
 
 def categories(request):
     latest_post = []
@@ -10,9 +11,10 @@ def categories(request):
     latest_post.append(latest_video)
     latest_post.append(latest_document)  
 
-        
     return {
         'categories': Category.objects.all(),
         'tags': Tag.objects.all(),
-        'latest_post': latest_post
+        'latest_post': latest_post,
+        'top_members': User.objects.all()[:4],
+        'total_users': User.objects.all().count()
     }

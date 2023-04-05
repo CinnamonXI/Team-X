@@ -1,6 +1,6 @@
 <div class="sidebar-menu-wrap">
     <div class="sidemenu-wrap d-flex justify-content-between align-items-center">
-        <h3>HealthLink Sidebar Menu</h3>
+        <h3>HealthLink</h3>
         <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
             <i class="ri-menu-line"></i>
         </button>
@@ -20,6 +20,52 @@
                                 <span class="menu-title">
                                     <i class="ri-home-8-line"></i>
                                     Home
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="has-arrow box-style">
+                                <i class="ri-question-line"></i>
+                                <span class="menu-title">
+                                    Questions
+                                </span>
+                            </a>
+                            <ul class="sidemenu-nav-second-level">
+                                <li>
+                                    <a href="">
+                                        <span class="menu-title">All questions</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="menu-title">Most answered</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="menu-title">Most visited</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="menu-title">Unanswered visited</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="box-style">
+                                <span class="menu-title">
+                                    <i class="ri-links-line"></i>
+                                    Communities
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="polls.html" class="box-style">
+                                <span class="menu-title">
+                                    <i class="ri-bar-chart-fill"></i>
+                                    Polls
                                 </span>
                             </a>
                         </li>
@@ -46,85 +92,8 @@
                                         <span class="menu-title {% if r_videos %}active{% endif %}">Videos</span>
                                     </a>
                                 </li>
-                                <!-- <li>
-                                    <a href="">
-                                        <span class="menu-title">Ask a questions</span>
-                                    </a>
-                                </li> -->
                             </ul>
                         </li>
-                        <!-- <li>
-                            <a href="#" class="has-arrow box-style">
-                                <i class="ri-question-line"></i>
-                                <span class="menu-title">
-                                    Questions
-                                </span>
-                            </a>
-                            <ul class="sidemenu-nav-second-level">
-                                <li>
-                                    <a href="">
-                                        <span class="menu-title">All questions</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <span class="menu-title">questions details</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="" class="box-style">
-                                <span class="menu-title">
-                                    <i class="ri-links-line"></i>
-                                    Communities
-                                </span>
-                            </a>
-                        </li> 
-                        <li>
-                            <a href="#" class="has-arrow box-style">
-                                <i class="ri-question-answer-fill"></i>
-                                <span class="menu-title">
-                                    Most answered
-                                </span>
-                            </a>
-                            <ul class="sidemenu-nav-second-level">
-                                <li>
-                                    <a href="">
-                                        <span class="menu-title">Most answered</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <span class="menu-title">Most answered details</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="" class="box-style">
-                                <span class="menu-title">
-                                    <i class="ri-checkbox-circle-line"></i>
-                                    Unanswered
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="box-style">
-                                <span class="menu-title">
-                                    <i class="ri-eye-line"></i>
-                                    Most visited 
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="box-style">
-                                <span class="menu-title">
-                                    <i class="ri-bar-chart-fill"></i>
-                                    Polls
-                                </span>
-                            </a>
-                        </li>-->
                         <li>
                             <a href="{% url 'faq' %}" class="box-style {% if title == 'Frequently Asked Questions' %}active{% endif %}">
                                 <span class="menu-title">
@@ -133,7 +102,7 @@
                                 </span>
                             </a>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a href="" class="box-style">
                                 <span class="menu-title">
                                     <i class="ri-group-2-line"></i>
@@ -157,7 +126,7 @@
                                 </span>
                             </a>
                         </li>
-
+                        {% if request.user.is_authenticated %}
                         <li>
                             <a href="#" class="has-arrow box-style">
                                 <i class="ri-user-line"></i>
@@ -167,12 +136,12 @@
                             </a>
                             <ul class="sidemenu-nav-second-level">
                                 <li>
-                                    <a href="">
+                                    <a href="{% url 'users:profile' %}">
                                         <span class="menu-title">Profile</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="{% url 'users:profile-edit' %}">
                                         <span class="menu-title">Edit profile</span>
                                     </a>
                                 </li>
@@ -181,13 +150,9 @@
                                         <span class="menu-title">Logout</span>
                                     </a>
                                 </li>
-                                 <li>
-                                    <a href="">
-                                        <span class="menu-title">Ask a questions</span>
-                                    </a>
-                                </li> -->
                             </ul>
                         </li>
+                        {% endif %}
                     </ul>
                 </nav>
             </div>

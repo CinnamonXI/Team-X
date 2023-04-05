@@ -1,5 +1,10 @@
 <div class="right-siderbar">
     <div class="right-siderbar-common">
+        <a href="{% url 'questions:ask' %}" class="default-btn">
+            Ask a question
+        </a>
+    </div>
+    <div class="right-siderbar-common">
         {% if categories %}
         <div class="category discussions">
             <h3>
@@ -41,6 +46,28 @@
             </div>
         </div>
         {% endif %}
+        <div class="right-siderbar-common">
+            <div class="answer-count">
+                <ul class="d-flex flex-wrap">
+                    <li>
+                        <span>Questions</span>
+                        <span class="count">435</span>
+                    </li>
+                    <li>
+                        <span>Answers</span>
+                        <span class="count">435</span>
+                    </li>
+                    <li>
+                        <span>Users</span>
+                        <span class="count">{{ total_users }}</span>
+                    </li>
+                    <li>
+                        <span>Tags</span>
+                        <span class="count">{{ tags.all.count }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
     {% if latest_post %}
     <div class="right-siderbar-common">
         <div class="recent-post">
@@ -59,6 +86,38 @@
                         <p>{{ pst.created_at|date }} by <a href="{{ pst.author.profile.get_absolute_url }}">{{ pst.author.get_full_name }}</a></p>
                     </li>
                     {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+    {% if top_members %}
+    <div class="right-siderbar-common">
+        <div class="top-members">
+            <h3>
+                <i class="ri-discuss-line"></i>
+                Top members
+            </h3>
+
+            <ul>
+                {% for member in top_members %}
+                <li>
+                    <a href="{% url 'users:user_profile' member.username %}">
+                        {% if member.profile.image %}
+                            <img src="{{ member.profile.image.url }}" style="max-height: 45px !important;" alt="{{ user.username }}">
+                        {% else %}
+                            {% if member.profile.gender == 'other' %}
+                                <img src="/static/user.png" style="max-height: 45px !important;" alt="{{ user.username }}">
+                            {% elif member.profile.gender == 'male' %}
+                                <img src="/static/man.png" style="max-height: 45px !important;" alt="{{ user.username }}">
+                            {% else %}
+                                <img src="/static/woman.png" style="max-height: 45px !important;" alt="{{ user.username }}">
+                            {% endif %}
+                        {% endif %}
+                        <p>{{ member.get_full_name|default:"No Name" }} <span>(5k Points)</span></p>
+                        <span>9 Questions</span>
+                    </a>
+                </li>
                 {% endfor %}
             </ul>
         </div>

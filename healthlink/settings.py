@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'users',
     'api',
     'blog',
+    'discussion',
 ]
 
 SITE_ID = 1

@@ -55,14 +55,7 @@
                                     </li>
                                 {% endif %}
 							</ul>
-							<form class="aq-form">
-								<i class="ri-search-line"></i>
-								<input type="text" class="form-control" placeholder="Have a question? Ask or enter a search">
-								<button class="aq-btn">
-									Ask Question
-								</button>
-							</form>
-
+							{% include 'partials/search.html' %}
 							<div class="tab-content" id="myTabContent">
 								<div class="tab-pane fade show active" id="recent-questions" role="tabpanel" aria-labelledby="recent-questions-tab">
                                     {% if r_articles %}
