@@ -34,4 +34,4 @@ class FaqAdmin(admin.ModelAdmin):
     list_filter = ('category', 'created_at', 'updated_at')
     search_fields = ('question', 'answer')
     date_hierarchy = 'created_at'
-    ordering = ('-created_at',)
+    # ordering = ('-created_at',)

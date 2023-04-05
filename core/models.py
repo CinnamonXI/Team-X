@@ -57,5 +57,5 @@ class Faq(models.Model):
     def __str__(self):
         return self.question
     
-    class Meta:
-        ordering = ('-created_at',)
+    # class Meta:
+    #     ordering = ('-created_at',)
