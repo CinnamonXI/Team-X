@@ -32,29 +32,29 @@
                             </a>
                             <ul class="sidemenu-nav-second-level">
                                 <li>
-                                    <a href="">
+                                    <a href="{% url 'questions:all' %}">
                                         <span class="menu-title">All questions</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="{% url 'questions:most-answered' %}">
                                         <span class="menu-title">Most answered</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
-                                        <span class="menu-title">Most visited</span>
+                                    <a href="{% url 'questions:most-recent' %}">
+                                        <span class="menu-title">Most recent</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
-                                        <span class="menu-title">Unanswered visited</span>
+                                    <a href="{% url 'questions:unanswered' %}">
+                                        <span class="menu-title">Unanswered questions</span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="" class="box-style">
+                            <a href="{% url 'questions:communities' %}" class="box-style">
                                 <span class="menu-title">
                                     <i class="ri-links-line"></i>
                                     Communities
@@ -62,7 +62,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="polls.html" class="box-style">
+                            <a href="{% url 'questions:polls' %}" class="box-style">
                                 <span class="menu-title">
                                     <i class="ri-bar-chart-fill"></i>
                                     Polls
@@ -103,7 +103,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="" class="box-style">
+                            <a href="{% url 'questions:groups' %}" class="box-style">
                                 <span class="menu-title">
                                     <i class="ri-group-2-line"></i>
                                     Groups
@@ -111,7 +111,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="" class="box-style">
+                            <a href="{% url 'questions:tags' %}" class="box-style">
                                 <span class="menu-title">
                                     <i class="ri-price-tag-line"></i>
                                     Tags
@@ -119,7 +119,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="" class="box-style">
+                            <a href="{% url 'questions:badges' %}" class="box-style">
                                 <span class="menu-title">
                                     <i class="ri-award-line"></i>
                                     Badges

@@ -81,27 +81,6 @@ Quit the server with CTRL-BREAK.
 username: admin
 password: 1234
 
-## Sample Images
-
-### Home Page
-![Screenshot from 2023-03-25 21-14-45](https://user-images.githubusercontent.com/81902856/227734906-e93e7e60-3d8a-4949-89ba-0d3c0b04263e.png)
-
-### Admin Panel
-![Screenshot from 2023-03-25 21-27-25](https://user-images.githubusercontent.com/81902856/227735061-a435a9ea-c607-4af3-9ad9-c6a172ded3d0.png)
-
-### Resouce Library
-
-#### Articles
-![Screenshot from 2023-03-25 21-28-39](https://user-images.githubusercontent.com/81902856/227735104-7ea5d57b-cdea-4cf9-9818-214cf26b2205.png)
-
-#### Documents
-![Screenshot from 2023-03-25 21-29-29](https://user-images.githubusercontent.com/81902856/227735142-59e1003b-e26d-4dee-85e7-105fe9b60b93.png)
-
-#### Videos
-![Screenshot from 2023-03-25 21-30-22](https://user-images.githubusercontent.com/81902856/227735181-8a519cff-4358-4da8-846d-2198d77925dd.png)
-
-
-
 Reach out to us if you have any questions or suggestions +254795067776. Thanks for reading.
 
 ## 3. Team
