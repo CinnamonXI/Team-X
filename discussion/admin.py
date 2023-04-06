@@ -22,7 +22,7 @@ class GroupAdmin(admin.ModelAdmin):
 
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ('title', 'user', 'community', 'group', 'created_at', 'updated_at')
+    list_display = ('title', 'category', 'user', 'community', 'group', 'created_at', 'updated_at')
     list_filter = ('created_at', 'updated_at', 'user', 'community', 'group')
     search_fields = ('title', 'description')
     ordering = ('-created_at',)

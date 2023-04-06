@@ -11,6 +11,7 @@ urlpatterns=[
     path('groups/', views.group_list, name='groups'),
     path('tags/', views.tag_list, name='tags'),
     path('badges/', views.badge_list, name='badges'),
-    path('polls/', views.polls, name='polls'),
     path('communities/', views.communities, name='communities'),
+    path('communities/<slug:slug>/', views.community_detail, name='community_detail'),
+    path('communities/<slug:slug>/follow-unfollow/', views.follow_unfollow_community, name='follow_unfollow_community'),
 ]

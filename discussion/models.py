@@ -1,9 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 class Community(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='owned_communities')
     description = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to='community_images', null=True, blank=True)
     followers = models.ManyToManyField(User, related_name='followed_communities', blank=True)
@@ -16,15 +18,19 @@ class Community(models.Model):
         ordering = ('-created_at',)
         verbose_name = 'Communities'
 
+    def get_absolute_url(self):
+        return reverse('questions:community_detail', kwargs={'slug': self.slug})
+
 
 class Group(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='owned_groups')
     description = models.TextField(null=True, blank=True)
     group_icon = models.ImageField(upload_to='group/profile_images', null=True, blank=True)
     cover_image = models.ImageField(upload_to='group/cover_images', null=True, blank=True)
     members = models.ManyToManyField(User, related_name='joined_groups', blank=True)
-    community = models.ForeignKey(Community, on_delete=models.CASCADE, null=True, blank=True)
+    community = models.ForeignKey(Community, on_delete=models.CASCADE, null=True, blank=True, related_name='groups')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -37,11 +43,11 @@ class Question(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
     description = models.TextField()
-    category = models.ForeignKey('core.Category', on_delete=models.CASCADE, null=True, blank=True)
+    category = models.ForeignKey('core.Category', on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     group = models.ForeignKey(Group, on_delete=models.CASCADE, null=True, blank=True)
-    community = models.ForeignKey(Community, on_delete=models.CASCADE, null=True, blank=True)
-    tags = models.ForeignKey('core.Tag', on_delete=models.CASCADE, null=True, blank=True)
+    community = models.ForeignKey(Community, on_delete=models.CASCADE, null=True, blank=True, related_name='questions')
+    tags = models.ManyToManyField('core.Tag', related_name='question_tags', blank=True)
     # likes = models.ManyToManyField(User, related_name='liked_questions', through='QuestionLike')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -54,7 +60,7 @@ class Question(models.Model):
 class Answer(models.Model):
     content = models.TextField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answers')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

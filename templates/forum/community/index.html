@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+		<!-- Start Mail Content Area -->
+		<div class="main-content-area ptb-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3">
+						{% include 'partials/left-sidebar.html' %}
+					</div>
+					
+					<div class="col-lg-6">
+						<div class="middull-content">
+							<ul class="page-nish">
+								<li>
+									<a href="/">
+										<i class="ri-home-8-line"></i>
+										Home
+									</a>
+								</li>
+								<li class="active">
+									Communities
+								</li>
+							</ul>
+
+							{% include 'partials/search.html' %}
+
+							<div class="row justify-content-center">
+								{% if communities %}
+									{% for community in communities %}
+										<div class="col-xl-4 col-sm-6">
+                                            <a href="{{ community.get_absolute_url }}">
+                                                <div class="single-communities-box">
+                                                    <img src="{% if community.image %}{{ community.image.url }}{% else %}/static/community.jpg{% endif %}" width="80" alt="{{ community.title }}">
+                                                    <h3>
+                                                        <a href="{{ community.get_absolute_url }}">{{ community.title }}</a>
+                                                    </h3>
+                                                    <ul class="d-flex justify-content-between">
+                                                        <li>{{ community.followers.all.count }} Followers</li>
+                                                        <li>
+                                                           <a href="{% url 'questions:follow_unfollow_community' community.slug %}" class="active">{% if request.user in community.followers.all %}Unfollow{% else %}Follow{% endif %}</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+										</div>
+									{% endfor %}
+								{% else %}
+									<div class="col-lg-12">
+										<div class="alert alert-warning">
+											No communities found.
+										</div>
+									</div>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-3">
+						{% include 'resources/partials/right-sidebar.html' %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Mail Content Area -->
+
+{% endblock %}
