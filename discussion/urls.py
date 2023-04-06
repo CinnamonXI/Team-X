@@ -3,7 +3,7 @@ from django.urls import path
 
 app_name = 'questions'
 urlpatterns=[
-    path('', views.all_questions, name='all'),
+    path('', views.questions, name='all'),
     path('ask/', views.ask, name='ask'),
     path('groups/', views.group_list, name='groups'),
     path('groups/<slug:slug>/', views.group_detail, name='group_detail'),

@@ -5,14 +5,22 @@ from django.contrib import messages
 from .models import Contact, Faq, Category, Tag
 from users.models import Team
 from resources.models import Article, Video, Document
+from discussion.models import Question
 # Create your views here.
 def index(request):
+    questions = Question.objects.all()
+    unanswered_questions = []
+    for question in questions:
+        if question.answers.count() == 0:
+            unanswered_questions.append(question)
+
+    most_answered_questions = sorted(questions, key=lambda x: x.answers.count(), reverse=True)
+    most_recent_questions = sorted(questions, key=lambda x: x.created_at, reverse=True)
     context = {
         'title': 'Homepage',
-        'r_articles': 'active',
-        'articles': Article.objects.filter(is_published=True).order_by('-created_at')[:3],
-        'videos': Video.objects.filter(is_published=True).order_by('-created_at')[:3],
-        'documents': Document.objects.filter(is_published=True).order_by('-created_at')[:3],
+        'unanswered_questions': unanswered_questions,
+        'most_answered_questions': most_answered_questions,
+        'most_recent_questions': most_recent_questions,
     }
     return render(request, 'index.html', context)
 

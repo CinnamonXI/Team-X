@@ -1,114 +1,131 @@
-<div class="single-qa-box like-dislike">
-    <div class="d-flex">
-        <div class="link-unlike flex-shrink-0">
-            <a href="user.html">
-                <img src="/static/assets/images/user/user-1.jpg" alt="Image">
-            </a>
-        </div>
-
-        <div class="flex-grow-1 ms-3">
-            <ul class="graphic-design">
-                <li>
-                    <a href="user.html">Teresa Klein</a>
-                </li>
-                <li>
-                    <span>Latest Answer: 14 hours ago</span>
-                </li>
-                <li>
-                    <span>In:</span>
-                    <a href="tags.html" class="graphic">
-                        Graphic design
+{% if most_answered_questions %}
+    {% for maquestion in most_answered_questions %}
+        <div class="single-qa-box like-dislike">
+            <div class="d-flex">
+                <div class="link-unlike flex-shrink-0">
+                    <a href="{{ maquestion.user.profile.get_absolute_url }}">
+                        {% if maquestion.user.profile.image %}
+                            <img src="{{ maquestion.user.profile.image.url }}" style="max-height: 45px !important;" alt="{{ maquestion.user.username }}">
+                        {% else %}
+                            {% if maquestion.user.profile.gender == 'other' %}
+                                <img src="/static/user.png" style="max-height: 45px !important;" alt="{{ maquestion.user.username }}">
+                            {% elif maquestion.user.profile.gender == 'male' %}
+                                <img src="/static/man.png" style="max-height: 45px !important;" alt="{{ maquestion.user.username }}">
+                            {% else %}
+                                <img src="/static/woman.png" style="max-height: 45px !important;" alt="{{ maquestion.user.username }}">
+                            {% endif %}
+                        {% endif %}
                     </a>
-                </li>
-            </ul>
+                </div>
 
-            <h3>
-                <a href="queations-details.html">
-                    If you open Illustrator by dragging the Photoshop file, why it becomes a JPG file
-                </a>
-            </h3>
+                <div class="flex-grow-1 ms-3">
+                    <ul class="graphic-design">
+                        <li>
+                            <a href="{{ maquestion.user.profile.get_absolute_url }}">{{ maquestion.user.get_full_name|default:'No Name' }}</a>
+                        </li>
+                        <li>
+                            <span>{{ maquestion.created_at }}</span>
+                        </li>
+                        <li>
+                            <span>In:</span>
+                            <a href="" class="graphic">
+                                {{ maquestion.category.title }}
+                            </a>
+                        </li>
+                    </ul>
 
-            <p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus rutrum congue leo eget malesuada tincidunt.</p>
-
-            <ul class="tag-list">
-                <li>
-                    <a href="tags.html">Discussion</a>
-                </li>
-                <li>
-                    <a href="tags.html">Photoshop</a>
-                </li>
-                <li>
-                    <a href="tags.html">Analytics</a>
-                </li>
-            </ul>
-
-            <div class="d-flex justify-content-between align-items-center">
-                <ul class="anser-list">
-                    <li>
-                        <a href="polls.html">
-                            24 Vote
+                    <h3>
+                        <a href="maquestion.get_absolute_url">
+                            {{ maquestion.title }}
                         </a>
-                    </li>
-                    <li>
-                        <a href="most-answered.html">
-                            2 Answer
-                        </a>
-                    </li>
-                    <li>
-                        <a href="most-visited.html">
-                            658 Views
-                        </a>
-                    </li>
-                    <li>
-                        <ul class="qa-share">
-                            <li class="share-option">
-                                <span>
-                                    <i class="ri-share-fill"></i>
-                                </span>
-                                
-                                <ul class="social-icon">
-                                    <li>
-                                        <a href="https://www.facebook.com/" target="_blank">
-                                            <i class="ri-facebook-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.twitter.com/" target="_blank">
-                                            <i class="ri-twitter-line"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.linkedin.com/" target="_blank">
-                                            <i class="ri-linkedin-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.instagram.com/" target="_blank">
-                                            <i class="ri-instagram-line"></i>
-                                        </a>
+                    </h3>
+
+                    <p>
+                        {{ maquestion.description|truncatechars:220 }}
+                    </p>
+                    {% if maquestion.tags.all %}
+                        <ul class="tag-list">
+                            {% for tag in maquestion.tags.all %}
+                            <li>
+                                <a href="">{{ tag }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <ul class="anser-list">
+                            <!-- <li>
+                                <a href="polls.html">
+                                    24 Vote
+                                </a>
+                            </li> -->
+                            <li>
+                                <a href="{{ maquestion.get_absolute_url }}">
+                                    {{ maquestion.answers.all.count }} Answer
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    658 Views
+                                </a>
+                            </li>
+                            <li>
+                                <ul class="qa-share">
+                                    <li class="share-option">
+                                        <span>
+                                            <i class="ri-share-fill"></i>
+                                        </span>
+                                        
+                                        <ul class="social-icon">
+                                            <li>
+                                                <a href="https://www.facebook.com/" target="_blank">
+                                                    <i class="ri-facebook-fill"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.twitter.com/" target="_blank">
+                                                    <i class="ri-twitter-line"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.linkedin.com/" target="_blank">
+                                                    <i class="ri-linkedin-fill"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.instagram.com/" target="_blank">
+                                                    <i class="ri-instagram-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
-                    </li>
-                </ul>
 
-                <a href="" class="default-btn bg-ea4335">
-                    Question
-                </a>
+                        <a href="" class="default-btn bg-ea4335">
+                            Answer
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
+    {% endfor %}
+{% else %}
+    <div class="alert alert-info">
+        No Answered Questions Found
     </div>
-</div>
+{% endif %}
 <!-- <div class="pagination-area">
-    <a href="" class="next page-numbers">
+    <a href="all-queations.html" class="next page-numbers">
         <i class="ri-arrow-left-line"></i>
     </a>
     <span class="page-numbers current" aria-current="page">1</span>
-    <a href="" class="page-numbers">2</a>
-    <a href="" class="page-numbers">3</a>
+    <a href="all-queations.html" class="page-numbers">2</a>
+    <a href="all-queations.html" class="page-numbers">3</a>
     
-    <a href="" class="next page-numbers">
+    <a href="all-queations.html" class="next page-numbers">
         <i class="ri-arrow-right-line"></i>
     </a>
 </div> -->

@@ -24,7 +24,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'questions:all' %}" class="box-style">
+                            <a href="{% url 'questions:all' %}" class="box-style {% if title == 'Questions' %}active{% endif %}">
                                 <i class="ri-question-line"></i>
                                 <span class="menu-title">
                                     Questions
@@ -32,7 +32,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'questions:communities' %}" class="box-style">
+                            <a href="{% url 'questions:communities' %}" class="box-style {% if title == 'Communities' %}active{% endif %}">
                                 <span class="menu-title">
                                     <i class="ri-links-line"></i>
                                     Communities
@@ -73,7 +73,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'questions:groups' %}" class="box-style">
+                            <a href="{% url 'questions:groups' %}" class="box-style {% if title == 'Groups' %}active{% endif %}">
                                 <span class="menu-title">
                                     <i class="ri-group-2-line"></i>
                                     Groups
@@ -81,7 +81,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'questions:tags' %}" class="box-style">
+                            <a href="{% url 'questions:tags' %}" class="box-style {% if title == 'Tags' %}active{% endif %}">
                                 <span class="menu-title">
                                     <i class="ri-price-tag-line"></i>
                                     Tags

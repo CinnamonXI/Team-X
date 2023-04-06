@@ -45,102 +45,42 @@
 
 							<ul class="nav nav-tabs questions-tabs d-flex justify-content-between" id="myTab" role="tablist">
 								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="featured-question-tab" data-bs-toggle="tab" data-bs-target="#featured-question" type="button" role="tab" aria-controls="featured-question" aria-selected="false">
-										All Resources
-									</button>
-								</li>
-								<li class="nav-item" role="presentation">
 									<button class="nav-link active" id="recent-questions-tab" data-bs-toggle="tab" data-bs-target="#recent-questions" type="button" role="tab" aria-controls="recent-questions" aria-selected="true">
-										Articles
+										Recent
 									</button>
 								</li>
 								<li class="nav-item" role="presentation">
 									<button class="nav-link" id="most-answered-tab" data-bs-toggle="tab" data-bs-target="#most-answered" type="button" role="tab" aria-controls="most-answered" aria-selected="false">
-										Videos
+										Most Answered 
 									</button>
 								</li>
 								<li class="nav-item" role="presentation">
 									<button class="nav-link" id="unanswered-question-tab" data-bs-toggle="tab" data-bs-target="#unanswered-question" type="button" role="tab" aria-controls="unanswered-question" aria-selected="false">
-										Documents
+										Unanswered
+									</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="featured-question-tab" data-bs-toggle="tab" data-bs-target="#featured-question" type="button" role="tab" aria-controls="featured-question" aria-selected="false">
+										Featured
 									</button>
 								</li>
 							</ul>
 
 							<div class="tab-content" id="myTabContent">
 								<div class="tab-pane fade show active" id="recent-questions" role="tabpanel" aria-labelledby="recent-questions-tab">
-									
-									{% include 'resources/partials/articles.html' %}
-
-									<!-- <div class="pagination-area">
-										<a href="#" class="next page-numbers">
-											<i class="ri-arrow-left-line"></i>
-										</a>
-										<span class="page-numbers current" aria-current="page">1</span>
-										<a href="#" class="page-numbers">2</a>
-										<a href="#" class="page-numbers">3</a>
-										
-										<a href="#" class="next page-numbers">
-											<i class="ri-arrow-right-line"></i>
-										</a>
-									</div> -->
+									{% include 'forum/questions/most-recent.html' %}
 								</div>
 
 								<div class="tab-pane fade" id="most-answered" role="tabpanel" aria-labelledby="most-answered-tab">
-									
-									{% include 'resources/partials/videos.html' %}
-
-									<!-- <div class="pagination-area">
-										<a href="#" class="next page-numbers">
-											<i class="ri-arrow-left-line"></i>
-										</a>
-										<span class="page-numbers current" aria-current="page">1</span>
-										<a href="#" class="page-numbers">2</a>
-										<a href="#" class="page-numbers">3</a>
-										
-										<a href="#" class="next page-numbers">
-											<i class="ri-arrow-right-line"></i>
-										</a>
-									</div> -->
+									{% include 'forum/questions/most-answered.html' %}
 								</div>
 
 								<div class="tab-pane fade" id="unanswered-question" role="tabpanel" aria-labelledby="unanswered-question-tab">
-									
-									{% include 'resources/partials/documents.html' %}
-
-									<!-- <div class="pagination-area">
-										<a href="#" class="next page-numbers">
-											<i class="ri-arrow-left-line"></i>
-										</a>
-										<span class="page-numbers current" aria-current="page">1</span>
-										<a href="#" class="page-numbers">2</a>
-										<a href="#" class="page-numbers">3</a>
-										
-										<a href="#" class="next page-numbers">
-											<i class="ri-arrow-right-line"></i>
-										</a>
-									</div> -->
+									{% include 'forum/questions/unanswered.html' %}
 								</div>
 
 								<div class="tab-pane fade" id="featured-question" role="tabpanel" aria-labelledby="featured-question-tab">
-									
-									{% include 'resources/partials/articles.html' %}
-								
-									{% include 'resources/partials/videos.html' %}
-								
-									{% include 'resources/partials/documents.html' %}
-									
-									<!-- <div class="pagination-area">
-										<a href="#" class="next page-numbers">
-											<i class="ri-arrow-left-line"></i>
-										</a>
-										<span class="page-numbers current" aria-current="page">1</span>
-										<a href="#" class="page-numbers">2</a>
-										<a href="#" class="page-numbers">3</a>
-										
-										<a href="#" class="next page-numbers">
-											<i class="ri-arrow-right-line"></i>
-										</a>
-									</div> -->
+									{% include 'forum/questions/featured.html' %}
 								</div>
 							</div>
 						</div>
