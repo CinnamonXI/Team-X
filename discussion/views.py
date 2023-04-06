@@ -37,11 +37,34 @@ def ask(request):
     }
     return render(request, 'forum/ask-questions.html', context)
 
+
+# Groups
 def group_list(request):
     context = {
-        'title': 'Groups'
+        'title': 'Groups',
+        'groups': Group.objects.all(),
+        'category': 'groups',
     }
-    return render(request, 'forum/groups.html', context)
+    return render(request, 'forum/groups/index.html', context)
+@login_required
+def group_detail(request, slug):
+    group = get_object_or_404(Group, slug=slug)
+    context = {
+        'title': group.title,
+        'group': group,
+        'category': 'groups',
+    }
+    return render(request, 'forum/groups/details.html', context)
+@login_required
+def join_leave_group(request, slug):
+    group = get_object_or_404(Group, slug=slug)
+    if request.user in group.members.all():
+        group.members.remove(request.user)
+        messages.success(request, 'You have left the group')
+    else:
+        group.members.add(request.user)
+        messages.success(request, 'You have joined the group')
+    return redirect('questions:group_detail', slug=group.slug)
 
 def tag_list(request):
     context = {
@@ -55,6 +78,7 @@ def badge_list(request):
     }
     return render(request, 'forum/badges.html', context)
 
+# Communities
 def communities(request):
     context = {
         'title': 'Communities',
@@ -78,8 +102,10 @@ def follow_unfollow_community(request, slug):
     if request.user.is_authenticated:
         if request.user in community.followers.all():
             community.followers.remove(request.user)
+            messages.success(request, 'You have unfollowed the community')
         else:
             community.followers.add(request.user)
+            messages.success(request, 'You have followed the community')
     return redirect('questions:community_detail', slug=community.slug)
 
 

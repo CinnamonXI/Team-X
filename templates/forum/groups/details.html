@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% block content %}
+		<!-- Start Mail Content Area -->
+		<div class="main-content-area ptb-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3">
+						{% include 'partials/left-sidebar.html' %}
+					</div>
+
+					<div class="col-lg-9">
+						<div class="user-profile-area">
+							<div class="profile-content d-flex justify-content-between align-items-center">
+                                <div class="profile-img">
+                                    <img src="{% if group.group_icon %}{{ group.group_icon.url }}{% else %}/static/group.jpg{% endif %}" alt="{{ group.title }}">
+                                    <h3>{{ group.title }}</h3>
+                                    <span>Created By {{ group.owner }}</span>
+                                    <span>Date Created {{ group.created_at }}</span>
+                                    <button class="followers-btn">{{ group.members.all|length }} Members</button>
+                                </div>
+                                {% if request.user.is_authenticated %}
+                                <div class="edit-btn">
+                                    <a href="{% url 'questions:join_leave_group' group.slug %}" class="default-btn">{% if request.user in group.members.all %}Leave Group{% else %}Join Group{% endif %}</a>
+                                </div>
+                                {% endif %}
+                            </div>
+
+							<div class="profile-achive">
+								<div class="row">
+									<div class="col-xl-3 col-sm-6">
+										<div class="single-achive">
+											<h2>{{ group.members.all|length }}</h2>
+											<span>Members</span>
+										</div>
+									</div>
+
+									<div class="col-xl-3 col-sm-6">
+										<div class="single-achive">
+											<h2>{{ group.questions.all|length }}</h2>
+											<span>Question</span>
+										</div>
+									</div>
+
+									<div class="col-xl-3 col-sm-6">
+										<div class="single-achive">
+											<h2>1</h2>
+											<span>Communities</span>
+										</div>
+									</div>
+
+									<div class="col-xl-3 col-sm-6">
+										<div class="single-achive">
+											<h2>2M</h2>
+											<span>Reached</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="about">
+								<h3>About</h3>
+								{{ group.description|linebreaksbr|default:'No About Updated' }}
+							</div>
+
+
+							<div class="top-posts mt-4">
+								<div class="d-flex justify-content-between">
+									<h3>Top posts</h3>
+
+									<ul class="nav nav-tabs" id="myTab" role="tablist">
+										<li class="nav-item" role="presentation">
+											<button class="nav-link active" id="view-all-tab" data-bs-toggle="tab" data-bs-target="#view-all" type="button" role="tab" aria-controls="view-all" aria-selected="true">View All</button>
+										</li>
+										
+										<li class="nav-item" role="presentation">
+										  	<button class="nav-link" id="question-tab" data-bs-toggle="tab" data-bs-target="#question" type="button" role="tab" aria-controls="question" aria-selected="false">Question</button>
+										</li>
+
+										<li class="nav-item" role="presentation">
+										  	<button class="nav-link" id="newest-tab" data-bs-toggle="tab" data-bs-target="#newest" type="button" role="tab" aria-controls="newest" aria-selected="false">Newest</button>
+										</li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="groups-tab" data-bs-toggle="tab" data-bs-target="#groups" type="button" role="tab" aria-controls="groups" aria-selected="false">Groups</button>
+                                        </li>
+									</ul>
+								</div>
+
+								<div class="tab-content" id="myTabContent">
+									<div class="tab-pane fade show active" id="view-all" role="tabpanel" aria-labelledby="view-all-tab">
+                                        {% if group.questions.all %}
+										<ul>
+                                            {% for question in group.questions.all %}
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">{{ question.answers.all.count }}</span>
+													<span>{{ question.title }}</span>
+												</div>
+												<p><span>{{ question.created_at }}</span> by <a href="{% url 'users:user_profile' question.user.username %}">{{ question.user.get_full_name }}</a></p>
+											</li>
+                                            {% endfor %}
+										</ul>
+                                        {% else %}
+                                            <p>No Questions Posted Yet</p>
+                                        {% endif %}
+									</div>
+
+									<div class="tab-pane fade" id="question" role="tabpanel" aria-labelledby="question-tab">
+										{% if group.questions.all %}
+                                            <ul>
+                                                {% for question in group.questions.all %}
+                                                <li class="d-flex justify-content-between">
+                                                    <div class="top-posts-list">
+                                                        <i class="ri-chat-2-fill"></i>
+                                                        <span class="count">{{ question.answers.all.count }}</span>
+                                                        <span>{{ question.title }}</span>
+                                                    </div>
+                                                    <p><span>{{ question.created_at }}</span> by <a href="{% url 'users:user_profile' question.user.username %}">{{ question.user.get_full_name }}</a></p>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% else %}
+                                            <p>No Questions Posted Yet</p>
+                                        {% endif %}
+									</div>
+									<div class="tab-pane fade" id="newest" role="tabpanel" aria-labelledby="newest-tab">
+										{% if group.questions.all %}
+										<ul>
+                                            {% for question in group.questions.all %}
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">{{ question.answers.all.count }}</span>
+													<span>{{ question.title }}</span>
+												</div>
+												<p><span>{{ question.created_at }}</span> by <a href="{% url 'users:user_profile' question.user.username %}">{{ question.user.get_full_name }}</a></p>
+											</li>
+                                            {% endfor %}
+										</ul>
+                                        {% else %}
+                                            <p>No Questions Posted Yet</p>
+                                        {% endif %}
+									</div>
+                                    <div class="tab-pane fade" id="groups" role="tabpanel" aria-labelledby="groups-tab">
+										{% if group.community %}
+										<ul>
+											<li class="d-flex justify-content-between">
+												<div class="top-posts-list">
+													<i class="ri-chat-2-fill"></i>
+													<span class="count">{{ group.community.groups.all.count }}</span>
+													<span>{{ group.community.title }}</span>
+												</div>
+												<p><span>{{ group.community.created_at }}</span> by <a href="{% url 'users:user_profile' group.community.owner.username %}">{{ group.community.owner.get_full_name }}</a></p>
+											</li>
+										</ul>
+                                        {% else %}
+                                            <p>No Group has not joined a Community</p>
+                                        {% endif %}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Mail Content Area -->
+{% endblock %}

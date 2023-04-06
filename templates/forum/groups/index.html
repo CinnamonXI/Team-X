@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block content %}
+		<!-- Start Mail Content Area -->
+		<div class="main-content-area ptb-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3">
+						{% include 'partials/left-sidebar.html' %}
+					</div>
+
+					<div class="col-lg-6">
+						<div class="middull-content">
+							<ul class="page-nish">
+								<li>
+									<a href="/">
+										<i class="ri-home-8-line"></i>
+										Home
+									</a>
+								</li>
+								<li class="active">
+									Groups
+								</li>
+							</ul>
+
+							{% include 'partials/search.html' %}
+
+							<div class="group-content">
+								{% if groups %}
+								<div class="row justify-content-center">
+									{% for group in groups %}
+										<div class="col-xl-6 col-md-6">
+											<div class="single-group-box">
+												<div class="group-img">
+													<img src="{% if group.cover_image %}{{ group.cover_image.url }}{% else %}/static/assets/images/group/group-1.jpg{% endif %}" class="img-fluid w-100" style="max-height: 130px;" alt="Image">
+													<span>{{ group.created_at|date }}</span>
+												</div>
+
+												<div class="group-content">
+													<div class="group-sub-img">
+														<a href="{{ group.get_absolute_url }}">
+															<img src="{% if group.group_icon %}{{ group.group_icon.url }}{% else %}/static/assets/images/group/sub-1.jpg{% endif %}" height="90" width="90" alt="Image">
+															<h3>{{ group.title }}</h3>
+														</a>
+														<a href="{{ group.community.get_absolute_url }}">
+															<span>{{ group.community }}</span>
+														</a>
+														</div>
+													<ul class="d-flex justify-content-between">
+														<li>
+															<h4>{{ group.questions.all.count }}</h4>
+															<span>Post</span>
+														</li>
+														<li>
+															<h4>{{ group.members.all.count }}</h4>
+															<span>User</span>
+														</li>
+													</ul>
+													<a href="{% url 'questions:join_leave_group' group.slug %}">
+														<button class="group-btn">
+															{% if request.user in group.members.all %}
+																Leave group
+															{% else %}
+																Join group
+															{% endif %}
+														</button>
+													</a>
+												</div>
+											</div>
+										</div>
+									{% endfor %}
+								</div>
+								{% else %}
+									<div class="col-lg-12">
+										<div class="alert alert-warning">
+											No groups found.
+										</div>
+									</div>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-3">
+						{% include 'resources/partials/right-sidebar.html' %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Mail Content Area -->
+{% endblock %}

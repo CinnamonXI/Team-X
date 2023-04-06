@@ -23,6 +23,7 @@ class Tag(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     image = models.ImageField(upload_to='tags/', null=True, blank=True)
     description = models.TextField(null=True, blank=True)
+    followers = models.ManyToManyField('auth.User', related_name='followed_tags', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

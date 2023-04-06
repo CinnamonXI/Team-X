@@ -39,15 +39,18 @@ class Group(models.Model):
     class Meta:
         ordering = ('-created_at',)
 
+    def get_absolute_url(self):
+        return reverse('questions:group_detail', kwargs={'slug': self.slug})
+
 class Question(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
     description = models.TextField()
     category = models.ForeignKey('core.Category', on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    group = models.ForeignKey(Group, on_delete=models.CASCADE, null=True, blank=True)
+    group = models.ForeignKey(Group, on_delete=models.CASCADE, null=True, blank=True, related_name='questions')
     community = models.ForeignKey(Community, on_delete=models.CASCADE, null=True, blank=True, related_name='questions')
-    tags = models.ManyToManyField('core.Tag', related_name='question_tags', blank=True)
+    tags = models.ManyToManyField('core.Tag', related_name='questions', blank=True)
     # likes = models.ManyToManyField(User, related_name='liked_questions', through='QuestionLike')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
