@@ -24,34 +24,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="has-arrow box-style">
+                            <a href="{% url 'questions:all' %}" class="box-style">
                                 <i class="ri-question-line"></i>
                                 <span class="menu-title">
                                     Questions
                                 </span>
                             </a>
-                            <ul class="sidemenu-nav-second-level">
-                                <li>
-                                    <a href="{% url 'questions:all' %}">
-                                        <span class="menu-title">All questions</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'questions:most-answered' %}">
-                                        <span class="menu-title">Most answered</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'questions:most-recent' %}">
-                                        <span class="menu-title">Most recent</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{% url 'questions:unanswered' %}">
-                                        <span class="menu-title">Unanswered questions</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
                             <a href="{% url 'questions:communities' %}" class="box-style">

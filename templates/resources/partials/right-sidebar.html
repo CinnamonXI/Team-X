@@ -73,19 +73,17 @@
         <div class="recent-post">
             <h3>
                 <i class="ri-discuss-line"></i>
-                Recent post
+                Recent questions
             </h3>
 
             <ul>
                 {% for post in latest_post %}
-                    {% for pst in post %}
                     <li>
-                        <a href="{{ pst.get_absolute_url }}">
-                            {{ pst.title }}
+                        <a href="{{ post.get_absolute_url }}">
+                            {{ post.title|truncatechars:60 }}
                         </a>
-                        <p>{{ pst.created_at|date }} by <a href="{{ pst.author.profile.get_absolute_url }}">{{ pst.author.get_full_name }}</a></p>
+                        <p>{{ post.created_at|date }} by <a href="{{ post.user.profile.get_absolute_url }}">{{ post.user.get_full_name }}</a></p>
                     </li>
-                    {% endfor %}
                 {% endfor %}
             </ul>
         </div>

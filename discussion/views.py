@@ -5,32 +5,24 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 def all_questions(request):
+    all_questions = Question.objects.all()
+    unanswered_questions = []
+    for question in all_questions:
+        if question.answers.count() == 0:
+            unanswered_questions.append(question)
+
+    most_answered_questions = sorted(all_questions, key=lambda x: x.answers.count(), reverse=True)
+    most_recent_questions = sorted(all_questions, key=lambda x: x.created_at, reverse=True)
     context = {
         'title': 'All Questions',
         'category': 'Questions',
+        'all_questions': all_questions,
+        'unanswered_questions': unanswered_questions,
+        'most_answered_questions': most_answered_questions,
+        'most_recent_questions': most_recent_questions,
     }
     return render(request, 'forum/index.html', context)
 
-def unanswered(request):
-    context = {
-        'title': 'Unanswered',
-        'category': 'Questions',
-    }
-    return render(request, 'forum/index.html', context)
-
-def most_answered(request):
-    context = {
-        'title': 'Most Answered',
-        'category': 'Questions',
-    }
-    return render(request, 'forum/index.html', context)
-
-def most_recent(request):
-    context = {
-        'title': 'Most Recent',
-        'category': 'Questions',
-    }
-    return render(request, 'forum/index.html', context)
 
 def ask(request):
     context = {
