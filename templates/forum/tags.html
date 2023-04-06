@@ -25,494 +25,43 @@
 							{% include 'partials/search.html' %}
 
 							<div class="tag-content">
+								{% if tags %}
 								<div class="row justify-content-center">
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>discussion</span>
-												</li>
-												<li>
-													1984 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														325 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
+									{% for tag in tags %}
+										<div class="col-lg-6 col-md-6">
+											<div class="single-tags-box">
+												<ul class="tag-mark">
+													<li>
+														<i class="ri-price-tag-3-line"></i>
+														<span>{{ tag.title }}</span>
+													</li>
+													<li>
+														{{ tag.questions.all.count }} questions
+													</li>
+												</ul>
+												<p>{{ tag.description|truncatechars:110|default:'No description provided' }}</p>
+												<ul class="tag-btn d-flex justify-content-between">
+													<li>
+														<button class="default-btn">
+															{{ tag.followers.all.count }} Followers
+														</button>
+													</li>
+													<li>
+														<a href="{% url 'questions:follow_unfollow_tag' tag.slug %}">
+															<button class="default-btn active">
+																{% if request.user in tag.followers.all %}
+																	Unfollow
+																{% else %}
+																	Follow
+																{% endif %}
+															</button>
+														</a>
+													</li>
+												</ul>
+											</div>
 										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>language</span>
-												</li>
-												<li>
-													2019 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														325 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>analytics</span>
-												</li>
-												<li>
-													1994 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														325 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>company</span>
-												</li>
-												<li>
-													682 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														325 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>excel</span>
-												</li>
-												<li>
-													581 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														325 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>life</span>
-												</li>
-												<li>
-													627 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														55 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>grammer</span>
-												</li>
-												<li>
-													984 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														74 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>convertion</span>
-												</li>
-												<li>
-													184 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														37 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>developers</span>
-												</li>
-												<li>
-													592 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														37 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>programmer</span>
-												</li>
-												<li>
-													843 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														100 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>javascript</span>
-												</li>
-												<li>
-													481 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														81 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>python</span>
-												</li>
-												<li>
-													24 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														65 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>node.js</span>
-												</li>
-												<li>
-													342 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														46 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>reactjs</span>
-												</li>
-												<li>
-													53 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														100 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>linux</span>
-												</li>
-												<li>
-													414 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														39 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>computer</span>
-												</li>
-												<li>
-													68 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														84 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>convertion</span>
-												</li>
-												<li>
-													758 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														758 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-lg-6 col-md-6">
-										<div class="single-tags-box">
-											<ul class="tag-mark">
-												<li>
-													<i class="ri-price-tag-3-line"></i>
-													<span>interview</span>
-												</li>
-												<li>
-													184 questions
-												</li>
-											</ul>
-											<p>Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada.</p>
-											<ul class="tag-btn d-flex justify-content-between">
-												<li>
-													<button class="default-btn">
-														37 Followers
-													</button>
-												</li>
-												<li>
-													<button class="default-btn active">
-														Follow
-													</button>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-									<div class="col-12">
+									{% endfor %}
+									<!-- <div class="col-12">
 										<div class="pagination-area mt-0">
 											<a href="tags.html" class="next page-numbers">
 												<i class="ri-arrow-left-line"></i>
@@ -525,8 +74,13 @@
 												<i class="ri-arrow-right-line"></i>
 											</a>
 										</div>
-									</div>
+									</div> -->
 								</div>
+								{% else %}
+									<div class="alert alert-warning">
+										No tags found
+									</div>
+								{% endif %}
 							</div>
 						</div>
 					</div>

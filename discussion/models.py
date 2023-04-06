@@ -47,7 +47,7 @@ class Question(models.Model):
     slug = models.SlugField(max_length=255, unique=True)
     description = models.TextField()
     category = models.ForeignKey('core.Category', on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='questions')
     group = models.ForeignKey(Group, on_delete=models.CASCADE, null=True, blank=True, related_name='questions')
     community = models.ForeignKey(Community, on_delete=models.CASCADE, null=True, blank=True, related_name='questions')
     tags = models.ManyToManyField('core.Tag', related_name='questions', blank=True)
@@ -62,7 +62,7 @@ class Question(models.Model):
 
 class Answer(models.Model):
     content = models.TextField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='answers')
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answers')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

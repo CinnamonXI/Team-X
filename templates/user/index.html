@@ -16,29 +16,29 @@
 								<div class="row">
 									<div class="col-xl-3 col-sm-6">
 										<div class="single-achive">
-											<h2>1984</h2>
+											<h2>{{ user.answers.all.count }}</h2>
 											<span>Answers</span>
 										</div>
 									</div>
 
 									<div class="col-xl-3 col-sm-6">
 										<div class="single-achive">
-											<h2>507</h2>
+											<h2>{{ user.questions.all.count }}</h2>
 											<span>Question</span>
 										</div>
 									</div>
 
 									<div class="col-xl-3 col-sm-6">
 										<div class="single-achive">
-											<h2>124</h2>
-											<span>Best answers</span>
+											<h2>{{ user.joined_groups.all.count }}</h2>
+											<span>Groups</span>
 										</div>
 									</div>
 
 									<div class="col-xl-3 col-sm-6">
 										<div class="single-achive">
-											<h2>2M</h2>
-											<span>Reached</span>
+											<h2>{{ user.followed_tags.all.count }}</h2>
+											<span>Tags</span>
 										</div>
 									</div>
 								</div>
@@ -87,75 +87,52 @@
 								</div>
 							</div> -->
 
-							<!-- <div class="top-tags">
+							<div class="top-tags mt-4">
 								<div class="tag-title d-flex justify-content-between">
-									<h3>Top tags</h3>
+									<h3>Followed tags</h3>
 									<a href="" class="read-more">View all tags</a>
 								</div>
 
 								<ul>
-									<li>
-										<span class="tag-cate">discussion</span>
-										<span class="tag-score">0 score</span>
-										<span class="tag-score">0 posts</span>
-										<span class="tag-score">0 posts %</span>
-									</li>
-									<li>
-										<span class="tag-cate">language</span>
-										<span class="tag-score">0 score</span>
-										<span class="tag-score">0 posts</span>
-										<span class="tag-score">0 posts %</span>
-									</li>
-									<li>
-										<span class="tag-cate">analytics</span>
-										<span class="tag-score">0 score</span>
-										<span class="tag-score">0 posts</span>
-										<span class="tag-score">0 posts %</span>
-									</li>
-									<li>
-										<span class="tag-cate">convertion</span>
-										<span class="tag-score">0 score</span>
-										<span class="tag-score">0 posts</span>
-										<span class="tag-score">0 posts %</span>
-									</li>
-									<li>
-										<span class="tag-cate">computer</span>
-										<span class="tag-score">0 score</span>
-										<span class="tag-score">0 posts</span>
-										<span class="tag-score">0 posts %</span>
-									</li>
-									<li>
-										<span class="tag-cate">grammer</span>
-										<span class="tag-score">0 score</span>
-										<span class="tag-score">0 posts</span>
-										<span class="tag-score">0 posts %</span>
-									</li>
+									{% if not request.user.followed_tags.all %}
+										<li>
+											<span class="tag-cate">No tags followed</span>
+										</li>
+									{% else %}
+										{% for tag in request.user.followed_tags.all %}
+											<li>
+												<span class="tag-cate">{{ tag.title }}</span>
+												<span class="tag-score">{{ tag.followers.all.count }} followers</span>
+												<span class="tag-score">{{ tag.questions.all.count }} posts</span>
+											</li>
+										{% endfor %}
+									{% endif %}
 								</ul>
-							</div> -->
+							</div>
 
-							<!-- <div class="top-posts">
+							<div class="top-posts">
 								<div class="d-flex justify-content-between">
-									<h3>Top posts</h3>
+									<h3>Activities</h3>
 
 									<ul class="nav nav-tabs" id="myTab" role="tablist">
 										<li class="nav-item" role="presentation">
-											<button class="nav-link active" id="view-all-tab" data-bs-toggle="tab" data-bs-target="#view-all" type="button" role="tab" aria-controls="view-all" aria-selected="true">View All</button>
+											<button class="nav-link active" id="view-all-tab" data-bs-toggle="tab" data-bs-target="#view-all" type="button" role="tab" aria-controls="view-all" aria-selected="true">Posts/Questions</button>
 										</li>
 										
 										<li class="nav-item" role="presentation">
-										  	<button class="nav-link" id="question-tab" data-bs-toggle="tab" data-bs-target="#question" type="button" role="tab" aria-controls="question" aria-selected="false">Question</button>
+										  	<button class="nav-link" id="question-tab" data-bs-toggle="tab" data-bs-target="#question" type="button" role="tab" aria-controls="question" aria-selected="false">Answers</button>
 										</li>
 
 										<li class="nav-item" role="presentation">
-										  	<button class="nav-link" id="answers-tab" data-bs-toggle="tab" data-bs-target="#answers" type="button" role="tab" aria-controls="answers" aria-selected="false">Answers</button>
+										  	<button class="nav-link" id="answers-tab" data-bs-toggle="tab" data-bs-target="#answers" type="button" role="tab" aria-controls="answers" aria-selected="false">Groups</button>
 										</li>
 
 										<li class="nav-item" role="presentation">
-										  	<button class="nav-link" id="newest-tab" data-bs-toggle="tab" data-bs-target="#newest" type="button" role="tab" aria-controls="newest" aria-selected="false">Newest</button>
+										  	<button class="nav-link" id="newest-tab" data-bs-toggle="tab" data-bs-target="#newest" type="button" role="tab" aria-controls="newest" aria-selected="false">Tags</button>
 										</li>
 
 										<li class="nav-item" role="presentation">
-										  	<button class="nav-link" id="votes-tab" data-bs-toggle="tab" data-bs-target="#votes" type="button" role="tab" aria-controls="votes" aria-selected="false">Votes</button>
+										  	<button class="nav-link" id="votes-tab" data-bs-toggle="tab" data-bs-target="#votes" type="button" role="tab" aria-controls="votes" aria-selected="false">Communities</button>
 										</li>
 									</ul>
 								</div>
@@ -163,187 +140,105 @@
 								<div class="tab-content" id="myTabContent">
 									<div class="tab-pane fade show active" id="view-all" role="tabpanel" aria-labelledby="view-all-tab">
 										<ul>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">21</span>
-													<span>What could be UX design software?</span>
-												</div>
-												<p><span>8 hours ago</span> by <a href="user-profile.html">Alan Woodson</a></p>
-											</li>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">5</span>
-													<span>What is the most important thing in learning design?</span>
-												</div>
-												<p><span>10 hours ago</span> by <a href="user-profile.html">Juan McPhail</a></p>
-											</li>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">13</span>
-													<span>All the new features that have been used in Windows 11</span>
-												</div>
-												<p><span>11 hours ago</span> by <a href="user-profile.html">Vickie White</a></p>
-											</li>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">10</span>
-													<span>Which language is the most popular in the web right now?</span>
-												</div>
-												<p><span>13 hours ago</span> by <a href="user-profile.html">Jose Merz</a></p>
-											</li>
+											{% if user.questions.all %}
+												{% for question in user.questions.all %}
+													<li class="d-flex justify-content-between">
+														<div class="top-posts-list">
+															<i class="ri-chat-2-fill"></i>
+															<span class="count">{{ question.answers.all.count }}</span>
+															<span>{{ question.title }}</span>
+														</div>
+														<p><span>{{ question.created_at }}</span> by <a href="{% url 'users:user_profile' question.user.username %}">{{ question.user.get_full_name|default:'No Name' }}</a></p>
+													</li>
+												{% endfor %}
+											{% else %}
+												<li>
+													<span class="tag-cate">No Posts/Questions</span>
+												</li>
+											{% endif %}
 										</ul>
 									</div>
 
 									<div class="tab-pane fade" id="question" role="tabpanel" aria-labelledby="question-tab">
 										<ul>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">21</span>
-													<span>What could be UX design software?</span>
-												</div>
-												<p><span>8 hours ago</span> by <a href="user-profile.html">Alan Woodson</a></p>
-											</li>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">5</span>
-													<span>What is the most important thing in learning design?</span>
-												</div>
-												<p><span>10 hours ago</span> by <a href="user-profile.html">Juan McPhail</a></p>
-											</li>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">13</span>
-													<span>All the new features that have been used in Windows 11</span>
-												</div>
-												<p><span>11 hours ago</span> by <a href="user-profile.html">Vickie White</a></p>
-											</li>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">10</span>
-													<span>Which language is the most popular in the web right now?</span>
-												</div>
-												<p><span>13 hours ago</span> by <a href="user-profile.html">Jose Merz</a></p>
-											</li>
+											{% if user.answers.all %}
+												{% for answer in user.answers.all %}
+													<li class="d-flex justify-content-between">
+														<div class="top-posts-list">
+															<span>{{ answer.content|truncatechars:80 }}</span>
+														</div>
+														<p><span>{{ answer.created_at }}</span> by <a href="{% url 'users:user_profile' answer.user.username %}">{{ answer.user.get_full_name|default:'No Name' }}</a></p>
+													</li>
+												{% endfor %}
+											{% else %}
+												<li>
+													<span class="tag-cate">No Answers</span>
+												</li>
+											{% endif %}
 										</ul>
 									</div>
 									<div class="tab-pane fade" id="answers" role="tabpanel" aria-labelledby="answers-tab">
 										<ul>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">21</span>
-													<span>What could be UX design software?</span>
-												</div>
-												<p><span>8 hours ago</span> by <a href="user-profile.html">Alan Woodson</a></p>
-											</li>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">5</span>
-													<span>What is the most important thing in learning design?</span>
-												</div>
-												<p><span>10 hours ago</span> by <a href="user-profile.html">Juan McPhail</a></p>
-											</li>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">13</span>
-													<span>All the new features that have been used in Windows 11</span>
-												</div>
-												<p><span>11 hours ago</span> by <a href="user-profile.html">Vickie White</a></p>
-											</li>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">10</span>
-													<span>Which language is the most popular in the web right now?</span>
-												</div>
-												<p><span>13 hours ago</span> by <a href="user-profile.html">Jose Merz</a></p>
-											</li>
+											{% if user.joined_groups.all %}
+												{% for group in user.joined_groups.all %}
+													<li class="d-flex justify-content-between">
+														<div class="top-posts-list">
+															<i class="ri-chat-2-fill"></i>
+															<span class="count">{{ group.questions.all.count }}</span>
+															<span>{{ group.title }}</span>
+														</div>
+														<p><span>{{ group.created_at }}</span> by <a href="{% url 'users:user_profile' group.owner.username %}">{{ group.owner.get_full_name|default:'No Name' }}</a></p>
+													</li>
+												{% endfor %}
+											{% else %}
+												<li>
+													<span class="tag-cate">No Groups Joined</span>
+												</li>
+											{% endif %}
 										</ul>
 									</div>
 									<div class="tab-pane fade" id="newest" role="tabpanel" aria-labelledby="newest-tab">
 										<ul>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">21</span>
-													<span>What could be UX design software?</span>
-												</div>
-												<p><span>8 hours ago</span> by <a href="user-profile.html">Alan Woodson</a></p>
-											</li>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">5</span>
-													<span>What is the most important thing in learning design?</span>
-												</div>
-												<p><span>10 hours ago</span> by <a href="user-profile.html">Juan McPhail</a></p>
-											</li>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">13</span>
-													<span>All the new features that have been used in Windows 11</span>
-												</div>
-												<p><span>11 hours ago</span> by <a href="user-profile.html">Vickie White</a></p>
-											</li>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">10</span>
-													<span>Which language is the most popular in the web right now?</span>
-												</div>
-												<p><span>13 hours ago</span> by <a href="user-profile.html">Jose Merz</a></p>
-											</li>
+											{% if user.followed_tags.all %}
+												{% for tag in user.followed_tags.all %}
+													<li class="d-flex justify-content-between">
+														<div class="top-posts-list">
+															<i class="ri-chat-2-fill"></i>
+															<span class="count">{{ tag.questions.all.count }}</span>
+															<span>{{ tag.title }}</span>
+														</div>
+														<p><span>{{ tag.created_at }}</span> by <a href="{% url 'users:user_profile' user.username %}">{{ user.get_full_name|default:'No Name' }}</a></p>
+													</li>
+												{% endfor %}
+											{% else %}
+												<li>
+													<span class="tag-cate">No Tags Followed</span>
+												</li>
+											{% endif %}
 										</ul>
 									</div>
 									<div class="tab-pane fade" id="votes" role="tabpanel" aria-labelledby="votes-tab">
 										<ul>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">21</span>
-													<span>What could be UX design software?</span>
-												</div>
-												<p><span>8 hours ago</span> by <a href="user-profile.html">Alan Woodson</a></p>
-											</li>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">5</span>
-													<span>What is the most important thing in learning design?</span>
-												</div>
-												<p><span>10 hours ago</span> by <a href="user-profile.html">Juan McPhail</a></p>
-											</li>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">13</span>
-													<span>All the new features that have been used in Windows 11</span>
-												</div>
-												<p><span>11 hours ago</span> by <a href="user-profile.html">Vickie White</a></p>
-											</li>
-											<li class="d-flex justify-content-between">
-												<div class="top-posts-list">
-													<i class="ri-chat-2-fill"></i>
-													<span class="count">10</span>
-													<span>Which language is the most popular in the web right now?</span>
-												</div>
-												<p><span>13 hours ago</span> by <a href="user-profile.html">Jose Merz</a></p>
-											</li>
+											{% if user.followed_communities.all %}
+												{% for community in user.followed_communities.all %}
+													<li class="d-flex justify-content-between">
+														<div class="top-posts-list">
+															<i class="ri-chat-2-fill"></i>
+															<span class="count">{{ community.questions.all.count }}</span>
+															<span>{{ community.title }}</span>
+														</div>
+														<p><span>{{ community.created_at }}</span> by <a href="{% url 'users:user_profile' community.owner.username %}">{{ community.owner.get_full_name|default:'No Name' }}</a></p>
+													</li>
+												{% endfor %}
+											{% else %}
+												<li>
+													<span class="tag-cate">No Communities Followed</span>
+												</li>
+											{% endif %}
 										</ul>
 									</div>
 								</div>
-							</div> -->
+							</div>
 						</div>
 					</div>
 				</div>
