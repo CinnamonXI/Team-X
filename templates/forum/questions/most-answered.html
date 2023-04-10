@@ -28,7 +28,7 @@
                         </li>
                         <li>
                             <span>In:</span>
-                            <a href="" class="graphic">
+                            <a href="{% url 'questions:category_detail' maquestion.category.slug %}" class="graphic">
                                 {{ maquestion.category.title }}
                             </a>
                         </li>
@@ -47,7 +47,7 @@
                         <ul class="tag-list">
                             {% for tag in maquestion.tags.all %}
                             <li>
-                                <a href="">{{ tag }}</a>
+                                <a href="{% url 'questions:tag_detail' tag.slug %}">{{ tag }}</a>
                             </li>
                             {% endfor %}
                         </ul>

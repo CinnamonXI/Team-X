@@ -42,7 +42,7 @@
                         </li>
                         <li>
                             <span>In:</span>
-                            <a href="" class="graphic">
+                            <a href="{% url 'questions:category_detail' unanswered_question.category.slug %}" class="graphic">
                                 {{ unanswered_question.category.title }}
                             </a>
                         </li>
@@ -61,7 +61,7 @@
                         <ul class="tag-list">
                             {% for tag in unanswered_question.tags.all %}
                             <li>
-                                <a href="">{{ tag }}</a>
+                                <a href="{% url 'questions:tag_detail' tag.slug %}">{{ tag }}</a>
                             </li>
                             {% endfor %}
                         </ul>

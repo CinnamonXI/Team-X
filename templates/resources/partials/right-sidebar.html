@@ -42,6 +42,14 @@
                         </li>
                         {% endfor %}
                     {% endif %}
+                    {% if q_category %}
+                        <li><a href="{% url 'questions:all' %}">All</a></li>
+                        {% for category in categories %}
+                        <li>
+                            <a href="{% url 'questions:category_detail' category.slug %}">{{ category }}</a>
+                        </li>
+                        {% endfor %}
+                    {% endif %}
                 </ul>
             </div>
         </div>
@@ -132,7 +140,7 @@
             <ul>
                 {% for tag in tags %}
                 <li>
-                    <a href="{% url 'resources:article_tags' tag.slug %}">
+                    <a href="{% url 'questions:tag_detail' tag.slug %}">
                         {{ tag }}
                     </a>
                 </li>

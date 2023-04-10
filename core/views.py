@@ -23,6 +23,7 @@ def index(request):
         'most_answered_questions': most_answered_questions,
         'most_recent_questions': most_recent_questions,
         'most_viewed_questions': most_viewed_questions,
+        'q_category': 'is_active',
     }
     return render(request, 'index.html', context)
 

@@ -42,7 +42,7 @@
                         </li>
                         <li>
                             <span>In:</span>
-                            <a href="" class="graphic">
+                            <a href="{% url 'questions:category_detail' most_viewed.category.slug  %}" class="graphic">
                                 {{ most_viewed.category.title }}
                             </a>
                         </li>
@@ -61,7 +61,7 @@
                         <ul class="tag-list">
                             {% for tag in most_viewed.tags.all %}
                             <li>
-                                <a href="">{{ tag }}</a>
+                                <a href="{% url 'questions:tag_detail' tag.slug %}">{{ tag }}</a>
                             </li>
                             {% endfor %}
                         </ul>

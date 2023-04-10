@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% block content %}
+		<!-- Start Mail Content Area -->
+		<div class="main-content-area ptb-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3">
+						{% include 'partials/left-sidebar.html' %}
+					</div>
+
+					<div class="col-lg-9">
+						<div class="user-profile-area">
+							<div class="profile-content d-flex justify-content-between align-items-center">
+                                <div class="profile-img">
+                                    <h3>{{ tag.title }}</h3>
+                                    <span>Created By {{ tag.owner.get_full_name|default:'No Name' }}</span>
+                                    <span>Date Created {{ tag.created_at }}</span>
+                                    <button class="followers-btn">{{ tag.members.all|length }} Members</button>
+                                    <button class="followers-btn">{{ tag.questions.all|length }} Posts</button>
+                                </div>
+                                {% if request.user.is_authenticated %}
+                                <div class="edit-btn">
+                                    <a href="{% url 'questions:follow_unfollow_tag' tag.slug %}" class="default-btn">{% if request.user in tag.followers.all %}Unfollow{% else %}Follow{% endif %}</a>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10">
+                                        <div class="middull-content">
+                                            <div class="tab-content mt-5" id="myTabContent">
+                                                <div class="tab-pane fade show active" id="recent-questions" role="tabpanel" aria-labelledby="recent-questions-tab">
+                                                    {% if questions %}
+                                                        {% for question in questions %}
+                                                            <div class="single-qa-box like-dislike">
+                                                                <div class="d-flex">
+                                                                    <div class="link-unlike flex-shrink-0">
+                                                                        <a href="{{ question.user.profile.get_absolute_url }}">
+                                                                            {% if question.user.profile.image %}
+                                                                                <img src="{{ question.user.profile.image.url }}" style="max-height: 45px !important;" alt="{{ question.user.username }}">
+                                                                            {% else %}
+                                                                                {% if question.user.profile.gender == 'other' %}
+                                                                                    <img src="/static/user.png" style="max-height: 45px !important;" alt="{{ question.user.username }}">
+                                                                                {% elif question.user.profile.gender == 'male' %}
+                                                                                    <img src="/static/man.png" style="max-height: 45px !important;" alt="{{ question.user.username }}">
+                                                                                {% else %}
+                                                                                    <img src="/static/woman.png" style="max-height: 45px !important;" alt="{{ question.user.username }}">
+                                                                                {% endif %}
+                                                                            {% endif %}
+                                                                        </a>
+                                                                    </div>
+
+                                                                    <div class="flex-grow-1 ms-3">
+                                                                        <ul class="graphic-design">
+                                                                            <li>
+                                                                                <a href="{{ question.user.profile.get_absolute_url }}">{{ question.user.get_full_name|default:'No Name' }}</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <span>{{ question.created_at }}</span>
+                                                                            </li>
+                                                                            <li>
+                                                                                <span>In:</span>
+                                                                                <a href="{% url 'questions:category_detail' question.category.slug %}" class="graphic">
+                                                                                    {{ question.category.title }}
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+
+                                                                        <h3>
+                                                                            <a href="{{ question.get_absolute_url }}">
+                                                                                {{ question.title }}
+                                                                            </a>
+                                                                        </h3>
+
+                                                                        <p>
+                                                                            {{ question.description|truncatechars:120 }}
+                                                                        </p>
+                                                                        {% if question.tags.all %}
+                                                                            <ul class="tag-list">
+                                                                                {% for tag in question.tags.all %}
+                                                                                <li>
+                                                                                    <a href="{% url 'questions:tag_detail' tag.slug  %}">{{ tag }}</a>
+                                                                                </li>
+                                                                                {% endfor %}
+                                                                            </ul>
+                                                                        {% endif %}
+
+                                                                        <div class="d-flex justify-content-between align-items-center">
+                                                                            <ul class="anser-list">
+                                                                                <!-- <li>
+                                                                                    <a href="polls.html">
+                                                                                        24 Vote
+                                                                                    </a>
+                                                                                </li> -->
+                                                                                <li>
+                                                                                    <a href="{{ question.get_absolute_url }}#answers">
+                                                                                        {{ question.answers.all.count }} Answers
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a>
+                                                                                        {{ question.views}} Views
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <ul class="qa-share">
+                                                                                        <li class="share-option">
+                                                                                            <span>
+                                                                                                <i class="ri-share-fill"></i>
+                                                                                            </span>
+                                                                                            
+                                                                                            <ul class="social-icon">
+                                                                                                <li>
+                                                                                                    <a href="https://www.facebook.com/" target="_blank">
+                                                                                                        <i class="ri-facebook-fill"></i>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <a href="https://www.twitter.com/" target="_blank">
+                                                                                                        <i class="ri-twitter-line"></i>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <a href="https://www.linkedin.com/" target="_blank">
+                                                                                                        <i class="ri-linkedin-fill"></i>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <a href="https://www.instagram.com/" target="_blank">
+                                                                                                        <i class="ri-instagram-line"></i>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                            <a href="{{ question.get_absolute_url }}#answer" class="default-btn bg-ea4335">
+                                                                                Answer
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        {% endfor %}
+                                                    {% else %}
+                                                        <div class="alert alert-info">
+                                                            No Questions Found in this Group
+                                                        </div>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Mail Content Area -->
+{% endblock %}

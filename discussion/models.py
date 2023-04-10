@@ -46,7 +46,7 @@ class Question(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
     description = models.TextField()
-    category = models.ForeignKey('core.Category', on_delete=models.CASCADE)
+    category = models.ForeignKey('core.Category', on_delete=models.CASCADE, related_name='questions')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='questions')
     group = models.ForeignKey(Group, on_delete=models.CASCADE, null=True, blank=True, related_name='questions')
     community = models.ForeignKey(Community, on_delete=models.CASCADE, null=True, blank=True, related_name='questions')

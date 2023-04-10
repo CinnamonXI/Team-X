@@ -20,6 +20,7 @@ def questions(request):
         'most_answered_questions': most_answered_questions,
         'most_recent_questions': most_recent_questions,
         'most_viewed_questions': most_viewed_questions,
+        'q_category': 'is_active',
     }
     return render(request, 'forum/index.html', context)
 
@@ -45,6 +46,7 @@ def question_detail(request, slug):
     context = {
         'title': question.title,
         'question': question,
+        'q_category': 'is_active',
     }
     return render(request, 'forum/question-details.html', context)
 
@@ -89,9 +91,9 @@ def ask(request):
     context = {
         'title': 'Ask Questions',
         'categories': Category.objects.all(),
+        'q_category': 'is_active',
     }
     return render(request, 'forum/ask-questions.html', context)
-
 
 # Groups
 def group_list(request):
@@ -99,6 +101,7 @@ def group_list(request):
         'title': 'Groups',
         'groups': Group.objects.all(),
         'category': 'groups',
+        'q_category': 'is_active',
     }
     return render(request, 'forum/groups/index.html', context)
 
@@ -177,6 +180,7 @@ def ask_group(request, slug):
         'title': 'Ask Group',
         'category': 'groups',
         'group_slug': group.slug,
+        'q_category': 'is_active',
     }
     return render(request, 'forum/ask-questions.html', context)
 
@@ -195,7 +199,8 @@ def join_leave_group(request, slug):
 # Tags
 def tag_list(request):
     context = {
-        'title': 'Tags'
+        'title': 'Tags',
+        'q_category': 'is_active',
     }
     return render(request, 'forum/tags.html', context)
 
@@ -208,14 +213,26 @@ def follow_unfollow_tag(request, slug):
     else:
         tag.followers.add(request.user)
         messages.success(request, f"You have followed the tag '{tag.title}'")
-    return redirect('questions:tags')
+    return redirect('questions:tag_detail', slug=tag.slug)
 
+@login_required
+def tag_detail(request, slug):
+    tag = get_object_or_404(Tag, slug=slug)
+    questions = Question.objects.filter(tags=tag)
+    
+    context = {
+        'title': tag.title,
+        'tag': tag,
+        'questions': questions,
+    }
+    return render(request, 'forum/tag-detail.html', context)
 
 # Communities
 def communities(request):
     context = {
         'title': 'Communities',
         'communities': Community.objects.all(),
+        'q_category': 'is_active',
     }
     return render(request, 'forum/community/index.html', context)
 
@@ -293,6 +310,7 @@ def ask_community(request, slug):
     context = {
         'title': 'Ask Community',
         'category': 'community',
+        'q_category': 'is_active',
     }
     return render(request, 'forum/ask-questions.html', context)
 
@@ -308,4 +326,12 @@ def follow_unfollow_community(request, slug):
             messages.success(request, f"You have followed the community '{community.title}'")
     return redirect('questions:community_detail', slug=community.slug)
 
-
+@login_required
+def category_detail(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+    questions = Question.objects.filter(category=category)
+    context = {
+        'title': category.title,
+        'questions': questions,
+    }
+    return render(request, 'forum/category-detail.html', context)

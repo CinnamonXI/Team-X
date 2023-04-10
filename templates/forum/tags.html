@@ -33,7 +33,7 @@
 												<ul class="tag-mark">
 													<li>
 														<i class="ri-price-tag-3-line"></i>
-														<span>{{ tag.title }}</span>
+														<span><a href="{% url 'questions:tag_detail' tag.slug %}">{{ tag.title }}</a></span>
 													</li>
 													<li>
 														{{ tag.questions.all.count }} questions
