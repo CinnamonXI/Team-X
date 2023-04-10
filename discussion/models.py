@@ -52,6 +52,7 @@ class Question(models.Model):
     community = models.ForeignKey(Community, on_delete=models.CASCADE, null=True, blank=True, related_name='questions')
     tags = models.ManyToManyField('core.Tag', related_name='questions', blank=True)
     # likes = models.ManyToManyField(User, related_name='liked_questions', through='QuestionLike')
+    views = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -59,6 +60,9 @@ class Question(models.Model):
             return self.title
     class Meta:
         ordering = ('-created_at',)
+
+    def get_absolute_url(self):
+        return reverse('questions:question_detail', kwargs={'slug': self.slug})
 
 class Answer(models.Model):
     content = models.TextField()

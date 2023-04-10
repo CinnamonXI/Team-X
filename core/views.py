@@ -16,11 +16,13 @@ def index(request):
 
     most_answered_questions = sorted(questions, key=lambda x: x.answers.count(), reverse=True)
     most_recent_questions = sorted(questions, key=lambda x: x.created_at, reverse=True)
+    most_viewed_questions = sorted(questions, key=lambda x: x.views, reverse=True)
     context = {
         'title': 'Homepage',
         'unanswered_questions': unanswered_questions,
         'most_answered_questions': most_answered_questions,
         'most_recent_questions': most_recent_questions,
+        'most_viewed_questions': most_viewed_questions,
     }
     return render(request, 'index.html', context)
 

@@ -10,40 +10,39 @@
 
 					<div class="col-lg-6">
 						<div class="middull-content">
-							<form class="your-answer-form">
+							{% if category == 'Group' %}
+							<form class="your-answer-form" method="post" action="{% url 'questions:ask_group' group_slug %}">
+							{% elif category == 'Community' %}
+							<form class="your-answer-form" method="post" action="{% url 'questions:ask_community' community_slug %}">
+							{% else %}
+							<form class="your-answer-form" method="post">
+							{% endif %}
+								{% csrf_token %}
 								<div class="form-group">
 									<h3>Create a questions</h3>
 								</div>
 								<div class="form-group">
-									<label>Title</label>
-									<input type="text" class="form-control">
+									<label for="title">Title*</label>
+									<input type="text" name="title" id="title" required class="form-control">
 								</div>
-								<div class="form-group">
-									<label>Category</label>
+								{% if categories %}
+									<div class="form-group">
+										<label for="category">Category*</label>
 
-									<select class="form-select form-control" aria-label="Default select example">
-										<option selected>Selete cagegory</option>
-										<option value="1">One</option>
-										<option value="2">Two</option>
-										<option value="3">Three</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<label>Tags (Add up to 5 tags to describe what your question is about)</label>
-									<input type="text" class="form-control">
-								</div>
-								<div class="form-group">
-									<label>Description</label>
-									<div id="txtEditor"></div>
-								</div>
-								<div class="form-group">
-									<div class="file-upload-account-info">
-										<input type="file" name="file" id="file-2" class="inputfile">
-										<label class="upload">
-											<i class="ri-link"></i>
-											Upload Photo
-										</label>
+										<select class="form-select form-control" id="category" name="category" required>
+											{% for category in categories %}
+												<option value="{{ category.id }}">{{ category }}</option>
+											{% endfor %}
+										</select>
 									</div>
+								{% endif %}
+								<div class="form-group">
+									<label for="tags">Tags (Add comma separated tags to describe what your question is about)</label>
+									<input type="text" id="tags" name="tags" class="form-control" required>
+								</div>
+								<div class="form-group">
+									<label for="txtEditor">Description*</label>
+									<textarea name="description" required class="form-control" rows="5"></textarea>
 								</div>
 								<div class="form-group">
 									<button type="submit" class="default-btn">Post your answer</button>

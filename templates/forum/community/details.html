@@ -13,7 +13,7 @@
 							<div class="profile-content d-flex justify-content-between align-items-center">
                                 <div class="profile-img">
                                     <img src="{% if community.image %}{{ community.image.url }}{% else %}/static/community.jpg{% endif %}" alt="{{ community.title }}">
-                                    <h3>{{ community.title }}</h3>
+                                    <a href="{{ community.get_absolute_url }}"><h3>{{ community.title }}</h3></a>
                                     <span>Created By {{ community.owner }}</span>
                                     <span>Date Created {{ community.created_at }}</span>
                                     <button class="followers-btn">{{ community.followers.all|length }} Followers</button>

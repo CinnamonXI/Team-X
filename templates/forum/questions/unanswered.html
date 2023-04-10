@@ -74,13 +74,13 @@
                                 </a>
                             </li> -->
                             <li>
-                                <a href="{{ unanswered_question.get_absolute_url }}">
-                                    {{ unanswered_question.answers.all.count }} Answer
+                                <a href="{{ unanswered_question.get_absolute_url }}#answers">
+                                    {{ unanswered_question.answers.all.count }} Answers
                                 </a>
                             </li>
                             <li>
                                 <a>
-                                    658 Views
+                                    {{ unanswered_question.views}} Views
                                 </a>
                             </li>
                             <li>
@@ -117,7 +117,7 @@
                             </li>
                         </ul>
 
-                        <a href="" class="default-btn">
+                        <a href="{{ unanswered_question.get_absolute_url }}#answer" class="default-btn">
                             Answer
                         </a>
                     </div>

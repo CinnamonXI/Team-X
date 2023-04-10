@@ -1,0 +1,263 @@
+{% extends 'base.html' %}
+{% block content %}
+		<!-- Start Mail Content Area -->
+		<div class="main-content-area ptb-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3">
+						{% include 'partials/left-sidebar.html' %}
+					</div>
+
+					<div class="col-lg-6">
+						<div class="middull-content">
+							<ul class="page-nish">
+								<li>
+									<a href="/">
+										<i class="ri-home-8-line"></i>
+										Home
+									</a>
+								</li>
+								<li>
+									<a href="{% url 'questions:all' %}">
+										Questions
+									</a>
+								</li>
+								<li class="active">
+									{{ question.title }}
+								</li>
+							</ul>
+							
+							{% include 'partials/search.html' %}
+
+							<div class="question-details-area">
+								<div class="question-details-content like-dislike">
+									<div class="d-flex">
+										<div class="link-unlike flex-shrink-0">
+											<a href="{{ question.user.profile.get_absolute_url }}">
+												{% if question.user.profile.image %}
+													<img src="{{ question.user.profile.image.url }}" style="max-height: 45px !important;" alt="{{ question.user.username }}">
+												{% else %}
+													{% if question.user.profile.gender == 'other' %}
+														<img src="/static/user.png" style="max-height: 45px !important;" alt="{{ question.user.username }}">
+													{% elif question.user.profile.gender == 'male' %}
+														<img src="/static/man.png" style="max-height: 45px !important;" alt="{{ question.user.username }}">
+													{% else %}
+														<img src="/static/woman.png" style="max-height: 45px !important;" alt="{{ question.user.username }}">
+													{% endif %}
+												{% endif %}
+											</a>
+
+											<!-- <div class="donet-like-list">
+												<button class="like-unlink-count like">
+													<i class="ri-thumb-up-fill"></i>
+													<span>4974</span>
+												</button>
+											</div>
+
+											<div class="donet-like-list">
+												<button class="like-unlink-count dislike">
+													<i class="ri-thumb-down-fill"></i>
+													<span>25</span>
+												</button>
+											</div> -->
+										</div>
+
+										<div class="flex-grow-1 ms-3">
+											<ul class="graphic-design">
+												<li>
+													<a href="{{ question.user.profile.get_absolute_url }}">{{ question.user.get_full_name|default:'No Name' }}</a>
+												</li>
+												<li>
+													<span>{{ question.created_at }}</span>
+												</li>
+												<li>
+													<span>In:</span>
+													<a href="" class="graphic">
+														{{ question.category.title }}
+													</a>
+												</li>
+											</ul>
+						
+											<h3>
+												<a href="question.get_absolute_url">
+													{{ question.title }}
+												</a>
+											</h3>
+						
+											<p>
+												{{ question.description|linebreaks }}
+											</p>
+											{% if question.tags.all %}
+												<ul class="tag-list">
+													{% for tag in question.tags.all %}
+													<li>
+														<a href="">{{ tag }}</a>
+													</li>
+													{% endfor %}
+												</ul>
+											{% endif %}
+						
+											<div class="d-flex justify-content-between align-items-center">
+												<ul class="anser-list">
+													<!-- <li>
+														<a href="polls.html">
+															24 Vote
+														</a>
+													</li> -->
+													<li>
+														<a href="{{ question.get_absolute_url }}#answers">
+															{{ question.answers.all.count }} Answers
+														</a>
+													</li>
+													<li>
+														<a>
+															{{ question.views }} Views
+														</a>
+													</li>
+													<li>
+														<ul class="qa-share">
+															<li class="share-option">
+																<span>
+																	<i class="ri-share-fill"></i>
+																</span>
+																
+																<ul class="social-icon">
+																	<li>
+																		<a href="https://www.facebook.com/" target="_blank">
+																			<i class="ri-facebook-fill"></i>
+																		</a>
+																	</li>
+																	<li>
+																		<a href="https://www.twitter.com/" target="_blank">
+																			<i class="ri-twitter-line"></i>
+																		</a>
+																	</li>
+																	<li>
+																		<a href="https://www.linkedin.com/" target="_blank">
+																			<i class="ri-linkedin-fill"></i>
+																		</a>
+																	</li>
+																	<li>
+																		<a href="https://www.instagram.com/" target="_blank">
+																			<i class="ri-instagram-line"></i>
+																		</a>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+												</ul>
+						
+												<a href="#answer" class="default-btn bg-ea4335">
+													Answer
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<ul class="answerss d-flex justify-content-between align-items-center" id="answers">
+									<li>
+										<h3>{{ questions.answers.all.count }} Answers</h3>
+									</li>
+									<li>
+										<select class="form-select" aria-label="Default select example">
+											<option selected>All answer</option>
+											<option value="1">Most Votes</option>
+											<option value="2">Most Recent</option>
+										</select>
+									</li>
+								</ul>
+								{% if question.answers.all %}
+									{% for answer in question.answers.all %}
+										<div class="answer-question-details like-dislike">
+											<div class="d-flex">
+												<div class="link-unlike flex-shrink-0">
+													<a href="{{ answer.user.profile.get_absolute_url }}">
+														{% if answer.user.profile.image %}
+															<img src="{{ answer.user.profile.image.url }}" style="max-height: 45px !important;" alt="{{ answer.user.username }}">
+														{% else %}
+															{% if answer.user.profile.gender == 'other' %}
+																<img src="/static/user.png" style="max-height: 45px !important;" alt="{{ answer.user.username }}">
+															{% elif answer.user.profile.gender == 'male' %}
+																<img src="/static/man.png" style="max-height: 45px !important;" alt="{{ answer.user.username }}">
+															{% else %}
+																<img src="/static/woman.png" style="max-height: 45px !important;" alt="{{ answer.user.username }}">
+															{% endif %}
+														{% endif %}
+													</a>
+
+													<!-- <div class="donet-like-list">
+														<button class="like-unlink-count like">
+															<i class="ri-thumb-up-fill"></i>
+															<span>197</span>
+														</button>
+													</div>
+
+													<div class="donet-like-list">
+														<button class="like-unlink-count dislike">
+															<i class="ri-thumb-down-fill"></i>
+															<span>2</span>
+														</button>
+													</div> -->
+												</div>
+
+												<div class="flex-grow-1 ms-3">
+													<ul class="latest-answer-list">
+														<li>
+															<a href="{{ answer.user.profile.get_absolute_url }}">{{ answer.user.get_full_name|default:'No Name' }}</a>
+														</li>
+														<li>
+															<span>{{ answer.created_at }}</span>
+														</li>
+														<li class="reports">
+															<a href="" class="report">
+																<i class="ri-error-warning-line"></i>
+																Report
+															</a>
+														</li>
+													</ul>
+
+													<p>
+														{{ answer.content|safe|linebreaksbr }}
+													</p>
+
+												</div>
+											</div>
+										</div>
+									{% endfor %}
+								{% else %}
+									<div class="answer-question-details">
+										<p>No Answers yet, Be the first to dropped an answer</p>
+									</div>
+								{% endif %}
+								{% if request.user.is_authenticated %}
+									<form class="your-answer-form" id="answer" method="POST">
+										{% csrf_token %}
+										<div class="form-group">
+											<h3>Your Answer</h3>
+										</div>
+										<div class="form-group">
+											<textarea name="content" id="content" cols="30" rows="8" class="form-control" required placeholder="Write your answer here..."></textarea>
+										</div>
+										<div class="form-group">
+											<button type="submit" class="default-btn">Post your answer</button>
+										</div>
+									</form>
+								{% else %}
+									<div class="answer-question-details">
+										<p>You need to <a href="{% url 'account_login' %}">login</a> to answer this question</p>
+									</div>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-3">
+						{% include 'resources/partials/right-sidebar.html' %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Mail Content Area -->
+{% endblock %}

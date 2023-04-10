@@ -35,7 +35,7 @@
                     </ul>
 
                     <h3>
-                        <a href="maquestion.get_absolute_url">
+                        <a href="{{ maquestion.get_absolute_url }}">
                             {{ maquestion.title }}
                         </a>
                     </h3>
@@ -61,13 +61,13 @@
                                 </a>
                             </li> -->
                             <li>
-                                <a href="{{ maquestion.get_absolute_url }}">
-                                    {{ maquestion.answers.all.count }} Answer
+                                <a href="{{ maquestion.get_absolute_url }}#answers">
+                                    {{ maquestion.answers.all.count }} Answers
                                 </a>
                             </li>
                             <li>
                                 <a>
-                                    658 Views
+                                    {{ maquestion.views}} Views
                                 </a>
                             </li>
                             <li>
@@ -104,7 +104,7 @@
                             </li>
                         </ul>
 
-                        <a href="" class="default-btn bg-ea4335">
+                        <a href="{{ maquestion.get_absolute_url }}#answer" class="default-btn bg-ea4335">
                             Answer
                         </a>
                     </div>

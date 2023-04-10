@@ -1,18 +1,18 @@
-{% if most_recent_questions %}
-    {% for recent_question in most_recent_questions %}
+{% if most_viewed_questions %}
+    {% for most_viewed in most_viewed_questions %}
         <div class="single-qa-box like-dislike">
             <div class="d-flex">
                 <div class="link-unlike flex-shrink-0">
-                    <a href="{{ recent_question.user.profile.get_absolute_url }}">
-                        {% if recent_question.user.profile.image %}
-                            <img src="{{ recent_question.user.profile.image.url }}" style="max-height: 45px !important;" alt="{{ recent_question.user.username }}">
+                    <a href="{{ most_viewed.user.profile.get_absolute_url }}">
+                        {% if most_viewed.user.profile.image %}
+                            <img src="{{ most_viewed.user.profile.image.url }}" style="max-height: 45px !important;" alt="{{ most_viewed.user.username }}">
                         {% else %}
-                            {% if recent_question.user.profile.gender == 'other' %}
-                                <img src="/static/user.png" style="max-height: 45px !important;" alt="{{ recent_question.user.username }}">
-                            {% elif recent_question.user.profile.gender == 'male' %}
-                                <img src="/static/man.png" style="max-height: 45px !important;" alt="{{ recent_question.user.username }}">
+                            {% if most_viewed.user.profile.gender == 'other' %}
+                                <img src="/static/user.png" style="max-height: 45px !important;" alt="{{ most_viewed.user.username }}">
+                            {% elif most_viewed.user.profile.gender == 'male' %}
+                                <img src="/static/man.png" style="max-height: 45px !important;" alt="{{ most_viewed.user.username }}">
                             {% else %}
-                                <img src="/static/woman.png" style="max-height: 45px !important;" alt="{{ recent_question.user.username }}">
+                                <img src="/static/woman.png" style="max-height: 45px !important;" alt="{{ most_viewed.user.username }}">
                             {% endif %}
                         {% endif %}
                     </a>
@@ -35,31 +35,31 @@
                 <div class="flex-grow-1 ms-3">
                     <ul class="graphic-design">
                         <li>
-                            <a href="{{ recent_question.user.profile.get_absolute_url }}">{{ recent_question.user.get_full_name|default:'No Name' }}</a>
+                            <a href="{{ most_viewed.user.profile.get_absolute_url }}">{{ most_viewed.user.get_full_name|default:'No Name' }}</a>
                         </li>
                         <li>
-                            <span>{{ recent_question.created_at }}</span>
+                            <span>{{ most_viewed.created_at }}</span>
                         </li>
                         <li>
                             <span>In:</span>
                             <a href="" class="graphic">
-                                {{ recent_question.category.title }}
+                                {{ most_viewed.category.title }}
                             </a>
                         </li>
                     </ul>
 
                     <h3>
-                        <a href="{{ recent_question.get_absolute_url }}">
-                            {{ recent_question.title }}
+                        <a href="{{ most_viewed.get_absolute_url }}">
+                            {{ most_viewed.title }}
                         </a>
                     </h3>
 
                     <p>
-                        {{ recent_question.description|truncatechars:220 }}
+                        {{ most_viewed.description|truncatechars:220 }}
                     </p>
-                    {% if recent_question.tags.all %}
+                    {% if most_viewed.tags.all %}
                         <ul class="tag-list">
-                            {% for tag in recent_question.tags.all %}
+                            {% for tag in most_viewed.tags.all %}
                             <li>
                                 <a href="">{{ tag }}</a>
                             </li>
@@ -74,13 +74,13 @@
                                 </a>
                             </li> -->
                             <li>
-                                <a href="{{ recent_question.get_absolute_url }}">
-                                    {{ recent_question.answers.all.count }} Answer
+                                <a href="{{ most_viewed.get_absolute_url }}#answers">
+                                    {{ most_viewed.answers.all.count }} Answers
                                 </a>
                             </li>
                             <li>
                                 <a>
-                                    658 Views
+                                    {{ most_viewed.views}}  Views
                                 </a>
                             </li>
                             <li>
@@ -117,13 +117,13 @@
                             </li>
                         </ul>
 
-                        <a href="" class="default-btn">
+                        <a href="{{ most_viewed.get_absolute_url }}#answer" class="default-btn">
                             Answer
                         </a>
                     </div>
                 </div>
             </div>
-            <span class="featured">Featured</span>
+            <span class="featured">Most Viewed</span>
         </div>
     {% endfor %}
 {% else %}
