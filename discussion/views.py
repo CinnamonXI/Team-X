@@ -3,6 +3,7 @@ from .models import Community, Group, Question, Answer
 from core.models import Tag, Category
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 # Create your views here.
 def questions(request):
     questions = Question.objects.all()
@@ -335,3 +336,32 @@ def category_detail(request, slug):
         'questions': questions,
     }
     return render(request, 'forum/category-detail.html', context)
+
+def search(request):
+    query = request.GET.get('q')
+    if query:
+        questions = Question.objects.filter(Q(title__icontains=query) | Q(description__icontains=query)| Q(tags__title__icontains=query))
+        total_results = questions.count()
+        unanswered_questions = []
+        for question in questions:
+            if question.answers.count() == 0:
+                unanswered_questions.append(question)
+
+        most_answered_questions = sorted(questions, key=lambda x: x.answers.count(), reverse=True)
+        most_recent_questions = sorted(questions, key=lambda x: x.created_at, reverse=True)
+        most_viewed_questions = sorted(questions, key=lambda x: x.views, reverse=True)
+
+        context = {
+            'title': f"({total_results})Search results for  '{query}'",
+            'questions': questions,
+            'q_category': 'is_active',
+            'unanswered_questions': unanswered_questions,
+            'most_answered_questions': most_answered_questions,
+            'most_recent_questions': most_recent_questions,
+            'most_viewed_questions': most_viewed_questions,
+        }
+        return render(request, 'forum/index.html', context)
+    else:
+        messages.warning(request, 'Please enter a search term')
+        return redirect('questions:all')
+    

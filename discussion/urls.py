@@ -8,6 +8,7 @@ urlpatterns=[
     path('ask/group/<slug:slug>', views.ask_group, name='ask_group'),
     path('ask/community/<slug:slug>', views.ask_community, name='ask_community'),
     path('tags/', views.tag_list, name='tags'),
+    path('search/', views.search, name='search'),
     path('groups/', views.group_list, name='groups'),
     path('communities/', views.communities, name='communities'),
     path('<slug:slug>/', views.question_detail, name='question_detail'),

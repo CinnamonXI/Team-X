@@ -1,6 +1,6 @@
-<form class="aq-form">
+<form class="aq-form" method="GET" action="{% url 'questions:search' %}">
     <i class="ri-search-line"></i>
-    <input type="search" required class="form-control" placeholder="Have a question? Ask or enter a search">
+    <input type="search" required name="q" class="form-control" placeholder="Have a question? Ask or enter a search">
     <button class="aq-btn" type="submit">
         Ask Question
     </button>
