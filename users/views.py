@@ -4,17 +4,79 @@ from django.shortcuts import get_object_or_404
 from .models import Profile, Follower, HealthData
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from core.views import check_if_userprofile_is_updated
+import re
 # Create your views here.
+
+def validate_username(username):
+    regex = '^[a-zA-Z0-9]+$'
+    if not re.match(regex, username):
+        return False
+    return True
+
+def get_following(user):
+    following = Follower.objects.filter(user_from=user)
+    return following
 
 @login_required
 def profile(request):
+    if not check_if_userprofile_is_updated(request.user):
+        messages.warning(request, 'Please update your profile to get the best experience.')
     context = {
-        'title': 'My Profile'
+        'title': 'My Profile',
+        'total_followers': get_following(request.user).count(),
     }
     return render(request, 'user/index.html', context)
 
 @login_required
-def edit_profile(request):
+def edit_profile(request): 
+    user = request.user
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        email = request.POST.get('email')
+        bio = request.POST.get('bio')
+        gender = request.POST.get('gender')
+        age = request.POST.get('age')
+        location = request.POST.get('location')
+        phone_number = request.POST.get('phone_number')
+        language_preference = request.POST.get('language_preference')
+        instagram = request.POST.get('instagram')
+        twitter = request.POST.get('twitter')
+        linkedin = request.POST.get('linkedin')
+        image = request.FILES.get('image', None)
+        # print(username)
+        #validate username to confirm it doesnt contain spaces and special characters
+        if not validate_username(username):
+            messages.warning(request, 'Username can only contain letters and numbers.')
+            return redirect('users:edit_profile')
+        else:
+            #validate username to confirm it doesnt already exist
+            if User.objects.filter(username=username).exists() and username != user.username:
+                messages.warning(request, 'Username already exists.')
+                return redirect('users:edit_profile')
+            else:
+                user.username = username
+                user.first_name = first_name
+                user.last_name = last_name
+                user.email = email
+                user.save()
+                profile = Profile.objects.get(user=user)
+                profile.bio = bio
+                profile.phone_number = phone_number
+                profile.gender = gender
+                profile.age = age
+                profile.location = location
+                profile.language_preference = language_preference
+                profile.instagram = instagram
+                profile.twitter = twitter
+                profile.linkedin = linkedin
+                if image:
+                    profile.image = image
+                profile.save()
+                messages.success(request, 'Profile updated successfully.')        
+
     context = {
         'title': 'Edit Profile'
     }
@@ -58,7 +120,8 @@ def user_profile(request, username):
     context = {
         'user': user,
         'title': f"{user}'s Profile",
-        'is_following': is_following
+        'is_following': is_following,
+        'total_followers': get_following(user).count(), 
     }
     return render(request, 'user/index.html', context)
 

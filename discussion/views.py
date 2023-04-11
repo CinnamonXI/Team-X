@@ -4,8 +4,11 @@ from core.models import Tag, Category
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from core.views import check_if_userprofile_is_updated
 # Create your views here.
 def questions(request):
+    if not check_if_userprofile_is_updated(request.user):
+        messages.warning(request, 'Please update your profile to get the best experience.')
     questions = Question.objects.all()
     unanswered_questions = []
     for question in questions:
@@ -26,6 +29,8 @@ def questions(request):
     return render(request, 'forum/index.html', context)
 
 def question_detail(request, slug):
+    if not check_if_userprofile_is_updated(request.user):
+        messages.warning(request, 'Please update your profile to get the best experience.')
     question = get_object_or_404(Question, slug=slug)
     question.views += 1
     question.save()

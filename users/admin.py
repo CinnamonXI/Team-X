@@ -4,8 +4,8 @@ from .models import Profile, Team, Follower, HealthData
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
-    list_display = ('user', 'gender', 'phone_number', 'created_at', 'updated_at')
-    list_filter = ('created_at', 'updated_at')
+    list_display = ('user', 'gender', 'age', 'location', 'language_preference', 'phone_number', 'created_at', 'updated_at')
+    list_filter = ('language_preference', 'created_at', 'updated_at')
     search_fields = ('user__username', 'user__email')
     date_hierarchy = 'created_at'
     ordering = ('-created_at',)

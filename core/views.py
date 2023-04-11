@@ -7,6 +7,12 @@ from users.models import Team
 from resources.models import Article, Video, Document
 from discussion.models import Question
 # Create your views here.
+def check_if_userprofile_is_updated(user):
+    if user.first_name and user.last_name and user.email:
+        return True
+    else:
+        return False
+
 def index(request):
     questions = Question.objects.all()
     unanswered_questions = []
@@ -17,6 +23,8 @@ def index(request):
     most_answered_questions = sorted(questions, key=lambda x: x.answers.count(), reverse=True)
     most_recent_questions = sorted(questions, key=lambda x: x.created_at, reverse=True)
     most_viewed_questions = sorted(questions, key=lambda x: x.views, reverse=True)
+    if not check_if_userprofile_is_updated(request.user):
+        messages.warning(request, 'Please update your profile to get the best experience.')
     context = {
         'title': 'Homepage',
         'unanswered_questions': unanswered_questions,

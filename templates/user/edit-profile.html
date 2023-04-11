@@ -18,7 +18,7 @@
 									</li>
 									
 									<li class="nav-item" role="presentation">
-										<button class="nav-link" id="change-password-tab" data-bs-toggle="tab" data-bs-target="#change-password" type="button" role="tab" aria-controls="change-password" aria-selected="false">Change Password</button>
+										<button class="nav-link" id="change-linkedin-tab" data-bs-toggle="tab" data-bs-target="#change-linkedin" type="button" role="tab" aria-controls="change-linkedin" aria-selected="false">Change Password</button>
 									</li>
 
 									<li class="nav-item" role="presentation">
@@ -38,77 +38,139 @@
 									<div class="tab-pane fade show active edit-profile" id="edit-profile" role="tabpanel" aria-labelledby="edit-profile-tab">
 										<div class="public-information">
 											<h3>Public information</h3>
-
-											<div class="information d-flex align-items-center">
-												{% if user.profile.image %}
-													<img src="{{ user.profile.image.url }}" style="min-height: 45px !important;" alt="{{ user.username }}">
-												{% else %}
-													{% if user.profile.gender == 'other' %}
-														<img src="/static/user.png" style="min-height: 45px !important;" alt="{{ user.username }}">
-													{% elif user.profile.gender == 'male' %}
-														<img src="/static/man.png" style="min-height: 45px !important;" alt="{{ user.username }}">
-													{% else %}
-														<img src="/static/woman.png" style="min-height: 45px !important;" alt="{{ user.username }}">
-													{% endif %}
-												{% endif %}											
-												<div class="file-upload-account-info">
-													<input type="file" name="file" id="file-2" class="inputfile">
-													<label class="upload">
-														<i class="ri-link"></i>
-														Upload Photo
-													</label>
-													<span>Maximum file size: 10 MB.</span>
-												</div>
-											</div>
-
-											<form class="edeite-content">
+											<form class="edeite-content" method="post" enctype="multipart/form-data">
+												{% csrf_token %}
 												<div class="form-group">
-													<label>Display name</label>
-													<input type="text" class="form-control" name="name" id="name">
+													<div class="row">
+														<div class="col-sm-12">
+															<label for="image">Profile Picture</label>
+															<input type="file" name="image" id="image" class="form-control" src="{{ user.profile.image.url }}">
+														</div>
+													</div>
 												</div>
-
 												<div class="form-group">
-													<label>Location</label>
-													<input type="text" class="form-control" name="location" id="location">
+													<div class="row">
+														<div class="col-sm-6">
+															<label for="first-name">First Name*</label>
+															<input type="text" class="form-control" name="first_name" id="first-name" required value="{{ user.first_name }}">
+														</div>
+														<div class="col-sm-6">
+															<label for="last-name">Last Name*</label>
+															<input type="text" class="form-control" name="last_name" id="last-name" required value="{{ user.last_name }}">
+														</div>
+													</div>
 												</div>
-												
 												<div class="form-group">
-													<label>About me</label>
-													<div id="txtEditor"></div>
+													<div class="row">
+														<div class="col-sm-6">
+															<label for="email">Email*</label>
+															<input type="email" class="form-control" name="email" id="email" required value="{{ user.email }}">
+														</div>
+														<div class="col-sm-6">
+															<label for="phone">Phone*</label>
+															<input type="text" class="form-control" name="phone_number" required id="phone" value="{{ user.profile.phone_number }}">
+														</div>
+													</div>
 												</div>
 
 												<div class="form-group">
-													<h3>Social Profiles</h3>
+													<div class="row">
+														<div class="col-sm-6">
+															<label>Location</label>
+															<input type="text" class="form-control" name="location" id="location" value="{{ user.profile.location }}">
+														</div>
+														<div class="col-sm-6">
+															<label for="username">Username*</label>
+															<input type="text" class="form-control" name="username" required id="username" value="{{ user.username }}">
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="row">
+														<div class="col-sm-6">
+															<label for="gender">Gender*</label>
+															<select name="gender" required class="form-control" id="gender">
+																{% if user.profile.gender == 'male' %}
+																	<option value="male" selected>Male</option>
+																	<option value="female">Female</option>
+																	<option value="other">Other</option>
+																{% endif %}
+																{% if user.profile.gender == 'female' %}
+																	<option value="male">Male</option>
+																	<option value="female" selected>Female</option>
+																	<option value="other">Other</option>
+																{% endif %}
+																{% if user.profile.gender == 'other' %}
+																	<option value="male">Male</option>
+																	<option value="female">Female</option>
+																	<option value="other" selected>Other</option>
+																{% endif %}
+															</select>
+														</div>
+														<div class="col-sm-6">
+															<label for="age">Age</label>
+															<input type="number" class="form-control" name="age" id="age" value="{{ user.profile.age }}">
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="row">
+														<div class="col-sm-6">
+															<label for="language_preference">Language Preference*</label>
+															<select name="language_preference" required class="form-control" id="language_preference">
+																{% if user.profile.language_preference == 'English' %}
+																	<option value="English" selected>English</option>
+																	<option value="Kiswahili">Kiswahili</option>
+																	<option value="Yoruba">Yoruba</option>
+																	<option value="Igbo">Igbo</option>
+																{% endif %}
+																{% if user.profile.language_preference == 'Kiswahili' %}
+																	<option value="English">English</option>
+																	<option value="Kiswahili" selected>Kiswahili</option>
+																	<option value="Yoruba">Yoruba</option>
+																	<option value="Igbo">Igbo</option>
+																{% endif %}
+																{% if user.profile.language_preference == 'Yoruba' %}
+																	<option value="English">English</option>
+																	<option value="Kiswahili">Kiswahili</option>
+																	<option value="Yoruba" selected>Yoruba</option>
+																	<option value="Igbo">Igbo</option>
+																{% endif %}
+																{% if user.profile.language_preference == 'Yoruba' %}
+																	<option value="English">English</option>
+																	<option value="Kiswahili">Kiswahili</option>
+																	<option value="Yoruba">Yoruba</option>
+																	<option value="Igbo" selected>Igbo</option>
+																{% endif %}
+															</select>
+														</div>
+														<div class="col-sm-6">
+															<label for="linkedin">LinkedIn</label>
+															<input type="url" class="form-control" name="linkedin" id="linkedin" value="{{ user.profile.linkedin }}">
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="row">
+														<div class="col-sm-6">
+															<label for="twitter">Twitter</label>
+															<input type="url" class="form-control" name="twitter" id="twitter" value="{{ user.profile.twitter }}">
+														</div>
+														<div class="col-sm-6">
+															<label for="instagram">Instagram</label>
+															<input type="url" class="form-control" name="instagram" id="instagram" value="{{ user.profile.instagram }}">
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="bio">About me</label>
+													<textarea name="bio" id="bio" class="form-control" cols="30" rows="10">{{ user.profile.bio }}</textarea>
 												</div>
 
 												<div class="row">
-													<div class="col-lg-6 col-mad-6">
-														<div class="form-group">
-															<label>Website link</label>
-															<input type="text" class="form-control" name="WebsiteLink" id="website-link">
-														</div>
-													</div>
-													<div class="col-lg-6 col-mad-6">
-														<div class="form-group">
-															<label>Twitter link</label>
-															<input type="text" class="form-control" name="twitter" id="twitter">
-														</div>
-													</div>
-													<div class="col-lg-6 col-mad-6">
-														<div class="form-group">
-															<label>Facebook link</label>
-															<input type="text" class="form-control" name="facebook" id="facebook">
-														</div>
-													</div>
-													<div class="col-lg-6 col-mad-6">
-														<div class="form-group">
-															<label>GitHub link</label>
-															<input type="text" class="form-control" name="github" id="github">
-														</div>
-													</div>
 													<div class="col-12">
 														<div class="form-group mb-0">
-															<button class="default-btn">Save change</button>
+															<button type="submit" class="default-btn">Save change</button>
 														</div>
 													</div>
 												</div>
@@ -116,12 +178,12 @@
 										</div>
 									</div>
 	
-									<div class="tab-pane fade edit-profile" id="change-password" role="tabpanel" aria-labelledby="change-password-tab">
+									<div class="tab-pane fade edit-profile" id="change-linkedin" role="tabpanel" aria-labelledby="change-linkedin-tab">
 										<div class="public-information">
-											<h3>Change password</h3>
+											<h3>Change linkedin</h3>
 											<div class="form-group mb-0">
 												<a href="{% url 'account_change_password' %}">
-													<button class="default-btn">Change password</button>
+													<button class="default-btn">Change linkedin</button>
 												</a>
 											</div>
 										</div>

@@ -15,7 +15,7 @@
         <span>Member since {{ user.date_joined }}</span>
         <span>Last seen {{ user.last_login }}</span>
         <button class="followers-btn">{{ user.profile.followers.all|length }} Followers</button>
-        <button class="followers-btn">{{ user.profile.following.all|length }} Following</button>
+        <button class="followers-btn">{{ total_followers }} Following</button>
     </div>
     <div class="edit-btn">
         {% if user == request.user %}
