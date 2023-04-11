@@ -20,8 +20,8 @@ class TeamAdmin(admin.ModelAdmin):
 
 @admin.register(HealthData)
 class HealthDataAdmin(admin.ModelAdmin):
-    list_display = ('user', 'weight', 'height', 'status', 'systolic_bp', 'diastolic_bp', 'heart_rate', 'created_at', 'updated_at')
-    list_filter = ('created_at', 'updated_at')
+    list_display = ('user', 'weight', 'height', 'status', 'systolic_bp', 'diastolic_bp', 'heart_rate', 'smoke', 'take_alcohol', 'is_disabled', 'created_at', 'updated_at')
+    list_filter = ('smoke', 'take_alcohol', 'is_disabled','created_at', 'updated_at')
     search_fields = ('user__username', 'user__email')
     date_hierarchy = 'created_at'
     ordering = ('-created_at',)

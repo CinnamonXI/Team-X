@@ -83,6 +83,23 @@ def add_health_record(request):
         interest = request.POST.get('interest')
         allergies = request.POST.get('allergies')
         status = request.POST.get('status')
+        is_disabled = request.POST.get('is_disabled')
+        smoke = request.POST.get('smoke')
+        take_alcohol = request.POST.get('take_alcohol')
+        #convert to boolean
+        if is_disabled == 'True':
+                is_disabled = True
+        else:
+            is_disabled = False
+        if smoke == 'True':
+            smoke = True
+        else:
+            smoke = False
+        if take_alcohol == 'True':
+            take_alcohol = True
+        else:
+            take_alcohol = False
+
         health_data = HealthData.objects.create(
             user=request.user,
             weight=weight,
@@ -92,7 +109,10 @@ def add_health_record(request):
             diastolic_bp=diastolic_bp,
             interests=interest,
             allergies=allergies,
-            status=status
+            status=status,
+            take_alcohol = take_alcohol,
+            smoke = smoke,
+            is_disabled = is_disabled
         )
         health_data.save()
         messages.success(request, 'Health record added successfully.')
@@ -119,6 +139,23 @@ def edit_health_record(request, id):
             interest = request.POST.get('interest')
             allergies = request.POST.get('allergies')
             status = request.POST.get('status')
+            is_disabled = request.POST.get('is_disabled')
+            smoke = request.POST.get('smoke')
+            take_alcohol = request.POST.get('take_alcohol')
+            #convert to boolean
+            if is_disabled == 'True':
+                is_disabled = True
+            else:
+                is_disabled = False
+            if smoke == 'True':
+                smoke = True
+            else:
+                smoke = False
+            if take_alcohol == 'True':
+                take_alcohol = True
+            else:
+                take_alcohol = False
+
             health_data.weight = weight
             health_data.height = height
             health_data.heart_rate = heart_rate
@@ -127,6 +164,9 @@ def edit_health_record(request, id):
             health_data.interests = interest
             health_data.allergies = allergies
             health_data.status = status
+            health_data.take_alcohol = take_alcohol
+            health_data.smoke = smoke
+            health_data.is_disabled = is_disabled
             health_data.save()
             messages.success(request, 'Health record updated successfully.')
             return redirect('users:health_records')

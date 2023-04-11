@@ -70,45 +70,18 @@ class Team(models.Model):
 
 # Model for collecting users health data and interests
 class HealthData(models.Model):
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE,
-        related_name='health_data'
-    )
-    height = models.DecimalField(
-        max_digits=5, decimal_places=2,
-        help_text="Height in Centimeters (e.g. 175.2)"
-    )
-    weight = models.DecimalField(
-        max_digits=5, decimal_places=2,
-        help_text="Weight in kilograms (e.g. 70.5)"
-    )
-    systolic_bp = models.PositiveIntegerField(
-        help_text="Systolic blood pressure in mmHg (e.g. 120)"
-    )
-    diastolic_bp = models.PositiveIntegerField(
-        help_text="Diastolic blood pressure in mmHg (e.g. 80)"
-    )
-    heart_rate = models.PositiveIntegerField(
-        help_text="Heart rate in beats per minute (e.g. 70)"
-    )
-    status = models.CharField(
-        max_length=50,
-        blank=True,
-        null=True,
-        help_text="Current health status (e.g. diabetes, asthma, etc.)"
-    )
-    allergies = models.CharField(
-        max_length=100,
-        blank=True,
-        null=True,
-        help_text="Known allergies (e.g. pollen, dust, etc.)"
-    )
-    interests = models.CharField(
-        max_length=100,
-        blank=True,
-        null=True,
-        help_text="Interests and hobbies (e.g. sports, music, etc.)"
-    )
+    user = models.ForeignKey(User, on_delete=models.CASCADE,related_name='health_data')
+    height = models.DecimalField(max_digits=5, decimal_places=2,help_text="Height in Centimeters (e.g. 175.2)")
+    weight = models.DecimalField(max_digits=5, decimal_places=2,help_text="Weight in kilograms (e.g. 70.5)")
+    systolic_bp = models.PositiveIntegerField(help_text="Systolic blood pressure in mmHg (e.g. 120)")
+    diastolic_bp = models.PositiveIntegerField(help_text="Diastolic blood pressure in mmHg (e.g. 80)")
+    heart_rate = models.PositiveIntegerField(help_text="Heart rate in beats per minute (e.g. 70)")
+    status = models.CharField(max_length=200,blank=True,null=True,help_text="Current health status (e.g. diabetes, asthma, etc.)")
+    allergies = models.CharField(max_length=200,blank=True,null=True,help_text="Known allergies (e.g. pollen, dust, etc.)")
+    interests = models.CharField(max_length=100,blank=True,null=True,help_text="Interests and hobbies (e.g. sports, music, etc.)")
+    take_alcohol = models.BooleanField(default=False)
+    smoke = models.BooleanField(default=False)
+    is_disabled = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

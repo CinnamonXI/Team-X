@@ -52,6 +52,46 @@
 								<hr>
 								<div class="form-group">
 									<div class="row">
+										<div class="col-sm-4">
+											<label for="is_disabled">Are you disabled?*</label>
+											<select name="is_disabled" id="is_disabled" required class="form-control rounded-pill form-control-sm">
+												{% if record.is_disabled %}
+													<option value="True" selected>Yes</option>
+													<option value="False">No</option>
+												{% else %}
+													<option value="True">Yes</option>
+													<option value="False" selected>No</option>
+												{% endif %}
+											</select>
+										</div>
+										<div class="col-sm-4">
+											<label for="smoke">Do you smoke?*</label>
+											<select name="smoke" id="smoke" required class="form-control rounded-pill form-control-sm">
+												{% if record.smoke %}
+													<option value="True" selected>Yes</option>
+													<option value="False">No</option>
+												{% else %}
+													<option value="True">Yes</option>
+													<option value="False" selected>No</option>
+												{% endif %}
+											</select>
+										</div>
+										<div class="col-sm-4">
+											<label for="take_alcohol">Do you take alcohol?*</label>
+											<select name="take_alcohol" id="take_alcohol" required class="form-control rounded-pill form-control-sm">
+												{% if record.take_alcohol %}
+													<option value="True" selected>Yes</option>
+													<option value="False">No</option>
+												{% else %}
+													<option value="True">Yes</option>
+													<option value="False" selected>No</option>
+												{% endif %}
+											</select>
+										</div>
+									</div>
+								<hr>
+								<div class="form-group">
+									<div class="row">
 										<div class="col-sm-12">
 											<label for="status">Health Status:</label>
 											<input type="text" name="status" id="status" class="form-control rounded-pill form-control-sm" value="{{ record.status }}">
