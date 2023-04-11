@@ -21,10 +21,20 @@ class Follower(models.Model):
         ordering = ('-created_at',)
     def __str__(self):
         return f'{self.user_from} follows {self.user_to}'
-    
+
+LANGUAGE_CHOICES = (
+    #languages in Kenya and nigeria
+    ('English', 'English'),
+    ('Kiswahili', 'Kiswahili'),
+    ('Yoruba', 'Yoruba'),
+    ('Igbo', 'Igbo'),
+)   
 class Profile(models.Model):
     user = models.OneToOneField('auth.User', on_delete=models.CASCADE, related_name='profile')
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES, default='other')
+    age = models.PositiveSmallIntegerField(blank=True, null=True)
+    location = models.CharField(max_length=100, blank=True, null=True)
+    language_preference = models.CharField(max_length=100, choices=LANGUAGE_CHOICES, default='English')
     followers = models.ManyToManyField(Follower, blank=True)
     image = models.ImageField(upload_to='users/profiles/', null=True, blank=True)
     bio = models.TextField(null=True, blank=True)
@@ -57,6 +67,53 @@ class Team(models.Model):
     
     class Meta:
         ordering = ('order',)
+
+# Model for collecting users health data and interests
+class HealthData(models.Model):
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE,
+        related_name='health_data'
+    )
+    height = models.DecimalField(
+        max_digits=5, decimal_places=2,
+        help_text="Height in Centimeters (e.g. 175.2)"
+    )
+    weight = models.DecimalField(
+        max_digits=5, decimal_places=2,
+        help_text="Weight in kilograms (e.g. 70.5)"
+    )
+    systolic_bp = models.PositiveIntegerField(
+        help_text="Systolic blood pressure in mmHg (e.g. 120)"
+    )
+    diastolic_bp = models.PositiveIntegerField(
+        help_text="Diastolic blood pressure in mmHg (e.g. 80)"
+    )
+    heart_rate = models.PositiveIntegerField(
+        help_text="Heart rate in beats per minute (e.g. 70)"
+    )
+    status = models.CharField(
+        max_length=50,
+        blank=True,
+        null=True,
+        help_text="Current health status (e.g. diabetes, asthma, etc.)"
+    )
+    allergies = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        help_text="Known allergies (e.g. pollen, dust, etc.)"
+    )
+    interests = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        help_text="Interests and hobbies (e.g. sports, music, etc.)"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+
+    
 
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):

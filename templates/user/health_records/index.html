@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block content %}
+
+	<!-- Start Mail Content Area -->
+	<div class="main-content-area ptb-100">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					{% include 'partials/left-sidebar.html' %}
+				</div>
+
+				<div class="col-lg-9">
+
+						<div class="edit-profile-area">
+							{% include 'user/partials/top-nav.html' %}
+						</div>
+						<div class="container-fluid">
+							<div class="row justify-content-between align-items-center py-4">
+								<div class="col-md-8">
+									<h3 class="card-title text-info">Health Data</h3>
+								</div>
+								<div class="col-md-3 text-right">
+									<a href="{% url 'users:add_health_record' %}" class="btn btn-info rounded-pill">Add Health Record</a>
+								</div>
+							</div>
+							<div class="table-responsive">
+								<table id="dtBasicExample" class="table table-striped table-bordered table-sm responsive" cellspacing="0" width="100%">
+									<thead>
+									<tr>
+										<th class="th-sm">Gender</th>
+										<th class="th-sm">Age</th>
+										<th class="th-sm">Height(cm)</th>
+										<th class="th-sm">Weight(kg)</th>
+										<th class="th-sm">Heart Rate(BPM)</th>
+										<th class="th-sm">Systolic BP(mmHg)</th>
+										<th class="th-sm">Diastolic BP(mmHg)</th>
+										<th class="th-sm">Heath Status</th>
+										<th class="th-sm">Allergies</th>
+										<th class="th-sm">Interests</th>
+										<th class="th-sm">Action</th>
+									</tr>
+									</thead>
+									<tbody>
+										{% if health_records %}
+											{% for record in health_records %}
+												<tr>
+													<td>{{ request.user.profile.gender }}</td>
+													<td>{{ request.user.profile.age|default:'0' }}</td>
+													<td>{{ record.height|default:'0' }}</td>
+													<td>{{ record.weight|default:'0' }}</td>
+													<td>{{ record.heart_rate|default:'0' }}</td>
+													<td>{{ record.systolic_bp|default:'0' }}</td>
+													<td>{{ record.diastolic_bp|default:'0' }}</td>
+													<td>{{ record.status|default:'-' }}</td>
+													<td>{{ record.allergies|default:'-' }}</td>
+													<td>{{ record.interests|default:'-' }}</td>
+													<td>
+														<a href="{% url 'users:edit_health_record' record.id %}" class="text-info">Edit</a>
+														<a href="{% url 'users:delete_health_record' record.id %}" class="text-danger">Delete</a>
+													</td>
+												</tr>
+											{% endfor %}
+										{% else %}
+											<tr><td colspan="8" class="text-center py-3">No records found</td></tr>
+										{% endif %}
+									</tbody>
+									<tfoot>
+									<tr>
+										<th class="th-sm">Gender</th>
+										<th class="th-sm">Age</th>
+										<th class="th-sm">Height(cm)</th>
+										<th class="th-sm">Weight(kg)</th>
+										<th class="th-sm">Heart Rate(BPM)</th>
+										<th class="th-sm">Systolic BP(mmHg)</th>
+										<th class="th-sm">Diastolic BP(mmHg)</th>
+										<th class="th-sm">Heath Status</th>
+										<th class="th-sm">Allergies</th>
+										<th class="th-sm">Interests</th>
+										<th class="th-sm">Action</th>
+									</tr>
+									</tfoot>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Mail Content Area -->
+{% endblock %}

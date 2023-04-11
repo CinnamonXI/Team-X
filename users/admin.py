@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile, Team, Follower
+from .models import Profile, Team, Follower, HealthData
 # Register your models here.
 
 @admin.register(Profile)
@@ -17,6 +17,14 @@ class TeamAdmin(admin.ModelAdmin):
     search_fields = ('title',)
     date_hierarchy = 'created_at'
     ordering = ('order',)
+
+@admin.register(HealthData)
+class HealthDataAdmin(admin.ModelAdmin):
+    list_display = ('user', 'weight', 'height', 'status', 'systolic_bp', 'diastolic_bp', 'heart_rate', 'created_at', 'updated_at')
+    list_filter = ('created_at', 'updated_at')
+    search_fields = ('user__username', 'user__email')
+    date_hierarchy = 'created_at'
+    ordering = ('-created_at',)
 
 @admin.register(Follower)
 class FollowerAdmin(admin.ModelAdmin):

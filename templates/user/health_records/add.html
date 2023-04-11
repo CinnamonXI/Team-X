@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+
+	<!-- Start Mail Content Area -->
+	<div class="main-content-area ptb-100">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					{% include 'partials/left-sidebar.html' %}
+				</div>
+
+				<div class="col-lg-9">
+
+						<div class="edit-profile-area">
+							{% include 'user/partials/top-nav.html' %}
+						</div>
+						<div class="container-fluid">
+							<form action="" method="POST">
+								{% csrf_token %}
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6">
+											<label for="weight">Weight*:</label>
+											<input type="number" name="weight" id="weight" required class="form-control rounded-pill form-control-sm" placeholder="Weight in kilograms (e.g. 70.5)">
+										</div>
+										<div class="col-sm-6">
+											<label for="height">Height*:</label>
+											<input type="number" name="height" id="height" required class="form-control rounded-pill form-control-sm" placeholder="Height in Centimeters (e.g. 175.2)">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-12">
+											<label for="heart_rate">Heart Rate*:</label>
+											<input type="number" name="heart_rate" id="heart_rate" required class="form-control rounded-pill form-control-sm" placeholder="Heart rate in beats per minute (e.g. 70)">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6">
+											<label for="systolic_bp">Systolic BP*:</label>
+											<input type="number" name="systolic_bp" id="systolic_bp" required class="form-control rounded-pill form-control-sm" placeholder="Systolic blood pressure in mmHg (e.g. 120)">
+										</div>
+										<div class="col-sm-6">
+											<label for="diastolic_bp">Diastolic BP*:</label>
+											<input type="number" name="diastolic_bp" id="diastolic_bp" required class="form-control rounded-pill form-control-sm" placeholder="Diastolic blood pressure in mmHg (e.g. 80)">
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-12">
+											<label for="status">Health Status:</label>
+											<input type="text" name="status" id="status" class="form-control rounded-pill form-control-sm" placeholder="Current health status (e.g. diabetes, asthma, etc.)">
+										</div>
+										<div class="col-sm-12">
+											<label for="allergies">Allergies:</label>
+											<input type="text" name="allergies" id="allergies" class="form-control rounded-pill form-control-sm" placeholder="Known allergies (e.g. pollen, dust, etc.)">
+										</div>
+										<div class="col-sm-12">
+											<label for="interest">Interests:</label>
+											<input type="text" name="interest" id="interest" class="form-control rounded-pill form-control-sm" placeholder="Interests (e.g. sports, music, etc.)">
+										</div>
+									</div>
+								</div>
+								<div class="form-group my-3">
+									<div class="row">
+										<div class="col-sm-12">
+											<button type="submit" class="btn btn-info w-100 btn-lg rounded-pill">Submit</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Mail Content Area -->
+{% endblock %}
