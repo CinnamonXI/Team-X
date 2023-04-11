@@ -21,4 +21,8 @@ urlpatterns=[
     path('ask/group/<slug:slug>', views.ask_group, name='ask_group'),
     path('communities/<slug:slug>/about/', views.community_about, name='community_about'),
     path('communities/<slug:slug>/follow-unfollow/', views.follow_unfollow_community, name='follow_unfollow_community'),
+    path('answer/<int:answer_id>/like/', views.like_answer, name='like_answer'),
+    path('answer/<int:answer_id>/dislike/', views.dislike_answer, name='dislike_answer'),
+    path('question/<int:question_id>/like/', views.like_question, name='like_question'),
+    path('question/<int:question_id>/dislike/', views.dislike_question, name='dislike_question'),
 ]

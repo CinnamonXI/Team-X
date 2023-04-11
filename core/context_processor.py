@@ -15,7 +15,7 @@ def categories(request):
     return {
         'categories': Category.objects.all(),
         'tags': Tag.objects.all(),
-        'latest_post': Question.objects.order_by('-created_at')[:5],
+        'latest_post': Question.objects.order_by('-likes')[:5],
         'top_members': User.objects.all()[:4],
         'total_users': User.objects.all().count(),
         'total_questions': Question.objects.all().count(),

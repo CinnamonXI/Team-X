@@ -47,19 +47,29 @@
 												{% endif %}
 											</a>
 
-											<!-- <div class="donet-like-list">
+											<div class="donet-like-list">
 												<button class="like-unlink-count like">
-													<i class="ri-thumb-up-fill"></i>
-													<span>4974</span>
+													<form method="post" action="{% url 'questions:like_question' question.id %}">
+														{% csrf_token %}
+														<input type="hidden" name="question_id" value="{{ question.id }}">
+														<input type="hidden" name="action" value="like">
+														<button type="submit" class="like-unlink-count like"><i class="ri-thumb-up-fill"></i></button>
+													</form>
+														<span>{{ question.likes }}</span>
 												</button>
 											</div>
 
 											<div class="donet-like-list">
 												<button class="like-unlink-count dislike">
-													<i class="ri-thumb-down-fill"></i>
-													<span>25</span>
+													<form method="post" action="{% url 'questions:dislike_question' question.id %}">
+														{% csrf_token %}
+														<input type="hidden" name="question_id" value="{{ question.id }}">
+														<input type="hidden" name="action" value="dislike">
+														<button type="submit" class="like-unlink-count dislike"><i class="ri-thumb-down-fill"></i></button>
+													</form>
+													<span>{{ question.dislikes }}</span>
 												</button>
-											</div> -->
+											</div>
 										</div>
 
 										<div class="flex-grow-1 ms-3">
@@ -187,19 +197,29 @@
 														{% endif %}
 													</a>
 
-													<!-- <div class="donet-like-list">
+													<div class="donet-like-list">
 														<button class="like-unlink-count like">
-															<i class="ri-thumb-up-fill"></i>
-															<span>197</span>
+															<form method="post" action="{% url 'questions:like_answer' answer.id %}">
+																{% csrf_token %}
+																<input type="hidden" name="answer_id" value="{{ answer.id }}">
+    															<input type="hidden" name="action" value="like">
+																<button type="submit" class="like-unlink-count like"><i class="ri-thumb-up-fill"></i></button>
+															</form>
+															<span>{{ answer.likes }}</span>
 														</button>
 													</div>
 
 													<div class="donet-like-list">
 														<button class="like-unlink-count dislike">
-															<i class="ri-thumb-down-fill"></i>
-															<span>2</span>
+															<form method="post" action="{% url 'questions:dislike_answer' answer.id %}">
+																{% csrf_token %}
+																<input type="hidden" name="answer_id" value="{{ answer.id }}">
+    															<input type="hidden" name="action" value="dislike">
+																<button type="submit" class="like-unlink-count dislike"><i class="ri-thumb-down-fill"></i></button>
+															</form>
+															<span>{{ answer.dislikes }}</span>
 														</button>
-													</div> -->
+													</div>
 												</div>
 
 												<div class="flex-grow-1 ms-3">

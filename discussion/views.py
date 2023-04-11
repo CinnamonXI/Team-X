@@ -1,5 +1,6 @@
+from django.db import IntegrityError
 from django.shortcuts import get_object_or_404, redirect, render
-from .models import Community, Group, Question, Answer
+from .models import Community, Group, Question, Answer, AnswerLike, QuestionLike
 from core.models import Tag, Category
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -370,3 +371,98 @@ def search(request):
         messages.warning(request, 'Please enter a search term')
         return redirect('questions:all')
     
+@login_required
+def like_answer(request, answer_id):
+    answer = Answer.objects.get(pk=answer_id)
+    try:
+        like, created = AnswerLike.objects.get_or_create(user=request.user, answer=answer, value='like')
+        if not created:
+            # User already liked this answer
+            messages.warning(request, "You already liked this answer")
+        else:
+            answer.increase_likes()
+            messages.success(request, "Answer liked!")
+    except IntegrityError:
+        like = AnswerLike.objects.get(user=request.user, answer=answer)
+        if like.value == 'like':
+            messages.warning(request, "You already liked this answer")
+        else:
+            like.value = 'like'
+            like.save()
+            answer.increase_likes()
+            answer.decrease_dislikes()
+            messages.success(request, "Answer liked!")
+
+    return redirect('questions:question_detail', slug=answer.question.slug)
+
+@login_required
+def dislike_answer(request, answer_id):
+    answer = Answer.objects.get(pk=answer_id)
+    try:
+        like, created = AnswerLike.objects.get_or_create(user=request.user, answer=answer, value='dislike')
+        if not created:
+            # User already disliked this answer
+            messages.warning(request, "You already disliked this answer")
+        else:
+            answer.increase_dislikes()
+            messages.success(request, "Answer disliked!")
+    except IntegrityError:
+        like = AnswerLike.objects.get(user=request.user, answer=answer)
+        if like.value == 'dislike':
+            messages.warning(request, "You already disliked this answer")
+        else:
+            like.value = 'dislike'
+            like.save()
+            answer.increase_dislikes()
+            answer.decrease_likes()
+            messages.success(request, "Answer disliked!")
+
+    return redirect('questions:question_detail', slug=answer.question.slug)
+
+@login_required
+def like_question(request, question_id):
+    question = Question.objects.get(pk=question_id)
+    try:
+        like, created = QuestionLike.objects.get_or_create(user=request.user, question=question, value='like')
+        if not created:
+            # User already liked this question
+            messages.warning(request, "You already liked this question")
+        else:
+            question.increase_likes()
+            messages.success(request, "Question liked!")
+    except IntegrityError:
+        like = QuestionLike.objects.get(user=request.user, question=question)
+        if like.value == 'like':
+            messages.warning(request, "You already liked this question")
+        else:
+            like.value = 'like'
+            like.save()
+            question.increase_likes()
+            question.decrease_dislikes()
+            messages.success(request, "Question liked!")
+
+    return redirect('questions:question_detail', slug=question.slug)
+
+@login_required
+def dislike_question(request, question_id):
+    question = Question.objects.get(pk=question_id)
+    try:
+        like, created = QuestionLike.objects.get_or_create(user=request.user, question=question, value='dislike')
+        if not created:
+            # User already disliked this question
+            messages.warning(request, "You already disliked this question")
+        else:
+            question.increase_dislikes()
+            messages.success(request, "Question disliked!")
+    except IntegrityError:
+        like = QuestionLike.objects.get(user=request.user, question=question)
+        if like.value == 'dislike':
+            messages.warning(request, "You already disliked this question")
+        else:
+            like.value = 'dislike'
+            like.save()
+            question.increase_dislikes()
+            question.decrease_likes()
+            messages.success(request, "Question disliked!")
+
+    return redirect('questions:question_detail', slug=question.slug)

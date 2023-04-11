@@ -16,6 +16,29 @@
                             {% endif %}
                         {% endif %}
                     </a>
+                    <div class="donet-like-list">
+                        <button class="like-unlink-count like">
+                            <form method="post" action="{% url 'questions:like_question' maquestion.id %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="question_id" value="{{ maquestion.id }}">
+                                <input type="hidden" name="action" value="like">
+                                <button type="submit" class="like-unlink-count like"><i class="ri-thumb-up-fill"></i></button>
+                            </form>
+                                <span>{{ maquestion.likes }}</span>
+                        </button>
+                    </div>
+
+                    <div class="donet-like-list">
+                        <button class="like-unlink-count dislike">
+                            <form method="post" action="{% url 'questions:dislike_question' maquestion.id %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="question_id" value="{{ maquestion.id }}">
+                                <input type="hidden" name="action" value="dislike">
+                                <button type="submit" class="like-unlink-count dislike"><i class="ri-thumb-down-fill"></i></button>
+                            </form>
+                            <span>{{ maquestion.dislikes }}</span>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="flex-grow-1 ms-3">
