@@ -91,7 +91,7 @@
 												<ul class="tag-list">
 													{% for tag in question.tags.all %}
 													<li>
-														<a href="{% url 'quetions:tag_detail' tag.slug %}">{{ tag }}</a>
+														<a href="{% url 'questions:tag_detail' tag.slug %}">{{ tag }}</a>
 													</li>
 													{% endfor %}
 												</ul>
