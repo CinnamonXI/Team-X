@@ -20,7 +20,7 @@ def get_following(user):
 
 @login_required
 def profile(request):
-    if not check_if_userprofile_is_updated(request.user):
+    if request.user.is_authenticated and not check_if_userprofile_is_updated(request.user):
         messages.warning(request, 'Please update your profile to get the best experience.')
     context = {
         'title': 'My Profile',

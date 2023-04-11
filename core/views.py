@@ -23,7 +23,7 @@ def index(request):
     most_answered_questions = sorted(questions, key=lambda x: x.answers.count(), reverse=True)
     most_recent_questions = sorted(questions, key=lambda x: x.created_at, reverse=True)
     most_viewed_questions = sorted(questions, key=lambda x: x.views, reverse=True)
-    if not check_if_userprofile_is_updated(request.user):
+    if request.user.is_authenticated and not check_if_userprofile_is_updated(request.user):
         messages.warning(request, 'Please update your profile to get the best experience.')
     context = {
         'title': 'Homepage',

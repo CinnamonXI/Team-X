@@ -7,7 +7,7 @@ from django.db.models import Q
 from core.views import check_if_userprofile_is_updated
 # Create your views here.
 def questions(request):
-    if not check_if_userprofile_is_updated(request.user):
+    if request.user.is_authenticated and not check_if_userprofile_is_updated(request.user):
         messages.warning(request, 'Please update your profile to get the best experience.')
     questions = Question.objects.all()
     unanswered_questions = []
@@ -17,7 +17,7 @@ def questions(request):
 
     most_answered_questions = sorted(questions, key=lambda x: x.answers.count(), reverse=True)
     most_recent_questions = sorted(questions, key=lambda x: x.created_at, reverse=True)
-    most_viewed_questions = sorted(questions, key=lambda x: x.views, reverse=True)
+    most_viewed_questions = sorted(questions, key=lambda x: x.views, reverse=True)  
     context = {
         'title': 'Questions',
         'unanswered_questions': unanswered_questions,
@@ -29,7 +29,7 @@ def questions(request):
     return render(request, 'forum/index.html', context)
 
 def question_detail(request, slug):
-    if not check_if_userprofile_is_updated(request.user):
+    if request.user.is_authenticated and not check_if_userprofile_is_updated(request.user):
         messages.warning(request, 'Please update your profile to get the best experience.')
     question = get_object_or_404(Question, slug=slug)
     question.views += 1
