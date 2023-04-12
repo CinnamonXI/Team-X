@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 		<!-- Start Mail Content Area -->
 		<div class="main-content-area ptb-100">
@@ -14,14 +15,14 @@
                                 <div class="profile-img">
                                     <img src="{% if group.group_icon %}{{ group.group_icon.url }}{% else %}/static/group.jpg{% endif %}" alt="{{ group.title }}">
                                     <a href="{% url 'questions:group_about' group.slug %}"><h3>{{ group.title }}</h3></a>
-                                    <span>Created By {{ group.owner.get_full_name|default:'No Name' }}</span>
-                                    <span>Date Created {{ group.created_at }}</span>
-                                    <button class="followers-btn">{{ group.members.all|length }} Members</button>
-                                    <button class="followers-btn">{{ group.questions.all|length }} Posts</button>
+                                    <span>{% trans 'Created By' %} {{ group.owner.get_full_name|default:'No Name' }}</span>
+                                    <span>{% trans 'Date Created' %} {{ group.created_at }}</span>
+                                    <button class="followers-btn">{{ group.members.all|length }} {% trans 'Members' %}</button>
+                                    <button class="followers-btn">{{ group.questions.all|length }} {% trans 'Posts' %}</button>
                                 </div>
                                 {% if request.user.is_authenticated %}
                                 <div class="edit-btn">
-                                    <a href="{% url 'questions:join_leave_group' group.slug %}" class="default-btn">{% if request.user in group.members.all %}Leave Group{% else %}Join Group{% endif %}</a>
+                                    <a href="{% url 'questions:join_leave_group' group.slug %}" class="default-btn">{% if request.user in group.members.all %}{% trans 'Leave Group' %}{% else %}{% trans 'Join Group' %}{% endif %}</a>
                                 </div>
                                 {% endif %}
                             </div>
@@ -42,7 +43,7 @@
                                     </div>
                                     <div class="col-md-6 col-sm-9 bg-light p-3 rounded rounded-pill">
                                         <a href="{% url 'questions:ask_group' group.slug %}">
-                                            <p>Ask a Question to Group"{{ group.title }}"</p>
+                                            <p>{% trans 'Ask a Question to Group' %}"{{ group.title }}"</p>
                                         </a>
                                     </div>
                                 </div>
@@ -80,7 +81,7 @@
                                                                                 <span>{{ question.created_at }}</span>
                                                                             </li>
                                                                             <li>
-                                                                                <span>In:</span>
+                                                                                <span>{% trans 'In' %}:</span>
                                                                                 <a href="" class="graphic">
                                                                                     {{ question.category.title }}
                                                                                 </a>
@@ -115,12 +116,12 @@
                                                                                 </li> -->
                                                                                 <li>
                                                                                     <a href="{{ question.get_absolute_url }}#answers">
-                                                                                        {{ question.answers.all.count }} Answers
+                                                                                        {{ question.answers.all.count }} {% trans 'Answers' %}
                                                                                     </a>
                                                                                 </li>
                                                                                 <li>
                                                                                     <a>
-                                                                                        {{ question.views}} Views
+                                                                                        {{ question.views}} {% trans 'Views' %}
                                                                                     </a>
                                                                                 </li>
                                                                                 <li>
@@ -158,7 +159,7 @@
                                                                             </ul>
 
                                                                             <a href="{{ question.get_absolute_url }}#answer" class="default-btn bg-ea4335">
-                                                                                Answer
+                                                                                {% trans 'Answer' %}
                                                                             </a>
                                                                         </div>
                                                                     </div>
@@ -167,7 +168,7 @@
                                                         {% endfor %}
                                                     {% else %}
                                                         <div class="alert alert-info">
-                                                            No Questions Found in this Group
+                                                            {% trans 'No Questions Found in this Group' %}
                                                         </div>
                                                     {% endif %}
                                                 </div>

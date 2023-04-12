@@ -1,3 +1,4 @@
+{% load i18n %}
 {% if unanswered_questions %}
     {% for unanswered_question in unanswered_questions %}
         <div class="single-qa-box like-dislike">
@@ -51,7 +52,7 @@
                             <span>{{ unanswered_question.created_at }}</span>
                         </li>
                         <li>
-                            <span>In:</span>
+                            <span>{% trans 'In' %}:</span>
                             <a href="{% url 'questions:category_detail' unanswered_question.category.slug %}" class="graphic">
                                 {{ unanswered_question.category.title }}
                             </a>
@@ -85,12 +86,12 @@
                             </li> -->
                             <li>
                                 <a href="{{ unanswered_question.get_absolute_url }}#answers">
-                                    {{ unanswered_question.answers.all.count }} Answers
+                                    {{ unanswered_question.answers.all.count }} {% trans 'Answers' %}
                                 </a>
                             </li>
                             <li>
                                 <a>
-                                    {{ unanswered_question.views}} Views
+                                    {{ unanswered_question.views}} {% trans 'Views' %}
                                 </a>
                             </li>
                             <li>
@@ -128,7 +129,7 @@
                         </ul>
 
                         <a href="{{ unanswered_question.get_absolute_url }}#answer" class="default-btn">
-                            Answer
+                            {% trans 'Answer' %}
                         </a>
                     </div>
                 </div>
@@ -137,7 +138,7 @@
     {% endfor %}
 {% else %}
     <div class="alert alert-info">
-        No Unanswered Questions Found
+        {% trans 'No Unanswered Questions Found' %}
     </div>
 {% endif %}
 <!-- <div class="pagination-area">

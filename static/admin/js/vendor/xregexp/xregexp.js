@@ -3210,9 +3210,6 @@ function runTokens(pattern, flags, pos, scope, context) {
 }
 
 /**
- * Enables or disables implicit astral mode opt-in. When enabled, flag A is automatically added to
- * all new regexes created by XRegExp. This causes an error to be thrown when creating regexes if
- * the Unicode Base addon is not available, since flag A is registered by that addon.
  *
  * @private
  * @param {Boolean} on `true` to enable; `false` to disable.

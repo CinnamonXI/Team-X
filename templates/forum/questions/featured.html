@@ -1,3 +1,4 @@
+{% load i18n %}
 {% if most_viewed_questions %}
     {% for most_viewed in most_viewed_questions %}
         <div class="single-qa-box like-dislike">
@@ -51,7 +52,7 @@
                             <span>{{ most_viewed.created_at }}</span>
                         </li>
                         <li>
-                            <span>In:</span>
+                            <span>{% trans 'In' %}:</span>
                             <a href="{% url 'questions:category_detail' most_viewed.category.slug  %}" class="graphic">
                                 {{ most_viewed.category.title }}
                             </a>
@@ -85,12 +86,12 @@
                             </li> -->
                             <li>
                                 <a href="{{ most_viewed.get_absolute_url }}#answers">
-                                    {{ most_viewed.answers.all.count }} Answers
+                                    {{ most_viewed.answers.all.count }} {% trans 'Answers' %}
                                 </a>
                             </li>
                             <li>
                                 <a>
-                                    {{ most_viewed.views}}  Views
+                                    {{ most_viewed.views}}  {% trans 'Views' %}
                                 </a>
                             </li>
                             <li>
@@ -128,17 +129,17 @@
                         </ul>
 
                         <a href="{{ most_viewed.get_absolute_url }}#answer" class="default-btn">
-                            Answer
+                            {% trans 'Answer' %}
                         </a>
                     </div>
                 </div>
             </div>
-            <span class="featured">Most Viewed</span>
+            <span class="featured">{% trans 'Most Viewed' %}</span>
         </div>
     {% endfor %}
 {% else %}
     <div class="alert alert-info">
-        No Featured Questions Found
+        {% trans 'No Featured Questions Found' %}
     </div>
 {% endif %}
 <!-- <div class="pagination-area">

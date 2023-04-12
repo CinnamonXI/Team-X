@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 		<!-- Start Mail Content Area -->
 		<div class="main-content-area ptb-100">
@@ -13,14 +14,14 @@
 							<div class="profile-content d-flex justify-content-between align-items-center">
                                 <div class="profile-img">
                                     <h3>{{ tag.title }}</h3>
-                                    <span>Created By {{ tag.owner.get_full_name|default:'No Name' }}</span>
-                                    <span>Date Created {{ tag.created_at }}</span>
-                                    <button class="followers-btn">{{ tag.members.all|length }} Members</button>
-                                    <button class="followers-btn">{{ tag.questions.all|length }} Posts</button>
+                                    <span>{% trans 'Created By' %} {{ tag.owner.get_full_name|default:'No Name' }}</span>
+                                    <span>{% trans 'Date Created' %} {{ tag.created_at }}</span>
+                                    <button class="followers-btn">{{ tag.members.all|length }} {% trans 'Members' %}</button>
+                                    <button class="followers-btn">{{ tag.questions.all|length }} {% trans 'Posts' %}</button>
                                 </div>
                                 {% if request.user.is_authenticated %}
                                 <div class="edit-btn">
-                                    <a href="{% url 'questions:follow_unfollow_tag' tag.slug %}" class="default-btn">{% if request.user in tag.followers.all %}Unfollow{% else %}Follow{% endif %}</a>
+                                    <a href="{% url 'questions:follow_unfollow_tag' tag.slug %}" class="default-btn">{% if request.user in tag.followers.all %}{% trans 'Unfollow' %}{% else %}{% trans 'Follow' %}{% endif %}</a>
                                 </div>
                                 {% endif %}
                             </div>
@@ -59,7 +60,7 @@
                                                                                 <span>{{ question.created_at }}</span>
                                                                             </li>
                                                                             <li>
-                                                                                <span>In:</span>
+                                                                                <span>{% trans 'In' %}:</span>
                                                                                 <a href="{% url 'questions:category_detail' question.category.slug %}" class="graphic">
                                                                                     {{ question.category.title }}
                                                                                 </a>
@@ -94,12 +95,12 @@
                                                                                 </li> -->
                                                                                 <li>
                                                                                     <a href="{{ question.get_absolute_url }}#answers">
-                                                                                        {{ question.answers.all.count }} Answers
+                                                                                        {{ question.answers.all.count }} {% trans 'Answers' %}
                                                                                     </a>
                                                                                 </li>
                                                                                 <li>
                                                                                     <a>
-                                                                                        {{ question.views}} Views
+                                                                                        {{ question.views}} {% trans 'Views' %}
                                                                                     </a>
                                                                                 </li>
                                                                                 <li>
@@ -137,7 +138,7 @@
                                                                             </ul>
 
                                                                             <a href="{{ question.get_absolute_url }}#answer" class="default-btn bg-ea4335">
-                                                                                Answer
+                                                                                {% trans 'Answer' %}
                                                                             </a>
                                                                         </div>
                                                                     </div>
@@ -146,7 +147,7 @@
                                                         {% endfor %}
                                                     {% else %}
                                                         <div class="alert alert-info">
-                                                            No Questions Found in this Group
+                                                            {% trans 'No Questions Found in this Group' %}
                                                         </div>
                                                     {% endif %}
                                                 </div>

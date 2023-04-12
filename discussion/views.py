@@ -6,10 +6,12 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from core.views import check_if_userprofile_is_updated
+from django.utils.translation import gettext as _
+
 # Create your views here.
 def questions(request):
     if request.user.is_authenticated and not check_if_userprofile_is_updated(request.user):
-        messages.warning(request, 'Please update your profile to get the best experience.')
+        messages.warning(request, _('Please update your profile to get the best experience.'))
     questions = Question.objects.all()
     unanswered_questions = []
     for question in questions:
@@ -31,7 +33,7 @@ def questions(request):
 
 def question_detail(request, slug):
     if request.user.is_authenticated and not check_if_userprofile_is_updated(request.user):
-        messages.warning(request, 'Please update your profile to get the best experience.')
+        messages.warning(request, _('Please update your profile to get the best experience.'))
     question = get_object_or_404(Question, slug=slug)
     question.views += 1
     question.save()
@@ -44,10 +46,10 @@ def question_detail(request, slug):
                 question=question,
             )
             answer.save()
-            messages.success(request, 'Your answer has been posted successfully')
+            messages.success(request, _('Your answer has been posted successfully'))
             return redirect('questions:question_detail', slug=question.slug)
         else:
-            messages.warning(request, 'An error occurred while posting your answer, please try again')
+            messages.warning(request, _('An error occurred while posting your answer, please try again'))
             return redirect('questions:question_detail', slug=question.slug)
         
     context = {
@@ -89,14 +91,14 @@ def ask(request):
                         question.tags.add(tag)
 
             question.save()
-            messages.success(request, 'Your question has been posted successfully')
+            messages.success(request, _('Your question has been posted successfully'))
             return redirect('questions:question_detail', slug=question.slug)
         else:
-            messages.warning(request, 'An error occurred while posting your question, please try again')
+            messages.warning(request, _('An error occurred while posting your question, please try again'))
             return redirect('questions:ask')
         
     context = {
-        'title': 'Ask Questions',
+        'title': _('Ask Questions'),
         'categories': Category.objects.all(),
         'q_category': 'is_active',
     }
@@ -105,9 +107,9 @@ def ask(request):
 # Groups
 def group_list(request):
     context = {
-        'title': 'Groups',
+        'title': _('Groups'),
         'groups': Group.objects.all(),
-        'category': 'groups',
+        'category': _('groups'),
         'q_category': 'is_active',
     }
     return render(request, 'forum/groups/index.html', context)
@@ -118,7 +120,7 @@ def group_about(request, slug):
     context = {
         'title': group.title,
         'group': group,
-        'category': 'groups',
+        'category': _('groups'),
     }
     return render(request, 'forum/groups/details.html', context)
 
@@ -128,13 +130,13 @@ def group_posts(request, slug):
     if request.user in group.members.all():
         questions = Question.objects.filter(group=group)
     else:
-        messages.warning(request, 'You are not a member of this group, please join the group to view the posts')
+        messages.warning(request, _('You are not a member of this group, please join the group to view the posts'))
         return redirect('questions:groups')
     
     context = {
         'title': group.title,
         'group': group,
-        'category': 'groups',
+        'category': _('groups'),
         'questions': questions,
     }
     return render(request, 'forum/groups/posts.html', context)
@@ -174,18 +176,18 @@ def ask_group(request, slug):
                             question.tags.add(tag)
 
                 question.save()
-                messages.success(request, f"Your question has been posted to group '{group.title}' successfully")
+                messages.success(request, _(f"Your question has been posted to group '{group.title}' successfully"))
                 return redirect('questions:group_detail', slug=group.slug)
             else:
-                messages.warning(request, 'An error occurred while posting your question, please try again')
+                messages.warning(request, _('An error occurred while posting your question, please try again'))
                 return redirect('questions:ask_group', slug=group.slug)
     else:
-        messages.warning(request, 'You are not a member of this group, please join the group to ask a question')
+        messages.warning(request, _('You are not a member of this group, please join the group to ask a question'))
         return redirect('questions:groups')
         
     context = {
-        'title': 'Ask Group',
-        'category': 'groups',
+        'title': _('Ask Group'),
+        'category': _('groups'),
         'group_slug': group.slug,
         'q_category': 'is_active',
     }
@@ -196,17 +198,17 @@ def join_leave_group(request, slug):
     group = get_object_or_404(Group, slug=slug)
     if request.user in group.members.all():
         group.members.remove(request.user)
-        messages.success(request, f"You have left the group '{group.title}'")
+        messages.success(request, _(f"You have left the group '{group.title}'"))
     else:
         group.members.add(request.user)
-        messages.success(request, f"You have joined the group '{group.title}'")
+        messages.success(request, _(f"You have joined the group '{group.title}'"))
     return redirect('questions:group_detail', slug=group.slug)
 
 
 # Tags
 def tag_list(request):
     context = {
-        'title': 'Tags',
+        'title': _('Tags'),
         'q_category': 'is_active',
     }
     return render(request, 'forum/tags.html', context)
@@ -216,10 +218,10 @@ def follow_unfollow_tag(request, slug):
     tag = get_object_or_404(Tag, slug=slug)
     if request.user in tag.followers.all():
         tag.followers.remove(request.user)
-        messages.success(request, f"You have unfollowed the tag '{tag.title}'")
+        messages.success(request, _(f"You have unfollowed the tag '{tag.title}'"))
     else:
         tag.followers.add(request.user)
-        messages.success(request, f"You have followed the tag '{tag.title}'")
+        messages.success(request, _(f"You have followed the tag '{tag.title}'"))
     return redirect('questions:tag_detail', slug=tag.slug)
 
 @login_required
@@ -237,7 +239,7 @@ def tag_detail(request, slug):
 # Communities
 def communities(request):
     context = {
-        'title': 'Communities',
+        'title': _('Communities'),
         'communities': Community.objects.all(),
         'q_category': 'is_active',
     }
@@ -249,7 +251,7 @@ def community_about(request, slug):
     context = {
         'title': community.title,
         'community': community,
-        'category': 'community',
+        'category': _('community'),
     }
     return render(request, 'forum/community/details.html', context)
 
@@ -259,13 +261,13 @@ def community_posts(request, slug):
     if request.user in community.followers.all():
         questions = Question.objects.filter(community=community)
     else:
-        messages.warning(request, f"You are not following the community '{community.title}', follow it to see the posts in it")
+        messages.warning(request, _(f"You are not following the community '{community.title}', follow it to see the posts in it"))
         return redirect('questions:communities')
     
     context = {
         'title': community.title,
         'community': community,
-        'category': 'community',
+        'category': _('community'),
         'questions': questions,
     }
     return render(request, 'forum/community/posts.html', context)
@@ -305,18 +307,18 @@ def ask_community(request, slug):
                             question.tags.add(tag)
 
                 question.save()
-                messages.success(request, f"Your question has been posted to community '{community.title}' successfully")
+                messages.success(request, _(f"Your question has been posted to community '{community.title}' successfully"))
                 return redirect('questions:community_detail', slug=community.slug)
             else:
-                messages.warning(request, 'An error occurred while posting your question, please try again')
+                messages.warning(request, _('An error occurred while posting your question, please try again'))
                 return redirect('questions:ask_community', slug=community.slug)
     else:
-        messages.warning(request, 'You are not following the community, please follow it to ask a question')
+        messages.warning(request, _('You are not following the community, please follow it to ask a question'))
         return redirect('questions:communities')
     
     context = {
-        'title': 'Ask Community',
-        'category': 'community',
+        'title': _('Ask Community'),
+        'category': _('community'),
         'q_category': 'is_active',
     }
     return render(request, 'forum/ask-questions.html', context)
@@ -327,10 +329,10 @@ def follow_unfollow_community(request, slug):
     if request.user.is_authenticated:
         if request.user in community.followers.all():
             community.followers.remove(request.user)
-            messages.success(request, f"You have unfollowed the community '{community.title}'")
+            messages.success(request, _(f"You have unfollowed the community '{community.title}'"))
         else:
             community.followers.add(request.user)
-            messages.success(request, f"You have followed the community '{community.title}'")
+            messages.success(request, _(f"You have followed the community '{community.title}'"))
     return redirect('questions:community_detail', slug=community.slug)
 
 @login_required
@@ -358,7 +360,7 @@ def search(request):
         most_viewed_questions = sorted(questions, key=lambda x: x.views, reverse=True)
 
         context = {
-            'title': f"({total_results})Search results for  '{query}'",
+            'title': _(f"({total_results})Search results for  '{query}'"),
             'questions': questions,
             'q_category': 'is_active',
             'unanswered_questions': unanswered_questions,
@@ -368,7 +370,7 @@ def search(request):
         }
         return render(request, 'forum/index.html', context)
     else:
-        messages.warning(request, 'Please enter a search term')
+        messages.warning(request, _('Please enter a search term'))
         return redirect('questions:all')
     
 @login_required
@@ -378,20 +380,20 @@ def like_answer(request, answer_id):
         like, created = AnswerLike.objects.get_or_create(user=request.user, answer=answer, value='like')
         if not created:
             # User already liked this answer
-            messages.warning(request, "You already liked this answer")
+            messages.warning(request, _("You already liked this answer"))
         else:
             answer.increase_likes()
-            messages.success(request, "Answer liked!")
+            messages.success(request, _("Answer liked!"))
     except IntegrityError:
         like = AnswerLike.objects.get(user=request.user, answer=answer)
         if like.value == 'like':
-            messages.warning(request, "You already liked this answer")
+            messages.warning(request, _("You already liked this answer"))
         else:
             like.value = 'like'
             like.save()
             answer.increase_likes()
             answer.decrease_dislikes()
-            messages.success(request, "Answer liked!")
+            messages.success(request, _("Answer liked!"))
 
     return redirect('questions:question_detail', slug=answer.question.slug)
 
@@ -402,20 +404,20 @@ def dislike_answer(request, answer_id):
         like, created = AnswerLike.objects.get_or_create(user=request.user, answer=answer, value='dislike')
         if not created:
             # User already disliked this answer
-            messages.warning(request, "You already disliked this answer")
+            messages.warning(request, _("You already disliked this answer"))
         else:
             answer.increase_dislikes()
-            messages.success(request, "Answer disliked!")
+            messages.success(request, _("Answer disliked!"))
     except IntegrityError:
         like = AnswerLike.objects.get(user=request.user, answer=answer)
         if like.value == 'dislike':
-            messages.warning(request, "You already disliked this answer")
+            messages.warning(request, _("You already disliked this answer"))
         else:
             like.value = 'dislike'
             like.save()
             answer.increase_dislikes()
             answer.decrease_likes()
-            messages.success(request, "Answer disliked!")
+            messages.success(request, _("Answer disliked!"))
 
     return redirect('questions:question_detail', slug=answer.question.slug)
 
@@ -426,20 +428,20 @@ def like_question(request, question_id):
         like, created = QuestionLike.objects.get_or_create(user=request.user, question=question, value='like')
         if not created:
             # User already liked this question
-            messages.warning(request, "You already liked this question")
+            messages.warning(request, _("You already liked this question"))
         else:
             question.increase_likes()
-            messages.success(request, "Question liked!")
+            messages.success(request, _("Question liked!"))
     except IntegrityError:
         like = QuestionLike.objects.get(user=request.user, question=question)
         if like.value == 'like':
-            messages.warning(request, "You already liked this question")
+            messages.warning(request, _("You already liked this question"))
         else:
             like.value = 'like'
             like.save()
             question.increase_likes()
             question.decrease_dislikes()
-            messages.success(request, "Question liked!")
+            messages.success(request, _("Question liked!"))
 
     return redirect('questions:question_detail', slug=question.slug)
 
@@ -450,19 +452,19 @@ def dislike_question(request, question_id):
         like, created = QuestionLike.objects.get_or_create(user=request.user, question=question, value='dislike')
         if not created:
             # User already disliked this question
-            messages.warning(request, "You already disliked this question")
+            messages.warning(request, _("You already disliked this question"))
         else:
             question.increase_dislikes()
-            messages.success(request, "Question disliked!")
+            messages.success(request, _("Question disliked!"))
     except IntegrityError:
         like = QuestionLike.objects.get(user=request.user, question=question)
         if like.value == 'dislike':
-            messages.warning(request, "You already disliked this question")
+            messages.warning(request, _("You already disliked this question"))
         else:
             like.value = 'dislike'
             like.save()
             question.increase_dislikes()
             question.decrease_likes()
-            messages.success(request, "Question disliked!")
+            messages.success(request, _("Question disliked!"))
 
     return redirect('questions:question_detail', slug=question.slug)

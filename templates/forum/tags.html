@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 		<!-- Start Mail Content Area -->
 		<div class="main-content-area ptb-100">
@@ -14,11 +15,11 @@
 								<li>
 									<a href="/">
 										<i class="ri-home-8-line"></i>
-										Home
+										{% trans 'Home' %}
 									</a>
 								</li>
 								<li class="active">
-									Tags
+									{% trans 'Tags' %}
 								</li>
 							</ul>
 
@@ -36,23 +37,23 @@
 														<span><a href="{% url 'questions:tag_detail' tag.slug %}">{{ tag.title }}</a></span>
 													</li>
 													<li>
-														{{ tag.questions.all.count }} questions
+														{{ tag.questions.all.count }} {% trans 'questions' %}
 													</li>
 												</ul>
 												<p>{{ tag.description|truncatechars:110|default:'No description provided' }}</p>
 												<ul class="tag-btn d-flex justify-content-between">
 													<li>
 														<button class="default-btn">
-															{{ tag.followers.all.count }} Followers
+															{{ tag.followers.all.count }} {% trans 'Followers' %}
 														</button>
 													</li>
 													<li>
 														<a href="{% url 'questions:follow_unfollow_tag' tag.slug %}">
 															<button class="default-btn active">
 																{% if request.user in tag.followers.all %}
-																	Unfollow
+																	{% trans 'Unfollow' %}
 																{% else %}
-																	Follow
+																	{% trans 'Follow' %}
 																{% endif %}
 															</button>
 														</a>
@@ -78,7 +79,7 @@
 								</div>
 								{% else %}
 									<div class="alert alert-warning">
-										No tags found
+										{% trans 'No tags found' %}
 									</div>
 								{% endif %}
 							</div>

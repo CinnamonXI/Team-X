@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 		<!-- Start Mail Content Area -->
 		<div class="main-content-area ptb-100">
@@ -14,13 +15,13 @@
                                 <div class="profile-img">
                                     <img src="{% if group.group_icon %}{{ group.group_icon.url }}{% else %}/static/group.jpg{% endif %}" alt="{{ group.title }}">
                                     <a href="{{ group.get_absolute_url }}"><h3>{{ group.title }}</h3></a>
-                                    <span>Created By {{ group.owner }}</span>
-                                    <span>Date Created {{ group.created_at }}</span>
-                                    <button class="followers-btn">{{ group.members.all|length }} Members</button>
+                                    <span>{% trans 'Created By' %} {{ group.owner }}</span>
+                                    <span>{% trans 'Date Created' %} {{ group.created_at }}</span>
+                                    <button class="followers-btn">{{ group.members.all|length }} {% trans 'Members' %}</button>
                                 </div>
                                 {% if request.user.is_authenticated %}
                                 <div class="edit-btn">
-                                    <a href="{% url 'questions:join_leave_group' group.slug %}" class="default-btn">{% if request.user in group.members.all %}Leave Group{% else %}Join Group{% endif %}</a>
+                                    <a href="{% url 'questions:join_leave_group' group.slug %}" class="default-btn">{% if request.user in group.members.all %}{% trans 'Leave Group' %}{% else %}{% trans 'Join Group' %}{% endif %}</a>
                                 </div>
                                 {% endif %}
                             </div>
@@ -30,57 +31,57 @@
 									<div class="col-xl-3 col-sm-6">
 										<div class="single-achive">
 											<h2>{{ group.members.all|length }}</h2>
-											<span>Members</span>
+											<span>{% trans 'Members' %}</span>
 										</div>
 									</div>
 
 									<div class="col-xl-3 col-sm-6">
 										<div class="single-achive">
 											<h2>{{ group.questions.all|length }}</h2>
-											<span>Question</span>
+											<span>{% trans 'Question' %}</span>
 										</div>
 									</div>
 
 									<div class="col-xl-3 col-sm-6">
 										<div class="single-achive">
 											<h2>1</h2>
-											<span>Communities</span>
+											<span>{% trans 'Communities' %}</span>
 										</div>
 									</div>
 
 									<div class="col-xl-3 col-sm-6">
 										<div class="single-achive">
 											<h2>2M</h2>
-											<span>Reached</span>
+											<span>{% trans 'Reached' %}</span>
 										</div>
 									</div>
 								</div>
 							</div>
 
 							<div class="about">
-								<h3>About</h3>
+								<h3>{% trans 'About' %}</h3>
 								{{ group.description|linebreaksbr|default:'No About Updated' }}
 							</div>
 
 
 							<div class="top-posts mt-4">
 								<div class="d-flex justify-content-between">
-									<h3>Top posts</h3>
+									<h3>{% trans 'Top posts' %}</h3>
 
 									<ul class="nav nav-tabs" id="myTab" role="tablist">
 										<li class="nav-item" role="presentation">
-											<button class="nav-link active" id="view-all-tab" data-bs-toggle="tab" data-bs-target="#view-all" type="button" role="tab" aria-controls="view-all" aria-selected="true">View All</button>
+											<button class="nav-link active" id="view-all-tab" data-bs-toggle="tab" data-bs-target="#view-all" type="button" role="tab" aria-controls="view-all" aria-selected="true">{% trans 'View All' %}</button>
 										</li>
 										
 										<li class="nav-item" role="presentation">
-										  	<button class="nav-link" id="question-tab" data-bs-toggle="tab" data-bs-target="#question" type="button" role="tab" aria-controls="question" aria-selected="false">Question</button>
+										  	<button class="nav-link" id="question-tab" data-bs-toggle="tab" data-bs-target="#question" type="button" role="tab" aria-controls="question" aria-selected="false">{% trans 'Question' %}</button>
 										</li>
 
 										<li class="nav-item" role="presentation">
-										  	<button class="nav-link" id="newest-tab" data-bs-toggle="tab" data-bs-target="#newest" type="button" role="tab" aria-controls="newest" aria-selected="false">Newest</button>
+										  	<button class="nav-link" id="newest-tab" data-bs-toggle="tab" data-bs-target="#newest" type="button" role="tab" aria-controls="newest" aria-selected="false">{% trans 'Newest' %}</button>
 										</li>
                                         <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="groups-tab" data-bs-toggle="tab" data-bs-target="#groups" type="button" role="tab" aria-controls="groups" aria-selected="false">Communities</button>
+                                            <button class="nav-link" id="groups-tab" data-bs-toggle="tab" data-bs-target="#groups" type="button" role="tab" aria-controls="groups" aria-selected="false">{% trans 'Communities' %}</button>
                                         </li>
 									</ul>
 								</div>
@@ -96,12 +97,12 @@
 													<span class="count">{{ question.answers.all.count }}</span>
 													<span>{{ question.title }}</span>
 												</div>
-												<p><span>{{ question.created_at }}</span> by <a href="{% url 'users:user_profile' question.user.username %}">{{ question.user.get_full_name }}</a></p>
+												<p><span>{{ question.created_at }}</span> {% trans 'by' %} <a href="{% url 'users:user_profile' question.user.username %}">{{ question.user.get_full_name }}</a></p>
 											</li>
                                             {% endfor %}
 										</ul>
                                         {% else %}
-                                            <p>No Questions Posted Yet</p>
+                                            <p>{% trans 'No Questions Posted Yet' %}</p>
                                         {% endif %}
 									</div>
 
@@ -120,7 +121,7 @@
                                                 {% endfor %}
                                             </ul>
                                         {% else %}
-                                            <p>No Questions Posted Yet</p>
+                                            <p>{% trans 'No Questions Posted Yet' %}</p>
                                         {% endif %}
 									</div>
 									<div class="tab-pane fade" id="newest" role="tabpanel" aria-labelledby="newest-tab">
@@ -133,12 +134,12 @@
 													<span class="count">{{ question.answers.all.count }}</span>
 													<span>{{ question.title }}</span>
 												</div>
-												<p><span>{{ question.created_at }}</span> by <a href="{% url 'users:user_profile' question.user.username %}">{{ question.user.get_full_name }}</a></p>
+												<p><span>{{ question.created_at }}</span> {% trans 'by' %} <a href="{% url 'users:user_profile' question.user.username %}">{{ question.user.get_full_name }}</a></p>
 											</li>
                                             {% endfor %}
 										</ul>
                                         {% else %}
-                                            <p>No Questions Posted Yet</p>
+                                            <p>{% trans 'No Questions Posted Yet' %}</p>
                                         {% endif %}
 									</div>
                                     <div class="tab-pane fade" id="groups" role="tabpanel" aria-labelledby="groups-tab">
@@ -150,11 +151,11 @@
 													<span class="count">{{ group.community.groups.all.count }}</span>
 													<span>{{ group.community.title }}</span>
 												</div>
-												<p><span>{{ group.community.created_at }}</span> by <a href="{% url 'users:user_profile' group.community.owner.username %}">{{ group.community.owner.get_full_name }}</a></p>
+												<p><span>{{ group.community.created_at }}</span> {% trans 'by' %} <a href="{% url 'users:user_profile' group.community.owner.username %}">{{ group.community.owner.get_full_name }}</a></p>
 											</li>
 										</ul>
                                         {% else %}
-                                            <p>No Group has not joined a Community</p>
+                                            <p>{% trans 'No Group has not joined a Community' %}</p>
                                         {% endif %}
 									</div>
 								</div>

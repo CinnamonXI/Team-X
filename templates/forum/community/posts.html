@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 		<!-- Start Mail Content Area -->
 		<div class="main-content-area ptb-100">
@@ -14,14 +15,14 @@
                                 <div class="profile-img">
                                     <img src="{% if community.image %}{{ community.image.url }}{% else %}/static/community.jpg{% endif %}" alt="{{ community.title }}">
                                     <a href="{% url 'questions:community_about' community.slug %}"><h3>{{ community.title }}</h3></a>
-                                    <span>Created By {{ community.owner.get_full_name|default:'No Name' }}</span>
-                                    <span>Date Created {{ community.created_at }}</span>
-                                    <button class="followers-btn">{{ community.followers.all|length }} Members</button>
-                                    <button class="followers-btn">{{ community.questions.all|length }} Posts</button>
+                                    <span>{% trans 'Created By' %} {{ community.owner.get_full_name|default:'No Name' }}</span>
+                                    <span>{% trans 'Date Created' %} {{ community.created_at }}</span>
+                                    <button class="followers-btn">{{ community.followers.all|length }} {% trans 'Members' %}</button>
+                                    <button class="followers-btn">{{ community.questions.all|length }} {% trans 'Posts' %}</button>
                                 </div>
                                 {% if request.user.is_authenticated %}
                                 <div class="edit-btn">
-                                    <a href="{% url 'questions:follow_unfollow_community' community.slug %}" class="default-btn">{% if request.user in community.followers.all %}Unfollow{% else %}Follow{% endif %}</a>
+                                    <a href="{% url 'questions:follow_unfollow_community' community.slug %}" class="default-btn">{% if request.user in community.followers.all %}{% trans 'Unfollow' %}{% else %}{% trans 'Follow' %}{% endif %}</a>
                                 </div>
                                 {% endif %}
                             </div>
@@ -43,7 +44,7 @@
                                     </div>
                                     <div class="col-md-6 col-sm-9 bg-light p-3 rounded rounded-pill">
                                         <a href="{% url 'questions:ask_community' community.slug %}">
-                                            <p>Ask a Question to Community "{{ community.title }}"</p>
+                                            <p>{% trans 'Ask a Question to Community' %} "{{ community.title }}"</p>
                                         </a>
                                     </div>
                                 </div>
@@ -81,7 +82,7 @@
                                                                                 <span>{{ question.created_at }}</span>
                                                                             </li>
                                                                             <li>
-                                                                                <span>In:</span>
+                                                                                <span>{% trans 'In' %}:</span>
                                                                                 <a href="" class="graphic">
                                                                                     {{ question.category.title }}
                                                                                 </a>
@@ -116,12 +117,12 @@
                                                                                 </li> -->
                                                                                 <li>
                                                                                     <a href="{{ question.get_absolute_url }}#answers">
-                                                                                        {{ question.answers.all.count }} Answers
+                                                                                        {{ question.answers.all.count }} {% trans 'Answers' %}
                                                                                     </a>
                                                                                 </li>
                                                                                 <li>
                                                                                     <a>
-                                                                                        {{ question.views}} Views
+                                                                                        {{ question.views}} {% trans 'Views' %}
                                                                                     </a>
                                                                                 </li>
                                                                                 <li>
@@ -159,7 +160,7 @@
                                                                             </ul>
 
                                                                             <a href="{{ question.get_absolute_url }}#answer" class="default-btn bg-ea4335">
-                                                                                Answer
+                                                                                {% trans 'Answer' %}
                                                                             </a>
                                                                         </div>
                                                                     </div>
@@ -168,7 +169,7 @@
                                                         {% endfor %}
                                                     {% else %}
                                                         <div class="alert alert-info">
-                                                            No Questions Found in this Community
+                                                            {% trans 'No Questions Found in this Community' %}
                                                         </div>
                                                     {% endif %}
                                                 </div>

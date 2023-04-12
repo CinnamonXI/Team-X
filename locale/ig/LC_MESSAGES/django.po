@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-12 22:04+0300\n"
+"POT-Creation-Date: 2023-04-12 23:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "faqs/"
 msgstr ""
 
-#: core/views.py:28
+#: core/views.py:28 discussion/views.py:14 discussion/views.py:36
 msgid "Please update your profile to get the best experience."
 msgstr ""
 
@@ -74,6 +74,164 @@ msgstr ""
 #: core/views.py:102
 #, python-brace-format
 msgid "Search result for '{search}'"
+msgstr ""
+
+#: discussion/views.py:49
+msgid "Your answer has been posted successfully"
+msgstr ""
+
+#: discussion/views.py:52
+msgid "An error occurred while posting your answer, please try again"
+msgstr ""
+
+#: discussion/views.py:94
+msgid "Your question has been posted successfully"
+msgstr ""
+
+#: discussion/views.py:97 discussion/views.py:182 discussion/views.py:313
+msgid "An error occurred while posting your question, please try again"
+msgstr ""
+
+#: discussion/views.py:101
+msgid "Ask Questions"
+msgstr ""
+
+#: discussion/views.py:110 templates/forum/community/details.html:48
+#: templates/forum/community/details.html:84
+#: templates/forum/groups/index.html:22 templates/partials/left-sidebar.html:80
+msgid "Groups"
+msgstr ""
+
+#: discussion/views.py:112 discussion/views.py:123 discussion/views.py:139
+#: discussion/views.py:190
+msgid "groups"
+msgstr ""
+
+#: discussion/views.py:133
+msgid ""
+"You are not a member of this group, please join the group to view the posts"
+msgstr ""
+
+#: discussion/views.py:179
+#, python-brace-format
+msgid "Your question has been posted to group '{group.title}' successfully"
+msgstr ""
+
+#: discussion/views.py:185
+msgid ""
+"You are not a member of this group, please join the group to ask a question"
+msgstr ""
+
+#: discussion/views.py:189
+msgid "Ask Group"
+msgstr ""
+
+#: discussion/views.py:201
+#, python-brace-format
+msgid "You have left the group '{group.title}'"
+msgstr ""
+
+#: discussion/views.py:204
+#, python-brace-format
+msgid "You have joined the group '{group.title}'"
+msgstr ""
+
+#: discussion/views.py:211 templates/partials/left-sidebar.html:88
+#: templates/resources/partials/right-sidebar.html:74
+msgid "Tags"
+msgstr ""
+
+#: discussion/views.py:221
+#, python-brace-format
+msgid "You have unfollowed the tag '{tag.title}'"
+msgstr ""
+
+#: discussion/views.py:224
+#, python-brace-format
+msgid "You have followed the tag '{tag.title}'"
+msgstr ""
+
+#: discussion/views.py:242 templates/forum/community/index.html:22
+#: templates/forum/groups/details.html:48
+#: templates/forum/groups/details.html:84
+#: templates/partials/left-sidebar.html:39
+msgid "Communities"
+msgstr ""
+
+#: discussion/views.py:254 discussion/views.py:270 discussion/views.py:321
+msgid "community"
+msgstr ""
+
+#: discussion/views.py:264
+#, python-brace-format
+msgid ""
+"You are not following the community '{community.title}', follow it to see "
+"the posts in it"
+msgstr ""
+
+#: discussion/views.py:310
+#, python-brace-format
+msgid ""
+"Your question has been posted to community '{community.title}' successfully"
+msgstr ""
+
+#: discussion/views.py:316
+msgid "You are not following the community, please follow it to ask a question"
+msgstr ""
+
+#: discussion/views.py:320
+msgid "Ask Community"
+msgstr ""
+
+#: discussion/views.py:332
+#, python-brace-format
+msgid "You have unfollowed the community '{community.title}'"
+msgstr ""
+
+#: discussion/views.py:335
+#, python-brace-format
+msgid "You have followed the community '{community.title}'"
+msgstr ""
+
+#: discussion/views.py:363
+#, python-brace-format
+msgid "({total_results})Search results for  '{query}'"
+msgstr ""
+
+#: discussion/views.py:373
+msgid "Please enter a search term"
+msgstr ""
+
+#: discussion/views.py:383 discussion/views.py:390
+msgid "You already liked this answer"
+msgstr ""
+
+#: discussion/views.py:386 discussion/views.py:396
+msgid "Answer liked!"
+msgstr ""
+
+#: discussion/views.py:407 discussion/views.py:414
+msgid "You already disliked this answer"
+msgstr ""
+
+#: discussion/views.py:410 discussion/views.py:420
+msgid "Answer disliked!"
+msgstr ""
+
+#: discussion/views.py:431 discussion/views.py:438
+msgid "You already liked this question"
+msgstr ""
+
+#: discussion/views.py:434 discussion/views.py:444
+msgid "Question liked!"
+msgstr ""
+
+#: discussion/views.py:455 discussion/views.py:462
+msgid "You already disliked this question"
+msgstr ""
+
+#: discussion/views.py:458 discussion/views.py:468
+msgid "Question disliked!"
 msgstr ""
 
 #: env/lib/python3.10/site-packages/django/contrib/messages/apps.py:15
@@ -1686,13 +1844,200 @@ msgid ""
 "mail address</a>."
 msgstr ""
 
-#: templates/openid/login.html:9
-msgid "OpenID Sign In"
+#: templates/faq/index.html:18 templates/forum/community/index.html:18
+#: templates/forum/groups/index.html:18 templates/partials/breadcrum.html:16
+#: templates/partials/footer.html:22 templates/partials/left-sidebar.html:23
+#: templates/partials/top-nav.html:27
+msgid "Home"
 msgstr ""
 
-#: templates/partials/breadcrum.html:16 templates/partials/footer.html:22
-#: templates/partials/left-sidebar.html:23 templates/partials/top-nav.html:27
-msgid "Home"
+#: templates/faq/index.html:22 templates/partials/footer.html:46
+#: templates/partials/left-sidebar.html:72
+msgid "FAQs"
+msgstr ""
+
+#: templates/faq/index.html:30 templates/partials/search.html:6
+msgid "Ask Question"
+msgstr ""
+
+#: templates/faq/index.html:55
+msgid "No Frequently Asked Questions"
+msgstr ""
+
+#: templates/forum/category-detail.html:16
+#: templates/forum/community/details.html:18
+#: templates/forum/community/posts.html:18
+#: templates/forum/groups/details.html:18 templates/forum/groups/posts.html:18
+#: templates/forum/tag-detail.html:16
+msgid "Created By"
+msgstr ""
+
+#: templates/forum/category-detail.html:17
+#: templates/forum/community/details.html:19
+#: templates/forum/community/posts.html:19
+#: templates/forum/groups/details.html:19 templates/forum/groups/posts.html:19
+#: templates/forum/tag-detail.html:17
+msgid "Date Created"
+msgstr ""
+
+#: templates/forum/category-detail.html:18
+#: templates/forum/community/posts.html:21 templates/forum/groups/posts.html:21
+#: templates/forum/tag-detail.html:19
+#: templates/user/user-ask-questions.html:665
+#: templates/user/user-groups.html:841 templates/user/users.html:826
+msgid "Posts"
+msgstr ""
+
+#: templates/forum/community/details.html:20
+#: templates/forum/community/index.html:39
+msgid "Followers"
+msgstr ""
+
+#: templates/forum/community/details.html:24
+#: templates/forum/community/index.html:41
+#: templates/forum/community/posts.html:25 templates/forum/tag-detail.html:23
+msgid "Unfollow"
+msgstr ""
+
+#: templates/forum/community/details.html:24
+#: templates/forum/community/index.html:41
+#: templates/forum/community/posts.html:25 templates/forum/tag-detail.html:23
+msgid "Follow"
+msgstr ""
+
+#: templates/forum/community/details.html:34
+#: templates/forum/community/posts.html:20
+#: templates/forum/groups/details.html:20
+#: templates/forum/groups/details.html:34 templates/forum/groups/posts.html:20
+#: templates/forum/tag-detail.html:18
+msgid "Members"
+msgstr ""
+
+#: templates/forum/community/details.html:41
+#: templates/forum/community/details.html:77
+#: templates/forum/groups/details.html:41
+#: templates/forum/groups/details.html:77
+msgid "Question"
+msgstr ""
+
+#: templates/forum/community/details.html:55
+#: templates/forum/groups/details.html:55
+msgid "Reached"
+msgstr ""
+
+#: templates/forum/community/details.html:62
+#: templates/forum/groups/details.html:62
+msgid "About"
+msgstr ""
+
+#: templates/forum/community/details.html:69
+#: templates/forum/groups/details.html:69
+msgid "Top posts"
+msgstr ""
+
+#: templates/forum/community/details.html:73
+#: templates/forum/groups/details.html:73
+msgid "View All"
+msgstr ""
+
+#: templates/forum/community/details.html:81
+#: templates/forum/groups/details.html:81
+msgid "Newest"
+msgstr ""
+
+#: templates/forum/community/details.html:105
+#: templates/forum/community/details.html:124
+#: templates/forum/community/details.html:142
+#: templates/forum/groups/details.html:105
+#: templates/forum/groups/details.html:124
+#: templates/forum/groups/details.html:142
+msgid "No Questions Posted Yet"
+msgstr ""
+
+#: templates/forum/community/details.html:160
+msgid "No Group has joined this community yes"
+msgstr ""
+
+#: templates/forum/community/index.html:51
+msgid "No communities found."
+msgstr ""
+
+#: templates/forum/community/posts.html:47
+msgid "Ask a Question to Community"
+msgstr ""
+
+#: templates/forum/community/posts.html:85 templates/forum/groups/posts.html:84
+msgid "In"
+msgstr ""
+
+#: templates/forum/community/posts.html:120
+#: templates/forum/groups/posts.html:119
+#: templates/resources/partials/right-sidebar.html:66
+msgid "Answers"
+msgstr ""
+
+#: templates/forum/community/posts.html:125
+#: templates/forum/groups/posts.html:124
+msgid "Views"
+msgstr ""
+
+#: templates/forum/community/posts.html:163
+#: templates/forum/groups/posts.html:162
+msgid "Answer"
+msgstr ""
+
+#: templates/forum/community/posts.html:172
+msgid "No Questions Found in this Community"
+msgstr ""
+
+#: templates/forum/groups/details.html:24 templates/forum/groups/posts.html:25
+msgid "Leave Group"
+msgstr ""
+
+#: templates/forum/groups/details.html:24 templates/forum/groups/posts.html:25
+msgid "Join Group"
+msgstr ""
+
+#: templates/forum/groups/details.html:100
+#: templates/forum/groups/details.html:137
+#: templates/forum/groups/details.html:154
+msgid "by"
+msgstr ""
+
+#: templates/forum/groups/details.html:158
+msgid "No Group has not joined a Community"
+msgstr ""
+
+#: templates/forum/groups/index.html:52
+msgid "Post"
+msgstr ""
+
+#: templates/forum/groups/index.html:56 templates/partials/left-sidebar.html:97
+msgid "User"
+msgstr ""
+
+#: templates/forum/groups/index.html:62
+msgid "Leave group"
+msgstr ""
+
+#: templates/forum/groups/index.html:64
+msgid "Join group"
+msgstr ""
+
+#: templates/forum/groups/index.html:76
+msgid "No groups found."
+msgstr ""
+
+#: templates/forum/groups/posts.html:46
+msgid "Ask a Question to Group"
+msgstr ""
+
+#: templates/forum/groups/posts.html:171
+msgid "No Questions Found in this Group"
+msgstr ""
+
+#: templates/openid/login.html:9
+msgid "OpenID Sign In"
 msgstr ""
 
 #: templates/partials/footer.html:12
@@ -1724,10 +2069,6 @@ msgstr ""
 
 #: templates/partials/footer.html:43
 msgid "Ask question"
-msgstr ""
-
-#: templates/partials/footer.html:46 templates/partials/left-sidebar.html:72
-msgid "FAQs"
 msgstr ""
 
 #: templates/partials/footer.html:49
@@ -1783,11 +2124,9 @@ msgid "Menu"
 msgstr ""
 
 #: templates/partials/left-sidebar.html:31
+#: templates/resources/partials/right-sidebar.html:62
+#: templates/resources/partials/right-sidebar.html:125
 msgid "Questions"
-msgstr ""
-
-#: templates/partials/left-sidebar.html:39
-msgid "Communities"
 msgstr ""
 
 #: templates/partials/left-sidebar.html:47
@@ -1806,18 +2145,6 @@ msgstr ""
 msgid "Videos"
 msgstr ""
 
-#: templates/partials/left-sidebar.html:80
-msgid "Groups"
-msgstr ""
-
-#: templates/partials/left-sidebar.html:88
-msgid "Tags"
-msgstr ""
-
-#: templates/partials/left-sidebar.html:97
-msgid "User"
-msgstr ""
-
 #: templates/partials/left-sidebar.html:103
 msgid "Profile"
 msgstr ""
@@ -1833,10 +2160,6 @@ msgstr ""
 
 #: templates/partials/search.html:4
 msgid "Have a question? Ask or enter a search"
-msgstr ""
-
-#: templates/partials/search.html:6
-msgid "Ask Question"
 msgstr ""
 
 #: templates/partials/top-nav.html:38
@@ -1870,6 +2193,42 @@ msgstr ""
 
 #: templates/partials/top-nav.html:177 templates/partials/top-nav.html:219
 msgid "Sign up"
+msgstr ""
+
+#: templates/resources/partials/right-sidebar.html:5
+msgid "Ask a question"
+msgstr ""
+
+#: templates/resources/partials/right-sidebar.html:13
+msgid "Categories"
+msgstr ""
+
+#: templates/resources/partials/right-sidebar.html:17
+#: templates/resources/partials/right-sidebar.html:24
+#: templates/resources/partials/right-sidebar.html:31
+#: templates/resources/partials/right-sidebar.html:39
+#: templates/resources/partials/right-sidebar.html:47
+msgid "All"
+msgstr ""
+
+#: templates/resources/partials/right-sidebar.html:70
+msgid "Users"
+msgstr ""
+
+#: templates/resources/partials/right-sidebar.html:85
+msgid "Most Liked Questions"
+msgstr ""
+
+#: templates/resources/partials/right-sidebar.html:106
+msgid "Top members"
+msgstr ""
+
+#: templates/resources/partials/right-sidebar.html:124
+msgid "Points"
+msgstr ""
+
+#: templates/resources/partials/right-sidebar.html:138
+msgid "Trending Tags"
 msgstr ""
 
 #: templates/socialaccount/authentication_error.html:5

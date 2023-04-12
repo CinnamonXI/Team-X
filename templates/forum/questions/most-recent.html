@@ -1,3 +1,4 @@
+{% load i18n %}
 {% if most_recent_questions %}
     {% for recent_question in most_recent_questions %}
         <div class="single-qa-box like-dislike">
@@ -51,7 +52,7 @@
                             <span>{{ recent_question.created_at }}</span>
                         </li>
                         <li>
-                            <span>In:</span>
+                            <span>{% trans 'In' %}:</span>
                             <a href="{% url 'questions:category_detail' recent_question.category.slug %}" class="graphic">
                                 {{ recent_question.category.title }}
                             </a>
@@ -85,12 +86,12 @@
                             </li> -->
                             <li>
                                 <a href="{{ recent_question.get_absolute_url }}#answers">
-                                    {{ recent_question.answers.all.count }} Answers
+                                    {{ recent_question.answers.all.count }} {% trans 'Answers' %}
                                 </a>
                             </li>
                             <li>
                                 <a>
-                                    {{ recent_question.views}} Views
+                                    {{ recent_question.views}} {% trans 'Views' %}
                                 </a>
                             </li>
                             <li>
@@ -128,7 +129,7 @@
                         </ul>
 
                         <a href="{{ recent_question.get_absolute_url }}#answer" class="default-btn">
-                            Answer
+                            {% trans 'Answer' %}
                         </a>
                     </div>
                 </div>
@@ -137,7 +138,7 @@
     {% endfor %}
 {% else %}
     <div class="alert alert-info">
-        No Recent Questions Found
+        {% trans 'No Recent Questions Found' %}
     </div>
 {% endif %}
 <!-- <div class="pagination-area">

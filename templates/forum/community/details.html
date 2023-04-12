@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 		<!-- Start Mail Content Area -->
 		<div class="main-content-area ptb-100">
@@ -14,13 +15,13 @@
                                 <div class="profile-img">
                                     <img src="{% if community.image %}{{ community.image.url }}{% else %}/static/community.jpg{% endif %}" alt="{{ community.title }}">
                                     <a href="{{ community.get_absolute_url }}"><h3>{{ community.title }}</h3></a>
-                                    <span>Created By {{ community.owner }}</span>
-                                    <span>Date Created {{ community.created_at }}</span>
-                                    <button class="followers-btn">{{ community.followers.all|length }} Followers</button>
+                                    <span>{% trans 'Created By' %} {{ community.owner }}</span>
+                                    <span>{% trans 'Date Created' %} {{ community.created_at }}</span>
+                                    <button class="followers-btn">{{ community.followers.all|length }} {% trans 'Followers' %}</button>
                                 </div>
                                 {% if request.user.is_authenticated %}
                                 <div class="edit-btn">
-                                    <a href="{% url 'questions:follow_unfollow_community' community.slug %}" class="default-btn">{% if request.user in community.followers.all %}Unfollow{% else %}Follow{% endif %}</a>
+                                    <a href="{% url 'questions:follow_unfollow_community' community.slug %}" class="default-btn">{% if request.user in community.followers.all %}{% trans 'Unfollow' %}{% else %}{% trans 'Follow' %}{% endif %}</a>
                                 </div>
                                 {% endif %}
                             </div>
@@ -30,57 +31,57 @@
 									<div class="col-xl-3 col-sm-6">
 										<div class="single-achive">
 											<h2>{{ community.followers.all|length }}</h2>
-											<span>Members</span>
+											<span>{% trans 'Members' %}</span>
 										</div>
 									</div>
 
 									<div class="col-xl-3 col-sm-6">
 										<div class="single-achive">
 											<h2>{{ community.questions.all|length }}</h2>
-											<span>Question</span>
+											<span>{% trans 'Question' %}</span>
 										</div>
 									</div>
 
 									<div class="col-xl-3 col-sm-6">
 										<div class="single-achive">
 											<h2>{{ community.groups.all|length }}</h2>
-											<span>Groups</span>
+											<span>{% trans 'Groups' %}</span>
 										</div>
 									</div>
 
 									<div class="col-xl-3 col-sm-6">
 										<div class="single-achive">
 											<h2>2M</h2>
-											<span>Reached</span>
+											<span>{% trans 'Reached' %}</span>
 										</div>
 									</div>
 								</div>
 							</div>
 
 							<div class="about">
-								<h3>About</h3>
+								<h3>{% trans 'About' %}</h3>
 								{{ community.description|linebreaksbr|default:'No About Updated' }}
 							</div>
 
 
 							<div class="top-posts mt-4">
 								<div class="d-flex justify-content-between">
-									<h3>Top posts</h3>
+									<h3>{% trans 'Top posts' %}</h3>
 
 									<ul class="nav nav-tabs" id="myTab" role="tablist">
 										<li class="nav-item" role="presentation">
-											<button class="nav-link active" id="view-all-tab" data-bs-toggle="tab" data-bs-target="#view-all" type="button" role="tab" aria-controls="view-all" aria-selected="true">View All</button>
+											<button class="nav-link active" id="view-all-tab" data-bs-toggle="tab" data-bs-target="#view-all" type="button" role="tab" aria-controls="view-all" aria-selected="true">{% trans 'View All' %}</button>
 										</li>
 										
 										<li class="nav-item" role="presentation">
-										  	<button class="nav-link" id="question-tab" data-bs-toggle="tab" data-bs-target="#question" type="button" role="tab" aria-controls="question" aria-selected="false">Question</button>
+										  	<button class="nav-link" id="question-tab" data-bs-toggle="tab" data-bs-target="#question" type="button" role="tab" aria-controls="question" aria-selected="false">{% trans 'Question' %}</button>
 										</li>
 
 										<li class="nav-item" role="presentation">
-										  	<button class="nav-link" id="newest-tab" data-bs-toggle="tab" data-bs-target="#newest" type="button" role="tab" aria-controls="newest" aria-selected="false">Newest</button>
+										  	<button class="nav-link" id="newest-tab" data-bs-toggle="tab" data-bs-target="#newest" type="button" role="tab" aria-controls="newest" aria-selected="false">{% trans 'Newest' %}</button>
 										</li>
                                         <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="groups-tab" data-bs-toggle="tab" data-bs-target="#groups" type="button" role="tab" aria-controls="groups" aria-selected="false">Groups</button>
+                                            <button class="nav-link" id="groups-tab" data-bs-toggle="tab" data-bs-target="#groups" type="button" role="tab" aria-controls="groups" aria-selected="false">{% trans 'Groups' %}</button>
                                         </li>
 									</ul>
 								</div>
@@ -101,7 +102,7 @@
                                             {% endfor %}
 										</ul>
                                         {% else %}
-                                            <p>No Questions Posted Yet</p>
+                                            <p>{% trans 'No Questions Posted Yet' %}</p>
                                         {% endif %}
 									</div>
 
@@ -120,7 +121,7 @@
                                                 {% endfor %}
                                             </ul>
                                         {% else %}
-                                            <p>No Questions Posted Yet</p>
+                                            <p>{% trans 'No Questions Posted Yet' %}</p>
                                         {% endif %}
 									</div>
 									<div class="tab-pane fade" id="newest" role="tabpanel" aria-labelledby="newest-tab">
@@ -138,7 +139,7 @@
                                             {% endfor %}
 										</ul>
                                         {% else %}
-                                            <p>No Questions Posted Yet</p>
+                                            <p>{% trans 'No Questions Posted Yet' %}</p>
                                         {% endif %}
 									</div>
                                     <div class="tab-pane fade" id="groups" role="tabpanel" aria-labelledby="groups-tab">
@@ -156,7 +157,7 @@
                                             {% endfor %}
 										</ul>
                                         {% else %}
-                                            <p>No Group has joined this community yes</p>
+                                            <p>{% trans 'No Group has joined this community yes' %}</p>
                                         {% endif %}
 									</div>
 								</div>

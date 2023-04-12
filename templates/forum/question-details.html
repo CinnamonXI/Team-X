@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 		<!-- Start Mail Content Area -->
 		<div class="main-content-area ptb-100">
@@ -14,12 +15,12 @@
 								<li>
 									<a href="/">
 										<i class="ri-home-8-line"></i>
-										Home
+										{% trans 'Home' %}
 									</a>
 								</li>
 								<li>
 									<a href="{% url 'questions:all' %}">
-										Questions
+										{% trans 'Questions' %}
 									</a>
 								</li>
 								<li class="active">
@@ -81,7 +82,7 @@
 													<span>{{ question.created_at }}</span>
 												</li>
 												<li>
-													<span>In:</span>
+													<span>{% trans 'In' %}:</span>
 													<a href="{% url 'questions:category_detail' question.category.slug %}" class="graphic">
 														{{ question.category.title }}
 													</a>
@@ -116,12 +117,12 @@
 													</li> -->
 													<li>
 														<a href="{{ question.get_absolute_url }}#answers">
-															{{ question.answers.all.count }} Answers
+															{{ question.answers.all.count }} {% trans 'Answers' %}
 														</a>
 													</li>
 													<li>
 														<a>
-															{{ question.views }} Views
+															{{ question.views }} {% trans 'Views' %}
 														</a>
 													</li>
 													<li>
@@ -159,7 +160,7 @@
 												</ul>
 						
 												<a href="#answer" class="default-btn bg-ea4335">
-													Answer
+													{% trans 'Answer' %}
 												</a>
 											</div>
 										</div>
@@ -168,13 +169,13 @@
 
 								<ul class="answerss d-flex justify-content-between align-items-center" id="answers">
 									<li>
-										<h3>{{ questions.answers.all.count }} Answers</h3>
+										<h3>{{ questions.answers.all.count }} {% trans 'Answers' %}</h3>
 									</li>
 									<li>
 										<select class="form-select" aria-label="Default select example">
-											<option selected>All answer</option>
-											<option value="1">Most Votes</option>
-											<option value="2">Most Recent</option>
+											<option selected>{% trans 'All answer' %}</option>
+											<option value="1">{% trans 'Most Votes' %}</option>
+											<option value="2">{% trans 'Most Recent' %}</option>
 										</select>
 									</li>
 								</ul>
@@ -233,7 +234,7 @@
 														<li class="reports">
 															<a href="" class="report">
 																<i class="ri-error-warning-line"></i>
-																Report
+																{% trans 'Report' %}
 															</a>
 														</li>
 													</ul>
@@ -248,25 +249,25 @@
 									{% endfor %}
 								{% else %}
 									<div class="answer-question-details">
-										<p>No Answers yet, Be the first to dropped an answer</p>
+										<p>{% trans 'No Answers yet, Be the first to dropped an answer' %}</p>
 									</div>
 								{% endif %}
 								{% if request.user.is_authenticated %}
 									<form class="your-answer-form" id="answer" method="POST">
 										{% csrf_token %}
 										<div class="form-group">
-											<h3>Your Answer</h3>
+											<h3>{% trans 'Your Answer' %}</h3>
 										</div>
 										<div class="form-group">
 											<textarea name="content" id="content" cols="30" rows="8" class="form-control" required placeholder="Write your answer here..."></textarea>
 										</div>
 										<div class="form-group">
-											<button type="submit" class="default-btn">Post your answer</button>
+											<button type="submit" class="default-btn">{% trans 'Post your answer' %}</button>
 										</div>
 									</form>
 								{% else %}
 									<div class="answer-question-details">
-										<p>You need to <a href="{% url 'account_login' %}">login</a> to answer this question</p>
+										<p>{% trans 'You need to' %} <a href="{% url 'account_login' %}">{% trans 'login' %}</a> {% trans 'to answer this question' %}</p>
 									</div>
 								{% endif %}
 							</div>

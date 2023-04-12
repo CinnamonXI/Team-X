@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 		<!-- Start Mail Content Area -->
 		<div class="main-content-area ptb-100">
@@ -14,11 +15,11 @@
 								<li>
 									<a href="/">
 										<i class="ri-home-8-line"></i>
-										Home
+										{% trans 'Home' %}
 									</a>
 								</li>
 								<li class="active">
-									FAQs
+									{% trans 'FAQs' %}
 								</li>
 							</ul>
 
@@ -26,7 +27,7 @@
 								<i class="ri-search-line"></i>
 								<input type="text" class="form-control" placeholder="Have a question? Ask or enter a search">
 								<button class="aq-btn">
-									Ask Question
+									{% trans 'Ask Question' %}
 								</button>
 							</form>
 							{% if faqs %}
@@ -51,7 +52,7 @@
 							</div>
 							{% else %}
 								<div class="alert alert-info">
-									No Frequently Asked Questions
+									{% trans 'No Frequently Asked Questions' %}
 								</div>
 							{% endif %}
 						</div>

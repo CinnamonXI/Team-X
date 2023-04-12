@@ -1,3 +1,4 @@
+{% load i18n %}
 {% if most_answered_questions %}
     {% for maquestion in most_answered_questions %}
         <div class="single-qa-box like-dislike">
@@ -50,7 +51,7 @@
                             <span>{{ maquestion.created_at }}</span>
                         </li>
                         <li>
-                            <span>In:</span>
+                            <span>{% trans 'In' %}:</span>
                             <a href="{% url 'questions:category_detail' maquestion.category.slug %}" class="graphic">
                                 {{ maquestion.category.title }}
                             </a>
@@ -85,12 +86,12 @@
                             </li> -->
                             <li>
                                 <a href="{{ maquestion.get_absolute_url }}#answers">
-                                    {{ maquestion.answers.all.count }} Answers
+                                    {{ maquestion.answers.all.count }} {% trans 'Answers' %}
                                 </a>
                             </li>
                             <li>
                                 <a>
-                                    {{ maquestion.views}} Views
+                                    {{ maquestion.views}} {% trans 'Views' %}
                                 </a>
                             </li>
                             <li>
@@ -128,7 +129,7 @@
                         </ul>
 
                         <a href="{{ maquestion.get_absolute_url }}#answer" class="default-btn bg-ea4335">
-                            Answer
+                            {% trans 'Answer' %}
                         </a>
                     </div>
                 </div>
@@ -137,7 +138,7 @@
     {% endfor %}
 {% else %}
     <div class="alert alert-info">
-        No Answered Questions Found
+        {% trans 'No Answered Questions Found' %}
     </div>
 {% endif %}
 <!-- <div class="pagination-area">

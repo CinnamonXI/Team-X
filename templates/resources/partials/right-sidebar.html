@@ -1,7 +1,8 @@
+{% load i18n %}
 <div class="right-siderbar">
     <div class="right-siderbar-common">
         <a href="{% url 'questions:ask' %}" class="default-btn">
-            Ask a question
+            {% trans 'Ask a question' %}
         </a>
     </div>
     <div class="right-siderbar-common">
@@ -9,25 +10,25 @@
         <div class="category discussions">
             <h3>
                 <i class="ri-list-unordered"></i>
-                Categories
+                {% trans 'Categories' %}
             </h3>
                 <ul>
                     {% if articles or article or r_articles %}
-                        <li><a href="{% url 'resources:articles' %}">All</a></li>
+                        <li><a href="{% url 'resources:articles' %}">{% trans 'All' %}</a></li>
                         {% for category in categories %}
                         <li>
                             <a href="{% url 'resources:articles_category' category.slug %}">{{ category }}</a>
                         </li>
                         {% endfor %}
                     {% elif videos or r_videos %}
-                        <li><a href="{% url 'resources:videos' %}">All</a></li>
+                        <li><a href="{% url 'resources:videos' %}">{% trans 'All' %}</a></li>
                         {% for category in categories %}
                         <li>
                             <a href="{% url 'resources:videos_category' category.slug %}">{{ category }}</a>
                         </li>
                         {% endfor %}
                     {% elif documents or r_documents %}
-                        <li><a href="{% url 'resources:documents' %}">All</a></li>
+                        <li><a href="{% url 'resources:documents' %}">{% trans 'All' %}</a></li>
                         {% for category in categories %}
                         <li>
                             <a href="{% url 'resources:documents_category' category.slug %}">{{ category }}</a>
@@ -35,7 +36,7 @@
                         {% endfor %}
                     {% endif %}
                     {% if faqs or faq %}
-                        <li><a href="{% url 'faq' %}">All</a></li>
+                        <li><a href="{% url 'faq' %}">{% trans 'All' %}</a></li>
                         {% for category in categories %}
                         <li>
                             <a href="{% url 'faqs_category' category.slug %}">{{ category }}</a>
@@ -43,7 +44,7 @@
                         {% endfor %}
                     {% endif %}
                     {% if q_category %}
-                        <li><a href="{% url 'questions:all' %}">All</a></li>
+                        <li><a href="{% url 'questions:all' %}">{% trans 'All' %}</a></li>
                         {% for category in categories %}
                         <li>
                             <a href="{% url 'questions:category_detail' category.slug %}">{{ category }}</a>
@@ -58,19 +59,19 @@
             <div class="answer-count">
                 <ul class="d-flex flex-wrap">
                     <li>
-                        <span>Questions</span>
+                        <span>{% trans 'Questions' %}</span>
                         <span class="count">{{ total_questions }}</span>
                     </li>
                     <li>
-                        <span>Answers</span>
+                        <span>{% trans 'Answers' %}</span>
                         <span class="count">{{ total_answers }}</span>
                     </li>
                     <li>
-                        <span>Users</span>
+                        <span>{% trans 'Users' %}</span>
                         <span class="count">{{ total_users }}</span>
                     </li>
                     <li>
-                        <span>Tags</span>
+                        <span>{% trans 'Tags' %}</span>
                         <span class="count">{{ tags.all.count }}</span>
                     </li>
                 </ul>
@@ -81,7 +82,7 @@
         <div class="recent-post">
             <h3>
                 <i class="ri-discuss-line"></i>
-                Most Liked Questions
+                {% trans 'Most Liked Questions' %}
             </h3>
 
             <ul>
@@ -102,7 +103,7 @@
         <div class="top-members">
             <h3>
                 <i class="ri-discuss-line"></i>
-                Top members
+                {% trans 'Top members' %}
             </h3>
 
             <ul>
@@ -120,8 +121,8 @@
                                 <img src="/static/woman.png" style="max-height: 45px !important;" alt="{{ user.username }}">
                             {% endif %}
                         {% endif %}
-                        <p>{{ member.get_full_name|default:"No Name" }} <span>(5k Points)</span></p>
-                        <span>9 Questions</span>
+                        <p>{{ member.get_full_name|default:"No Name" }} <span>(5k {% trans 'Points' %})</span></p>
+                        <span>9 {% trans 'Questions' %}</span>
                     </a>
                 </li>
                 {% endfor %}
@@ -134,7 +135,7 @@
         <div class="trending-tags">
             <h3>
                 <i class="ri-price-tag-3-line"></i>
-                Trending Tags
+                {% trans 'Trending Tags' %}
             </h3>
 
             <ul>

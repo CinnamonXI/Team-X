@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 		<!-- Start Mail Content Area -->
 		<div class="main-content-area ptb-100">
@@ -14,11 +15,11 @@
 								<li>
 									<a href="/">
 										<i class="ri-home-8-line"></i>
-										Home
+										{% trans 'Home' %}
 									</a>
 								</li>
 								<li>
-									Questions
+									{% trans 'Questions' %}
 								</li>
 							</ul>
 							
@@ -27,22 +28,22 @@
 							<ul class="nav nav-tabs questions-tabs d-flex justify-content-between" id="myTab" role="tablist">
 								<li class="nav-item" role="presentation">
 									<button class="nav-link active" id="recent-questions-tab" data-bs-toggle="tab" data-bs-target="#recent-questions" type="button" role="tab" aria-controls="recent-questions" aria-selected="true">
-										Recent
+										{% trans 'Recent' %}
 									</button>
 								</li>
 								<li class="nav-item" role="presentation">
 									<button class="nav-link" id="most-answered-tab" data-bs-toggle="tab" data-bs-target="#most-answered" type="button" role="tab" aria-controls="most-answered" aria-selected="false">
-										Most Answered 
+										{% trans 'Most Answered' %}
 									</button>
 								</li>
 								<li class="nav-item" role="presentation">
 									<button class="nav-link" id="unanswered-question-tab" data-bs-toggle="tab" data-bs-target="#unanswered-question" type="button" role="tab" aria-controls="unanswered-question" aria-selected="false">
-										Unanswered
+										{% trans 'Unanswered' %}
 									</button>
 								</li>
 								<li class="nav-item" role="presentation">
 									<button class="nav-link" id="featured-question-tab" data-bs-toggle="tab" data-bs-target="#featured-question" type="button" role="tab" aria-controls="featured-question" aria-selected="false">
-										Most Viewed
+										{% trans 'Most Viewed' %}
 									</button>
 								</li>
 							</ul>
