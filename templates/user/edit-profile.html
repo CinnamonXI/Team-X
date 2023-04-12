@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 		<!-- Start Mail Content Area -->
 		<div class="main-content-area ptb-100">
@@ -118,30 +119,13 @@
 														<div class="col-sm-6">
 															<label for="language_preference">Language Preference*</label>
 															<select name="language_preference" required class="form-control" id="language_preference">
-																{% if user.profile.language_preference == 'English' %}
-																	<option value="English" selected>English</option>
-																	<option value="Kiswahili">Kiswahili</option>
-																	<option value="Yoruba">Yoruba</option>
-																	<option value="Igbo">Igbo</option>
-																{% endif %}
-																{% if user.profile.language_preference == 'Kiswahili' %}
-																	<option value="English">English</option>
-																	<option value="Kiswahili" selected>Kiswahili</option>
-																	<option value="Yoruba">Yoruba</option>
-																	<option value="Igbo">Igbo</option>
-																{% endif %}
-																{% if user.profile.language_preference == 'Yoruba' %}
-																	<option value="English">English</option>
-																	<option value="Kiswahili">Kiswahili</option>
-																	<option value="Yoruba" selected>Yoruba</option>
-																	<option value="Igbo">Igbo</option>
-																{% endif %}
-																{% if user.profile.language_preference == 'Yoruba' %}
-																	<option value="English">English</option>
-																	<option value="Kiswahili">Kiswahili</option>
-																	<option value="Yoruba">Yoruba</option>
-																	<option value="Igbo" selected>Igbo</option>
-																{% endif %}
+																{% get_available_languages as LANGUAGES %}
+																{% get_language_info_list for LANGUAGES as languages %}
+																{% for language in languages %}
+																	<option value="{{ language.code }}" {% if language.code == user.profile.language_preference %}selected{% endif %}>
+																		{{ language.name_local }}({{ language.code }})
+																	</option>
+																{% endfor %}
 															</select>
 														</div>
 														<div class="col-sm-6">

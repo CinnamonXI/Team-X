@@ -17,17 +17,23 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.utils.translation import gettext_lazy as _
+from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('core.urls')),
-    path('resources/', include('resources.urls')),
-    path('accounts/', include('allauth.urls')),
-    path('users/', include('users.urls')),
-    path('api/', include('api.urls')),
-    path('blogs/', include('blog.urls')),
-    path('forum/', include('discussion.urls')),
+    path('i18n/', include('django.conf.urls.i18n')),
 ]
+urlpatterns += i18n_patterns(
+    path('', include('core.urls')),
+    path(_('admin/'), admin.site.urls),
+    path(_('resources/'), include('resources.urls')),
+    path(_('accounts/'), include('allauth.urls')),
+    path(_('users/'), include('users.urls')),
+    path(_('api/'), include('api.urls')),
+    path(_('blogs/'), include('blog.urls')),
+    path(_('forum/'), include('discussion.urls')),
+    # prefix_default_language=False
+)
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

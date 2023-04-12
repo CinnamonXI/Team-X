@@ -1,3 +1,4 @@
+{% load i18n %}
 <!-- Start Navbar Area -->
 <div class="navbar-area">
     <div class="mobile-responsive-nav">
@@ -6,7 +7,6 @@
                 <div class="logo">
                     <a href="/">
                         <img src="/static/assets/images/logo.png" alt="logo" width="180">
-                        <!-- <h2 style="font-size: px; color: white !important;">HealthLink</h2> -->
                     </a>
                 </div>
             </div>
@@ -18,46 +18,45 @@
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand" href="/">
                     <img src="/static/assets/images/logo.png" alt="logo" width="180">
-                    <!-- <h2 style="font-size: px; color: white !important;">HealthLink</h2> -->
-                    </a>
+                </a>
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto">
                         <li class="nav-item {% if title == 'Homepage' %}active{% endif %}">
                             <a href="/" class="nav-link">
-                                Home
+                                {% trans 'Home' %}
                             </a>
                         </li>
                         <li class="nav-item {% if title == 'About Us' %}active{% endif %}">
                             <a href="{% url 'about' %}" class="nav-link">
-                                About Us
+                                {% trans 'About Us' %}
                             </a>
                         </li>
 
                         <li class="nav-item {% if title == 'Blogs' or category == 'Blogs' %}active{% endif %}">
                             <a href="{% url 'blogs:index' %}" class="nav-link">
-                                Blog
+                                {% trans 'Blog' %}
                             </a>
                         </li>
 
                         <li class="nav-item {% if title == 'Contact Us' %}active{% endif %}">
-                            <a href="{% url 'contact' %}" class="nav-link">Contact Us</a>
+                            <a href="{% url 'contact' %}" class="nav-link">{% trans 'Contact Us' %}</a>
                         </li>
 
                         <li class="nav-item">
                             <a href="#" class="nav-link dropdown-toggle {% if title == 'Frequently Asked Questions' or title == 'Privacy Policy' or title == 'Terms and Conditions' %}active{% endif %}">
-                                Pages
+                                {% trans 'Pages' %}
                             </a>
 
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="{% url 'faq' %}" class="nav-link {% if title == 'Frequently Asked Questions' %}active{% endif %}">FAQ</a>
+                                    <a href="{% url 'faq' %}" class="nav-link {% if title == 'Frequently Asked Questions' %}active{% endif %}">{% trans 'FAQ' %}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{% url 'privacy' %}" class="nav-link {% if title == 'Privacy Policy' %}active{% endif %}">Privacy Policy</a>
+                                    <a href="{% url 'privacy' %}" class="nav-link {% if title == 'Privacy Policy' %}active{% endif %}">{% trans 'Privacy Policy' %}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{% url 'terms' %}" class="nav-link {% if title == 'Terms and Conditions' %}active{% endif %}">Terms & Conditions</a>
+                                    <a href="{% url 'terms' %}" class="nav-link {% if title == 'Terms and Conditions' %}active{% endif %}">{% trans 'Terms & Conditions' %}</a>
                                 </li>
                             </ul>
                         </li>
@@ -67,7 +66,7 @@
                         <ul>
                             <li>
                                 <form class="search-box" action="{% url 'search' %}" method="GET">
-                                    <input type="text" name="q" placeholder="Search for..." class="form-control">
+                                    <input type="text" name="q" placeholder="{% trans 'Search for...' %}" class="form-control">
                             
                                     <button type="submit" class="search-btn">
                                         <i class="ri-search-line"></i>
@@ -130,49 +129,25 @@
                                         <li>
                                             <a href="{% url 'users:profile' %}">
                                                 <i class="ri-user-line"></i>
-                                                User profile
+                                                {% trans 'User profile' %}
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{% url 'users:edit_profile' %}">
                                                 <i class="ri-settings-2-line"></i>
-                                                Setting
+                                                {% trans 'Settings' %}
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{% url 'users:health_records' %}">
                                                 <i class="ri-lightbulb-line"></i>
-                                                Health Records
+                                                {% trans 'Health Records' %}
                                             </a>
                                         </li>
-                                        <!-- <li>
-                                            <a href="">
-                                                <i class="ri-group-line"></i>
-                                                Groups
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <i class="ri-questionnaire-line"></i>
-                                                Ask questions
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <i class="ri-question-answer-line"></i>
-                                                Best Answers
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <i class="ri-restart-line"></i>
-                                                Referrals
-                                            </a>
-                                        </li> -->
                                         <li>
                                             <a href="{% url 'account_logout' %}">
                                                 <i class="ri-logout-box-r-line"></i>
-                                                Log out
+                                                {% trans 'Logout' %}
                                             </a>
                                         </li>
                                     </ul>
@@ -185,7 +160,7 @@
                         <ul>
                             <li>
                                 <form class="search-box" action="{% url 'search' %}" method="GET">
-                                    <input type="text" required name="q" placeholder="Search for..." class="form-control">
+                                    <input type="text" required name="q" placeholder="{% trans 'Search for...' %}" class="form-control">
 
                                     <button type="submit" class="search-btn">
                                         <i class="ri-search-line"></i>
@@ -194,12 +169,12 @@
                             </li>
                             <li>
                                 <a href="{% url 'account_login' %}" class="active">
-                                    Log in
+                                    {% trans 'Sign In' %}
                                 </a>
                             </li>
                             <li>
                                 <a href="{% url 'account_signup' %}">
-                                    Sign up
+                                    {% trans 'Sign up' %}
                                 </a>
                             </li>
                         </ul>
@@ -227,7 +202,7 @@
                         <ul>
                             <li>
                                 <form class="search-box" action="{% url 'search' %}" method="GET">
-                                    <input type="text" name="q" placeholder="Search for..." class="form-control">
+                                    <input type="text" name="q" placeholder="{% trans 'Search for...' %}" class="form-control">
 
                                     <button type="submit" class="search-btn">
                                         <i class="ri-search-line"></i>
@@ -236,12 +211,12 @@
                             </li>
                             <li>
                                 <a href="{% url 'account_login' %}" class="active">
-                                    Log in
+                                    {% trans 'Sign In' %}
                                 </a>
                             </li>
                             <li>
                                 <a href="{% url 'account_signup' %}">
-                                    Sign up
+                                    {% trans 'Sign up' %}
                                 </a>
                             </li>
                         </ul>
@@ -249,7 +224,7 @@
                         <ul>
                             <li>
                                 <form class="search-box" action="{% url 'search' %}" method="GET">
-                                    <input type="text" name="q" placeholder="Search for..." class="form-control">
+                                    <input type="text" name="q" placeholder="{% trans 'Search for...' %}" class="form-control">
                             
                                     <button type="submit" class="search-btn">
                                         <i class="ri-search-line"></i>
@@ -312,49 +287,25 @@
                                         <li>
                                             <a href="{% url 'users:profile' %}">
                                                 <i class="ri-user-line"></i>
-                                                User profile
+                                                {% trans 'User profile' %}
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{% url 'users:edit_profile' %}">
                                                 <i class="ri-settings-2-line"></i>
-                                                Setting
+                                                {% trans 'Settings' %}
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{% url 'users:health_records' %}">
                                                 <i class="ri-lightbulb-line"></i>
-                                                Health Records
+                                                {% trans 'Health Records' %}
                                             </a>
                                         </li>
-                                        <!-- <li>
-                                            <a href="">
-                                                <i class="ri-group-line"></i>
-                                                Group
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <i class="ri-questionnaire-line"></i>
-                                                Ask questions
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <i class="ri-question-answer-line"></i>
-                                                Best Answers
-                                            </a>
-                                        </li> -->
-                                        <!-- <li>
-                                            <a href="">
-                                                <i class="ri-restart-line"></i>
-                                                Referrals
-                                            </a>
-                                        </li> -->
                                         <li>
                                             <a href="{% url 'account_logout' %}">
                                                 <i class="ri-logout-box-r-line"></i>
-                                                Log out
+                                                {% trans 'Logout' %}
                                             </a>
                                         </li>
                                     </ul>

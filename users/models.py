@@ -1,9 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.utils.text import slugify
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.urls import reverse
+from healthlink.settings import LANGUAGES as LANGUAGE_CHOICES
 
 # Create your models here.
 
@@ -22,19 +22,12 @@ class Follower(models.Model):
     def __str__(self):
         return f'{self.user_from} follows {self.user_to}'
 
-LANGUAGE_CHOICES = (
-    #languages in Kenya and nigeria
-    ('English', 'English'),
-    ('Kiswahili', 'Kiswahili'),
-    ('Yoruba', 'Yoruba'),
-    ('Igbo', 'Igbo'),
-)   
 class Profile(models.Model):
     user = models.OneToOneField('auth.User', on_delete=models.CASCADE, related_name='profile')
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES, default='other')
     age = models.PositiveSmallIntegerField(blank=True, null=True)
     location = models.CharField(max_length=100, blank=True, null=True)
-    language_preference = models.CharField(max_length=100, choices=LANGUAGE_CHOICES, default='English')
+    language_preference = models.CharField(max_length=100, choices=LANGUAGE_CHOICES, default='en')
     followers = models.ManyToManyField(Follower, blank=True)
     image = models.ImageField(upload_to='users/profiles/', null=True, blank=True)
     bio = models.TextField(null=True, blank=True)

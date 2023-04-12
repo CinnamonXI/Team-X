@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <!-- Start Footer Area -->
 <div class="footer-area pt-100 pb-70">
     <div class="container">
@@ -6,29 +8,27 @@
                 <div class="single-footer-widget style-two">
                     <a href="/">
                         <img src="/static/assets/images/logo.png" alt="Image" width="200">
-                        <!-- <h2 class="text-light">HealthLink</h2> -->
                     </a>
-
-                    <p>Join HealthLink's community and connect with others who understand your health condition. Our features include discussion boards, search functionality, and a resource library for better health support.</p>
+                    <p>{% trans "Join HealthLink's community and connect with others who understand your health condition. Our features include discussion boards, search functionality, and a resource library for better health support." %}</p>
                 </div>
             </div>
 
             <div class="col-lg-2 col-sm-6">
                 <div class="single-footer-widget style-two ml-15">
-                    <h3>Company</h3>
+                    <h3>{% trans 'Company' %}</h3>
 
                     <ul class="import-link">
                         <li>
-                            <a href="/">Home</a>
+                            <a href="/">{% trans 'Home' %}</a>
                         </li>
                         <li>
-                            <a href="{% url 'about' %}">About us</a>
+                            <a href="{% url 'about' %}">{% trans 'About us' %}</a>
                         </li>
                         <li>
-                            <a href="{% url 'contact' %}">Contact us</a>
+                            <a href="{% url 'contact' %}">{% trans 'Contact us' %}</a>
                         </li>
                         <li>
-                            <a href="{% url 'blogs:index' %}">Blog</a>
+                            <a href="{% url 'blogs:index' %}">{% trans 'Blogs' %}</a>
                         </li>
                     </ul>
                 </div>
@@ -36,20 +36,20 @@
 
             <div class="col-lg-2 col-sm-6">
                 <div class="single-footer-widget style-two">
-                    <h3>Explore</h3>
+                    <h3>{% trans 'Explore' %}</h3>
 
                     <ul class="import-link">
                         <li>
-                            <a href="">Ask question</a>
+                            <a href="{% url 'questions:ask' %}">{% trans 'Ask question' %}</a>
                         </li>
                         <li>
-                            <a href="{% url 'faq' %}">FAQs</a>
+                            <a href="{% url 'faq' %}">{% trans 'FAQs' %}</a>
                         </li>
                         <li>
-                            <a href="{% url 'privacy' %}">Privacy policy</a>
+                            <a href="{% url 'privacy' %}">{% trans 'Privacy policy' %}</a>
                         </li>
                         <li>
-                            <a href="{% url 'terms' %}">Terms & Conditions</a>
+                            <a href="{% url 'terms' %}">{% trans 'Terms & Conditions' %}</a>
                         </li>
                     </ul>
                 </div>
@@ -57,20 +57,20 @@
 
             <div class="col-lg-2 col-sm-6">
                 <div class="single-footer-widget style-two">
-                    <h3>Follow us</h3>
+                    <h3>{% trans 'Follow us' %}</h3>
 
                     <ul class="import-link">
                         <li>
-                            <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+                            <a href="https://www.facebook.com/" target="_blank">{% trans 'Facebook' %}</a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+                            <a href="https://www.instagram.com/" target="_blank">{% trans 'Instagram' %}</a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/" target="_blank">Linkedin</a>
+                            <a href="https://www.linkedin.com/" target="_blank">{% trans 'Linkedin' %}</a>
                         </li>
                         <li>
-                            <a href="https://www.twitter.com/" target="_blank">Twitter</a>
+                            <a href="https://www.twitter.com/" target="_blank">{% trans 'Twitter' %}</a>
                         </li>
                     </ul>
                 </div>
@@ -78,20 +78,20 @@
 
             <div class="col-lg-3 col-sm-6">
                 <div class="single-footer-widget style-two">
-                    <h3>Contact Us</h3>
+                    <h3>{% trans 'Contact Us' %}</h3>
 
                     <ul class="address-link">
                         <li>
-                            <span>Call:</span>
+                            <span>{% trans 'Call' %}:</span>
                             <a href="tel:+2547 95 067 776">+2547 95 067 776</a>
                         </li>
                         <li>
-                            <span>Email:</span>
+                            <span>{% trans 'Email' %}:</span>
                             <a href="mailto:jeff.odhiambo@studentambassadors.com"><span
                                     class="__cf_email__">jeff.odhiambo@studentambassadors.com</span></a>
                         </li>
                         <li>
-                            <span>Address:</span>
+                            <span>{% trans 'Address' %}:</span>
                             52106-00100 Nairobi, Kenya
                         </li>
                     </ul>
@@ -111,17 +111,26 @@
         <div class="copy-right-content">
             <div class="row">
                 <div class="col-lg-6 col-md-8">
-                    <p>© Proudly Owned by <a href="/" target="_blank">Team X</a></p>
+                    <p>© {% trans 'Proudly Owned by' %} <a href="/" target="_blank">{% trans 'Team X' %}</a></p>
                 </div>
                 <div class="col-lg-6 col-md-4">
                     <div class="language">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Language</option>
-                            <option value="1">English</option>
-                            <option value="2">Arabic</option>
-                            <option value="3">Germany</option>
-                        </select>
-                        <i class="ri-global-line"></i>
+                        <form action="{% url 'set_language' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ request.path }}">
+                            <select class="form-select" aria-label="Default select example" name="language" id="">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                    <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
+                                        {{ language.name_local }}({{ language.code }})
+                                    </option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit" class="btn btn-info btn-sm">{% trans 'Change' %}</button>
+                            <i class="ri-global-line"></i>
+                        </form>
                     </div>
                 </div>
             </div>

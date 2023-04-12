@@ -1,3 +1,4 @@
+{% load i18n %}
 <div class="sidebar-menu-wrap">
     <div class="sidemenu-wrap d-flex justify-content-between align-items-center">
         <h3>HealthLink</h3>
@@ -8,7 +9,7 @@
       
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">{% trans 'Menu' %}</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -19,7 +20,7 @@
                             <a href="/" class="box-style {% if title == 'Homepage' %}active{% endif %}">
                                 <span class="menu-title">
                                     <i class="ri-home-8-line"></i>
-                                    Home
+                                    {% trans 'Home' %}
                                 </span>
                             </a>
                         </li>
@@ -27,7 +28,7 @@
                             <a href="{% url 'questions:all' %}" class="box-style {% if title == 'Questions' %}active{% endif %}">
                                 <i class="ri-question-line"></i>
                                 <span class="menu-title">
-                                    Questions
+                                    {% trans 'Questions' %}
                                 </span>
                             </a>
                         </li>
@@ -35,7 +36,7 @@
                             <a href="{% url 'questions:communities' %}" class="box-style {% if title == 'Communities' %}active{% endif %}">
                                 <span class="menu-title">
                                     <i class="ri-links-line"></i>
-                                    Communities
+                                    {% trans 'Communities' %}
                                 </span>
                             </a>
                         </li>
@@ -43,23 +44,23 @@
                             <a href="#" class="box-style has-arrow {% if r_documents or r_articles or r_videos %}active{% endif %}">
                                 <span class="menu-title">
                                     <i class="ri-book-line"></i>
-                                    Resources
+                                    {% trans 'Resources' %}
                                 </span>
                             </a>
                             <ul class="sidemenu-nav-second-level">
                                 <li>
                                     <a href="{% url 'resources:articles' %}">
-                                        <span class="menu-title {% if r_articles %}active{% endif %}">Articles</span>
+                                        <span class="menu-title {% if r_articles %}active{% endif %}">{% trans 'Articles' %}</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'resources:documents' %}">
-                                        <span class="menu-title {% if r_documents %}active{% endif %}">Documents</span>
+                                        <span class="menu-title {% if r_documents %}active{% endif %}">{% trans 'Documents' %}</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'resources:videos' %}">
-                                        <span class="menu-title {% if r_videos %}active{% endif %}">Videos</span>
+                                        <span class="menu-title {% if r_videos %}active{% endif %}">{% trans 'Videos' %}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -68,7 +69,7 @@
                             <a href="{% url 'faq' %}" class="box-style {% if title == 'Frequently Asked Questions' %}active{% endif %}">
                                 <span class="menu-title">
                                     <i class="ri-hq-line"></i>
-                                    FAQs
+                                    {% trans 'FAQs' %}
                                 </span>
                             </a>
                         </li>
@@ -76,7 +77,7 @@
                             <a href="{% url 'questions:groups' %}" class="box-style {% if title == 'Groups' %}active{% endif %}">
                                 <span class="menu-title">
                                     <i class="ri-group-2-line"></i>
-                                    Groups
+                                    {% trans 'Groups' %}
                                 </span>
                             </a>
                         </li>
@@ -84,7 +85,7 @@
                             <a href="{% url 'questions:tags' %}" class="box-style {% if title == 'Tags' %}active{% endif %}">
                                 <span class="menu-title">
                                     <i class="ri-price-tag-line"></i>
-                                    Tags
+                                    {% trans 'Tags' %}
                                 </span>
                             </a>
                         </li>
@@ -93,23 +94,23 @@
                             <a href="#" class="has-arrow box-style">
                                 <i class="ri-user-line"></i>
                                 <span class="menu-title">
-                                    User
+                                    {% trans 'User' %}
                                 </span>
                             </a>
                             <ul class="sidemenu-nav-second-level">
                                 <li>
                                     <a href="{% url 'users:profile' %}">
-                                        <span class="menu-title">Profile</span>
+                                        <span class="menu-title">{% trans 'Profile' %}</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'users:edit_profile' %}">
-                                        <span class="menu-title">Edit profile</span>
+                                        <span class="menu-title">{% trans 'Edit profile' %}</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{% url 'account_logout' %}">
-                                        <span class="menu-title">Logout</span>
+                                        <span class="menu-title">{% trans 'Logout' %}</span>
                                     </a>
                                 </li>
                             </ul>

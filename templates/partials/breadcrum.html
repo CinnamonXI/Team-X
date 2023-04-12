@@ -1,3 +1,4 @@
+{% load i18n %}
 <!-- Start Page title Area -->
 <div class="page-title-area ptb-100">
     <div class="container">
@@ -12,7 +13,7 @@
                 <div class="page-title-list">
                     <ul>
                         <li>
-                            <a href="/">Home</a>
+                            <a href="/">{% trans 'Home' %}</a>
                         </li>
                         {% if category %}
                         <li>

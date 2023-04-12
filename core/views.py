@@ -6,6 +6,7 @@ from .models import Contact, Faq, Category, Tag
 from users.models import Team
 from resources.models import Article, Video, Document
 from discussion.models import Question
+from django.utils.translation import gettext as _
 # Create your views here.
 def check_if_userprofile_is_updated(user):
     if user.first_name and user.last_name and user.email:
@@ -24,9 +25,10 @@ def index(request):
     most_recent_questions = sorted(questions, key=lambda x: x.created_at, reverse=True)
     most_viewed_questions = sorted(questions, key=lambda x: x.views, reverse=True)
     if request.user.is_authenticated and not check_if_userprofile_is_updated(request.user):
-        messages.warning(request, 'Please update your profile to get the best experience.')
+        messages.warning(request, _('Please update your profile to get the best experience.'))
+    
     context = {
-        'title': 'Homepage',
+        'title': _('Homepage'),
         'unanswered_questions': unanswered_questions,
         'most_answered_questions': most_answered_questions,
         'most_recent_questions': most_recent_questions,
@@ -37,7 +39,7 @@ def index(request):
 
 def about(request):
     context = {
-        'title': 'About Us',
+        'title': _('About Us'),
         'teams': Team.objects.filter(is_active=True)
     }
     return render(request, 'about.html', context)
@@ -57,19 +59,19 @@ def contact(request):
         return redirect('index')
 
     context = {
-        'title': 'Contact Us'
+        'title': _('Contact Us')
     }
     return render(request, 'contact.html', context)
 
 def terms(request):
     context = {
-        'title': 'Terms and Conditions',
+        'title': _('Terms and Conditions'),
     }
     return render(request, 'terms.html', context)
 
 def privacy(request):
     context = {
-        'title': 'Privacy Policy',
+        'title': _('Privacy Policy'),
     }
     return render(request, 'privacy.html', context)
 
@@ -82,7 +84,7 @@ def faq(request, slug=None):
         faqs = Faq.objects.filter(category=category)
     
     context = {
-        'title': 'Frequently Asked Questions',
+        'title': _('Frequently Asked Questions'),
         'faqs': faqs,
         'faq' : 'active',
         'categories' : Category.objects.all(),
@@ -97,7 +99,7 @@ def search(request):
             videos = Video.objects.filter(title__icontains=search) 
             documents = Document.objects.filter(title__icontains=search) 
             context = {
-                'title': f"Search result for '{search}'",
+                'title': _(f"Search result for '{search}'"),
                 'articles': articles,
                 'videos': videos,
                 'documents': documents,
