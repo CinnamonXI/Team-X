@@ -1,3 +1,4 @@
+{% load i18n %}
 {% if documents %}
 <div class="single-qa-box like-dislike">
     <div class="d-flex">
@@ -19,6 +20,6 @@
 </div>
 {% else %}
 <div class="alert alert-info">
-    No documents found
+    {% trans 'No documents found' %}
 </div>
 {% endif %}

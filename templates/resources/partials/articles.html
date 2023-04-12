@@ -1,3 +1,4 @@
+{% load i18n %}
 {% if articles %}
 {% for article in articles %}
 <div class="single-qa-box like-dislike">
@@ -5,7 +6,7 @@
         <div class="flex-grow-1 ms-3">
             <ul class="graphic-design">
                 <li>
-                    <a href="">{{ article.author.get_full_name|default:'No name' }}</a>
+                    <a href="{{ article.author.profile.get_absolute_url }}">{{ article.author.get_full_name|default:'No name' }}</a>
                 </li>
                 <li>
                     <span>{{ article.updated_at }}</span>
@@ -46,6 +47,6 @@
 {% endfor %}
 {% else %}
     <div class="alert alert-info">
-        No articles found
+        {% trans 'No articles found' %}
     </div>
 {% endif %}

@@ -1,3 +1,4 @@
+{% load i18n %}
 {% if videos %}
 {% for video in videos %}
 <div class="single-qa-box like-dislike">
@@ -5,7 +6,7 @@
         <div class="flex-grow-1 ms-3">
             <ul class="graphic-design">
                 <li>
-                    <a href="">{{ video.author.get_full_name|default:'No Name'}}</a>
+                    <a href="{{ video.author.profile.get_absolute_url }}">{{ video.author.get_full_name|default:'No Name'}}</a>
                 </li>
                 <li>
                     <span>{{ video.updated_at }}</span>
@@ -45,6 +46,6 @@
 {% endfor %}
 {% else %}
 <div class="alert alert-info">
-    No videos found
+    {% trans 'No videos found' %}
 </div>
 {% endif %}
