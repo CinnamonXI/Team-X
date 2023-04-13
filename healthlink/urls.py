@@ -29,7 +29,6 @@ urlpatterns += i18n_patterns(
     path(_('resources/'), include('resources.urls')),
     path(_('accounts/'), include('allauth.urls')),
     path(_('users/'), include('users.urls')),
-    path(_('api/'), include('api.urls')),
     path(_('blogs/'), include('blog.urls')),
     path(_('forum/'), include('discussion.urls')),
     # prefix_default_language=False
@@ -38,5 +37,5 @@ urlpatterns += i18n_patterns(
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-admin.site.site_header = "HealthLink Admin"
-admin.site.site_title = "HealthLink Admin Portal"
+admin.site.site_header = _("HealthLink Admin")
+admin.site.site_title = _("HealthLink Admin Portal")
