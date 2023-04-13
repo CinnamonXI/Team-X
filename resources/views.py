@@ -2,7 +2,7 @@ from django.shortcuts import render
 from core.models import Category, Tag
 from .models import Article, Video, Document
 from django.shortcuts import get_object_or_404
-
+from django.utils.translation import gettext as _
 # Create your views here.
 def article(request, slug=None):
     category = None
@@ -12,7 +12,7 @@ def article(request, slug=None):
         category = get_object_or_404(Category, slug=slug)
         articles = Article.objects.filter(category=category, is_published=True)
     context = {
-        'title': 'Resource Articles',
+        'title': _('Resource Articles'),
         'articles': articles,
         'category': category,
         'r_articles': 'active',
@@ -23,7 +23,7 @@ def article_tags(request, slug):
     tag = get_object_or_404(Tag, slug=slug)
     articles = Article.objects.filter(tags=tag, is_published=True)
     context = {
-        'title': f"Articles with tag '{tag}'",
+        'title': _(f"Articles with tag '{tag}'"),
         'articles': articles,
         'tag': tag,
         'r_articles': 'active',
@@ -47,7 +47,7 @@ def video(request, slug=None):
         category = get_object_or_404(Category, slug=slug)
         videos = Video.objects.filter(category=category, is_published=True)
     context = {
-        'title': 'Resource Videos',
+        'title': _('Resource Videos'),
         'videos': videos,
         'category': category,
         'r_videos': 'active',
@@ -58,7 +58,7 @@ def video_tags(request, slug):
     tag = get_object_or_404(Tag, slug=slug)
     videos = Video.objects.filter(tags=tag, is_published=True)
     context = {
-        'title': f"Videos with tag '{tag}'",
+        'title': _(f"Videos with tag '{tag}'"),
         'videos': videos,
         'tag': tag,
         'r_videos': 'active',
@@ -73,7 +73,7 @@ def documents(request, slug=None):
         category = get_object_or_404(Category, slug=slug)
         documents = Document.objects.filter(category=category, is_published=True)
     context = {
-        'title': 'Resource Documents',
+        'title': _('Resource Documents'),
         'documents': documents,
         'category': category,
         'r_documents': 'active',

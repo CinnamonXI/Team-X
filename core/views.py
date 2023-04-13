@@ -53,7 +53,7 @@ def contact(request):
         message = request.POST['message']
         contact = Contact(name=name, email=email, subject=subject, message=message, phone_number=phone_number)
         contact.save()
-        messages.success(request, 'Message submitted successfully.')
+        messages.success(request, _('Message submitted successfully.'))
         # subject = f'Contact: {subject} - {name} - {email}'
         # send_mail(subject,message, email, ['o.jeff3.a@gmail.com',],fail_silently=False,)
         return redirect('index')

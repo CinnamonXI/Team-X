@@ -2,12 +2,13 @@ from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from .models import Post, Comment
 from django.contrib import messages 
+from django.utils.translation import gettext as _
 
 # Create your views here.
 def index(request):
 
     context = {
-        'title': 'Blogs',
+        'title': _('Blogs'),
         'blogs': Post.objects.filter(is_published=True),
     }
     return render(request, 'blog.html', context)
@@ -27,7 +28,7 @@ def detail(request, slug):
     
     context = {
         'title': blog.title,
-        'category': 'Blogs',
+        'category': _('Blogs'),
         'blog' : blog,
     }
     return render(request, 'blog-details.html', context)
@@ -38,7 +39,7 @@ def search(request):
             search = request.GET.get('q')
             blogs = Post.objects.filter(title__icontains=search) or Post.objects.filter(body__icontains=search)
             context = {
-                'title': f"Search result for '{search}'",
+                'title': _(f"Search result for '{search}'"),
                 'blogs': blogs,
             }
             return render(request, 'blog.html', context)

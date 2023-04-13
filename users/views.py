@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from core.views import check_if_userprofile_is_updated
 import re
+from django.utils.translation import gettext as _
 # Create your views here.
 
 def validate_username(username):
@@ -21,9 +22,9 @@ def get_following(user):
 @login_required
 def profile(request):
     if request.user.is_authenticated and not check_if_userprofile_is_updated(request.user):
-        messages.warning(request, 'Please update your profile to get the best experience.')
+        messages.warning(request, _('Please update your profile to get the best experience.'))
     context = {
-        'title': 'My Profile',
+        'title': _('My Profile'),
         'total_followers': get_following(request.user).count(),
     }
     return render(request, 'user/index.html', context)
@@ -49,7 +50,7 @@ def edit_profile(request):
         # print(username)
         #validate username to confirm it doesnt contain spaces and special characters
         if not validate_username(username):
-            messages.warning(request, 'Username can only contain letters and numbers.')
+            messages.warning(request, _('Username can only contain letters and numbers.'))
             return redirect('users:edit_profile')
         else:
             #validate username to confirm it doesnt already exist
@@ -75,10 +76,10 @@ def edit_profile(request):
                 if image:
                     profile.image = image
                 profile.save()
-                messages.success(request, 'Profile updated successfully.')        
+                messages.success(request, _('Profile updated successfully.'))
 
     context = {
-        'title': 'Edit Profile'
+        'title': _('Edit Profile'),
     }
     return render(request, 'user/edit-profile.html', context)
 
@@ -87,13 +88,13 @@ def follow(request, username):
     user_to_follow = get_object_or_404(User, username=username, is_active=True)
     try:
         follower = Follower.objects.get(user_to=user_to_follow, user_from=request.user)
-        messages.warning(request, f'You already follow {user_to_follow}.')
+        messages.warning(request, _(f'You already follow {user_to_follow}.'))
         return redirect('users:user_profile', username=username)
     except Follower.DoesNotExist:
         follower = Follower.objects.create(user_to=user_to_follow, user_from=request.user)
         follower.save()
         user_to_follow.profile.followers.add(follower)
-        messages.success(request, f'Successfully followed {user_to_follow}.')
+        messages.success(request, _(f'Successfully followed {user_to_follow}.'))
         return redirect('users:user_profile', username=username)
 
 @login_required
@@ -103,10 +104,10 @@ def unfollow(request, username):
         follower = Follower.objects.get(user_to=user_to_unfollow, user_from=request.user)
         follower.delete()
         user_to_unfollow.profile.followers.remove(follower)
-        messages.success(request, f'Successfully unfollowed {user_to_unfollow}.')
+        messages.success(request, _(f'Successfully unfollowed {user_to_unfollow}.'))
         return redirect('users:user_profile', username=username)
     except Follower.DoesNotExist:
-        messages.warning(request, f'You do not follow {user_to_unfollow}.')
+        messages.warning(request, _(f'You do not follow {user_to_unfollow}.'))
         return redirect('users:user_profile', username=username)
 
 @login_required
@@ -119,7 +120,7 @@ def user_profile(request, username):
         is_following = False
     context = {
         'user': user,
-        'title': f"{user}'s Profile",
+        'title': _(f"{user}'s Profile"),
         'is_following': is_following,
         'total_followers': get_following(user).count(), 
     }
@@ -129,7 +130,7 @@ def user_profile(request, username):
 def user_health_records(request):
     health_data = HealthData.objects.filter(user=request.user).order_by('-created_at')
     context = {
-        'title': f"{request.user}'s Health Records",
+        'title': _(f"{request.user}'s Health Records"),
         'health_records': health_data
     }
     return render(request, 'user/health_records/index.html', context)
@@ -178,11 +179,11 @@ def add_health_record(request):
             is_disabled = is_disabled
         )
         health_data.save()
-        messages.success(request, 'Health record added successfully.')
+        messages.success(request, _('Health record added successfully.'))
         return redirect('users:health_records')
 
     context = {
-        'title': 'Add Health Record'
+        'title': _('Add Health Record')
     }
     return render(request, 'user/health_records/add.html', context)
 
@@ -190,7 +191,7 @@ def add_health_record(request):
 def edit_health_record(request, id):
     health_data = get_object_or_404(HealthData, id=id)
     if request.user != health_data.user:
-        messages.warning(request, 'You are not authorized to edit this health record.')
+        messages.warning(request, _('You are not authorized to edit this health record.'))
         return redirect('users:health_records')
     else:
         if request.method == 'POST':
@@ -231,11 +232,11 @@ def edit_health_record(request, id):
             health_data.smoke = smoke
             health_data.is_disabled = is_disabled
             health_data.save()
-            messages.success(request, 'Health record updated successfully.')
+            messages.success(request, _('Health record updated successfully.'))
             return redirect('users:health_records')
 
         context = {
-            'title': 'Edit Health Record',
+            'title': _('Edit Health Record'),
             'record': health_data
         }
         return render(request, 'user/health_records/edit.html', context)
@@ -244,16 +245,16 @@ def edit_health_record(request, id):
 def delete_health_record(request, id):
     health_data = get_object_or_404(HealthData, id=id)
     if request.user != health_data.user:
-        messages.warning(request, 'You are not authorized to delete this health record.')
+        messages.warning(request, _('You are not authorized to delete this health record.'))
         return redirect('users:health_records')
     else:
         health_data.delete()
-        messages.success(request, 'Health record deleted successfully.')
+        messages.success(request, _('Health record deleted successfully.'))
         return redirect('users:health_records')
     
 def referal(request):
     context ={
-        'title': 'Referrals'
+        'title': _('Referrals')
     }
     return render(request, 'user/referrals.html', context)
 
@@ -268,7 +269,7 @@ def users(request):
             is_following = False
 
     context = {
-        'title': 'Users',
+        'title': _('Users'),
          'is_following': is_following,
         'users': users,
     }
