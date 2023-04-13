@@ -25,12 +25,12 @@ urlpatterns = [
 ]
 urlpatterns += i18n_patterns(
     path('', include('core.urls')),
-    path(_('admin/'), admin.site.urls),
-    path(_('resources/'), include('resources.urls')),
-    path(_('accounts/'), include('allauth.urls')),
-    path(_('users/'), include('users.urls')),
-    path(_('blogs/'), include('blog.urls')),
-    path(_('forum/'), include('discussion.urls')),
+    path('admin/', admin.site.urls),
+    path('resources/', include('resources.urls')),
+    path('accounts/', include('allauth.urls')),
+    path('users/', include('users.urls')),
+    path('blogs/', include('blog.urls')),
+    path('forum/', include('discussion.urls')),
     # prefix_default_language=False
 )
 

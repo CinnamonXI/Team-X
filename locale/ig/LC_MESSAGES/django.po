@@ -20,71 +20,71 @@ msgstr ""
 
 #: blog/views.py:11 blog/views.py:31 templates/partials/footer.html:31
 msgid "Blogs"
-msgstr ""
+msgstr "Blọọgụ"
 
 #: blog/views.py:42 core/views.py:102
 #, python-brace-format
 msgid "Search result for '{search}'"
-msgstr ""
+msgstr "Chọọ nsonaazụ maka '{search}'"
 
 #: core/urls.py:7
 msgid "search/"
-msgstr ""
+msgstr "chọọ/"
 
 #: core/urls.py:8
 msgid "about/"
-msgstr ""
+msgstr "gbasara/"
 
 #: core/urls.py:9
 msgid "contact/"
-msgstr ""
+msgstr "kọntaktị/"
 
 #: core/urls.py:10
 msgid "terms-and-conditions/"
-msgstr ""
+msgstr "usoro na ọnọdụ/"
 
 #: core/urls.py:11
 msgid "privacy-policy/"
-msgstr ""
+msgstr "amụma nzuzo/"
 
 #: core/urls.py:12
 msgid "faqs/"
-msgstr ""
+msgstr "faks/"
 
 #: core/views.py:28 discussion/views.py:14 discussion/views.py:36
 #: users/views.py:25
 msgid "Please update your profile to get the best experience."
-msgstr ""
+msgstr "Biko melite profaịlụ gị ka ị nweta ahụmịhe kachasị mma."
 
 #: core/views.py:31
 msgid "Homepage"
-msgstr ""
+msgstr "Ibe mbụ"
 
 #: core/views.py:42 templates/partials/top-nav.html:32
 msgid "About Us"
-msgstr ""
+msgstr "Gbasara anyị"
 
 #: core/views.py:56
 msgid "Message submitted successfully."
-msgstr ""
+msgstr "Etinyere ozi nke ọma."
 
 #: core/views.py:62 templates/partials/footer.html:81
 #: templates/partials/top-nav.html:43 templates/privacy.html:59
 #: templates/terms.html:85
 msgid "Contact Us"
-msgstr ""
+msgstr "Kpọtụrụ anyị"
 
 #: core/views.py:68
 msgid "Terms and Conditions"
-msgstr ""
+msgstr "Usoro na ọnọdụ"
 
 #: core/views.py:74 templates/partials/top-nav.html:56
 msgid "Privacy Policy"
-msgstr ""
+msgstr "amụma nzuzo"
 
 #: core/views.py:87
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "Ajụjụ a na-ajụkarị"
 
 #: discussion/views.py:25 templates/forum/index.html:22
 #: templates/forum/question-details.html:23
@@ -92,219 +92,219 @@ msgstr ""
 #: templates/resources/partials/right-sidebar.html:62
 #: templates/resources/partials/right-sidebar.html:125
 msgid "Questions"
-msgstr ""
+msgstr "Ajụjụ"
 
 #: discussion/views.py:49
 msgid "Your answer has been posted successfully"
-msgstr ""
+msgstr "Ebiputela azịza gị nke ọma"
 
 #: discussion/views.py:52
 msgid "An error occurred while posting your answer, please try again"
-msgstr ""
+msgstr "Enwere mperi mgbe ị na-ekesa azịza gị, biko nwaa ọzọ"
 
 #: discussion/views.py:94
 msgid "Your question has been posted successfully"
-msgstr ""
+msgstr "Ebiputela ajụjụ gị nke ọma"
 
 #: discussion/views.py:97 discussion/views.py:182 discussion/views.py:313
 msgid "An error occurred while posting your question, please try again"
-msgstr ""
+msgstr "Enwere mperi mgbe ị na-ekesa ajụjụ gị, biko nwaa ọzọ"
 
 #: discussion/views.py:101
 msgid "Ask Questions"
-msgstr ""
+msgstr "Jụọ ajụjụ"
 
 #: discussion/views.py:110 templates/forum/community/details.html:48
 #: templates/forum/community/details.html:84
 #: templates/forum/groups/index.html:22 templates/partials/left-sidebar.html:47
 #: templates/user/index.html:35 templates/user/index.html:128
 msgid "Groups"
-msgstr ""
+msgstr "Jụọ ajụjụ"
 
 #: discussion/views.py:112 discussion/views.py:123 discussion/views.py:139
 #: discussion/views.py:190
 msgid "groups"
-msgstr ""
+msgstr "Otu dị iche iche"
 
 #: discussion/views.py:133
 msgid ""
 "You are not a member of this group, please join the group to view the posts"
-msgstr ""
+msgstr "Ị bụghị onye otu a, biko sonye na otu ka ịhụ posts"
 
 #: discussion/views.py:179
 #, python-brace-format
 msgid "Your question has been posted to group '{group.title}' successfully"
-msgstr ""
+msgstr "Ebisara ajụjụ gị na otu '{group.title}' nke ọma"
 
 #: discussion/views.py:185
 msgid ""
 "You are not a member of this group, please join the group to ask a question"
-msgstr ""
+msgstr "Ị bụghị onye otu a, biko sonye na otu ka ị jụọ ajụjụ"
 
 #: discussion/views.py:189
 msgid "Ask Group"
-msgstr ""
+msgstr "Jụọ otu"
 
 #: discussion/views.py:201
 #, python-brace-format
 msgid "You have left the group '{group.title}'"
-msgstr ""
+msgstr "Ị hapụla otu '{group.title}'"
 
 #: discussion/views.py:204
 #, python-brace-format
 msgid "You have joined the group '{group.title}'"
-msgstr ""
+msgstr "Ị sonyela otu '{group.title}'"
 
 #: discussion/views.py:211 templates/forum/tags.html:22
 #: templates/partials/left-sidebar.html:96 templates/resources/index.html:52
 #: templates/resources/partials/right-sidebar.html:74
 #: templates/user/index.html:42 templates/user/index.html:132
 msgid "Tags"
-msgstr ""
+msgstr "Tags"
 
 #: discussion/views.py:221
 #, python-brace-format
 msgid "You have unfollowed the tag '{tag.title}'"
-msgstr ""
+msgstr "Ị sochiri mkpado '{tag.title}'"
 
 #: discussion/views.py:224
 #, python-brace-format
 msgid "You have followed the tag '{tag.title}'"
-msgstr ""
+msgstr "I sorola mkpado '{tag.title}'"
 
 #: discussion/views.py:242 templates/forum/community/index.html:22
 #: templates/forum/groups/details.html:48
 #: templates/forum/groups/details.html:84
 #: templates/partials/left-sidebar.html:39 templates/user/index.html:136
 msgid "Communities"
-msgstr ""
+msgstr "Obodo"
 
 #: discussion/views.py:254 discussion/views.py:270 discussion/views.py:321
 msgid "community"
-msgstr ""
+msgstr "obodo"
 
 #: discussion/views.py:264
 #, python-brace-format
 msgid ""
 "You are not following the community '{community.title}', follow it to see "
 "the posts in it"
-msgstr ""
+msgstr "Ị naghị eso obodo '{community.title}', soro ya ka ịhụ posts dị na ya"
 
 #: discussion/views.py:310
 #, python-brace-format
 msgid ""
 "Your question has been posted to community '{community.title}' successfully"
-msgstr ""
+msgstr "Ebisara ajụjụ gị na obodo '{community.title}' nke ọma"
 
 #: discussion/views.py:316
 msgid "You are not following the community, please follow it to ask a question"
-msgstr ""
+msgstr "Ị naghị eso obodo, biko soro ya ka ị jụọ ajụjụ"
 
 #: discussion/views.py:320
 msgid "Ask Community"
-msgstr ""
+msgstr "Jụọ Ogbe"
 
 #: discussion/views.py:332
 #, python-brace-format
 msgid "You have unfollowed the community '{community.title}'"
-msgstr ""
+msgstr "Ị sochiri obodo '{community.title}'"
 
 #: discussion/views.py:335
 #, python-brace-format
 msgid "You have followed the community '{community.title}'"
-msgstr ""
+msgstr "Ị sorola obodo '{community.title}'"
 
 #: discussion/views.py:363
 #, python-brace-format
 msgid "({total_results})Search results for  '{query}'"
-msgstr ""
+msgstr "({total_results})Chọọ rịzọlt maka '{query}'"
 
 #: discussion/views.py:373
 msgid "Please enter a search term"
-msgstr ""
+msgstr "Biko tinye okwu ọchụchọ"
 
 #: discussion/views.py:383 discussion/views.py:390
 msgid "You already liked this answer"
-msgstr ""
+msgstr "Azịza ya masịrị gị"
 
 #: discussion/views.py:386 discussion/views.py:396
 msgid "Answer liked!"
-msgstr ""
+msgstr "Azịza masịrị!"
 
 #: discussion/views.py:407 discussion/views.py:414
 msgid "You already disliked this answer"
-msgstr ""
+msgstr "Azịza a anaghị amasị gị"
 
 #: discussion/views.py:410 discussion/views.py:420
 msgid "Answer disliked!"
-msgstr ""
+msgstr "Achọghị azịza!"
 
 #: discussion/views.py:431 discussion/views.py:438
 msgid "You already liked this question"
-msgstr ""
+msgstr "Ajụjụ a masịrị gị"
 
 #: discussion/views.py:434 discussion/views.py:444
 msgid "Question liked!"
-msgstr ""
+msgstr "Ajụjụ masịrị!"
 
 #: discussion/views.py:455 discussion/views.py:462
 msgid "You already disliked this question"
-msgstr ""
+msgstr "Ajụjụ a amasịghị gị"
 
 #: discussion/views.py:458 discussion/views.py:468
 msgid "Question disliked!"
-msgstr ""
+msgstr "Ajụjụ anaghị amasị!"
 
 #: env/lib/python3.10/site-packages/django/contrib/messages/apps.py:15
 msgid "Messages"
-msgstr ""
+msgstr "Ozi"
 
 #: env/lib/python3.10/site-packages/django/contrib/sitemaps/apps.py:8
 msgid "Site Maps"
-msgstr ""
+msgstr "Maapụ saịtị"
 
 #: env/lib/python3.10/site-packages/django/contrib/staticfiles/apps.py:9
 msgid "Static Files"
-msgstr ""
+msgstr "Faịlụ static"
 
 #: env/lib/python3.10/site-packages/django/contrib/syndication/apps.py:7
 msgid "Syndication"
-msgstr ""
+msgstr "Syndication"
 
 #. Translators: String used to replace omitted page numbers in elided page
 #. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
 #: env/lib/python3.10/site-packages/django/core/paginator.py:30
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #: env/lib/python3.10/site-packages/django/core/paginator.py:50
 msgid "That page number is not an integer"
-msgstr ""
+msgstr "Nọmba ibe ahụ abụghị ọnụọgụ"
 
 #: env/lib/python3.10/site-packages/django/core/paginator.py:52
 msgid "That page number is less than 1"
-msgstr ""
+msgstr "Nọmba ibe ahụ erughị 1"
 
 #: env/lib/python3.10/site-packages/django/core/paginator.py:57
 msgid "That page contains no results"
-msgstr ""
+msgstr "Ibe ahụ enweghị nsonaazụ ọ bụla"
 
 #: env/lib/python3.10/site-packages/django/core/validators.py:22
 msgid "Enter a valid value."
-msgstr ""
+msgstr "Tinye uru bara uru."
 
 #: env/lib/python3.10/site-packages/django/core/validators.py:104
 #: env/lib/python3.10/site-packages/django/forms/fields.py:751
 msgid "Enter a valid URL."
-msgstr ""
+msgstr "Tinye URL ziri ezi."
 
 #: env/lib/python3.10/site-packages/django/core/validators.py:164
 msgid "Enter a valid integer."
-msgstr ""
+msgstr "Tinye integer bara uru."
 
 #: env/lib/python3.10/site-packages/django/core/validators.py:175
 msgid "Enter a valid email address."
-msgstr ""
+msgstr "Tinye adreesị ozi-e bara uru."
 
 #. Translators: "letters" means latin letters: a-z and A-Z.
 #: env/lib/python3.10/site-packages/django/core/validators.py:256
@@ -316,27 +316,27 @@ msgstr ""
 msgid ""
 "Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
 "hyphens."
-msgstr ""
+msgstr "Tinye “slug” bara uru nke nwere mkpụrụedemede, ọnụọgụ, akara ma ọ bụ njiko."
 
 #: env/lib/python3.10/site-packages/django/core/validators.py:276
 #: env/lib/python3.10/site-packages/django/core/validators.py:284
 #: env/lib/python3.10/site-packages/django/core/validators.py:313
 msgid "Enter a valid IPv4 address."
-msgstr ""
+msgstr "Tinye adreesị IPv4 bara uru."
 
 #: env/lib/python3.10/site-packages/django/core/validators.py:293
 #: env/lib/python3.10/site-packages/django/core/validators.py:314
 msgid "Enter a valid IPv6 address."
-msgstr ""
+msgstr "Tinye adreesị IPv6 bara uru."
 
 #: env/lib/python3.10/site-packages/django/core/validators.py:305
 #: env/lib/python3.10/site-packages/django/core/validators.py:312
 msgid "Enter a valid IPv4 or IPv6 address."
-msgstr ""
+msgstr "Tinye adreesị IPv4 ma ọ bụ IPv6 bara uru."
 
 #: env/lib/python3.10/site-packages/django/core/validators.py:348
 msgid "Enter only digits separated by commas."
-msgstr ""
+msgstr "Tinye naanị mkpụrụọnụọgụ ndị rikoma kewapụrụ."
 
 #: env/lib/python3.10/site-packages/django/core/validators.py:354
 #, python-format
@@ -384,7 +384,7 @@ msgstr[1] ""
 #: env/lib/python3.10/site-packages/django/forms/fields.py:347
 #: env/lib/python3.10/site-packages/django/forms/fields.py:386
 msgid "Enter a number."
-msgstr ""
+msgstr "Tinye nọmba."
 
 #: env/lib/python3.10/site-packages/django/core/validators.py:460
 #, python-format
@@ -478,7 +478,7 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1068
 msgid "Boolean (Either True or False)"
-msgstr ""
+msgstr "Boolean (Ma ọ bụ eziokwu ma ọ bụ ụgha)"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1118
 #, python-format
@@ -487,7 +487,7 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1222
 msgid "Comma-separated integers"
-msgstr ""
+msgstr "ọnụọgụ rịkọm kewapụrụ"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1323
 #, python-format
@@ -524,7 +524,7 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1471
 msgid "Date (with time)"
-msgstr ""
+msgstr "Ụbọchị (ya na oge)"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1595
 #, python-format
@@ -533,7 +533,7 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1597
 msgid "Decimal number"
-msgstr ""
+msgstr "Nọmba iri"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1754
 #, python-format
@@ -544,15 +544,15 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1758
 msgid "Duration"
-msgstr ""
+msgstr "Ogologo oge"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1810
 msgid "Email address"
-msgstr ""
+msgstr "Adreesị ozi ịntanetị"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1835
 msgid "File path"
-msgstr ""
+msgstr "Ụzọ faịlụ"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1913
 #, python-format
@@ -561,7 +561,7 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1915
 msgid "Floating point number"
-msgstr ""
+msgstr "Ọnụ ọgụgụ na-ese n'elu mmiri"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1955
 #, python-format
@@ -570,23 +570,23 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1957
 msgid "Integer"
-msgstr ""
+msgstr "Ọnụọgụ"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2049
 msgid "Big (8 byte) integer"
-msgstr ""
+msgstr "Nnukwu (8 byte) ọnụọgụgụ"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2066
 msgid "Small integer"
-msgstr ""
+msgstr "Obere ọnụọgụgụ"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2074
 msgid "IPv4 address"
-msgstr ""
+msgstr "adreesị IPv4"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2105
 msgid "IP address"
-msgstr ""
+msgstr "adreesị IP"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2198
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2199
@@ -596,19 +596,19 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2201
 msgid "Boolean (Either True, False or None)"
-msgstr ""
+msgstr "Boolean (ma ọ bụ eziokwu, ụgha ma ọ bụ ọ dịghị)"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2252
 msgid "Positive big integer"
-msgstr ""
+msgstr "Ọnụ ọgụgụ buru ibu dị mma"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2267
 msgid "Positive integer"
-msgstr ""
+msgstr "Ọnụọgụ dị mma"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2282
 msgid "Positive small integer"
-msgstr ""
+msgstr "Obere ọnụọgụgụ dị mma"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2298
 #, python-format
@@ -617,7 +617,7 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2334
 msgid "Text"
-msgstr ""
+msgstr "Ederede"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2409
 #, python-format
@@ -635,7 +635,7 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2417
 msgid "Time"
-msgstr ""
+msgstr "Oge"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2525
 msgid "URL"
@@ -643,7 +643,7 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2549
 msgid "Raw binary data"
-msgstr ""
+msgstr "Data ọnụọgụ abụọ"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2614
 #, python-format
@@ -652,23 +652,23 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2616
 msgid "Universally unique identifier"
-msgstr ""
+msgstr "Ihe nchọpụta pụrụ iche zuru ụwa ọnụ"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/files.py:231
 msgid "File"
-msgstr ""
+msgstr "Faịlụ"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/files.py:391
 msgid "Image"
-msgstr ""
+msgstr "Onyonyo"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/json.py:18
 msgid "A JSON object"
-msgstr ""
+msgstr "Ihe JSON"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/json.py:20
 msgid "Value must be valid JSON."
-msgstr ""
+msgstr "Uru aghaghị ịdị irè JSON."
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/related.py:918
 #, python-format
@@ -677,11 +677,11 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/related.py:920
 msgid "Foreign Key (type determined by related field)"
-msgstr ""
+msgstr "Igodo mba ofesi (ụdị ekpebie site na mpaghara metụtara ya)"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/related.py:1227
 msgid "One-to-one relationship"
-msgstr ""
+msgstr "Mmekọrịta otu na otu"
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/related.py:1284
 #, python-format
@@ -695,7 +695,7 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/db/models/fields/related.py:1334
 msgid "Many-to-many relationship"
-msgstr ""
+msgstr "Mmekọrịta ọtụtụ-na-ọtụtụ"
 
 #. Translators: If found as last label character, these punctuation
 #. characters will prevent the default label_suffix to be appended to the label
@@ -705,29 +705,29 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/forms/fields.py:91
 msgid "This field is required."
-msgstr ""
+msgstr "A chọrọ ama a."
 
 #: env/lib/python3.10/site-packages/django/forms/fields.py:298
 msgid "Enter a whole number."
-msgstr ""
+msgstr "Tinye nọmba dum."
 
 #: env/lib/python3.10/site-packages/django/forms/fields.py:467
 #: env/lib/python3.10/site-packages/django/forms/fields.py:1240
 msgid "Enter a valid date."
-msgstr ""
+msgstr "Tinye ụbọchị bara uru."
 
 #: env/lib/python3.10/site-packages/django/forms/fields.py:490
 #: env/lib/python3.10/site-packages/django/forms/fields.py:1241
 msgid "Enter a valid time."
-msgstr ""
+msgstr "Tinye oge kwesịrị ekwesị."
 
 #: env/lib/python3.10/site-packages/django/forms/fields.py:517
 msgid "Enter a valid date/time."
-msgstr ""
+msgstr "Tinye ụbọchị/oge bara uru."
 
 #: env/lib/python3.10/site-packages/django/forms/fields.py:551
 msgid "Enter a valid duration."
-msgstr ""
+msgstr "Tinye oge kwesịrị ekwesị."
 
 #: env/lib/python3.10/site-packages/django/forms/fields.py:552
 #, python-brace-format
@@ -736,15 +736,15 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/forms/fields.py:618
 msgid "No file was submitted. Check the encoding type on the form."
-msgstr ""
+msgstr "Ọnweghị faịlụ etinyere. Lelee ụdị ngbanwe dị n'ụdị ahụ."
 
 #: env/lib/python3.10/site-packages/django/forms/fields.py:619
 msgid "No file was submitted."
-msgstr ""
+msgstr "Ọnweghị faịlụ etinyere."
 
 #: env/lib/python3.10/site-packages/django/forms/fields.py:620
 msgid "The submitted file is empty."
-msgstr ""
+msgstr "Faịlụ ezigara abaghị uru."
 
 #: env/lib/python3.10/site-packages/django/forms/fields.py:622
 #, python-format
@@ -756,7 +756,7 @@ msgstr[1] ""
 
 #: env/lib/python3.10/site-packages/django/forms/fields.py:627
 msgid "Please either submit a file or check the clear checkbox, not both."
-msgstr ""
+msgstr "Biko nyefee faịlụ ma ọ bụ lelee igbe nlele doro anya, ọ bụghị ha abụọ."
 
 #: env/lib/python3.10/site-packages/django/forms/fields.py:693
 msgid ""
@@ -779,15 +779,15 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/forms/fields.py:1070
 msgid "Enter a complete value."
-msgstr ""
+msgstr "Tinye ndepụta ụkpụrụ."
 
 #: env/lib/python3.10/site-packages/django/forms/fields.py:1309
 msgid "Enter a valid UUID."
-msgstr ""
+msgstr "Tinye UUID bara uru."
 
 #: env/lib/python3.10/site-packages/django/forms/fields.py:1339
 msgid "Enter a valid JSON."
-msgstr ""
+msgstr "Tinye JSON bara uru."
 
 #. Translators: This is the default suffix added to form field labels
 #: env/lib/python3.10/site-packages/django/forms/forms.py:98
@@ -829,7 +829,7 @@ msgstr ""
 #: env/lib/python3.10/site-packages/django/forms/formsets.py:496
 #: templates/user/health_records/index.html:88
 msgid "Delete"
-msgstr ""
+msgstr "Nye iwu"
 
 #: env/lib/python3.10/site-packages/django/forms/models.py:892
 #, python-format
@@ -850,15 +850,15 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/forms/models.py:913
 msgid "Please correct the duplicate values below."
-msgstr ""
+msgstr "Biko mezie ụkpụrụ oyiri dị n'okpuru."
 
 #: env/lib/python3.10/site-packages/django/forms/models.py:1344
 msgid "The inline value did not match the parent instance."
-msgstr ""
+msgstr "The inline value did not match the parent instance."
 
 #: env/lib/python3.10/site-packages/django/forms/models.py:1435
 msgid "Select a valid choice. That choice is not one of the available choices."
-msgstr ""
+msgstr "Họrọ ezigbo nhọrọ. Nhọrọ ahụ abụghị otu n'ime nhọrọ ndị dị."
 
 #: env/lib/python3.10/site-packages/django/forms/models.py:1574
 #, python-format
@@ -874,20 +874,20 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/forms/widgets.py:439
 msgid "Clear"
-msgstr ""
+msgstr "Kpochapụ"
 
 #: env/lib/python3.10/site-packages/django/forms/widgets.py:440
 msgid "Currently"
-msgstr ""
+msgstr "Ugbu a"
 
 #: env/lib/python3.10/site-packages/django/forms/widgets.py:441
 #: templates/partials/footer.html:131
 msgid "Change"
-msgstr ""
+msgstr "Gbanwee"
 
 #: env/lib/python3.10/site-packages/django/forms/widgets.py:769
 msgid "Unknown"
-msgstr ""
+msgstr "Amaghi ama"
 
 #: env/lib/python3.10/site-packages/django/forms/widgets.py:770
 #: templates/user/health_records/add.html:60
@@ -900,7 +900,7 @@ msgstr ""
 #: templates/user/health_records/edit.html:84
 #: templates/user/health_records/edit.html:87
 msgid "Yes"
-msgstr ""
+msgstr "Ee"
 
 #: env/lib/python3.10/site-packages/django/forms/widgets.py:771
 #: templates/user/health_records/add.html:59
@@ -913,12 +913,12 @@ msgstr ""
 #: templates/user/health_records/edit.html:85
 #: templates/user/health_records/edit.html:88
 msgid "No"
-msgstr ""
+msgstr "Mba"
 
 #. Translators: Please do not add spaces around commas.
 #: env/lib/python3.10/site-packages/django/template/defaultfilters.py:853
 msgid "yes,no,maybe"
-msgstr ""
+msgstr "ee,mba,eleghi anya"
 
 #: env/lib/python3.10/site-packages/django/template/defaultfilters.py:883
 #: env/lib/python3.10/site-packages/django/template/defaultfilters.py:900
@@ -971,11 +971,11 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/utils/dateformat.py:155
 msgid "midnight"
-msgstr ""
+msgstr "etiti abalị"
 
 #: env/lib/python3.10/site-packages/django/utils/dateformat.py:157
 msgid "noon"
-msgstr ""
+msgstr "ehihie"
 
 #: env/lib/python3.10/site-packages/django/utils/dates.py:7
 msgid "Monday"
@@ -1035,23 +1035,23 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/utils/dates.py:25
 msgid "January"
-msgstr ""
+msgstr "Jenụwarị"
 
 #: env/lib/python3.10/site-packages/django/utils/dates.py:26
 msgid "February"
-msgstr ""
+msgstr "Febụwarị"
 
 #: env/lib/python3.10/site-packages/django/utils/dates.py:27
 msgid "March"
-msgstr ""
+msgstr "Maachị"
 
 #: env/lib/python3.10/site-packages/django/utils/dates.py:28
 msgid "April"
-msgstr ""
+msgstr "Eprel"
 
 #: env/lib/python3.10/site-packages/django/utils/dates.py:29
 msgid "May"
-msgstr ""
+msgstr "Mee"
 
 #: env/lib/python3.10/site-packages/django/utils/dates.py:30
 msgid "June"
@@ -1059,27 +1059,27 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/utils/dates.py:31
 msgid "July"
-msgstr ""
+msgstr "Julaị"
 
 #: env/lib/python3.10/site-packages/django/utils/dates.py:32
 msgid "August"
-msgstr ""
+msgstr "Ọgọst"
 
 #: env/lib/python3.10/site-packages/django/utils/dates.py:33
 msgid "September"
-msgstr ""
+msgstr "Septemba"
 
 #: env/lib/python3.10/site-packages/django/utils/dates.py:34
 msgid "October"
-msgstr ""
+msgstr "October"
 
 #: env/lib/python3.10/site-packages/django/utils/dates.py:35
 msgid "November"
-msgstr ""
+msgstr "Nọvemba"
 
 #: env/lib/python3.10/site-packages/django/utils/dates.py:36
 msgid "December"
-msgstr ""
+msgstr "Disemba"
 
 #: env/lib/python3.10/site-packages/django/utils/dates.py:39
 msgid "jan"
@@ -1251,7 +1251,7 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/utils/ipv6.py:8
 msgid "This is not a valid IPv6 address."
-msgstr ""
+msgstr "Nke a abụghị adreesị IPv6 bara uru."
 
 #: env/lib/python3.10/site-packages/django/utils/text.py:76
 #, python-format
@@ -1262,7 +1262,7 @@ msgstr ""
 #: env/lib/python3.10/site-packages/django/utils/text.py:252
 #: templates/account/login.html:25
 msgid "or"
-msgstr ""
+msgstr "ma ọ bụ"
 
 #. Translators: This string is used as a separator between list elements
 #: env/lib/python3.10/site-packages/django/utils/text.py:271
@@ -1314,11 +1314,11 @@ msgstr[1] ""
 
 #: env/lib/python3.10/site-packages/django/views/csrf.py:111
 msgid "Forbidden"
-msgstr ""
+msgstr "Amachibidoro"
 
 #: env/lib/python3.10/site-packages/django/views/csrf.py:112
 msgid "CSRF verification failed. Request aborted."
-msgstr ""
+msgstr "Nyocha CSRF dara. Arịrịọ ewepụrụ."
 
 #: env/lib/python3.10/site-packages/django/views/csrf.py:116
 msgid ""
@@ -1359,29 +1359,29 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/views/csrf.py:148
 msgid "More information is available with DEBUG=True."
-msgstr ""
+msgstr "Ozi ndị ọzọ dị na DEBUG=Eziokwu."
 
 #: env/lib/python3.10/site-packages/django/views/generic/dates.py:44
 msgid "No year specified"
-msgstr ""
+msgstr "Enweghị afọ akọwapụtara"
 
 #: env/lib/python3.10/site-packages/django/views/generic/dates.py:64
 #: env/lib/python3.10/site-packages/django/views/generic/dates.py:115
 #: env/lib/python3.10/site-packages/django/views/generic/dates.py:214
 msgid "Date out of range"
-msgstr ""
+msgstr "Ụbọchị enweghị oke"
 
 #: env/lib/python3.10/site-packages/django/views/generic/dates.py:94
 msgid "No month specified"
-msgstr ""
+msgstr "Enweghị ọnwa akọwapụtara"
 
 #: env/lib/python3.10/site-packages/django/views/generic/dates.py:147
 msgid "No day specified"
-msgstr ""
+msgstr "Enweghị ụbọchị akọwapụtara"
 
 #: env/lib/python3.10/site-packages/django/views/generic/dates.py:194
 msgid "No week specified"
-msgstr ""
+msgstr "Enweghị izu akọwapụtara"
 
 #: env/lib/python3.10/site-packages/django/views/generic/dates.py:349
 #: env/lib/python3.10/site-packages/django/views/generic/dates.py:380
@@ -1408,7 +1408,7 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/views/generic/list.py:70
 msgid "Page is not “last”, nor can it be converted to an int."
-msgstr ""
+msgstr "Ibe abụghị “ikpeazụ”, enweghịkwa ike ịtụgharị ya ka ọ bụrụ int."
 
 #: env/lib/python3.10/site-packages/django/views/generic/list.py:77
 #, python-format
@@ -1422,7 +1422,7 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/views/static.py:38
 msgid "Directory indexes are not allowed here."
-msgstr ""
+msgstr "A naghị anabata ndenye ndekọ aha ebe a."
 
 #: env/lib/python3.10/site-packages/django/views/static.py:40
 #, python-format
@@ -1437,7 +1437,7 @@ msgstr ""
 #: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:7
 #: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:221
 msgid "The install worked successfully! Congratulations!"
-msgstr ""
+msgstr "Ntinye ahụ rụrụ ọrụ nke ọma! Ekele!"
 
 #: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:207
 #, python-format
@@ -1457,7 +1457,7 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:230
 msgid "Django Documentation"
-msgstr ""
+msgstr "Akwụkwọ Django"
 
 #: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:231
 msgid "Topics, references, &amp; how-to’s"
@@ -1465,87 +1465,89 @@ msgstr ""
 
 #: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:239
 msgid "Tutorial: A Polling App"
-msgstr ""
+msgstr "Nkuzi: Ngwa ntuli aka"
 
 #: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:240
 msgid "Get started with Django"
-msgstr ""
+msgstr "Bido na Django"
 
 #: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:248
 msgid "Django Community"
-msgstr ""
+msgstr "Ogbe Django"
 
 #: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:249
 msgid "Connect, get help, or contribute"
-msgstr ""
+msgstr "Jikọọ, nweta enyemaka, ma ọ bụ tinye aka"
 
 #: healthlink/urls.py:28
 msgid "admin/"
-msgstr ""
+msgstr "admin/"
 
 #: healthlink/urls.py:29
 msgid "resources/"
-msgstr ""
+msgstr "akụrụngwa/"
 
 #: healthlink/urls.py:30
 msgid "accounts/"
-msgstr ""
+msgstr "akaụntụ/"
 
 #: healthlink/urls.py:31
 msgid "users/"
-msgstr ""
+msgstr "ndị ọrụ/"
 
 #: healthlink/urls.py:32
 msgid "blogs/"
-msgstr ""
+msgstr "blọọgụ/"
 
 #: healthlink/urls.py:33
 msgid "forum/"
-msgstr ""
+msgstr "forum/"
 
 #: healthlink/urls.py:40
 msgid "HealthLink Admin"
-msgstr ""
+msgstr "Onye nlekọta HealthLink"
 
 #: healthlink/urls.py:41
 msgid "HealthLink Admin Portal"
-msgstr ""
+msgstr "Portal Admin HealthLink"
 
 #: resources/views.py:15
 msgid "Resource Articles"
-msgstr ""
+msgstr "Edemede akụrụngwa"
 
 #: resources/views.py:26
 #, python-brace-format
 msgid "Articles with tag '{tag}'"
-msgstr ""
+msgstr "Akụkọ nwere mkpado '{tag}'"
 
 #: resources/views.py:50
 msgid "Resource Videos"
-msgstr ""
+msgstr "Vidiyo akụrụngwa"
 
 #: resources/views.py:61
 #, python-brace-format
 msgid "Videos with tag '{tag}'"
-msgstr ""
+msgstr "Vidiyo nwere mkpado '{tag}'"
 
 #: resources/views.py:76
 msgid "Resource Documents"
-msgstr ""
+msgstr "Akwụkwọ akụrụngwa"
 
 #: templates/404.html:11
 msgid "Go To Home"
-msgstr ""
+msgstr "Gaa n'ụlọ"
 
 #: templates/about.html:15
 msgid "Who we are"
-msgstr ""
+msgstr "Onye anyi bu"
 
 #: templates/about.html:16
 msgid ""
 "HealthLink was founded by a group of students for healthcare professionals "
 "and patients with different health conditions."
 msgstr ""
+"Ọ bụ otu ụmụ akwụkwọ hiwere HealthLink maka ndị ọkachamara ahụike"
+"na ndị ọrịa nwere ọnọdụ ahụike dị iche iche."
 
 #: templates/about.html:17
 msgid ""
@@ -1558,11 +1560,15 @@ msgstr ""
 #: templates/about.html:53
 msgid "Our leadership team"
 msgstr ""
+"Anyị hụrụ mkpa ọ dị maka obodo ịntanetị na-akwado ma na-akwado ndị mmadụ na-eche ihu"
+"ihe ịma aka ahụike ọ bụla. Ebumnuche anyị bụ ịnye ndị mmadụ ohere ịnweta "
+"jikọọ, kesaa ozi ma kwado ibe anyị. Anyị na-agba mbọ na"
+"na-enye ebe nchekwa na nsonye maka ndị otu obodo anyị niile."
 
 #: templates/about.html:89 templates/partials/left-sidebar.html:116
 #: templates/user/partials/top-nav.html:23 templates/user/users.html:70
 msgid "Edit profile"
-msgstr ""
+msgstr "Dezie profaịlụ"
 
 #: templates/about.html:92 templates/forum/community/details.html:24
 #: templates/forum/community/index.html:41
@@ -1570,7 +1576,7 @@ msgstr ""
 #: templates/forum/tags.html:54 templates/user/partials/top-nav.html:26
 #: templates/user/users.html:73
 msgid "Unfollow"
-msgstr ""
+msgstr "Hapụ"
 
 #: templates/about.html:94 templates/forum/community/details.html:24
 #: templates/forum/community/index.html:41
@@ -1583,65 +1589,67 @@ msgstr ""
 #: templates/account/account_inactive.html:5
 #: templates/account/account_inactive.html:8
 msgid "Account Inactive"
-msgstr ""
+msgstr "Soro"
 
 #: templates/account/account_inactive.html:10
 msgid "This account is inactive."
-msgstr ""
+msgstr "Akaụntụ a anaghị arụ ọrụ."
 
 #: templates/account/email.html:5 templates/account/email.html:8
 msgid "E-mail Addresses"
-msgstr ""
+msgstr "Adreesị ozi-e"
 
 #: templates/account/email.html:10
 msgid "The following e-mail addresses are associated with your account:"
-msgstr ""
+msgstr "Ejikọrọ adreesị ozi-e ndị a na akaụntụ gị:"
 
 #: templates/account/email.html:24
 msgid "Verified"
-msgstr ""
+msgstr "Ekwetara"
 
 #: templates/account/email.html:26
 msgid "Unverified"
-msgstr ""
+msgstr "enyochabeghị"
 
 #: templates/account/email.html:28
 msgid "Primary"
-msgstr ""
+msgstr "Isi"
 
 #: templates/account/email.html:34
 msgid "Make Primary"
-msgstr ""
+msgstr "Mee Primary"
 
 #: templates/account/email.html:35
 msgid "Re-send Verification"
-msgstr ""
+msgstr "Zigharịa nkwenye"
 
 #: templates/account/email.html:36 templates/socialaccount/connections.html:35
 msgid "Remove"
-msgstr ""
+msgstr "Wepu"
 
 #: templates/account/email.html:43
 msgid "Warning:"
-msgstr ""
+msgstr "Ịdọ aka ná ntị:"
 
 #: templates/account/email.html:43
 msgid ""
 "You currently do not have any e-mail address set up. You should really add "
 "an e-mail address so you can receive notifications, reset your password, etc."
 msgstr ""
+"Ugbu a ị nwebeghị adreesị ozi-e ọ bụla edobere. Ịkwesịrị itinye n'ezie "
+"adreesị ozi-e ka ị nwee ike ịnweta ọkwa, tọgharịa paswọọdụ gị, wdg."
 
 #: templates/account/email.html:48
 msgid "Add E-mail Address"
-msgstr ""
+msgstr "Tinye adreesị ozi-e"
 
 #: templates/account/email.html:53
 msgid "Add E-mail"
-msgstr ""
+msgstr "Tinye ozi-e"
 
 #: templates/account/email.html:63
 msgid "Do you really want to remove the selected e-mail address?"
-msgstr ""
+msgstr "Ị chọrọ n'ezie iwepu adreesị ozi-e ahọpụtara?"
 
 #: templates/account/email/account_already_exists_message.txt:4
 #, python-format
@@ -1660,10 +1668,23 @@ msgid ""
 "\n"
 "%(password_reset_url)s"
 msgstr ""
+"Ị na-enweta ozi-e a n'ihi na gị ma ọ bụ onye ọzọ nwara ịbanye"
+"maka ihe"
+"akaụntụ na-eji adreesị ozi-e:\n"
+"\n"
+"%(email)s\n"
+"\n"
+"Otú ọ dị, akaụntụ na-eji adreesị ozi-e ahụ adịlarị. Ọ bụrụ na ị "
+"nwere\n"
+"chefuru na nke a, biko jiri usoro echefuru paswọọdụ"
+"nweghachi\n"
+"akaụntụ gị:\n"
+"\n"
+"%(password_reset_url)s"
 
 #: templates/account/email/account_already_exists_subject.txt:3
 msgid "Account Already Exists"
-msgstr ""
+msgstr "Akaụntụ adịlarị"
 
 #: templates/account/email/base_message.txt:1
 #, python-format
@@ -1688,7 +1709,7 @@ msgstr ""
 
 #: templates/account/email/email_confirmation_subject.txt:3
 msgid "Please Confirm Your E-mail Address"
-msgstr ""
+msgstr "Biko gosi na adreesị ozi-e gị"
 
 #: templates/account/email/password_reset_key_message.txt:4
 msgid ""
@@ -1697,6 +1718,10 @@ msgid ""
 "It can be safely ignored if you did not request a password reset. Click the "
 "link below to reset your password."
 msgstr ""
+"Ị na-enweta ozi-e a n'ihi na gị ma ọ bụ onye ọzọ arịọla"
+"paswọọdụ maka akaụntụ onye ọrụ gị.\n"
+"Enwere ike ileghara ya anya nke ọma ma ọ bụrụ na ị rịọghị nrụpụta paswọọdụ. Pịa"
+"njikọ n'okpuru ka ịtọgharịa paswọọdụ gị."
 
 #: templates/account/email/password_reset_key_message.txt:9
 #, python-format
@@ -1706,7 +1731,7 @@ msgstr ""
 #: templates/account/email/password_reset_key_subject.txt:3
 #: templates/account/email/unknown_account_subject.txt:3
 msgid "Password Reset E-mail"
-msgstr ""
+msgstr "E-mail Tọgharịa okwuntughe"
 
 #: templates/account/email/unknown_account_message.txt:4
 #, python-format
@@ -1724,7 +1749,7 @@ msgstr ""
 #: templates/account/email_confirm.html:6
 #: templates/account/email_confirm.html:10
 msgid "Confirm E-mail Address"
-msgstr ""
+msgstr "Kwenye Na Adreesị Ozi Ịntanetị"
 
 #: templates/account/email_confirm.html:16
 #, python-format
@@ -1735,7 +1760,7 @@ msgstr ""
 
 #: templates/account/email_confirm.html:20
 msgid "Confirm"
-msgstr ""
+msgstr "Kwenye"
 
 #: templates/account/email_confirm.html:27
 #, python-format
@@ -1748,7 +1773,7 @@ msgstr ""
 #: templates/account/login.html:43 templates/partials/top-nav.html:178
 #: templates/partials/top-nav.html:220 templates/socialaccount/login.html:4
 msgid "Sign In"
-msgstr ""
+msgstr "Banye"
 
 #: templates/account/login.html:15
 #, python-format
@@ -1768,16 +1793,16 @@ msgstr ""
 
 #: templates/account/login.html:42 templates/account/password_change.html:14
 msgid "Forgot Password?"
-msgstr ""
+msgstr "Chefuru okwuntughe?"
 
 #: templates/account/logout.html:5 templates/account/logout.html:8
 #: templates/account/logout.html:17
 msgid "Sign Out"
-msgstr ""
+msgstr "Pụọ"
 
 #: templates/account/logout.html:10
 msgid "Are you sure you want to sign out?"
-msgstr ""
+msgstr "Ị ji n'aka na ị chọrọ ịpụ?"
 
 #: templates/account/messages/cannot_delete_primary_email.txt:2
 #, python-format
@@ -1806,23 +1831,23 @@ msgstr ""
 
 #: templates/account/messages/logged_out.txt:2
 msgid "You have signed out."
-msgstr ""
+msgstr "Ị banyela."
 
 #: templates/account/messages/password_changed.txt:2
 msgid "Password successfully changed."
-msgstr ""
+msgstr "Agbanwere okwuntughe nke ọma."
 
 #: templates/account/messages/password_set.txt:2
 msgid "Password successfully set."
-msgstr ""
+msgstr "Ahaziri okwuntughe nke ọma."
 
 #: templates/account/messages/primary_email_set.txt:2
 msgid "Primary e-mail address set."
-msgstr ""
+msgstr "Ntọala adreesị ozi-e nke mbụ."
 
 #: templates/account/messages/unverified_primary_email.txt:2
 msgid "Your primary e-mail address must be verified."
-msgstr ""
+msgstr "A ga-enyocharịrị adreesị ozi-e mbụ gị."
 
 #: templates/account/password_change.html:5
 #: templates/account/password_change.html:8
@@ -1834,38 +1859,42 @@ msgstr ""
 #: templates/user/edit-profile.html:22 templates/user/edit-profile.html:167
 #: templates/user/edit-profile.html:170
 msgid "Change Password"
-msgstr ""
+msgstr "Gbanwee okwuntughe"
 
 #: templates/account/password_reset.html:6
 #: templates/account/password_reset.html:10
 #: templates/account/password_reset_done.html:6
 #: templates/account/password_reset_done.html:9
 msgid "Password Reset"
-msgstr ""
+msgstr "Tọgharia okwuntughe"
 
 #: templates/account/password_reset.html:15
 msgid ""
 "Forgotten your password? Enter your e-mail address below, and we'll send you "
 "an e-mail allowing you to reset it."
 msgstr ""
+"Chefuru paswọọdụ gị? Tinye adreesị ozi-e gị n'okpuru, anyị ga-ezitere gị"
+"e-mail na-enye gị ohere ịtọgharịa ya."
 
 #: templates/account/password_reset.html:20
 msgid "Reset My Password"
-msgstr ""
+msgstr "Tọgharịa okwuntughe m"
 
 #: templates/account/password_reset.html:23
 msgid "Please contact us if you have any trouble resetting your password."
-msgstr ""
+msgstr "Biko kpọtụrụ anyị ma ọ bụrụ na ị nwere nsogbu ịtọgharịa paswọọdụ gị."
 
 #: templates/account/password_reset_done.html:15
 msgid ""
 "We have sent you an e-mail. If you have not received it please check your "
 "spam folder. Otherwise contact us if you do not receive it in a few minutes."
 msgstr ""
+"Anyị ezitere gị ozi-e. Ọ bụrụ na ịnataghị ya biko lelee nke gị"
+" folda spam. Ma ọ bụghị, kpọtụrụ anyị ma ọ bụrụ na ịnataghị ya n'ime nkeji ole na ole."
 
 #: templates/account/password_reset_from_key.html:7
 msgid "Bad Token"
-msgstr ""
+msgstr "Token ọjọọ"
 
 #: templates/account/password_reset_from_key.html:11
 #, python-format
@@ -1877,25 +1906,25 @@ msgstr ""
 
 #: templates/account/password_reset_from_key.html:16
 msgid "change password"
-msgstr ""
+msgstr "gbanwee okwuntughe"
 
 #: templates/account/password_reset_from_key_done.html:8
 msgid "Your password is now changed."
-msgstr ""
+msgstr "Agbanweela paswọọdụ gị ugbu a."
 
 #: templates/account/password_set.html:5 templates/account/password_set.html:8
 #: templates/account/password_set.html:13
 msgid "Set Password"
-msgstr ""
+msgstr "Tọọ okwuntughe"
 
 #: templates/account/signup.html:5 templates/socialaccount/signup.html:5
 msgid "Signup"
-msgstr ""
+msgstr "Debanye aha"
 
 #: templates/account/signup.html:8 templates/account/signup.html:18
 #: templates/socialaccount/signup.html:8 templates/socialaccount/signup.html:19
 msgid "Sign Up"
-msgstr ""
+msgstr "Debanye aha"
 
 #: templates/account/signup.html:10
 #, python-format
@@ -1906,15 +1935,15 @@ msgstr ""
 #: templates/account/signup_closed.html:5
 #: templates/account/signup_closed.html:8
 msgid "Sign Up Closed"
-msgstr ""
+msgstr "Debanye aha emechi"
 
 #: templates/account/signup_closed.html:10
 msgid "We are sorry, but the sign up is currently closed."
-msgstr ""
+msgstr "Ọ dị anyị nwute, mana emechiela ndebanye aha ugbu a."
 
 #: templates/account/snippets/already_logged_in.html:5
 msgid "Note"
-msgstr ""
+msgstr "Rịba ama"
 
 #: templates/account/snippets/already_logged_in.html:5
 #, python-format
@@ -1926,7 +1955,7 @@ msgstr ""
 #: templates/account/verified_email_required.html:5
 #: templates/account/verified_email_required.html:8
 msgid "Verify Your E-mail Address"
-msgstr ""
+msgstr "Nyochaa adreesị ozi-e gị"
 
 #: templates/account/verification_sent.html:10
 msgid ""
@@ -1961,85 +1990,85 @@ msgstr ""
 
 #: templates/blog-details.html:17
 msgid "Share"
-msgstr ""
+msgstr "Kekọrịta"
 
 #: templates/blog-details.html:55
 msgid "Be the first to leave a comment"
-msgstr ""
+msgstr "Bụrụ onye mbụ hapụ ikwu"
 
 #: templates/blog-details.html:59
 msgid "Leave a Comment"
-msgstr ""
+msgstr "Hapụ ikwu"
 
 #: templates/blog-details.html:60
 msgid "Your email address will not be published. Required fields are marked"
-msgstr ""
+msgstr "Agaghị ebipụta adreesị ozi-e gị. Akara mpaghara achọrọ akara"
 
 #: templates/blog-details.html:71
 msgid "Your Name"
-msgstr ""
+msgstr "Aha gị"
 
 #: templates/blog-details.html:84 templates/contact.html:29
 #: templates/contact.html:81 templates/partials/footer.html:89
 #: templates/user/edit-profile.html:67 templates/user/edit-profile.html:200
 msgid "Email"
-msgstr ""
+msgstr "Ozi ịntanetị"
 
 #: templates/blog-details.html:93 templates/contact.html:45
 msgid "Your Subject"
-msgstr ""
+msgstr "Isiokwu gị"
 
 #: templates/blog-details.html:101
 msgid "Your Comment"
-msgstr ""
+msgstr "Okwu gị"
 
 #: templates/blog-details.html:109
 msgid "Send Comment"
-msgstr ""
+msgstr "Zipu nkwupụta"
 
 #: templates/blog-details.html:124
 msgid "Search"
-msgstr ""
+msgstr "Chọọ"
 
 #: templates/blog-details.html:128
 msgid "Search Here"
-msgstr ""
+msgstr "Chọọ Ebe a"
 
 #: templates/blog.html:67
 msgid "No Blogs Found"
-msgstr ""
+msgstr "Enweghị blọọgụ ahụrụ"
 
 #: templates/contact.html:15
 msgid "Get in touch"
-msgstr ""
+msgstr "Kpọtụrụ"
 
 #: templates/contact.html:21
 msgid "Name"
-msgstr ""
+msgstr "Aha"
 
 #: templates/contact.html:37
 msgid "Your Phone Number"
-msgstr ""
+msgstr "Nọmba ekwentị gị"
 
 #: templates/contact.html:53
 msgid "Your Message"
-msgstr ""
+msgstr "Ozi gị"
 
 #: templates/contact.html:61
 msgid "Send Message"
-msgstr ""
+msgstr "Ziga ozi"
 
 #: templates/contact.html:73
 msgid "Contact informaton"
-msgstr ""
+msgstr "Ozi mkpọtụrụ"
 
 #: templates/contact.html:77 templates/partials/footer.html:85
 msgid "Call"
-msgstr ""
+msgstr "Kpọọ"
 
 #: templates/contact.html:85 templates/partials/footer.html:94
 msgid "Address"
-msgstr ""
+msgstr "Adreesị"
 
 #: templates/faq/index.html:23 templates/forum/community/index.html:18
 #: templates/forum/groups/index.html:18 templates/forum/index.html:18
@@ -2049,46 +2078,46 @@ msgstr ""
 #: templates/resources/details.html:18 templates/resources/index.html:18
 #: templates/user/users.html:18
 msgid "Home"
-msgstr ""
+msgstr "Ụlọ"
 
 #: templates/faq/index.html:27 templates/partials/footer.html:46
 #: templates/partials/left-sidebar.html:88
 msgid "FAQs"
-msgstr ""
+msgstr "Ajụjụ"
 
 #: templates/faq/index.html:35 templates/partials/search.html:6
 #: templates/resources/details.html:40 templates/user/users.html:30
 msgid "Ask Question"
-msgstr ""
+msgstr "Jụọ ajụjụ"
 
 #: templates/faq/index.html:60
 msgid "No Frequently Asked Questions"
-msgstr ""
+msgstr "Enweghị ajụjụ a na-ajụkarị"
 
 #: templates/forum/ask-questions.html:23
 msgid "Create a question"
-msgstr ""
+msgstr "Mepụta ajụjụ"
 
 #: templates/forum/ask-questions.html:26
 msgid "Title"
-msgstr ""
+msgstr "Aha"
 
 #: templates/forum/ask-questions.html:31
 msgid "Category"
-msgstr ""
+msgstr "Otu"
 
 #: templates/forum/ask-questions.html:41
 msgid "Tags (Add comma separated tags to describe what your question is about)"
-msgstr ""
+msgstr "Tags (Tinye mkpado kewapụrụ rikoma iji kọwaa ihe ajụjụ gị gbasara)"
 
 #: templates/forum/ask-questions.html:45
 msgid "Description"
-msgstr ""
+msgstr "Nkọwa"
 
 #: templates/forum/ask-questions.html:49
 #: templates/forum/question-details.html:265
 msgid "Post your answer"
-msgstr ""
+msgstr "Bipute azịza gị"
 
 #: templates/forum/category-detail.html:17
 #: templates/forum/community/details.html:18
@@ -2096,7 +2125,7 @@ msgstr ""
 #: templates/forum/groups/details.html:18 templates/forum/groups/posts.html:18
 #: templates/forum/tag-detail.html:17
 msgid "Created By"
-msgstr ""
+msgstr "Emepụtara ya"
 
 #: templates/forum/category-detail.html:18
 #: templates/forum/community/details.html:19
@@ -2104,7 +2133,7 @@ msgstr ""
 #: templates/forum/groups/details.html:19 templates/forum/groups/posts.html:19
 #: templates/forum/tag-detail.html:18
 msgid "Date Created"
-msgstr ""
+msgstr "Ụbọchị Emepụtara"
 
 #: templates/forum/category-detail.html:19
 #: templates/forum/community/posts.html:21 templates/forum/groups/posts.html:21
@@ -2112,7 +2141,7 @@ msgstr ""
 #: templates/user/user-ask-questions.html:633
 #: templates/user/user-groups.html:813
 msgid "Posts"
-msgstr ""
+msgstr "Ederede"
 
 #: templates/forum/category-detail.html:57
 #: templates/forum/community/posts.html:85 templates/forum/groups/posts.html:84
@@ -2123,7 +2152,7 @@ msgstr ""
 #: templates/forum/questions/unanswered.html:55
 #: templates/forum/tag-detail.html:63 templates/resources/details.html:56
 msgid "In"
-msgstr ""
+msgstr "N'ime"
 
 #: templates/forum/category-detail.html:92
 #: templates/forum/community/posts.html:120
@@ -2138,7 +2167,7 @@ msgstr ""
 #: templates/resources/partials/right-sidebar.html:66
 #: templates/user/index.html:21 templates/user/index.html:124
 msgid "Answers"
-msgstr ""
+msgstr "Azịza ya"
 
 #: templates/forum/category-detail.html:97
 #: templates/forum/community/posts.html:125
@@ -2150,7 +2179,7 @@ msgstr ""
 #: templates/forum/questions/unanswered.html:94
 #: templates/forum/tag-detail.html:103
 msgid "Views"
-msgstr ""
+msgstr "Echiche"
 
 #: templates/forum/category-detail.html:135
 #: templates/forum/community/posts.html:163
@@ -2162,18 +2191,18 @@ msgstr ""
 #: templates/forum/questions/unanswered.html:132
 #: templates/forum/tag-detail.html:141
 msgid "Answer"
-msgstr ""
+msgstr "Zaa"
 
 #: templates/forum/category-detail.html:144
 #: templates/forum/groups/posts.html:171 templates/forum/tag-detail.html:150
 msgid "No Questions Found in this Group"
-msgstr ""
+msgstr "Enweghị ajụjụ ahụrụ n'otu a"
 
 #: templates/forum/community/details.html:20
 #: templates/forum/community/index.html:39 templates/forum/tags.html:47
 #: templates/user/partials/top-nav.html:18
 msgid "Followers"
-msgstr ""
+msgstr "Ndị na-eso ụzọ"
 
 #: templates/forum/community/details.html:34
 #: templates/forum/community/posts.html:20
@@ -2181,39 +2210,39 @@ msgstr ""
 #: templates/forum/groups/details.html:34 templates/forum/groups/posts.html:20
 #: templates/forum/tag-detail.html:19
 msgid "Members"
-msgstr ""
+msgstr "Ndị otu"
 
 #: templates/forum/community/details.html:41
 #: templates/forum/community/details.html:77
 #: templates/forum/groups/details.html:41
 #: templates/forum/groups/details.html:77 templates/user/index.html:28
 msgid "Question"
-msgstr ""
+msgstr "Ajụjụ"
 
 #: templates/forum/community/details.html:55
 #: templates/forum/groups/details.html:55
 msgid "Reached"
-msgstr ""
+msgstr "Erutere"
 
 #: templates/forum/community/details.html:62
 #: templates/forum/groups/details.html:62 templates/user/index.html:49
 msgid "About"
-msgstr ""
+msgstr "Ihe gbasara"
 
 #: templates/forum/community/details.html:69
 #: templates/forum/groups/details.html:69
 msgid "Top posts"
-msgstr ""
+msgstr "Ederede kacha elu"
 
 #: templates/forum/community/details.html:73
 #: templates/forum/groups/details.html:73
 msgid "View All"
-msgstr ""
+msgstr "Lelee All"
 
 #: templates/forum/community/details.html:81
 #: templates/forum/groups/details.html:81
 msgid "Newest"
-msgstr ""
+msgstr "Kacha ọhụrụ"
 
 #: templates/forum/community/details.html:105
 #: templates/forum/community/details.html:124
@@ -2222,31 +2251,31 @@ msgstr ""
 #: templates/forum/groups/details.html:124
 #: templates/forum/groups/details.html:142
 msgid "No Questions Posted Yet"
-msgstr ""
+msgstr "Enweghị ajụjụ ebisara"
 
 #: templates/forum/community/details.html:160
 msgid "No Group has joined this community yes"
-msgstr ""
+msgstr "O nweghị otu sonyeere obodo a ee"
 
 #: templates/forum/community/index.html:51
 msgid "No communities found."
-msgstr ""
+msgstr "Ọnweghị obodo ahụrụ."
 
 #: templates/forum/community/posts.html:47
 msgid "Ask a Question to Community"
-msgstr ""
+msgstr "Jụọ ndị obodo ajụjụ"
 
 #: templates/forum/community/posts.html:172
 msgid "No Questions Found in this Community"
-msgstr ""
+msgstr "Enweghị ajụjụ ahụrụ na obodo a"
 
 #: templates/forum/groups/details.html:24 templates/forum/groups/posts.html:25
 msgid "Leave Group"
-msgstr ""
+msgstr "Hapụ otu"
 
 #: templates/forum/groups/details.html:24 templates/forum/groups/posts.html:25
 msgid "Join Group"
-msgstr ""
+msgstr "Soro otu"
 
 #: templates/forum/groups/details.html:100
 #: templates/forum/groups/details.html:137
@@ -2254,121 +2283,121 @@ msgstr ""
 #: templates/user/index.html:171 templates/user/index.html:191
 #: templates/user/index.html:211 templates/user/index.html:231
 msgid "by"
-msgstr ""
+msgstr "site"
 
 #: templates/forum/groups/details.html:158
 msgid "No Group has not joined a Community"
-msgstr ""
+msgstr "Ọ nweghị otu abanyebeghị na Ogbe"
 
 #: templates/forum/groups/index.html:52
 msgid "Post"
-msgstr ""
+msgstr "Biputere"
 
 #: templates/forum/groups/index.html:56
 #: templates/partials/left-sidebar.html:105
 msgid "User"
-msgstr ""
+msgstr "Onye ọrụ"
 
 #: templates/forum/groups/index.html:62
 msgid "Leave group"
-msgstr ""
+msgstr "Hapụ otu"
 
 #: templates/forum/groups/index.html:64
 msgid "Join group"
-msgstr ""
+msgstr "Soro otu"
 
 #: templates/forum/groups/index.html:76
 msgid "No groups found."
-msgstr ""
+msgstr "Ọnweghị otu ahụrụ."
 
 #: templates/forum/groups/posts.html:46
 msgid "Ask a Question to Group"
-msgstr ""
+msgstr "Jụọ ajụjụ nye otu"
 
 #: templates/forum/index.html:31 templates/index.html:55
 msgid "Recent"
-msgstr ""
+msgstr "Na nso nso a"
 
 #: templates/forum/index.html:36 templates/index.html:60
 msgid "Most Answered"
-msgstr ""
+msgstr "A zara nke ukwuu"
 
 #: templates/forum/index.html:41 templates/index.html:65
 msgid "Unanswered"
-msgstr ""
+msgstr "Anaghị aza ya"
 
 #: templates/forum/index.html:46 templates/forum/questions/featured.html:137
 #: templates/index.html:70
 msgid "Most Viewed"
-msgstr ""
+msgstr "Kacha ele"
 
 #: templates/forum/question-details.html:176
 msgid "All answer"
-msgstr ""
+msgstr "Azịza niile"
 
 #: templates/forum/question-details.html:177
 msgid "Most Votes"
-msgstr ""
+msgstr "Kacha ọhụrụ"
 
 #: templates/forum/question-details.html:178
 msgid "Most Recent"
-msgstr ""
+msgstr "Kacha ọhụrụ"
 
 #: templates/forum/question-details.html:237
 msgid "Report"
-msgstr ""
+msgstr "Akuko"
 
 #: templates/forum/question-details.html:252
 msgid "No Answers yet, Be the first to dropped an answer"
-msgstr ""
+msgstr "Enweghị azịza, Bụrụ onye mbụ tụpụrụ azịza"
 
 #: templates/forum/question-details.html:259
 msgid "Your Answer"
-msgstr ""
+msgstr "Azịza gị"
 
 #: templates/forum/question-details.html:270
 msgid "You need to"
-msgstr ""
+msgstr "I tosiri"
 
 #: templates/forum/question-details.html:270
 msgid "login"
-msgstr ""
+msgstr "banye"
 
 #: templates/forum/question-details.html:270
 msgid "to answer this question"
-msgstr ""
+msgstr "zaa ajụjụ a"
 
 #: templates/forum/questions/featured.html:142
 msgid "No Featured Questions Found"
-msgstr ""
+msgstr "Enweghị ajụjụ egosipụtara ahụrụ"
 
 #: templates/forum/questions/most-answered.html:141
 msgid "No Answered Questions Found"
-msgstr ""
+msgstr "Enweghị ajụjụ azara ahụrụ"
 
 #: templates/forum/questions/most-recent.html:141
 msgid "No Recent Questions Found"
-msgstr ""
+msgstr "Enweghị ajụjụ ndị na-adịbeghị anya ahụrụ"
 
 #: templates/forum/questions/unanswered.html:141
 msgid "No Unanswered Questions Found"
-msgstr ""
+msgstr "Enweghị ajụjụ a na-azaghị"
 
 #: templates/forum/tags.html:40 templates/user/users.html:66
 msgid "questions"
-msgstr ""
+msgstr "ajụjụ"
 
 #: templates/forum/tags.html:82
 msgid "No tags found"
-msgstr ""
+msgstr "Enweghị mkpado ahụrụ"
 
 #: templates/index.html:16
 msgid "Join Our Health Community"
-msgstr ""
+msgstr "Soro Community Health Community"
 
 #: templates/index.html:16
 msgid "Today"
-msgstr ""
+msgstr "Taa"
 
 #: templates/index.html:17
 msgid ""
@@ -2377,14 +2406,18 @@ msgid ""
 "functionality, and a resource library. Join us today to connect with others "
 "who share similar experiences."
 msgstr ""
+"HealthLink bụ obodo nchekwa na nkwado maka ndị nwere dị iche iche"
+"ọnọdụ ahụike. Njirimara anyị gụnyere bọọdụ mkparịta ụka, chọọ "
+"arụmọrụ, yana ọba akwụkwọ akụ. Sonyere anyị taa ka gị na ndị ọzọ jikọọ"
+"ndị na-ekerịta ahụmahụ ndị yiri ya."
 
 #: templates/index.html:19
 msgid "Get Started"
-msgstr ""
+msgstr "Malite"
 
 #: templates/openid/login.html:9
 msgid "OpenID Sign In"
-msgstr ""
+msgstr "Mepee ID mbata"
 
 #: templates/partials/footer.html:12
 msgid ""
@@ -2392,38 +2425,41 @@ msgid ""
 "health condition. Our features include discussion boards, search "
 "functionality, and a resource library for better health support."
 msgstr ""
+"Jikọọ na obodo HealthLink wee jikọọ na ndị ọzọ ghọtara nke gị"
+"Ọnọdụ ahụike. Njirimara anyị gụnyere bọọdụ mkparịta ụka, chọọ "
+"arụmọrụ, yana ọbá akwụkwọ akụrụngwa maka nkwado ahụike ka mma."
 
 #: templates/partials/footer.html:18
 msgid "Company"
-msgstr ""
+msgstr "Ụlọ ọrụ"
 
 #: templates/partials/footer.html:25
 msgid "About us"
-msgstr ""
+msgstr "Gbasara anyị"
 
 #: templates/partials/footer.html:28
 msgid "Contact us"
-msgstr ""
+msgstr "Kpọtụrụ anyị"
 
 #: templates/partials/footer.html:39
 msgid "Explore"
-msgstr ""
+msgstr "Nyochaa"
 
 #: templates/partials/footer.html:43
 msgid "Ask question"
-msgstr ""
+msgstr "Jụọ ajụjụ"
 
 #: templates/partials/footer.html:49
 msgid "Privacy policy"
-msgstr ""
+msgstr "Amụma nzuzo"
 
 #: templates/partials/footer.html:52 templates/partials/top-nav.html:59
 msgid "Terms & Conditions"
-msgstr ""
+msgstr "Usoro & Ọnọdụ"
 
 #: templates/partials/footer.html:60
 msgid "Follow us"
-msgstr ""
+msgstr "Soro anyị"
 
 #: templates/partials/footer.html:64
 msgid "Facebook"
@@ -2443,61 +2479,61 @@ msgstr ""
 
 #: templates/partials/footer.html:114
 msgid "Proudly Owned by"
-msgstr ""
+msgstr "Ji nganga nwe ya"
 
 #: templates/partials/footer.html:114
 msgid "Team X"
-msgstr ""
+msgstr "Otu X"
 
 #: templates/partials/left-sidebar.html:12
 msgid "Menu"
-msgstr ""
+msgstr "NchNhr"
 
 #: templates/partials/left-sidebar.html:55
 #: templates/resources/partials/right-sidebar.html:70
 #: templates/user/users.html:22 users/views.py:272
 msgid "Users"
-msgstr ""
+msgstr "Ndị ọrụ"
 
 #: templates/partials/left-sidebar.html:63
 msgid "Resources"
-msgstr ""
+msgstr "Akụrụngwa"
 
 #: templates/partials/left-sidebar.html:69 templates/resources/details.html:23
 #: templates/resources/index.html:24
 msgid "Articles"
-msgstr ""
+msgstr "Akụkọ"
 
 #: templates/partials/left-sidebar.html:74 templates/resources/index.html:38
 msgid "Documents"
-msgstr ""
+msgstr "Akwụkwọ"
 
 #: templates/partials/left-sidebar.html:79 templates/resources/index.html:31
 msgid "Videos"
-msgstr ""
+msgstr "Vidiyo"
 
 #: templates/partials/left-sidebar.html:111
 msgid "Profile"
-msgstr ""
+msgstr "Profaịlụ"
 
 #: templates/partials/left-sidebar.html:121
 msgid "Health records"
-msgstr ""
+msgstr "Ndekọ ahụike"
 
 #: templates/partials/left-sidebar.html:126 templates/partials/top-nav.html:150
 #: templates/partials/top-nav.html:314 users/views.py:257
 msgid "Referrals"
-msgstr ""
+msgstr "Ntuziaka"
 
 #: templates/partials/left-sidebar.html:131 templates/partials/top-nav.html:156
 #: templates/partials/top-nav.html:320
 msgid "Logout"
-msgstr ""
+msgstr "Wepụ"
 
 #: templates/partials/search.html:4 templates/resources/details.html:38
 #: templates/user/users.html:28
 msgid "Have a question? Ask or enter a search"
-msgstr ""
+msgstr "Nwere ajụjụ? Jụọ ma ọ bụ tinye ọchụchọ"
 
 #: templates/partials/top-nav.html:38
 msgid "Blog"
@@ -2505,32 +2541,32 @@ msgstr ""
 
 #: templates/partials/top-nav.html:48
 msgid "Pages"
-msgstr ""
+msgstr "Ibe"
 
 #: templates/partials/top-nav.html:53
 msgid "FAQ"
-msgstr ""
+msgstr "Ajụjụ"
 
 #: templates/partials/top-nav.html:69 templates/partials/top-nav.html:169
 #: templates/partials/top-nav.html:211 templates/partials/top-nav.html:233
 msgid "Search for..."
-msgstr ""
+msgstr "Search for..."
 
 #: templates/partials/top-nav.html:132 templates/partials/top-nav.html:296
 msgid "User profile"
-msgstr ""
+msgstr "Profaịlụ onye ọrụ"
 
 #: templates/partials/top-nav.html:138 templates/partials/top-nav.html:302
 msgid "Settings"
-msgstr ""
+msgstr "Settings"
 
 #: templates/partials/top-nav.html:144 templates/partials/top-nav.html:308
 msgid "Health Records"
-msgstr ""
+msgstr "Ndekọ ahụike"
 
 #: templates/partials/top-nav.html:183 templates/partials/top-nav.html:225
 msgid "Sign up"
-msgstr ""
+msgstr "debanye aha"
 
 #: templates/privacy.html:13
 msgid ""
@@ -2539,10 +2575,14 @@ msgid ""
 "\t\t\t\tcollect, use, and protect your personal information when you use our "
 "platform."
 msgstr ""
+"Anyị na HealthLink gbalịsiri ike ichekwa nzuzo gị. Nzuzo a"
+"Iwu na-akọwa otu anyị\n"
+"\t\t\t na-anakọta, jiri, ma chekwaa ozi nkeonwe gị mgbe ị na-eji nke anyị"
+"ikpo okwu."
 
 #: templates/privacy.html:15
 msgid "Information We Collect"
-msgstr ""
+msgstr "Ozi Anyị na-anakọta"
 
 #: templates/privacy.html:16
 msgid ""
@@ -2555,10 +2595,18 @@ msgid ""
 "\t\t\t\tplatform, including your IP address, browser type, and device "
 "information."
 msgstr ""
+"Anyị na-anakọta ozi nkeonwe nke ị jiri aka gị nye anyị mgbe ị"
+"debanye aha maka\n"
+"\t\t\t\taccount ma ọ bụ jiri ikpo okwu anyị. Nke a nwere ike ịgụnye aha gị, email"
+"adreesị, ọnọdụ ahụike, ọgwụ,\n"
+"\t\t\t\treatments, na ozi gbasara ahụike ndị ọzọ. Anyị nwekwara ike"
+"kpokọta ozi gbasara ojiji nke anyị\n"
+"\t\t\tplatform, gụnyere adreesị IP gị, ụdị ihe nchọgharị na ngwaọrụ gị"
+"ozi."
 
 #: templates/privacy.html:23
 msgid "How We Use Your Information"
-msgstr ""
+msgstr "Otu anyị si eji ozi gị"
 
 #: templates/privacy.html:24
 msgid ""
@@ -2570,10 +2618,17 @@ msgid ""
 "to personalize your experience,\n"
 "\t\t\t\tprovide customer support, and improve our platform."
 msgstr ""
+"Anyị na-eji ozi nkeonwe gị iji nye gị nchekwa na nkwado"
+"obodo maka ndị mmadụ\n"
+"\t\t\t nwere ọnọdụ ahụike dị iche iche. Nke a gụnyere inye gị ohere "
+"jikọọ na ndị ọrụ ndị ọzọ, sonye na\n"
+"\t\t\t mkparịta ụka, na nweta akụrụngwa. Anyị nwekwara ike iji ozi gị"
+"iji hazie ahụmịhe gị,\n"
+"\t\t\t na-enye nkwado ndị ahịa, ma melite ikpo okwu anyị."
 
 #: templates/privacy.html:31
 msgid "How We Protect Your Information"
-msgstr ""
+msgstr "Otu anyị si echekwa ozi gị"
 
 #: templates/privacy.html:32
 msgid ""
@@ -2585,10 +2640,17 @@ msgid ""
 "technical safeguards to protect your\n"
 "\t\t\t\tinformation from unauthorized access."
 msgstr ""
+"Anyị na-eme ihe ezi uche dị na ya iji chebe ozi nkeonwe gị site na"
+"nweta enweghị ikike, jiri,\n"
+"\t\t\t\tor mkpughe. Anyị na-eji SSL nzuzo iji chekwaa data gị n'oge"
+"nyefe na chekwaa ozi gị\n"
+"\t\t\t\ton echekwabara sava. Anyị na-ejikwa nhazi, anụ ahụ, na"
+"Nchekwa teknụzụ iji chekwa gị\n"
+"\t\t\t\tin ọmụma sitere na ịnweta ikike na-akwadoghị."
 
 #: templates/privacy.html:39
 msgid "Sharing Your Information"
-msgstr ""
+msgstr "Ịkekọrịta ozi gị"
 
 #: templates/privacy.html:40
 msgid ""
@@ -2599,10 +2661,16 @@ msgid ""
 "\t\t\t\twho assist us in operating our platform, such as hosting and "
 "maintenance providers."
 msgstr ""
+"Anyị anaghị ekekọrịta ozi nkeonwe gị na ndị ọzọ na-enweghị nke gị"
+"nkwenye, belụsọ dị ka\n"
+"\t\t\t chọrọ n'iwu ma ọ bụ iji chekwaa ikike iwu anyị. Anyị nwere ike kekọrịta gị "
+"ozi na ndị na-eweta ọrụ anyị\n"
+"\t\t\t na-enyere anyị aka n'ịrụ ọrụ ikpo okwu anyị, dị ka nnabata na"
+"ndị na-enye nlekọta."
 
 #: templates/privacy.html:46
 msgid "Your Choices"
-msgstr ""
+msgstr "Nhọrọ gị"
 
 #: templates/privacy.html:47
 msgid ""
@@ -2613,10 +2681,16 @@ msgid ""
 "\t\t\t\tcomply with legal or regulatory requirements, resolve disputes, or "
 "enforce our policies."
 msgstr ""
+"You can control your personal information by updating your profile settings "
+"and preferences.\n"
+"\t\t\t\tYou can also delete your account at any time. We may retain your "
+"information for a reasonable period to\n"
+"\t\t\t\tcomply with legal or regulatory requirements, resolve disputes, or "
+"enforce our policies."
 
 #: templates/privacy.html:53
 msgid "Changes to Our Privacy Policy"
-msgstr ""
+msgstr "Mgbanwe na amụma nzuzo anyị"
 
 #: templates/privacy.html:54
 msgid ""
@@ -2627,33 +2701,41 @@ msgid ""
 "\t\t\t\tany changes to our policy will signify your acceptance of the "
 "updated policy."
 msgstr ""
+"Anyị nwere ike imelite amụma nzuzo anyị site n'oge ruo n'oge. Anyị ga-agwa gị maka "
+"mgbanwe ihe ọ bụla\n"
+"\t\t\t\to iwu anyị site na email ma ọ bụ site na ikesa ọkwa n'elu ikpo okwu anyị."
+"na-aga n'ihu iji ikpo okwu anyị emechaa\n"
+"\t\t\t\tany mgbanwe na amụma anyị ga-egosi na ị nabatara nke a"
+"emelitere amụma."
 
 #: templates/privacy.html:60
 msgid ""
 "If you have any questions or concerns about our Privacy Policy, please "
 "contact us at"
 msgstr ""
+"Ọ bụrụ na ị nwere ajụjụ ọ bụla ma ọ bụ nchegbu gbasara amụma nzuzo anyị, biko"
+"kpọtụrụ anyị na"
 
 #: templates/privacy.html:62
 msgid "Phone number"
-msgstr ""
+msgstr "Phone number"
 
 #: templates/resources/index.html:44
 #: templates/resources/partials/right-sidebar.html:13
 msgid "Categories"
-msgstr ""
+msgstr "Otu"
 
 #: templates/resources/partials/articles.html:50
 msgid "No articles found"
-msgstr ""
+msgstr "Enweghị akụkọ ahụrụ"
 
 #: templates/resources/partials/documents.html:23
 msgid "No documents found"
-msgstr ""
+msgstr "Enweghị akwụkwọ ahụrụ"
 
 #: templates/resources/partials/right-sidebar.html:5
 msgid "Ask a question"
-msgstr ""
+msgstr "Jụọ ajụjụ"
 
 #: templates/resources/partials/right-sidebar.html:17
 #: templates/resources/partials/right-sidebar.html:24
@@ -2661,57 +2743,60 @@ msgstr ""
 #: templates/resources/partials/right-sidebar.html:39
 #: templates/resources/partials/right-sidebar.html:47
 msgid "All"
-msgstr ""
+msgstr "Ha niile"
 
 #: templates/resources/partials/right-sidebar.html:85
 msgid "Most Liked Questions"
-msgstr ""
+msgstr "Ajụjụ kacha amasị"
 
 #: templates/resources/partials/right-sidebar.html:106
 msgid "Top members"
-msgstr ""
+msgstr "Ndị otu kachasị"
 
 #: templates/resources/partials/right-sidebar.html:124
 msgid "Points"
-msgstr ""
+msgstr "Isi ihe"
 
 #: templates/resources/partials/right-sidebar.html:138
 msgid "Trending Tags"
-msgstr ""
+msgstr "Mkpado na-agbanwe agbanwe"
 
 #: templates/resources/partials/videos.html:49
 msgid "No videos found"
-msgstr ""
+msgstr "No videos found"
 
 #: templates/socialaccount/authentication_error.html:5
 #: templates/socialaccount/authentication_error.html:8
 msgid "Social Network Login Failure"
-msgstr ""
+msgstr "Mbanye nbanye netwọk mmekọrịta"
 
 #: templates/socialaccount/authentication_error.html:10
 msgid ""
 "An error occurred while attempting to login via your social network account."
 msgstr ""
+"Enwere m njehie mgbe ị na-achọ ịbanye site na akaụntụ netwọk mmekọrịta gị."
 
 #: templates/socialaccount/connections.html:5
 #: templates/socialaccount/connections.html:8
 msgid "Account Connections"
-msgstr ""
+msgstr "Njikọ Akaụntụ"
 
 #: templates/socialaccount/connections.html:11
 msgid ""
 "You can sign in to your account using any of the following third party "
 "accounts:"
 msgstr ""
+"Ị nwere ike ịbanye na akaụntụ gị site na iji ndị ọzọ ọ bụla"
 
 #: templates/socialaccount/connections.html:43
 msgid ""
 "You currently have no social network accounts connected to this account."
 msgstr ""
+"Ugbu a ị nweghị akaụntụ netwọk mmekọrịta ejikọrọ na akaụntụ a."
 
 #: templates/socialaccount/connections.html:46
 msgid "Add a 3rd Party Account"
-msgstr ""
+msgstr "Tinye Akaụntụ Otu nke atọ"
 
 #: templates/socialaccount/login.html:8
 #, python-format
@@ -2735,12 +2820,12 @@ msgstr ""
 
 #: templates/socialaccount/login.html:19
 msgid "Continue"
-msgstr ""
+msgstr "Continue"
 
 #: templates/socialaccount/login_cancelled.html:5
 #: templates/socialaccount/login_cancelled.html:9
 msgid "Login Cancelled"
-msgstr ""
+msgstr "Kagbuo nbanye"
 
 #: templates/socialaccount/login_cancelled.html:13
 #, python-format
@@ -2752,15 +2837,15 @@ msgstr ""
 
 #: templates/socialaccount/messages/account_connected.txt:2
 msgid "The social account has been connected."
-msgstr ""
+msgstr "Ejikọtala akaụntụ ọha."
 
 #: templates/socialaccount/messages/account_connected_other.txt:2
 msgid "The social account is already connected to a different account."
-msgstr ""
+msgstr "Ejikọla akaụntụ ọha na akaụntụ ọzọ."
 
 #: templates/socialaccount/messages/account_disconnected.txt:2
 msgid "The social account has been disconnected."
-msgstr ""
+msgstr "Akwụsịla akaụntụ ọha."
 
 #: templates/socialaccount/signup.html:10
 #, python-format
@@ -2776,10 +2861,14 @@ msgid ""
 "\t\t\t\tfollowing terms and conditions. If you do not agree to these terms, "
 "please do not use our platform."
 msgstr ""
+"Nnọọ na HealthLink. Site na ịnweta ma ọ bụ iji ikpo okwu anyị, ị kwenyere ịbụ"
+"jide ya na\n"
+"\t\t\t na-eso usoro na ọnọdụ. Ọ bụrụ na ị kwenyeghị na usoro ndị a,"
+"biko ejikwala ikpo okwu anyi."
 
 #: templates/terms.html:18
 msgid "User Conduct"
-msgstr ""
+msgstr "Omume onye ọrụ"
 
 #: templates/terms.html:19
 msgid ""
@@ -2787,34 +2876,45 @@ msgid ""
 "all applicable\n"
 "\t\t\t\tlaws and regulations. You must not: "
 msgstr ""
+"Ị kwenyere iji ikpo okwu anyị naanị maka ebumnuche iwu kwadoro yana irube isi"
+"niile ọdabara\n"
+"\t\t\t\tlaws na ụkpụrụ. Ị gaghị:"
 
 #: templates/terms.html:24
 msgid ""
 "Impersonate or misrepresent your identity or affiliation with any person or "
 "entity."
 msgstr ""
+"Kwapụta onwe gị ma ọ bụ kọwaa njirimara gị ma ọ bụ njikọ gị na onye ọ bụla ma ọ bụ"
+"Ngwaọrụ."
 
 #: templates/terms.html:28
 msgid ""
 "Engage in any activity that disrupts, interferes with, or harms our platform "
 "or its users."
 msgstr ""
+"Tinye aka na mmemme ọ bụla na-akpaghasị, na-egbochi ma ọ bụ mebie ikpo okwu anyị"
+"ma ọ bụ ndị ọrụ ya."
 
 #: templates/terms.html:32
 msgid ""
 "Attempt to gain unauthorized access to our platform or its systems or "
 "networks."
 msgstr ""
+"Mgbalị inweta ohere na-enweghị ikike ịbanye na ikpo okwu anyị ma ọ bụ sistemụ ya ma ọ bụ"
+"netwọọdụ."
 
 #: templates/terms.html:36
 msgid ""
 "Collect or store the personal information of other users without their "
 "consent."
 msgstr ""
+"Collect or store the personal information of other users without their "
+"consent."
 
 #: templates/terms.html:39
 msgid "User Content"
-msgstr ""
+msgstr "Ọdịnaya onye ọrụ"
 
 #: templates/terms.html:40
 msgid ""
@@ -2825,6 +2925,12 @@ msgid ""
 "\t\t\t\tand transferable license to use, reproduce, and display your content "
 "on our platform."
 msgstr ""
+"Ikpo okwu anyị na-enye gị ohere biputere, bulite, ma ọ bụ bufee ọdịnaya dịka"
+"okwu, ozi,\n"
+"\t\t\tan oyiyi. Ị na-ejigide ọdịnaya nke gị wee nye anyị ndị na-abụghị"
+"naanị, zuru ụwa ọnụ, enweghị eze,\n"
+"\t\t\t\tan nwere ike ịnyefe ikike iji, mepụtagharị na igosipụta ọdịnaya gị"
+"n'elu ikpo okwu anyị."
 
 #: templates/terms.html:43
 msgid ""
@@ -2834,10 +2940,15 @@ msgid ""
 "content that violates our guidelines\n"
 "\t\t\t\tor that we deem inappropriate, without notice."
 msgstr ""
+"Ọ bụ naanị gị na-ahụ maka ọdịnaya gị ma hụ na ọ na-akwado ya"
+"na anyị\n"
+"\t\t\tguidelines na iwu ndị dị. Anyị nwere ikike iwepụ ihe ọ bụla"
+"ọdịnaya na-emebi ụkpụrụ anyị\n"
+"\t\t\t nke anyị chere na o kwesịghị ekwesị, na-enweghị ọkwa."
 
 #: templates/terms.html:49
 msgid "Intellectual Property"
-msgstr ""
+msgstr "Arịa ọgụgụ isi"
 
 #: templates/terms.html:50
 msgid ""
@@ -2848,10 +2959,16 @@ msgid ""
 "\t\t\t\tnot use, copy, or reproduce our platform or its content without our "
 "express written consent."
 msgstr ""
+"Ikpo okwu anyị na ọdịnaya ya, gụnyere ederede, eserese, onyonyo, akara ngosi, na"
+"software, bụ\n"
+"\t\t ihe onwunwe nke HealthLink na ndị nyere ya ikikere ma na-echekwa ya "
+"Intellectual property laws. Ị nwere ike\n"
+"\t\t\t\t'agaghị eji, detuo, ma ọ bụ megharịa ikpo okwu anyị ma ọ bụ ọdịnaya ya na-enweghị anyị "
+"gopụta nkwenye ederede."
 
 #: templates/terms.html:59
 msgid "Disclaimer of Warranties"
-msgstr ""
+msgstr "Disclaimer nke akwụkwọ ikike"
 
 #: templates/terms.html:60
 msgid ""
@@ -2864,10 +2981,18 @@ msgid ""
 "\t\t\t\tmerchantability, fitness for a particular purpose, and non-"
 "infringement."
 msgstr ""
+"A na-enye ikpo okwu anyị na dị ka ọ di na dị ka ọ dị. Anyị na-eme "
+"enweghị ikike na\n"
+"\t\t\tour platform agaghị akwụsị akwụsị, enweghị njehie, ma ọ bụ nchekwa, ma ọ bụ nke ahụ"
+"Nkwarụ ma ọ bụ mperi ọ bụla ga-abụ\n"
+"\t\t\tcorrected. Anyị na-ewepụ ikike niile, gụnyere ma ọnweghị oke na"
+" akwụkwọ ikike pụtara \n"
+"\t\t\t\tmerchantability, mma maka otu nzube, na-abụghị"
+"mmebi iwu."
 
 #: templates/terms.html:67
 msgid "Limitation of Liability"
-msgstr ""
+msgstr "Mmachi nke ibu"
 
 #: templates/terms.html:68
 msgid ""
@@ -2880,10 +3005,18 @@ msgid ""
 "\t\t\t\ttheory, even if we have been advised of the possibility of such "
 "damages."
 msgstr ""
+"Ọ dịghị ihe ọ bụla HealthLink ma ọ bụ ndị mmekọ ya, ndị isi, ndị ọrụ,"
+"ndị ọrụ, ma ọ bụ ndị nnọchi anya\n"
+"\t\t\t ga-akwụ ụgwọ maka ihe ọ bụla na-apụtaghị ìhè, mberede, pụrụ iche ma ọ bụ nke ga-esi na ya pụta"
+"mmebi na-esi na ma ọ bụ na\n"
+"\t\t\t njikọ na ojiji nke ikpo okwu anyị, ma ọ dabere na mmebi nke "
+"nkwekọrịta, mmekpa ahụ, ma ọ bụ iwu ọ bụla ọzọ\n"
+"\t\t\t\theory, ọ bụrụgodị na a dụrụ anyị ọdụ maka ohere nke dị otú ahụ"
+"mmebi." 
 
 #: templates/terms.html:74
 msgid "Indemnification"
-msgstr ""
+msgstr "Indemnification"
 
 #: templates/terms.html:75
 msgid ""
@@ -2894,10 +3027,16 @@ msgid ""
 "\t\t\t\tconnection with your use of our platform, your content, or your "
 "breach of these Terms of Use."
 msgstr ""
+"Ị kwenyere n'ịkwụ ụgwọ ma jide HealthLink na ndị mmekọ ya na-adịghị emerụ ahụ,"
+"ndị nduzi,\n"
+"\t\t\t ndị ọrụ, ndị ọrụ, na ndị nnọchite anya site na ebubo, mmebi, mmefu ọ bụla,"
+"ma ọ bụ ụgwọ ndị sitere na ma ọ bụ na\n"
+"\t\t\t njikọ na iji ikpo okwu anyị, ọdịnaya gị, ma ọ bụ nke gị"
+"mmebi nke Usoro ojiji ndị a."
 
 #: templates/terms.html:80
 msgid "Changes to These Terms"
-msgstr ""
+msgstr "Mgbanwe na Usoro Ndị a"
 
 #: templates/terms.html:81
 msgid ""
@@ -2907,87 +3046,94 @@ msgid ""
 "will signify your acceptance of the\n"
 "\t\t\t\tupdated terms."
 msgstr ""
+"Anyị dobere ikike ịgbanwe ma ọ bụ melite Usoro ojiji ndị a n'oge ọ bụla,"
+"enweghị ọkwa.\n"
+"\t\t\t Ị nọgidere na-eji ikpo okwu anyị mgbe mgbanwe ọ bụla na usoro ndị a"
+"ga-egosi na ị nabatara\n"
+"\t\t\t emelitere okwu."
 
 #: templates/terms.html:86
 msgid ""
 "If you have any questions or concerns about these Terms of Use, please "
 "contact us at"
 msgstr ""
+"Ọ bụrụ na ị nwere ajụjụ ọ bụla ma ọ bụ nchegbu gbasara Usoro ojiji ndị a, biko"
+"kpọtụrụ anyị na"
 
 #: templates/user/edit-profile.html:18 users/views.py:82
 msgid "Edit Profile"
-msgstr ""
+msgstr "Dezie profaịlụ"
 
 #: templates/user/edit-profile.html:26
 msgid "Email Settings"
-msgstr ""
+msgstr "Ntọala email"
 
 #: templates/user/edit-profile.html:30
 msgid "Privacy"
-msgstr ""
+msgstr "Nzuzo"
 
 #: templates/user/edit-profile.html:34
 msgid "Deactivate Account"
-msgstr ""
+msgstr "Gbanyụọ akaụntụ"
 
 #: templates/user/edit-profile.html:41
 msgid "Public information"
-msgstr ""
+msgstr "Ozi ọha"
 
 #: templates/user/edit-profile.html:47 templates/user/edit-profile.html:193
 msgid "Profile Picture"
-msgstr ""
+msgstr "Foto profaịlụ"
 
 #: templates/user/edit-profile.html:55
 msgid "First Name"
-msgstr ""
+msgstr "Aha mbụ"
 
 #: templates/user/edit-profile.html:59
 msgid "Last Name"
-msgstr ""
+msgstr "Aha ikpeazụ"
 
 #: templates/user/edit-profile.html:71 templates/user/edit-profile.html:214
 msgid "Phone"
-msgstr ""
+msgstr "Ekwentị"
 
 #: templates/user/edit-profile.html:80
 msgid "Location"
-msgstr ""
+msgstr "Ebe"
 
 #: templates/user/edit-profile.html:84
 msgid "Username"
-msgstr ""
+msgstr "Aha njirimara"
 
 #: templates/user/edit-profile.html:92 templates/user/edit-profile.html:221
 #: templates/user/health_records/index.html:37
 #: templates/user/health_records/index.html:98
 msgid "Gender"
-msgstr ""
+msgstr "okike"
 
 #: templates/user/edit-profile.html:95 templates/user/edit-profile.html:100
 #: templates/user/edit-profile.html:105
 msgid "Male"
-msgstr ""
+msgstr "Nwoke"
 
 #: templates/user/edit-profile.html:96 templates/user/edit-profile.html:101
 #: templates/user/edit-profile.html:106
 msgid "Female"
-msgstr ""
+msgstr "Nwanyị"
 
 #: templates/user/edit-profile.html:97 templates/user/edit-profile.html:102
 #: templates/user/edit-profile.html:107
 msgid "Other"
-msgstr ""
+msgstr "Ndị ọzọ"
 
 #: templates/user/edit-profile.html:112
 #: templates/user/health_records/index.html:38
 #: templates/user/health_records/index.html:99
 msgid "Age"
-msgstr ""
+msgstr "Afọ"
 
 #: templates/user/edit-profile.html:120
 msgid "Language Preference"
-msgstr ""
+msgstr "Mmasị Asụsụ"
 
 #: templates/user/edit-profile.html:132
 msgid "LinkedIn"
@@ -2995,84 +3141,84 @@ msgstr ""
 
 #: templates/user/edit-profile.html:150
 msgid "About me"
-msgstr ""
+msgstr "Gbasara m"
 
 #: templates/user/edit-profile.html:157
 msgid "Save changes"
-msgstr ""
+msgstr "Chekwa mgbanwe"
 
 #: templates/user/edit-profile.html:178
 msgid "Email settings"
-msgstr ""
+msgstr "Ntọala email"
 
 #: templates/user/edit-profile.html:181
 msgid "Manage your Emails"
-msgstr ""
+msgstr "Jikwaa ozi-e gị"
 
 #: templates/user/edit-profile.html:189
 msgid "Privacy Settings"
-msgstr ""
+msgstr "Ntọala nzuzo"
 
 #: templates/user/edit-profile.html:195 templates/user/edit-profile.html:202
 #: templates/user/edit-profile.html:209 templates/user/edit-profile.html:216
 #: templates/user/edit-profile.html:223 templates/user/edit-profile.html:230
 #: templates/user/edit-profile.html:237 templates/user/edit-profile.html:244
 msgid "Visible"
-msgstr ""
+msgstr "Na-ahụ anya"
 
 #: templates/user/edit-profile.html:196 templates/user/edit-profile.html:203
 #: templates/user/edit-profile.html:210 templates/user/edit-profile.html:217
 #: templates/user/edit-profile.html:224 templates/user/edit-profile.html:231
 #: templates/user/edit-profile.html:238 templates/user/edit-profile.html:245
 msgid "Hidden"
-msgstr ""
+msgstr "Zoro ezo"
 
 #: templates/user/edit-profile.html:207
 msgid "Country"
-msgstr ""
+msgstr "Obodo"
 
 #: templates/user/edit-profile.html:228
 msgid "Social links"
-msgstr ""
+msgstr "Njikọ mmekọrịta"
 
 #: templates/user/edit-profile.html:235
 msgid "Website"
-msgstr ""
+msgstr "Weebụsaịtị"
 
 #: templates/user/edit-profile.html:242
 msgid "Biography"
-msgstr ""
+msgstr "Akụkọ ndụ"
 
 #: templates/user/edit-profile.html:249
 msgid "Save"
-msgstr ""
+msgstr "Chekwa"
 
 #: templates/user/edit-profile.html:257
 msgid "Delete Account"
-msgstr ""
+msgstr "Hichapụ Akaụntụ"
 
 #: templates/user/edit-profile.html:264
 msgid "Deactivate your account?"
-msgstr ""
+msgstr "Gbanyụọ akaụntụ gị?"
 
 #: templates/user/edit-profile.html:270
 msgid "Deactivate"
-msgstr ""
+msgstr "Gbanyụọ"
 
 #: templates/user/health_records/add.html:24
 #: templates/user/health_records/edit.html:24
 msgid "Weight"
-msgstr ""
+msgstr "Ibu"
 
 #: templates/user/health_records/add.html:28
 #: templates/user/health_records/edit.html:28
 msgid "Height"
-msgstr ""
+msgstr "Ogologo"
 
 #: templates/user/health_records/add.html:36
 #: templates/user/health_records/edit.html:36
 msgid "Heart Rate"
-msgstr ""
+msgstr "Ọnụọgụgụ obi"
 
 #: templates/user/health_records/add.html:44
 #: templates/user/health_records/edit.html:44
@@ -3087,63 +3233,63 @@ msgstr ""
 #: templates/user/health_records/add.html:57
 #: templates/user/health_records/edit.html:57
 msgid "Are you disabled?"
-msgstr ""
+msgstr "Ị nwere nkwarụ?"
 
 #: templates/user/health_records/add.html:64
 msgid "Do you smoke?"
-msgstr ""
+msgstr "Ị na-ese anwụrụ?"
 
 #: templates/user/health_records/add.html:71
 #: templates/user/health_records/edit.html:81
 msgid "Do you take alcohol?"
-msgstr ""
+msgstr "Ị na-aṅụ mmanya?"
 
 #: templates/user/health_records/add.html:82
 #: templates/user/health_records/edit.html:97
 msgid "Health Status"
-msgstr ""
+msgstr "Ọnọdụ ahụike"
 
 #: templates/user/health_records/add.html:86
 #: templates/user/health_records/edit.html:101
 #: templates/user/health_records/index.html:47
 #: templates/user/health_records/index.html:108
 msgid "Allergies"
-msgstr ""
+msgstr "Allergy"
 
 #: templates/user/health_records/add.html:90
 #: templates/user/health_records/edit.html:105
 #: templates/user/health_records/index.html:48
 #: templates/user/health_records/index.html:109
 msgid "Interests"
-msgstr ""
+msgstr "Mmasị"
 
 #: templates/user/health_records/add.html:98
 #: templates/user/health_records/edit.html:113
 msgid "Submit"
-msgstr ""
+msgstr "Nyefee"
 
 #: templates/user/health_records/index.html:24
 msgid "Health Data"
-msgstr ""
+msgstr "Data ahụike"
 
 #: templates/user/health_records/index.html:27 users/views.py:186
 msgid "Add Health Record"
-msgstr ""
+msgstr "Tinye ndekọ ahụike"
 
 #: templates/user/health_records/index.html:39
 #: templates/user/health_records/index.html:100
 msgid "Height(cm)"
-msgstr ""
+msgstr "Ogologo (cm)"
 
 #: templates/user/health_records/index.html:40
 #: templates/user/health_records/index.html:101
 msgid "Weight(kg)"
-msgstr ""
+msgstr "Ibu(kg)"
 
 #: templates/user/health_records/index.html:41
 #: templates/user/health_records/index.html:102
 msgid "Heart Rate(BPM)"
-msgstr ""
+msgstr "Ọnụọgụgụ obi (BPM)"
 
 #: templates/user/health_records/index.html:42
 #: templates/user/health_records/index.html:103
@@ -3153,200 +3299,202 @@ msgstr ""
 #: templates/user/health_records/index.html:43
 #: templates/user/health_records/index.html:104
 msgid "Take Alcohol"
-msgstr ""
+msgstr "Were mmanya na-aba n'anya"
 
 #: templates/user/health_records/index.html:44
 #: templates/user/health_records/index.html:105
 msgid "Smoke"
-msgstr ""
+msgstr "Anwụrụ ọkụ"
 
 #: templates/user/health_records/index.html:45
 #: templates/user/health_records/index.html:106
 msgid "Is disabeled"
-msgstr ""
+msgstr "Ọ nwere nkwarụ"
 
 #: templates/user/health_records/index.html:46
 #: templates/user/health_records/index.html:107
 msgid "Heath Status"
-msgstr ""
+msgstr "Ọnọdụ ahụike"
 
 #: templates/user/health_records/index.html:49
 #: templates/user/health_records/index.html:110
 msgid "Action"
-msgstr ""
+msgstr "Omume"
 
 #: templates/user/health_records/index.html:87
 msgid "Edit"
-msgstr ""
+msgstr "Dezie"
 
 #: templates/user/health_records/index.html:93
 msgid "No records found"
-msgstr ""
+msgstr "Enweghị ndekọ ahụrụ"
 
 #: templates/user/index.html:93
 msgid "Followed tags"
-msgstr ""
+msgstr "Mkpado na-eso"
 
 #: templates/user/index.html:94
 msgid "View all tags"
-msgstr ""
+msgstr "Lelee mkpado niile"
 
 #: templates/user/index.html:100
 msgid "No tags followed"
-msgstr ""
+msgstr "Enweghị mkpado esochiri"
 
 #: templates/user/index.html:106
 msgid "followers"
-msgstr ""
+msgstr "ndị na-eso ụzọ"
 
 #: templates/user/index.html:107
 msgid "posts"
-msgstr ""
+msgstr "posts"
 
 #: templates/user/index.html:116
 msgid "Activities"
-msgstr ""
+msgstr "Ihe omume"
 
 #: templates/user/index.html:120
 msgid "Posts/Questions"
-msgstr ""
+msgstr "Posts/Ajụjụ"
 
 #: templates/user/index.html:157
 msgid "No Posts/Questions"
-msgstr ""
+msgstr "Enweghị ajụjụ/ajụjụ"
 
 #: templates/user/index.html:176
 msgid "No Answers"
-msgstr ""
+msgstr "Enweghị azịza"
 
 #: templates/user/index.html:196
 msgid "No Groups Joined"
-msgstr ""
+msgstr "Ọnweghị otu jikọtara"
 
 #: templates/user/index.html:216
 msgid "No Tags Followed"
-msgstr ""
+msgstr "Enweghị mkpado esochie"
 
 #: templates/user/index.html:236
 msgid "No Communities Followed"
-msgstr ""
+msgstr "Ọnweghị obodo soro"
 
 #: templates/user/partials/top-nav.html:16
 msgid "Member since"
-msgstr ""
+msgstr "Onye otu kemgbe"
 
 #: templates/user/partials/top-nav.html:17
 msgid "Last seen"
-msgstr ""
+msgstr "Ahụrụ ikpeazụ"
 
 #: templates/user/partials/top-nav.html:19
 msgid "Following"
-msgstr ""
+msgstr "Na-eso"
 
 #: templates/user/referrals.html:16
 msgid "Spread the word with friends. Earn points."
-msgstr ""
+msgstr "Soro ndị enyi gbasaa okwu ahụ. Nweta akara."
 
 #: templates/user/referrals.html:17
 msgid ""
 "We have a number of ways to help spread the word to your friends and family, "
 "Choose whatever works best for you."
 msgstr ""
+"Anyị nwere ọtụtụ ụzọ iji nyere aka gbasaa okwu ahụ na ndị enyi gị na ndị ezinụlọ gị,"
+"Họrọ ihe ọ bụla ga-abara gị uru."
 
 #: templates/user/referrals.html:21
 msgid "Send a referral by email."
-msgstr ""
+msgstr "Zipu ntughari site na email."
 
 #: templates/user/referrals.html:25
 msgid "Send"
-msgstr ""
+msgstr "Ziga"
 
 #: templates/user/referrals.html:30
 msgid "Copy and paste your referral link anywhere."
-msgstr ""
+msgstr "Detuo ma mado njikọ ntụnye aka gị ebe ọ bụla."
 
 #: templates/user/referrals.html:34
 msgid "Copy"
-msgstr ""
+msgstr "Detuo"
 
 #: templates/user/referrals.html:43
 msgid "Invitations Sent"
-msgstr ""
+msgstr "Ezitere akwụkwọ ịkpọ òkù"
 
 #: templates/user/referrals.html:50
 msgid "Pending"
-msgstr ""
+msgstr "Na-echere"
 
 #: templates/user/referrals.html:57
 msgid "Completed"
-msgstr ""
+msgstr "Emechara"
 
 #: templates/user/referrals.html:64
 msgid "Earned"
-msgstr ""
+msgstr "Erite"
 
 #: users/views.py:27
 msgid "My Profile"
-msgstr ""
+msgstr "Profaịlụ m"
 
 #: users/views.py:53
 msgid "Username can only contain letters and numbers."
-msgstr ""
+msgstr "Aha njirimara nwere ike ịnwe naanị mkpụrụedemede na ọnụọgụ."
 
 #: users/views.py:79
 msgid "Profile updated successfully."
-msgstr ""
+msgstr "Emelitere profaịlụ nke ọma."
 
 #: users/views.py:91
 #, python-brace-format
 msgid "You already follow {user_to_follow}."
-msgstr ""
+msgstr "I sorola {user_to_follow}."
 
 #: users/views.py:97
 #, python-brace-format
 msgid "Successfully followed {user_to_follow}."
-msgstr ""
+msgstr "soro {user_to_follow} nke ọma."
 
 #: users/views.py:107
 #, python-brace-format
 msgid "Successfully unfollowed {user_to_unfollow}."
-msgstr ""
+msgstr "Esobeghị nke ọma {user_to_unfollow}."
 
 #: users/views.py:110
 #, python-brace-format
 msgid "You do not follow {user_to_unfollow}."
-msgstr ""
+msgstr "Ị naghị eso {user_to_unfollow}."
 
 #: users/views.py:123
 #, python-brace-format
 msgid "{user}'s Profile"
-msgstr ""
+msgstr "Profaịlụ {user}"
 
 #: users/views.py:133
 #, python-brace-format
 msgid "{request.user}'s Health Records"
-msgstr ""
+msgstr "Ndekọ ahụike {request.user}"
 
 #: users/views.py:182
 msgid "Health record added successfully."
-msgstr ""
+msgstr "Agbakwunyere ndekọ ahụike nke ọma."
 
 #: users/views.py:194
 msgid "You are not authorized to edit this health record."
-msgstr ""
+msgstr "Ịnweghị ikike idezi ndekọ ahụike a."
 
 #: users/views.py:235
 msgid "Health record updated successfully."
-msgstr ""
+msgstr "Emelitere ndekọ ahụike nke ọma."
 
 #: users/views.py:239
 msgid "Edit Health Record"
-msgstr ""
+msgstr "Edit Health Record"
 
 #: users/views.py:248
 msgid "You are not authorized to delete this health record."
-msgstr ""
+msgstr "Enweghị ikike ka ihichapụ ndekọ ahụike a."
 
 #: users/views.py:252
 msgid "Health record deleted successfully."
-msgstr ""
+msgstr "E hichapụla ndekọ ahụike nke ọma."
