@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-13 09:16+0300\n"
+"POT-Creation-Date: 2023-04-13 11:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: blog/views.py:11 blog/views.py:31 templates/partials/footer.html:31
+msgid "Blogs"
+msgstr ""
+
+#: blog/views.py:42 core/views.py:102
+#, python-brace-format
+msgid "Search result for '{search}'"
+msgstr ""
 
 #: core/urls.py:7
 msgid "search/"
@@ -43,6 +52,7 @@ msgid "faqs/"
 msgstr ""
 
 #: core/views.py:28 discussion/views.py:14 discussion/views.py:36
+#: users/views.py:25
 msgid "Please update your profile to get the best experience."
 msgstr ""
 
@@ -54,9 +64,13 @@ msgstr ""
 msgid "About Us"
 msgstr ""
 
+#: core/views.py:56
+msgid "Message submitted successfully."
+msgstr ""
+
 #: core/views.py:62 templates/partials/footer.html:81
-#: templates/partials/top-nav.html:43 templates/privacy.html:54
-#: templates/terms.html:80
+#: templates/partials/top-nav.html:43 templates/privacy.html:59
+#: templates/terms.html:85
 msgid "Contact Us"
 msgstr ""
 
@@ -72,9 +86,12 @@ msgstr ""
 msgid "Frequently Asked Questions"
 msgstr ""
 
-#: core/views.py:102
-#, python-brace-format
-msgid "Search result for '{search}'"
+#: discussion/views.py:25 templates/forum/index.html:22
+#: templates/forum/question-details.html:23
+#: templates/partials/left-sidebar.html:31
+#: templates/resources/partials/right-sidebar.html:62
+#: templates/resources/partials/right-sidebar.html:125
+msgid "Questions"
 msgstr ""
 
 #: discussion/views.py:49
@@ -1479,32 +1496,58 @@ msgid "users/"
 msgstr ""
 
 #: healthlink/urls.py:32
-msgid "api/"
-msgstr ""
-
-#: healthlink/urls.py:33
 msgid "blogs/"
 msgstr ""
 
-#: healthlink/urls.py:34
+#: healthlink/urls.py:33
 msgid "forum/"
+msgstr ""
+
+#: healthlink/urls.py:40
+msgid "HealthLink Admin"
+msgstr ""
+
+#: healthlink/urls.py:41
+msgid "HealthLink Admin Portal"
+msgstr ""
+
+#: resources/views.py:15
+msgid "Resource Articles"
+msgstr ""
+
+#: resources/views.py:26
+#, python-brace-format
+msgid "Articles with tag '{tag}'"
+msgstr ""
+
+#: resources/views.py:50
+msgid "Resource Videos"
+msgstr ""
+
+#: resources/views.py:61
+#, python-brace-format
+msgid "Videos with tag '{tag}'"
+msgstr ""
+
+#: resources/views.py:76
+msgid "Resource Documents"
 msgstr ""
 
 #: templates/404.html:11
 msgid "Go To Home"
 msgstr ""
 
-#: templates/about.html:10
+#: templates/about.html:15
 msgid "Who we are"
 msgstr ""
 
-#: templates/about.html:11
+#: templates/about.html:16
 msgid ""
 "HealthLink was founded by a group of students for healthcare professionals "
 "and patients with different health conditions."
 msgstr ""
 
-#: templates/about.html:12
+#: templates/about.html:17
 msgid ""
 "We saw the need for a safe and supportive online community for people facing "
 "any health challenge. Our mission is to provide a platform for people to "
@@ -1512,16 +1555,16 @@ msgid ""
 "providing a safe and inclusive environment for all members of our community."
 msgstr ""
 
-#: templates/about.html:48
+#: templates/about.html:53
 msgid "Our leadership team"
 msgstr ""
 
-#: templates/about.html:84 templates/partials/left-sidebar.html:116
+#: templates/about.html:89 templates/partials/left-sidebar.html:116
 #: templates/user/partials/top-nav.html:23 templates/user/users.html:70
 msgid "Edit profile"
 msgstr ""
 
-#: templates/about.html:87 templates/forum/community/details.html:24
+#: templates/about.html:92 templates/forum/community/details.html:24
 #: templates/forum/community/index.html:41
 #: templates/forum/community/posts.html:25 templates/forum/tag-detail.html:24
 #: templates/forum/tags.html:54 templates/user/partials/top-nav.html:26
@@ -1529,7 +1572,7 @@ msgstr ""
 msgid "Unfollow"
 msgstr ""
 
-#: templates/about.html:89 templates/forum/community/details.html:24
+#: templates/about.html:94 templates/forum/community/details.html:24
 #: templates/forum/community/index.html:41
 #: templates/forum/community/posts.html:25 templates/forum/tag-detail.html:24
 #: templates/forum/tags.html:56 templates/user/partials/top-nav.html:28
@@ -1936,13 +1979,13 @@ msgstr ""
 msgid "Your Name"
 msgstr ""
 
-#: templates/blog-details.html:84 templates/contact.html:24
-#: templates/contact.html:76 templates/partials/footer.html:89
+#: templates/blog-details.html:84 templates/contact.html:29
+#: templates/contact.html:81 templates/partials/footer.html:89
 #: templates/user/edit-profile.html:67 templates/user/edit-profile.html:200
 msgid "Email"
 msgstr ""
 
-#: templates/blog-details.html:93 templates/contact.html:40
+#: templates/blog-details.html:93 templates/contact.html:45
 msgid "Your Subject"
 msgstr ""
 
@@ -1966,39 +2009,39 @@ msgstr ""
 msgid "No Blogs Found"
 msgstr ""
 
-#: templates/contact.html:10
+#: templates/contact.html:15
 msgid "Get in touch"
 msgstr ""
 
-#: templates/contact.html:16
+#: templates/contact.html:21
 msgid "Name"
 msgstr ""
 
-#: templates/contact.html:32
+#: templates/contact.html:37
 msgid "Your Phone Number"
 msgstr ""
 
-#: templates/contact.html:48
+#: templates/contact.html:53
 msgid "Your Message"
 msgstr ""
 
-#: templates/contact.html:56
+#: templates/contact.html:61
 msgid "Send Message"
 msgstr ""
 
-#: templates/contact.html:68
+#: templates/contact.html:73
 msgid "Contact informaton"
 msgstr ""
 
-#: templates/contact.html:72 templates/partials/footer.html:85
+#: templates/contact.html:77 templates/partials/footer.html:85
 msgid "Call"
 msgstr ""
 
-#: templates/contact.html:80 templates/partials/footer.html:94
+#: templates/contact.html:85 templates/partials/footer.html:94
 msgid "Address"
 msgstr ""
 
-#: templates/faq/index.html:18 templates/forum/community/index.html:18
+#: templates/faq/index.html:23 templates/forum/community/index.html:18
 #: templates/forum/groups/index.html:18 templates/forum/index.html:18
 #: templates/forum/question-details.html:18 templates/forum/tags.html:18
 #: templates/partials/breadcrum.html:16 templates/partials/footer.html:22
@@ -2008,17 +2051,17 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: templates/faq/index.html:22 templates/partials/footer.html:46
+#: templates/faq/index.html:27 templates/partials/footer.html:46
 #: templates/partials/left-sidebar.html:88
 msgid "FAQs"
 msgstr ""
 
-#: templates/faq/index.html:30 templates/partials/search.html:6
+#: templates/faq/index.html:35 templates/partials/search.html:6
 #: templates/resources/details.html:40 templates/user/users.html:30
 msgid "Ask Question"
 msgstr ""
 
-#: templates/faq/index.html:55
+#: templates/faq/index.html:60
 msgid "No Frequently Asked Questions"
 msgstr ""
 
@@ -2242,27 +2285,20 @@ msgstr ""
 msgid "Ask a Question to Group"
 msgstr ""
 
-#: templates/forum/index.html:22 templates/forum/question-details.html:23
-#: templates/partials/left-sidebar.html:31
-#: templates/resources/partials/right-sidebar.html:62
-#: templates/resources/partials/right-sidebar.html:125
-msgid "Questions"
-msgstr ""
-
-#: templates/forum/index.html:31 templates/index.html:50
+#: templates/forum/index.html:31 templates/index.html:55
 msgid "Recent"
 msgstr ""
 
-#: templates/forum/index.html:36 templates/index.html:55
+#: templates/forum/index.html:36 templates/index.html:60
 msgid "Most Answered"
 msgstr ""
 
-#: templates/forum/index.html:41 templates/index.html:60
+#: templates/forum/index.html:41 templates/index.html:65
 msgid "Unanswered"
 msgstr ""
 
 #: templates/forum/index.html:46 templates/forum/questions/featured.html:137
-#: templates/index.html:65
+#: templates/index.html:70
 msgid "Most Viewed"
 msgstr ""
 
@@ -2326,15 +2362,15 @@ msgstr ""
 msgid "No tags found"
 msgstr ""
 
-#: templates/index.html:11
+#: templates/index.html:16
 msgid "Join Our Health Community"
 msgstr ""
 
-#: templates/index.html:11
+#: templates/index.html:16
 msgid "Today"
 msgstr ""
 
-#: templates/index.html:12
+#: templates/index.html:17
 msgid ""
 "HealthLink is a safe and supportive community for people with different "
 "health conditions. Our features include discussion boards, search "
@@ -2342,7 +2378,7 @@ msgid ""
 "who share similar experiences."
 msgstr ""
 
-#: templates/index.html:14
+#: templates/index.html:19
 msgid "Get Started"
 msgstr ""
 
@@ -2367,10 +2403,6 @@ msgstr ""
 
 #: templates/partials/footer.html:28
 msgid "Contact us"
-msgstr ""
-
-#: templates/partials/footer.html:31
-msgid "Blogs"
 msgstr ""
 
 #: templates/partials/footer.html:39
@@ -2423,7 +2455,7 @@ msgstr ""
 
 #: templates/partials/left-sidebar.html:55
 #: templates/resources/partials/right-sidebar.html:70
-#: templates/user/users.html:22
+#: templates/user/users.html:22 users/views.py:272
 msgid "Users"
 msgstr ""
 
@@ -2453,7 +2485,7 @@ msgid "Health records"
 msgstr ""
 
 #: templates/partials/left-sidebar.html:126 templates/partials/top-nav.html:150
-#: templates/partials/top-nav.html:314
+#: templates/partials/top-nav.html:314 users/views.py:257
 msgid "Referrals"
 msgstr ""
 
@@ -2500,7 +2532,7 @@ msgstr ""
 msgid "Sign up"
 msgstr ""
 
-#: templates/privacy.html:8
+#: templates/privacy.html:13
 msgid ""
 "We at HealthLink are committed to protecting your privacy. This Privacy "
 "Policy explains how we\n"
@@ -2508,11 +2540,11 @@ msgid ""
 "platform."
 msgstr ""
 
-#: templates/privacy.html:10
+#: templates/privacy.html:15
 msgid "Information We Collect"
 msgstr ""
 
-#: templates/privacy.html:11
+#: templates/privacy.html:16
 msgid ""
 "We collect personal information that you voluntarily provide to us when you "
 "register for an\n"
@@ -2524,11 +2556,11 @@ msgid ""
 "information."
 msgstr ""
 
-#: templates/privacy.html:18
+#: templates/privacy.html:23
 msgid "How We Use Your Information"
 msgstr ""
 
-#: templates/privacy.html:19
+#: templates/privacy.html:24
 msgid ""
 "We use your personal information to provide you with a safe and supportive "
 "community for people\n"
@@ -2539,11 +2571,11 @@ msgid ""
 "\t\t\t\tprovide customer support, and improve our platform."
 msgstr ""
 
-#: templates/privacy.html:26
+#: templates/privacy.html:31
 msgid "How We Protect Your Information"
 msgstr ""
 
-#: templates/privacy.html:27
+#: templates/privacy.html:32
 msgid ""
 "We take reasonable measures to protect your personal information from "
 "unauthorized access, use,\n"
@@ -2554,11 +2586,11 @@ msgid ""
 "\t\t\t\tinformation from unauthorized access."
 msgstr ""
 
-#: templates/privacy.html:34
+#: templates/privacy.html:39
 msgid "Sharing Your Information"
 msgstr ""
 
-#: templates/privacy.html:35
+#: templates/privacy.html:40
 msgid ""
 "We do not share your personal information with third parties without your "
 "consent, except as\n"
@@ -2568,11 +2600,11 @@ msgid ""
 "maintenance providers."
 msgstr ""
 
-#: templates/privacy.html:41
+#: templates/privacy.html:46
 msgid "Your Choices"
 msgstr ""
 
-#: templates/privacy.html:42
+#: templates/privacy.html:47
 msgid ""
 "You can control your personal information by updating your profile settings "
 "and preferences.\n"
@@ -2582,11 +2614,11 @@ msgid ""
 "enforce our policies."
 msgstr ""
 
-#: templates/privacy.html:48
+#: templates/privacy.html:53
 msgid "Changes to Our Privacy Policy"
 msgstr ""
 
-#: templates/privacy.html:49
+#: templates/privacy.html:54
 msgid ""
 "We may update our Privacy Policy from time to time. We will notify you of "
 "any material changes\n"
@@ -2596,13 +2628,13 @@ msgid ""
 "updated policy."
 msgstr ""
 
-#: templates/privacy.html:55
+#: templates/privacy.html:60
 msgid ""
 "If you have any questions or concerns about our Privacy Policy, please "
 "contact us at"
 msgstr ""
 
-#: templates/privacy.html:57
+#: templates/privacy.html:62
 msgid "Phone number"
 msgstr ""
 
@@ -2737,7 +2769,7 @@ msgid ""
 "%(site_name)s. As a final step, please complete the following form:"
 msgstr ""
 
-#: templates/terms.html:8
+#: templates/terms.html:13
 msgid ""
 "Welcome to HealthLink. By accessing or using our platform, you agree to be "
 "bound by the\n"
@@ -2745,46 +2777,46 @@ msgid ""
 "please do not use our platform."
 msgstr ""
 
-#: templates/terms.html:13
+#: templates/terms.html:18
 msgid "User Conduct"
 msgstr ""
 
-#: templates/terms.html:14
+#: templates/terms.html:19
 msgid ""
 "You agree to use our platform for lawful purposes only and to comply with "
 "all applicable\n"
 "\t\t\t\tlaws and regulations. You must not: "
 msgstr ""
 
-#: templates/terms.html:19
+#: templates/terms.html:24
 msgid ""
 "Impersonate or misrepresent your identity or affiliation with any person or "
 "entity."
 msgstr ""
 
-#: templates/terms.html:23
+#: templates/terms.html:28
 msgid ""
 "Engage in any activity that disrupts, interferes with, or harms our platform "
 "or its users."
 msgstr ""
 
-#: templates/terms.html:27
+#: templates/terms.html:32
 msgid ""
 "Attempt to gain unauthorized access to our platform or its systems or "
 "networks."
 msgstr ""
 
-#: templates/terms.html:31
+#: templates/terms.html:36
 msgid ""
 "Collect or store the personal information of other users without their "
 "consent."
 msgstr ""
 
-#: templates/terms.html:34
+#: templates/terms.html:39
 msgid "User Content"
 msgstr ""
 
-#: templates/terms.html:35
+#: templates/terms.html:40
 msgid ""
 "Our platform allows you to post, upload, or transmit content such as "
 "comments, messages,\n"
@@ -2794,7 +2826,7 @@ msgid ""
 "on our platform."
 msgstr ""
 
-#: templates/terms.html:38
+#: templates/terms.html:43
 msgid ""
 "You are solely responsible for your content and must ensure that it complies "
 "with our\n"
@@ -2803,11 +2835,11 @@ msgid ""
 "\t\t\t\tor that we deem inappropriate, without notice."
 msgstr ""
 
-#: templates/terms.html:44
+#: templates/terms.html:49
 msgid "Intellectual Property"
 msgstr ""
 
-#: templates/terms.html:45
+#: templates/terms.html:50
 msgid ""
 "Our platform and its content, including text, graphics, images, logos, and "
 "software, are\n"
@@ -2817,11 +2849,11 @@ msgid ""
 "express written consent."
 msgstr ""
 
-#: templates/terms.html:54
+#: templates/terms.html:59
 msgid "Disclaimer of Warranties"
 msgstr ""
 
-#: templates/terms.html:55
+#: templates/terms.html:60
 msgid ""
 "Our platform is provided on an \"as is\" and \"as available\" basis. We do "
 "not warrant that\n"
@@ -2833,11 +2865,11 @@ msgid ""
 "infringement."
 msgstr ""
 
-#: templates/terms.html:62
+#: templates/terms.html:67
 msgid "Limitation of Liability"
 msgstr ""
 
-#: templates/terms.html:63
+#: templates/terms.html:68
 msgid ""
 "In no event shall HealthLink or its affiliates, directors, officers, "
 "employees, or agents\n"
@@ -2849,11 +2881,11 @@ msgid ""
 "damages."
 msgstr ""
 
-#: templates/terms.html:69
+#: templates/terms.html:74
 msgid "Indemnification"
 msgstr ""
 
-#: templates/terms.html:70
+#: templates/terms.html:75
 msgid ""
 "You agree to indemnify and hold harmless HealthLink and its affiliates, "
 "directors,\n"
@@ -2863,11 +2895,11 @@ msgid ""
 "breach of these Terms of Use."
 msgstr ""
 
-#: templates/terms.html:75
+#: templates/terms.html:80
 msgid "Changes to These Terms"
 msgstr ""
 
-#: templates/terms.html:76
+#: templates/terms.html:81
 msgid ""
 "We reserve the right to modify or update these Terms of Use at any time, "
 "without notice.\n"
@@ -2876,13 +2908,13 @@ msgid ""
 "\t\t\t\tupdated terms."
 msgstr ""
 
-#: templates/terms.html:81
+#: templates/terms.html:86
 msgid ""
 "If you have any questions or concerns about these Terms of Use, please "
 "contact us at"
 msgstr ""
 
-#: templates/user/edit-profile.html:18
+#: templates/user/edit-profile.html:18 users/views.py:82
 msgid "Edit Profile"
 msgstr ""
 
@@ -3094,7 +3126,7 @@ msgstr ""
 msgid "Health Data"
 msgstr ""
 
-#: templates/user/health_records/index.html:27
+#: templates/user/health_records/index.html:27 users/views.py:186
 msgid "Add Health Record"
 msgstr ""
 
@@ -3251,4 +3283,70 @@ msgstr ""
 
 #: templates/user/referrals.html:64
 msgid "Earned"
+msgstr ""
+
+#: users/views.py:27
+msgid "My Profile"
+msgstr ""
+
+#: users/views.py:53
+msgid "Username can only contain letters and numbers."
+msgstr ""
+
+#: users/views.py:79
+msgid "Profile updated successfully."
+msgstr ""
+
+#: users/views.py:91
+#, python-brace-format
+msgid "You already follow {user_to_follow}."
+msgstr ""
+
+#: users/views.py:97
+#, python-brace-format
+msgid "Successfully followed {user_to_follow}."
+msgstr ""
+
+#: users/views.py:107
+#, python-brace-format
+msgid "Successfully unfollowed {user_to_unfollow}."
+msgstr ""
+
+#: users/views.py:110
+#, python-brace-format
+msgid "You do not follow {user_to_unfollow}."
+msgstr ""
+
+#: users/views.py:123
+#, python-brace-format
+msgid "{user}'s Profile"
+msgstr ""
+
+#: users/views.py:133
+#, python-brace-format
+msgid "{request.user}'s Health Records"
+msgstr ""
+
+#: users/views.py:182
+msgid "Health record added successfully."
+msgstr ""
+
+#: users/views.py:194
+msgid "You are not authorized to edit this health record."
+msgstr ""
+
+#: users/views.py:235
+msgid "Health record updated successfully."
+msgstr ""
+
+#: users/views.py:239
+msgid "Edit Health Record"
+msgstr ""
+
+#: users/views.py:248
+msgid "You are not authorized to delete this health record."
+msgstr ""
+
+#: users/views.py:252
+msgid "Health record deleted successfully."
 msgstr ""
