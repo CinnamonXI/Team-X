@@ -1,9 +1,14 @@
 {% extends "account/base.html" %}
+{% block meta %}
+    <meta name="description" content="Sign in to your HealthLink account to join our community of health enthusiasts. Connect with others who are passionate about health and wellness and access resources and support for topics such as nutrition, fitness, mental health, chronic illness management, and more. Get advice, inspiration, and encouragement from our community members.">
+    <meta name="keywords" content=" HealthLink, health forum, login, sign in, account, member, access, community, wellness, fitness, mental health, chronic illness, disease management, treatment options, healthcare, self-care, prevention, holistic health, support groups, medical advice, healthy lifestyle.">
+{% endblock %}
+{% block head_title %}HealthLink Login | Sign In to Access Your Account {% endblock %}
 {% load crispy_forms_tags %}
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
 
 {% block content %}
 

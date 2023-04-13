@@ -1,8 +1,13 @@
 {% extends "account/base.html" %}
+{% block meta %}
+    <meta name="description" content="Join HealthLink community by signing up for a free account. Connect with others who are passionate about health and wellness and access resources and support for topics such as nutrition, fitness, mental health, chronic illness management, and more. Get advice, inspiration, and encouragement from our community members. Register now to join the conversation and start improving your health and well-being.">
+    <meta name="keywords" content="HealthLink, health forum, join, sign up, registration, member, community, wellness, fitness, mental health, chronic illness, disease management, treatment options, healthcare, self-care, prevention, holistic health, support groups, medical advice, healthy lifestyle.">
+    {% endblock %}
+{% block head_title %}Join HealthLink | Sign Up to Join Our Health Community {% endblock %}
 {% load crispy_forms_tags %}
 {% load i18n %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock %}
+
 
 {% block content %}
 <h1 class="text-primary">{% trans "Sign Up" %}</h1>
