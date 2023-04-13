@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 		<!-- Start Blog Area -->
 		<div class="blog-area ptb-100">
@@ -63,7 +64,7 @@
 					</div> -->
 				</div>
 				{% else %}
-					<p>No Blogs Found</p>
+					<p>{% trans 'No Blogs Found' %}</p>
 				{% endif %}
 			</div>
 		</div>

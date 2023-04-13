@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 
 	<!-- Start Mail Content Area -->
@@ -20,11 +21,11 @@
 								<div class="form-group">
 									<div class="row">
 										<div class="col-sm-6">
-											<label for="weight">Weight*:</label>
+											<label for="weight">{% trans 'Weight' %}*:</label>
 											<input type="number" name="weight" id="weight" required class="form-control rounded-pill form-control-sm" placeholder="Weight in kilograms (e.g. 70.5)">
 										</div>
 										<div class="col-sm-6">
-											<label for="height">Height*:</label>
+											<label for="height">{% trans 'Height' %}*:</label>
 											<input type="number" name="height" id="height" required class="form-control rounded-pill form-control-sm" placeholder="Height in Centimeters (e.g. 175.2)">
 										</div>
 									</div>
@@ -32,7 +33,7 @@
 								<div class="form-group">
 									<div class="row">
 										<div class="col-sm-12">
-											<label for="heart_rate">Heart Rate*:</label>
+											<label for="heart_rate">{% trans 'Heart Rate' %}*:</label>
 											<input type="number" name="heart_rate" id="heart_rate" required class="form-control rounded-pill form-control-sm" placeholder="Heart rate in beats per minute (e.g. 70)">
 										</div>
 									</div>
@@ -40,11 +41,11 @@
 								<div class="form-group">
 									<div class="row">
 										<div class="col-sm-6">
-											<label for="systolic_bp">Systolic BP*:</label>
+											<label for="systolic_bp">{% trans 'Systolic BP' %}*:</label>
 											<input type="number" name="systolic_bp" id="systolic_bp" required class="form-control rounded-pill form-control-sm" placeholder="Systolic blood pressure in mmHg (e.g. 120)">
 										</div>
 										<div class="col-sm-6">
-											<label for="diastolic_bp">Diastolic BP*:</label>
+											<label for="diastolic_bp">{% trans 'Diastolic BP' %}*:</label>
 											<input type="number" name="diastolic_bp" id="diastolic_bp" required class="form-control rounded-pill form-control-sm" placeholder="Diastolic blood pressure in mmHg (e.g. 80)">
 										</div>
 									</div>
@@ -53,24 +54,24 @@
 								<div class="form-group">
 									<div class="row">
 										<div class="col-sm-4">
-											<label for="is_disabled">Are you disabled?*</label>
+											<label for="is_disabled">{% trans 'Are you disabled?' %}*</label>
 											<select name="is_disabled" id="is_disabled" required class="form-control rounded-pill form-control-sm">
-												<option value="False" selected>No</option>
-												<option value="True">Yes</option>
+												<option value="False" selected>{% trans 'No' %}</option>
+												<option value="True">{% trans 'Yes' %}</option>
 											</select>
 										</div>
 										<div class="col-sm-4">
-											<label for="smoke">Do you smoke?*</label>
+											<label for="smoke">{% trans 'Do you smoke?'%} *</label>
 											<select name="smoke" id="smoke" required class="form-control rounded-pill form-control-sm">
-												<option value="False" selected>No</option>
-												<option value="True">Yes</option>
+												<option value="False" selected>{% trans 'No' %}</option>
+												<option value="True">{% trans 'Yes' %}</option>
 											</select>
 										</div>
 										<div class="col-sm-4">
-											<label for="take_alcohol">Do you take alcohol?*</label>
+											<label for="take_alcohol">{% trans 'Do you take alcohol?' %}*</label>
 											<select name="take_alcohol" id="take_alcohol" required class="form-control rounded-pill form-control-sm">
-												<option value="False" selected>No</option>
-												<option value="True">Yes</option>
+												<option value="False" selected>{% trans 'No' %}</option>
+												<option value="True">{% trans 'Yes' %}</option>
 											</select>
 										</div>
 									</div>
@@ -78,15 +79,15 @@
 								<div class="form-group">
 									<div class="row">
 										<div class="col-sm-12">
-											<label for="status">Health Status:</label>
+											<label for="status">{% trans 'Health Status' %}:</label>
 											<input type="text" name="status" id="status" class="form-control rounded-pill form-control-sm" placeholder="Current health status (e.g. diabetes, asthma, etc.)">
 										</div>
 										<div class="col-sm-12">
-											<label for="allergies">Allergies:</label>
+											<label for="allergies">{% trans 'Allergies' %}:</label>
 											<input type="text" name="allergies" id="allergies" class="form-control rounded-pill form-control-sm" placeholder="Known allergies (e.g. pollen, dust, etc.)">
 										</div>
 										<div class="col-sm-12">
-											<label for="interest">Interests:</label>
+											<label for="interest">{% trans 'Interests' %}:</label>
 											<input type="text" name="interest" id="interest" class="form-control rounded-pill form-control-sm" placeholder="Interests (e.g. sports, music, etc.)">
 										</div>
 									</div>
@@ -94,7 +95,7 @@
 								<div class="form-group my-3">
 									<div class="row">
 										<div class="col-sm-12">
-											<button type="submit" class="btn btn-info w-100 btn-lg rounded-pill">Submit</button>
+											<button type="submit" class="btn btn-info w-100 btn-lg rounded-pill">{% trans 'Submit' %}</button>
 										</div>
 									</div>
 								</div>

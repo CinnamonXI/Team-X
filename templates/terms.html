@@ -1,65 +1,84 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 <!-- End Terms & Conditions Area -->
 <section class="ptb-100">
 	<div class="container">
 		<div class="main-content-text">
-			<p>Welcome to HealthLink. By accessing or using our platform, you agree to be bound by the following terms and conditions. If you do not agree to these terms, please do not use our platform.</p>
+			<p>{% blocktrans %}Welcome to HealthLink. By accessing or using our platform, you agree to be bound by the
+				following terms and conditions. If you do not agree to these terms, please do not use our platform.{% endblocktrans %}</p>
 
 			<div class="gap-20"></div>
 
-			<h3>1. User Conduct </h3>
-			<p>You agree to use our platform for lawful purposes only and to comply with all applicable laws and regulations. You must not: </p>
+			<h3>1. {% trans 'User Conduct' %} </h3>
+			<p>{% blocktrans %}You agree to use our platform for lawful purposes only and to comply with all applicable
+				laws and regulations. You must not: {% endblocktrans %}</p>
 			<ul>
 				<li>
 					<i class="ri-check-line"></i>
-					Impersonate or misrepresent your identity or affiliation with any person or entity.
+					{% trans 'Impersonate or misrepresent your identity or affiliation with any person or entity.' %}
 				</li>
 				<li>
 					<i class="ri-check-line"></i>
-					Engage in any activity that disrupts, interferes with, or harms our platform or its users.
+					{% trans 'Engage in any activity that disrupts, interferes with, or harms our platform or its users.' %}
 				</li>
 				<li>
 					<i class="ri-check-line"></i>
-					Attempt to gain unauthorized access to our platform or its systems or networks. 
+					{% trans 'Attempt to gain unauthorized access to our platform or its systems or networks.' %}
 				</li>
 				<li>
 					<i class="ri-check-line"></i>
-					Collect or store the personal information of other users without their consent.  
+					{% trans 'Collect or store the personal information of other users without their consent.' %}
 				</li>
 			</ul>
-			<h3>2. User Content</h3>
-			<p>Our platform allows you to post, upload, or transmit content such as comments, messages, and images. You retain ownership of your content and grant us a non-exclusive, worldwide, royalty-free, and transferable license to use, reproduce, and display your content on our platform. </p>
-			<p>You are solely responsible for your content and must ensure that it complies with our guidelines and applicable laws. We reserve the right to remove any content that violates our guidelines or that we deem inappropriate, without notice.</p>
+			<h3>2. {% trans 'User Content' %}</h3>
+			<p>{% blocktrans %}Our platform allows you to post, upload, or transmit content such as comments, messages,
+				and images. You retain ownership of your content and grant us a non-exclusive, worldwide, royalty-free,
+				and transferable license to use, reproduce, and display your content on our platform.{% endblocktrans %} </p>
+			<p>{% blocktrans %}You are solely responsible for your content and must ensure that it complies with our
+				guidelines and applicable laws. We reserve the right to remove any content that violates our guidelines
+				or that we deem inappropriate, without notice.{% endblocktrans %}</p>
 
 			<div class="gap-20"></div>
 
-			<h3>3. Intellectual Property</h3>
-			<p>Our platform and its content, including text, graphics, images, logos, and software, are the property of HealthLink and its licensors and are protected by intellectual property laws. You may not use, copy, or reproduce our platform or its content without our express written consent.</p>
+			<h3>3. {% trans 'Intellectual Property' %}</h3>
+			<p>{% blocktrans %}Our platform and its content, including text, graphics, images, logos, and software, are
+				the property of HealthLink and its licensors and are protected by intellectual property laws. You may
+				not use, copy, or reproduce our platform or its content without our express written consent.{% endblocktrans %}</p>
 
 			<div class="gap-20"></div>
 
 
 			<div class="gap-20"></div>
 
-			<h3>4. Disclaimer of Warranties </h3>
-			<p>Our platform is provided on an "as is" and "as available" basis. We do not warrant that our platform will be uninterrupted, error-free, or secure, or that any defects or errors will be corrected. We disclaim all warranties, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+			<h3>4. {% trans 'Disclaimer of Warranties' %} </h3>
+			<p>{% blocktrans %}Our platform is provided on an "as is" and "as available" basis. We do not warrant that
+				our platform will be uninterrupted, error-free, or secure, or that any defects or errors will be
+				corrected. We disclaim all warranties, including but not limited to implied warranties of
+				merchantability, fitness for a particular purpose, and non-infringement.{% endblocktrans %}</p>
 
 			<div class="gap-20"></div>
 
-			<h3>5. Limitation of Liability</h3>
-			<p>In no event shall HealthLink or its affiliates, directors, officers, employees, or agents be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of our platform, whether based on breach of contract, tort, or any other legal theory, even if we have been advised of the possibility of such damages. 
+			<h3>5. {% trans 'Limitation of Liability' %}</h3>
+			<p>{% blocktrans %}In no event shall HealthLink or its affiliates, directors, officers, employees, or agents
+				be liable for any indirect, incidental, special, or consequential damages arising out of or in
+				connection with your use of our platform, whether based on breach of contract, tort, or any other legal
+				theory, even if we have been advised of the possibility of such damages.{% endblocktrans %}
 			</p>
 
-			<h3>Indemnification</h3>
-			<p>You agree to indemnify and hold harmless HealthLink and its affiliates, directors, officers, employees, and agents from any claims, damages, expenses, or liabilities arising out of or in connection with your use of our platform, your content, or your breach of these Terms of Use. 
+			<h3>{% trans 'Indemnification' %}</h3>
+			<p>{% blocktrans %}You agree to indemnify and hold harmless HealthLink and its affiliates, directors,
+				officers, employees, and agents from any claims, damages, expenses, or liabilities arising out of or in
+				connection with your use of our platform, your content, or your breach of these Terms of Use.{% endblocktrans %}
 			</p>
 
-			<h3>Changes to These Terms</h3>
-			<p>We reserve the right to modify or update these Terms of Use at any time, without notice. Your continued use of our platform after any changes to these terms will signify your acceptance of the updated terms.</p>
+			<h3>{% trans 'Changes to These Terms' %}</h3>
+			<p>{% blocktrans %}We reserve the right to modify or update these Terms of Use at any time, without notice.
+				Your continued use of our platform after any changes to these terms will signify your acceptance of the
+				updated terms.{% endblocktrans %}</p>
 
-			<h3>Contact Us</h3>
-			<p>If you have any questions or concerns about these Terms of Use, please contact us at
+			<h3>{% trans 'Contact Us' %}</h3>
+			<p>{% trans 'If you have any questions or concerns about these Terms of Use, please contact us at' %}
 			</p>
 		</div>
 	</div>

@@ -250,3 +250,26 @@ def delete_health_record(request, id):
         health_data.delete()
         messages.success(request, 'Health record deleted successfully.')
         return redirect('users:health_records')
+    
+def referal(request):
+    context ={
+        'title': 'Referrals'
+    }
+    return render(request, 'user/referrals.html', context)
+
+def users(request):
+    users = User.objects.all()
+    is_following = False
+    for user in users:
+        try:
+            follower = Follower.objects.get(user_to=user, user_from=request.user)
+            is_following = True
+        except Follower.DoesNotExist:
+            is_following = False
+
+    context = {
+        'title': 'Users',
+         'is_following': is_following,
+        'users': users,
+    }
+    return render(request, 'user/users.html', context)

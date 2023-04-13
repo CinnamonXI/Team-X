@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 
 <!-- Start Blog Details Area -->
@@ -13,7 +14,7 @@
 
 					<ul class="social-icon">
 						<li>
-							<span>Share:</span>
+							<span>{% trans 'Share' %}:</span>
 						</li>
 						<li>
 							<a href="https://www.facebook.com/" target="_blank">
@@ -51,12 +52,12 @@
 							{% endfor %}
 						</div>
 						{% else %}
-						<p class="py-3">Be the first to leave a comment</p>
+						<p class="py-3">{% trans 'Be the first to leave a comment' %}</p>
 						{% endif %}
 					</div>
 					<div class="leave-form pt-3">
-						<h4>Leave a Comment</h4>
-						<p>Your email address will not be published. Required fields are marked *</p>
+						<h4>{% trans 'Leave a Comment' %}</h4>
+						<p>{% trans 'Your email address will not be published. Required fields are marked' %} *</p>
 
 						<form method="post" action="">
 							{% csrf_token %}
@@ -67,7 +68,7 @@
 										<input type="hidden" name="name" class="form-control" required
 											value="{{ request.user }}">
 										{% else %}
-										<label for="name">Your Name*</label>
+										<label for="name">{% trans 'Your Name' %}*</label>
 										<input type="text" id="name" name="name" class="form-control" required
 											placeholder="e.g Jeff Odhiambo">
 										{% endif %}
@@ -80,7 +81,7 @@
 										<input type="hidden" name="email" class="form-control" required
 											value="{{ request.user.email }}">
 										{% else %}
-										<label for="email">Email*</label>
+										<label for="email">{% trans 'Email' %}*</label>
 										<input type="email" name="email" id="email" class="form-control" required
 											placeholder="e.g o.jeff1@outlook.com">
 										{% endif %}
@@ -89,7 +90,7 @@
 
 								<div class="col-lg-12">
 									<div class="form-group">
-										<label for="subject">Your Subject*</label>
+										<label for="subject">{% trans 'Your Subject' %}*</label>
 										<input type="text" name="subject" id="subject" class="form-control" required
 											placeholder="Your subject here">
 									</div>
@@ -97,7 +98,7 @@
 
 								<div class="col-lg-12">
 									<div class="form-group">
-										<label for="message">Your Comment*</label>
+										<label for="message">{% trans 'Your Comment' %}*</label>
 										<textarea name="message" class="form-control" required id="message" rows="6"
 											placeholder="Write your comment"></textarea>
 									</div>
@@ -105,7 +106,7 @@
 
 								<div class="col-lg-12">
 									<div class="form-group mb-0">
-										<button type="submit" class="default-btn">Send Comment</button>
+										<button type="submit" class="default-btn">{% trans 'Send Comment' %}</button>
 									</div>
 								</div>
 							</div>
@@ -120,11 +121,11 @@
 							<div class="search-form">
 								<h3>
 									<i class="ri-search-line"></i>
-									Search
+									{% trans 'Search' %}
 								</h3>
 
 								<form action="{% url 'blogs:search' %}" method="GET">
-									<input type="text" class="form-control" name="q" required placeholder="Search Here">
+									<input type="text" class="form-control" name="q" required placeholder="{% trans 'Search Here' %}">
 									<button class="src-btn" type="submit">
 										<i class="ri-search-line"></i>
 									</button>

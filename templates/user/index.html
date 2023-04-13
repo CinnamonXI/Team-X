@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 		<!-- Start Mail Content Area -->
 		<div class="main-content-area ptb-100">
@@ -17,35 +18,35 @@
 									<div class="col-xl-3 col-sm-6">
 										<div class="single-achive">
 											<h2>{{ user.answers.all.count }}</h2>
-											<span>Answers</span>
+											<span>{% trans 'Answers' %}</span>
 										</div>
 									</div>
 
 									<div class="col-xl-3 col-sm-6">
 										<div class="single-achive">
 											<h2>{{ user.questions.all.count }}</h2>
-											<span>Question</span>
+											<span>{% trans 'Question' %}</span>
 										</div>
 									</div>
 
 									<div class="col-xl-3 col-sm-6">
 										<div class="single-achive">
 											<h2>{{ user.joined_groups.all.count }}</h2>
-											<span>Groups</span>
+											<span>{% trans 'Groups' %}</span>
 										</div>
 									</div>
 
 									<div class="col-xl-3 col-sm-6">
 										<div class="single-achive">
 											<h2>{{ user.followed_tags.all.count }}</h2>
-											<span>Tags</span>
+											<span>{% trans 'Tags' %}</span>
 										</div>
 									</div>
 								</div>
 							</div>
 
 							<div class="about">
-								<h3>About</h3>
+								<h3>{% trans 'About' %}</h3>
 								{{ user.profile.bio|linebreaksbr|default:'No About Updated' }}
 							</div>
 
@@ -89,21 +90,21 @@
 
 							<div class="top-tags mt-4">
 								<div class="tag-title d-flex justify-content-between">
-									<h3>Followed tags</h3>
-									<a href="" class="read-more">View all tags</a>
+									<h3>{% trans 'Followed tags' %}</h3>
+									<a href="" class="read-more">{% trans 'View all tags' %}</a>
 								</div>
 
 								<ul>
 									{% if not request.user.followed_tags.all %}
 										<li>
-											<span class="tag-cate">No tags followed</span>
+											<span class="tag-cate">{% trans 'No tags followed' %}</span>
 										</li>
 									{% else %}
 										{% for tag in request.user.followed_tags.all %}
 											<li>
 												<span class="tag-cate">{{ tag.title }}</span>
-												<span class="tag-score">{{ tag.followers.all.count }} followers</span>
-												<span class="tag-score">{{ tag.questions.all.count }} posts</span>
+												<span class="tag-score">{{ tag.followers.all.count }} {% trans 'followers' %}</span>
+												<span class="tag-score">{{ tag.questions.all.count }} {% trans 'posts' %}</span>
 											</li>
 										{% endfor %}
 									{% endif %}
@@ -112,27 +113,27 @@
 
 							<div class="top-posts">
 								<div class="d-flex justify-content-between">
-									<h3>Activities</h3>
+									<h3>{% trans 'Activities' %}</h3>
 
 									<ul class="nav nav-tabs" id="myTab" role="tablist">
 										<li class="nav-item" role="presentation">
-											<button class="nav-link active" id="view-all-tab" data-bs-toggle="tab" data-bs-target="#view-all" type="button" role="tab" aria-controls="view-all" aria-selected="true">Posts/Questions</button>
+											<button class="nav-link active" id="view-all-tab" data-bs-toggle="tab" data-bs-target="#view-all" type="button" role="tab" aria-controls="view-all" aria-selected="true">{% trans 'Posts/Questions' %}</button>
 										</li>
 										
 										<li class="nav-item" role="presentation">
-										  	<button class="nav-link" id="question-tab" data-bs-toggle="tab" data-bs-target="#question" type="button" role="tab" aria-controls="question" aria-selected="false">Answers</button>
+										  	<button class="nav-link" id="question-tab" data-bs-toggle="tab" data-bs-target="#question" type="button" role="tab" aria-controls="question" aria-selected="false">{% trans 'Answers' %}</button>
 										</li>
 
 										<li class="nav-item" role="presentation">
-										  	<button class="nav-link" id="answers-tab" data-bs-toggle="tab" data-bs-target="#answers" type="button" role="tab" aria-controls="answers" aria-selected="false">Groups</button>
+										  	<button class="nav-link" id="answers-tab" data-bs-toggle="tab" data-bs-target="#answers" type="button" role="tab" aria-controls="answers" aria-selected="false">{% trans 'Groups' %}</button>
 										</li>
 
 										<li class="nav-item" role="presentation">
-										  	<button class="nav-link" id="newest-tab" data-bs-toggle="tab" data-bs-target="#newest" type="button" role="tab" aria-controls="newest" aria-selected="false">Tags</button>
+										  	<button class="nav-link" id="newest-tab" data-bs-toggle="tab" data-bs-target="#newest" type="button" role="tab" aria-controls="newest" aria-selected="false">{% trans 'Tags' %}</button>
 										</li>
 
 										<li class="nav-item" role="presentation">
-										  	<button class="nav-link" id="votes-tab" data-bs-toggle="tab" data-bs-target="#votes" type="button" role="tab" aria-controls="votes" aria-selected="false">Communities</button>
+										  	<button class="nav-link" id="votes-tab" data-bs-toggle="tab" data-bs-target="#votes" type="button" role="tab" aria-controls="votes" aria-selected="false">{% trans 'Communities' %}</button>
 										</li>
 									</ul>
 								</div>
@@ -148,12 +149,12 @@
 															<span class="count">{{ question.answers.all.count }}</span>
 															<span>{{ question.title }}</span>
 														</div>
-														<p><span>{{ question.created_at }}</span> by <a href="{% url 'users:user_profile' question.user.username %}">{{ question.user.get_full_name|default:'No Name' }}</a></p>
+														<p><span>{{ question.created_at }}</span> {% trans 'by' %} <a href="{% url 'users:user_profile' question.user.username %}">{{ question.user.get_full_name|default:'No Name' }}</a></p>
 													</li>
 												{% endfor %}
 											{% else %}
 												<li>
-													<span class="tag-cate">No Posts/Questions</span>
+													<span class="tag-cate">{% trans 'No Posts/Questions' %}</span>
 												</li>
 											{% endif %}
 										</ul>
@@ -167,12 +168,12 @@
 														<div class="top-posts-list">
 															<span>{{ answer.content|truncatechars:80 }}</span>
 														</div>
-														<p><span>{{ answer.created_at }}</span> by <a href="{% url 'users:user_profile' answer.user.username %}">{{ answer.user.get_full_name|default:'No Name' }}</a></p>
+														<p><span>{{ answer.created_at }}</span> {% trans 'by' %} <a href="{% url 'users:user_profile' answer.user.username %}">{{ answer.user.get_full_name|default:'No Name' }}</a></p>
 													</li>
 												{% endfor %}
 											{% else %}
 												<li>
-													<span class="tag-cate">No Answers</span>
+													<span class="tag-cate">{% trans 'No Answers' %}</span>
 												</li>
 											{% endif %}
 										</ul>
@@ -187,12 +188,12 @@
 															<span class="count">{{ group.questions.all.count }}</span>
 															<span>{{ group.title }}</span>
 														</div>
-														<p><span>{{ group.created_at }}</span> by <a href="{% url 'users:user_profile' group.owner.username %}">{{ group.owner.get_full_name|default:'No Name' }}</a></p>
+														<p><span>{{ group.created_at }}</span> {% trans 'by' %} <a href="{% url 'users:user_profile' group.owner.username %}">{{ group.owner.get_full_name|default:'No Name' }}</a></p>
 													</li>
 												{% endfor %}
 											{% else %}
 												<li>
-													<span class="tag-cate">No Groups Joined</span>
+													<span class="tag-cate">{% trans 'No Groups Joined' %}</span>
 												</li>
 											{% endif %}
 										</ul>
@@ -207,12 +208,12 @@
 															<span class="count">{{ tag.questions.all.count }}</span>
 															<span>{{ tag.title }}</span>
 														</div>
-														<p><span>{{ tag.created_at }}</span> by <a href="{% url 'users:user_profile' user.username %}">{{ user.get_full_name|default:'No Name' }}</a></p>
+														<p><span>{{ tag.created_at }}</span> {% trans 'by' %} <a href="{% url 'users:user_profile' user.username %}">{{ user.get_full_name|default:'No Name' }}</a></p>
 													</li>
 												{% endfor %}
 											{% else %}
 												<li>
-													<span class="tag-cate">No Tags Followed</span>
+													<span class="tag-cate">{% trans 'No Tags Followed' %}</span>
 												</li>
 											{% endif %}
 										</ul>
@@ -227,12 +228,12 @@
 															<span class="count">{{ community.questions.all.count }}</span>
 															<span>{{ community.title }}</span>
 														</div>
-														<p><span>{{ community.created_at }}</span> by <a href="{% url 'users:user_profile' community.owner.username %}">{{ community.owner.get_full_name|default:'No Name' }}</a></p>
+														<p><span>{{ community.created_at }}</span> {% trans 'by' %} <a href="{% url 'users:user_profile' community.owner.username %}">{{ community.owner.get_full_name|default:'No Name' }}</a></p>
 													</li>
 												{% endfor %}
 											{% else %}
 												<li>
-													<span class="tag-cate">No Communities Followed</span>
+													<span class="tag-cate">{% trans 'No Communities Followed' %}</span>
 												</li>
 											{% endif %}
 										</ul>

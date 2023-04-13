@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 	<!-- Start 404 Error Page Area -->
 	<div class="error-area ptb-100">
@@ -7,7 +8,7 @@
 				<img src="/static/assets/images/404.png" alt="Image">
 
 				<a href="/" class="default-btn">
-					Go To Home
+					{% trans 'Go To Home' %}
 				</a>
 			</div>
 		</div>

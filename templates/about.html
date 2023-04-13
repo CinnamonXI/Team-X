@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
 		<!-- Start About Banner Area -->
 		<div class="about-banner-area">
@@ -6,9 +7,9 @@
 				<div class="row align-items-center">
 					<div class="col-lg-7">
 						<div class="about-banner-content">
-							<span class="top-title">Who we are</span>
-							<h2>HealthLink was founded by a group of students for healthcare professionals and patients with different health conditions.</h2>
-							<p>We saw the need for a safe and supportive online community for people facing any health challenge. Our mission is to provide a platform for people to connect, share information, and support each other. We are committed to providing a safe and inclusive environment for all members of our community.</p>
+							<span class="top-title">{% trans 'Who we are' %}</span>
+							<h2>{% trans 'HealthLink was founded by a group of students for healthcare professionals and patients with different health conditions.' %}</h2>
+							<p>{% trans 'We saw the need for a safe and supportive online community for people facing any health challenge. Our mission is to provide a platform for people to connect, share information, and support each other. We are committed to providing a safe and inclusive environment for all members of our community.' %}</p>
 						</div>
 					</div>
 
@@ -39,12 +40,12 @@
 			</div>
 		</div>
 		<!-- End Partner Area -->
-{% if teams %}
+		{% if teams %}
 		<!-- Start team Area -->
 		<div class="team-area pt-100 pb-70">
 			<div class="container">
 				<div class="section-title">
-					<h2>Our leadership team</h2>
+					<h2>{% trans 'Our leadership team' %}</h2>
 				</div>
 
 				<div class="row justify-content-center">
@@ -80,12 +81,12 @@
 								{% if request.user.is_authenticated %}
 								<li>
 									{% if team.user == request.user %}
-										<a href="{% url 'users:edit_profile' %}" class="default-btn">Edit profile</a>
+										<a href="{% url 'users:edit_profile' %}" class="default-btn">{% trans 'Edit profile' %}</a>
 									{% else %}
 										{% if is_following %}
-											<a href="{% url 'users:unfollow' team.user.username %}" class="default-btn">Unfollow</a>
+											<a href="{% url 'users:unfollow' team.user.username %}" class="default-btn">{% trans 'Unfollow' %}</a>
 										{% else %}
-											<a href="{% url 'users:follow' team.user.username %}" class="default-btn">Follow</a>
+											<a href="{% url 'users:follow' team.user.username %}" class="default-btn">{% trans 'Follow' %}</a>
 										{% endif %}
 									{% endif %}
 								</li>

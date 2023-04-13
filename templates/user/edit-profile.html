@@ -15,36 +15,36 @@
 							<div class="profile-tabs">
 								<ul class="nav nav-tabs" id="myTab" role="tablist">
 									<li class="nav-item" role="presentation">
-										<button class="nav-link active" id="edit-profile-tab" data-bs-toggle="tab" data-bs-target="#edit-profile" type="button" role="tab" aria-controls="edit-profile" aria-selected="true">Edit Profile</button>
+										<button class="nav-link active" id="edit-profile-tab" data-bs-toggle="tab" data-bs-target="#edit-profile" type="button" role="tab" aria-controls="edit-profile" aria-selected="true">{% trans 'Edit Profile' %}</button>
 									</li>
 									
 									<li class="nav-item" role="presentation">
-										<button class="nav-link" id="change-linkedin-tab" data-bs-toggle="tab" data-bs-target="#change-linkedin" type="button" role="tab" aria-controls="change-linkedin" aria-selected="false">Change Password</button>
+										<button class="nav-link" id="change-linkedin-tab" data-bs-toggle="tab" data-bs-target="#change-linkedin" type="button" role="tab" aria-controls="change-linkedin" aria-selected="false">{% trans 'Change Password' %}</button>
 									</li>
 
 									<li class="nav-item" role="presentation">
-										<button class="nav-link" id="email-settings-tab" data-bs-toggle="tab" data-bs-target="#email-settings" type="button" role="tab" aria-controls="email-settings" aria-selected="false">Email Settings</button>
+										<button class="nav-link" id="email-settings-tab" data-bs-toggle="tab" data-bs-target="#email-settings" type="button" role="tab" aria-controls="email-settings" aria-selected="false">{% trans 'Email Settings' %}</button>
 									</li>
 
 									<li class="nav-item" role="presentation">
-										<button class="nav-link" id="privacy-tab" data-bs-toggle="tab" data-bs-target="#privacy" type="button" role="tab" aria-controls="privacy" aria-selected="false">Privacy</button>
+										<button class="nav-link" id="privacy-tab" data-bs-toggle="tab" data-bs-target="#privacy" type="button" role="tab" aria-controls="privacy" aria-selected="false">{% trans 'Privacy' %}</button>
 									</li>
 
 									<li class="nav-item" role="presentation">
-										<button class="nav-link" id="delete-account-tab" data-bs-toggle="tab" data-bs-target="#delete-account" type="button" role="tab" aria-controls="delete-account" aria-selected="false">Deactivate Account</button>
+										<button class="nav-link" id="delete-account-tab" data-bs-toggle="tab" data-bs-target="#delete-account" type="button" role="tab" aria-controls="delete-account" aria-selected="false">{% trans 'Deactivate Account' %}</button>
 									</li>
 								</ul>
 	
 								<div class="tab-content" id="myTabContent">
 									<div class="tab-pane fade show active edit-profile" id="edit-profile" role="tabpanel" aria-labelledby="edit-profile-tab">
 										<div class="public-information">
-											<h3>Public information</h3>
+											<h3>{% trans 'Public information' %}</h3>
 											<form class="edeite-content" method="post" enctype="multipart/form-data">
 												{% csrf_token %}
 												<div class="form-group">
 													<div class="row">
 														<div class="col-sm-12">
-															<label for="image">Profile Picture</label>
+															<label for="image">{% trans 'Profile Picture' %}</label>
 															<input type="file" name="image" id="image" class="form-control" src="{{ user.profile.image.url }}">
 														</div>
 													</div>
@@ -52,11 +52,11 @@
 												<div class="form-group">
 													<div class="row">
 														<div class="col-sm-6">
-															<label for="first-name">First Name*</label>
+															<label for="first-name">{% trans 'First Name' %}*</label>
 															<input type="text" class="form-control" name="first_name" id="first-name" required value="{{ user.first_name }}">
 														</div>
 														<div class="col-sm-6">
-															<label for="last-name">Last Name*</label>
+															<label for="last-name">{% trans 'Last Name' %}*</label>
 															<input type="text" class="form-control" name="last_name" id="last-name" required value="{{ user.last_name }}">
 														</div>
 													</div>
@@ -64,11 +64,11 @@
 												<div class="form-group">
 													<div class="row">
 														<div class="col-sm-6">
-															<label for="email">Email*</label>
+															<label for="email">{% trans 'Email' %}*</label>
 															<input type="email" class="form-control" name="email" id="email" required value="{{ user.email }}">
 														</div>
 														<div class="col-sm-6">
-															<label for="phone">Phone*</label>
+															<label for="phone">{% trans 'Phone' %}*</label>
 															<input type="text" class="form-control" name="phone_number" required id="phone" value="{{ user.profile.phone_number }}">
 														</div>
 													</div>
@@ -77,11 +77,11 @@
 												<div class="form-group">
 													<div class="row">
 														<div class="col-sm-6">
-															<label>Location</label>
+															<label>{% trans 'Location' %}</label>
 															<input type="text" class="form-control" name="location" id="location" value="{{ user.profile.location }}">
 														</div>
 														<div class="col-sm-6">
-															<label for="username">Username*</label>
+															<label for="username">{% trans 'Username' %}*</label>
 															<input type="text" class="form-control" name="username" required id="username" value="{{ user.username }}">
 														</div>
 													</div>
@@ -89,27 +89,27 @@
 												<div class="form-group">
 													<div class="row">
 														<div class="col-sm-6">
-															<label for="gender">Gender*</label>
+															<label for="gender">{% trans 'Gender' %}*</label>
 															<select name="gender" required class="form-control" id="gender">
 																{% if user.profile.gender == 'male' %}
-																	<option value="male" selected>Male</option>
-																	<option value="female">Female</option>
-																	<option value="other">Other</option>
+																	<option value="male" selected>{% trans 'Male' %}</option>
+																	<option value="female">{% trans 'Female' %}</option>
+																	<option value="other">{% trans 'Other' %}</option>
 																{% endif %}
 																{% if user.profile.gender == 'female' %}
-																	<option value="male">Male</option>
-																	<option value="female" selected>Female</option>
-																	<option value="other">Other</option>
+																	<option value="male">{% trans 'Male' %}</option>
+																	<option value="female" selected>{% trans 'Female' %}</option>
+																	<option value="other">{% trans 'Other' %}</option>
 																{% endif %}
 																{% if user.profile.gender == 'other' %}
-																	<option value="male">Male</option>
-																	<option value="female">Female</option>
-																	<option value="other" selected>Other</option>
+																	<option value="male">{% trans 'Male' %}</option>
+																	<option value="female">{% trans 'Female' %}</option>
+																	<option value="other" selected>{% trans 'Other' %}</option>
 																{% endif %}
 															</select>
 														</div>
 														<div class="col-sm-6">
-															<label for="age">Age</label>
+															<label for="age">{% trans 'Age' %}</label>
 															<input type="number" class="form-control" name="age" id="age" value="{{ user.profile.age }}">
 														</div>
 													</div>
@@ -117,7 +117,7 @@
 												<div class="form-group">
 													<div class="row">
 														<div class="col-sm-6">
-															<label for="language_preference">Language Preference*</label>
+															<label for="language_preference">{% trans 'Language Preference' %}*</label>
 															<select name="language_preference" required class="form-control" id="language_preference">
 																{% get_available_languages as LANGUAGES %}
 																{% get_language_info_list for LANGUAGES as languages %}
@@ -129,7 +129,7 @@
 															</select>
 														</div>
 														<div class="col-sm-6">
-															<label for="linkedin">LinkedIn</label>
+															<label for="linkedin">{% trans 'LinkedIn' %}</label>
 															<input type="url" class="form-control" name="linkedin" id="linkedin" value="{{ user.profile.linkedin }}">
 														</div>
 													</div>
@@ -137,24 +137,24 @@
 												<div class="form-group">
 													<div class="row">
 														<div class="col-sm-6">
-															<label for="twitter">Twitter</label>
+															<label for="twitter">{% trans 'Twitter' %}</label>
 															<input type="url" class="form-control" name="twitter" id="twitter" value="{{ user.profile.twitter }}">
 														</div>
 														<div class="col-sm-6">
-															<label for="instagram">Instagram</label>
+															<label for="instagram">{% trans 'Instagram' %}</label>
 															<input type="url" class="form-control" name="instagram" id="instagram" value="{{ user.profile.instagram }}">
 														</div>
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="bio">About me</label>
+													<label for="bio">{% trans 'About me' %}</label>
 													<textarea name="bio" id="bio" class="form-control" cols="30" rows="10">{{ user.profile.bio }}</textarea>
 												</div>
 
 												<div class="row">
 													<div class="col-12">
 														<div class="form-group mb-0">
-															<button type="submit" class="default-btn">Save change</button>
+															<button type="submit" class="default-btn">{% trans 'Save changes' %}</button>
 														</div>
 													</div>
 												</div>
@@ -164,10 +164,10 @@
 	
 									<div class="tab-pane fade edit-profile" id="change-linkedin" role="tabpanel" aria-labelledby="change-linkedin-tab">
 										<div class="public-information">
-											<h3>Change linkedin</h3>
+											<h3>{% trans 'Change Password' %}</h3>
 											<div class="form-group mb-0">
 												<a href="{% url 'account_change_password' %}">
-													<button class="default-btn">Change linkedin</button>
+													<button class="default-btn">{% trans 'Change Password' %}</button>
 												</a>
 											</div>
 										</div>
@@ -175,10 +175,10 @@
 
 									<div class="tab-pane fade edit-profile" id="email-settings" role="tabpanel" aria-labelledby="email-settings-tab">
 										<div class="public-information">
-											<h3>Email settings</h3>
+											<h3>{% trans 'Email settings' %}</h3>
 											<div class="form-group mb-0">
 												<a href="{% url 'account_email' %}">
-													<button class="default-btn">Manage your Emails</button>
+													<button class="default-btn">{% trans 'Manage your Emails' %}</button>
 												</a>
 											</div>
 										</div>
@@ -186,67 +186,67 @@
 
 									<div class="tab-pane fade edit-profile" id="privacy" role="tabpanel" aria-labelledby="privacy-tab">
 										<div class="public-information">
-											<h3>Privacy Settings</h3>
+											<h3>{% trans 'Privacy Settings' %}</h3>
 
 											<form class="edeite-content">
 												<div class="form-group">
-													<label>Profile Picture</label>
+													<label>{% trans 'Profile Picture' %}</label>
 													<select class="form-select form-control" aria-label="Default select example">
-														<option selected>Visibility</option>
-														<option value="1">Hidden</option>
+														<option selected>{% trans 'Visible' %}</option>
+														<option value="1">{% trans 'Hidden' %}</option>
 													</select>
 												</div>
 												<div class="form-group">
-													<label>Email</label>
+													<label>{% trans 'Email' %}</label>
 													<select class="form-select form-control" aria-label="Default select example">
-														<option selected>Visibility</option>
-														<option value="1">Hidden</option>
+														<option selected>{% trans 'Visible' %}</option>
+														<option value="1">{% trans 'Hidden' %}</option>
 													</select>
 												</div>
 												<div class="form-group">
-													<label>Country</label>
+													<label>{% trans 'Country' %}</label>
 													<select class="form-select form-control" aria-label="Default select example">
-														<option selected>Visibility</option>
-														<option value="1">Hidden</option>
+														<option selected>{% trans 'Visible' %}</option>
+														<option value="1">{% trans 'Hidden' %}</option>
 													</select>
 												</div>
 												<div class="form-group">
-													<label>Phone</label>
+													<label>{% trans 'Phone' %}</label>
 													<select class="form-select form-control" aria-label="Default select example">
-														<option selected>Visibility</option>
-														<option value="1">Hidden</option>
+														<option selected>{% trans 'Visible' %}</option>
+														<option value="1">{% trans 'Hidden' %}</option>
 													</select>
 												</div>
 												<div class="form-group">
-													<label>Gender</label>
+													<label>{% trans 'Gender' %}</label>
 													<select class="form-select form-control" aria-label="Default select example">
-														<option selected>Visibility</option>
-														<option value="1">Hidden</option>
+														<option selected>{% trans 'Visible' %}</option>
+														<option value="1">{% trans 'Hidden' %}</option>
 													</select>
 												</div>
 												<div class="form-group">
-													<label>Social links</label>
+													<label>{% trans 'Social links' %}</label>
 													<select class="form-select form-control" aria-label="Default select example">
-														<option selected>Visibility</option>
-														<option value="1">Hidden</option>
+														<option selected>{% trans 'Visible' %}</option>
+														<option value="1">{% trans 'Hidden' %}</option>
 													</select>
 												</div>
 												<div class="form-group">
-													<label>Website</label>
+													<label>{% trans 'Website' %}</label>
 													<select class="form-select form-control" aria-label="Default select example">
-														<option selected>Visibility</option>
-														<option value="1">Hidden</option>
+														<option selected>{% trans 'Visible' %}</option>
+														<option value="1">{% trans 'Hidden' %}</option>
 													</select>
 												</div>
 												<div class="form-group">
-													<label>Biography</label>
+													<label>{% trans 'Biography' %}</label>
 													<select class="form-select form-control" aria-label="Default select example">
-														<option selected>Visibility</option>
-														<option value="1">Hidden</option>
+														<option selected>{% trans 'Visible' %}</option>
+														<option value="1">{% trans 'Hidden' %}</option>
 													</select>
 												</div>
 												<div class="form-group mb-0">
-													<button class="default-btn">Save</button>
+													<button class="default-btn">{% trans 'Save' %}</button>
 												</div>
 											</form>
 										</div>
@@ -254,20 +254,20 @@
 
 									<div class="tab-pane fade edit-profile" id="delete-account" role="tabpanel" aria-labelledby="delete-account-tab">
 										<div class="public-information">
-											<h3>Delete Account</h3>
+											<h3>{% trans 'Delete Account' %}</h3>
 											
 											<ul class="delete-account">
 												<li>
 													<div class="form-check">
 														<input class="form-check-input" type="checkbox"  id="flexCheckDefault-9">
 														<label class="form-check-label" for="flexCheckDefault-9">
-															Deactivate your account?
+															{% trans 'Deactivate your account?' %}
 														</label>
 													</div>
 												</li>
 												<li>
 													<a href="" class="default-btn">
-														Deactivate
+														{% trans 'Deactivate' %}
 													</a>
 												</li>
 											</ul>

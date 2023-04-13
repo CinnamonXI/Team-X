@@ -41,6 +41,22 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{% url 'questions:groups' %}" class="box-style {% if title == 'Groups' %}active{% endif %}">
+                                <span class="menu-title">
+                                    <i class="ri-group-2-line"></i>
+                                    {% trans 'Groups' %}
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'users:users' %}" class="box-style {% if title == 'Users' %}active{% endif %}">
+                                <span class="menu-title">
+                                    <i class="ri-user-line"></i>
+                                    {% trans 'Users' %}
+                                </span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="#" class="box-style has-arrow {% if r_documents or r_articles or r_videos %}active{% endif %}">
                                 <span class="menu-title">
                                     <i class="ri-book-line"></i>
@@ -74,14 +90,6 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'questions:groups' %}" class="box-style {% if title == 'Groups' %}active{% endif %}">
-                                <span class="menu-title">
-                                    <i class="ri-group-2-line"></i>
-                                    {% trans 'Groups' %}
-                                </span>
-                            </a>
-                        </li>
-                        <li>
                             <a href="{% url 'questions:tags' %}" class="box-style {% if title == 'Tags' %}active{% endif %}">
                                 <span class="menu-title">
                                     <i class="ri-price-tag-line"></i>
@@ -106,6 +114,16 @@
                                 <li>
                                     <a href="{% url 'users:edit_profile' %}">
                                         <span class="menu-title">{% trans 'Edit profile' %}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'users:health_records' %}">
+                                        <span class="menu-title">{% trans 'Health records' %}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'users:referals' %}">
+                                        <span class="menu-title">{% trans 'Referrals' %}</span>
                                     </a>
                                 </li>
                                 <li>

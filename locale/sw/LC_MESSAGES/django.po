@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-12 23:03+0300\n"
+"POT-Creation-Date: 2023-04-13 09:16+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,7 +63,8 @@ msgid "About Us"
 msgstr "Kutuhusu"
 
 #: core/views.py:62 templates/partials/footer.html:81
-#: templates/partials/top-nav.html:43
+#: templates/partials/top-nav.html:43 templates/privacy.html:54
+#: templates/terms.html:80
 msgid "Contact Us"
 msgstr "Wasiliana nasi"
 
@@ -108,7 +109,8 @@ msgstr ""
 
 #: discussion/views.py:110 templates/forum/community/details.html:48
 #: templates/forum/community/details.html:84
-#: templates/forum/groups/index.html:22 templates/partials/left-sidebar.html:80
+#: templates/forum/groups/index.html:22 templates/partials/left-sidebar.html:47
+#: templates/user/index.html:35 templates/user/index.html:128
 msgid "Groups"
 msgstr ""
 
@@ -146,8 +148,10 @@ msgstr ""
 msgid "You have joined the group '{group.title}'"
 msgstr ""
 
-#: discussion/views.py:211 templates/partials/left-sidebar.html:88
+#: discussion/views.py:211 templates/forum/tags.html:22
+#: templates/partials/left-sidebar.html:96 templates/resources/index.html:52
 #: templates/resources/partials/right-sidebar.html:74
+#: templates/user/index.html:42 templates/user/index.html:132
 msgid "Tags"
 msgstr ""
 
@@ -164,7 +168,7 @@ msgstr ""
 #: discussion/views.py:242 templates/forum/community/index.html:22
 #: templates/forum/groups/details.html:48
 #: templates/forum/groups/details.html:84
-#: templates/partials/left-sidebar.html:39
+#: templates/partials/left-sidebar.html:39 templates/user/index.html:136
 msgid "Communities"
 msgstr ""
 
@@ -816,6 +820,7 @@ msgid "Order"
 msgstr ""
 
 #: env/lib/python3.10/site-packages/django/forms/formsets.py:496
+#: templates/user/health_records/index.html:88
 msgid "Delete"
 msgstr ""
 
@@ -878,10 +883,28 @@ msgid "Unknown"
 msgstr ""
 
 #: env/lib/python3.10/site-packages/django/forms/widgets.py:770
+#: templates/user/health_records/add.html:60
+#: templates/user/health_records/add.html:67
+#: templates/user/health_records/add.html:74
+#: templates/user/health_records/edit.html:60
+#: templates/user/health_records/edit.html:63
+#: templates/user/health_records/edit.html:72
+#: templates/user/health_records/edit.html:75
+#: templates/user/health_records/edit.html:84
+#: templates/user/health_records/edit.html:87
 msgid "Yes"
 msgstr ""
 
 #: env/lib/python3.10/site-packages/django/forms/widgets.py:771
+#: templates/user/health_records/add.html:59
+#: templates/user/health_records/add.html:66
+#: templates/user/health_records/add.html:73
+#: templates/user/health_records/edit.html:61
+#: templates/user/health_records/edit.html:64
+#: templates/user/health_records/edit.html:73
+#: templates/user/health_records/edit.html:76
+#: templates/user/health_records/edit.html:85
+#: templates/user/health_records/edit.html:88
 msgid "No"
 msgstr ""
 
@@ -1477,6 +1500,55 @@ msgstr "blogs/"
 msgid "forum/"
 msgstr "jukwaa/"
 
+#: templates/404.html:11
+msgid "Go To Home"
+msgstr ""
+
+#: templates/about.html:10
+msgid "Who we are"
+msgstr ""
+
+#: templates/about.html:11
+msgid ""
+"HealthLink was founded by a group of students for healthcare professionals "
+"and patients with different health conditions."
+msgstr ""
+
+#: templates/about.html:12
+msgid ""
+"We saw the need for a safe and supportive online community for people facing "
+"any health challenge. Our mission is to provide a platform for people to "
+"connect, share information, and support each other. We are committed to "
+"providing a safe and inclusive environment for all members of our community."
+msgstr ""
+
+#: templates/about.html:48
+msgid "Our leadership team"
+msgstr ""
+
+#: templates/about.html:84 templates/partials/left-sidebar.html:116
+#: templates/user/partials/top-nav.html:23 templates/user/users.html:70
+#, fuzzy
+#| msgid "User profile"
+msgid "Edit profile"
+msgstr "Wasifu wa mtumiaji"
+
+#: templates/about.html:87 templates/forum/community/details.html:24
+#: templates/forum/community/index.html:41
+#: templates/forum/community/posts.html:25 templates/forum/tag-detail.html:24
+#: templates/forum/tags.html:54 templates/user/partials/top-nav.html:26
+#: templates/user/users.html:73
+msgid "Unfollow"
+msgstr ""
+
+#: templates/about.html:89 templates/forum/community/details.html:24
+#: templates/forum/community/index.html:41
+#: templates/forum/community/posts.html:25 templates/forum/tag-detail.html:24
+#: templates/forum/tags.html:56 templates/user/partials/top-nav.html:28
+#: templates/user/users.html:75
+msgid "Follow"
+msgstr ""
+
 #: templates/account/account_inactive.html:5
 #: templates/account/account_inactive.html:8
 msgid "Account Inactive"
@@ -1642,8 +1714,8 @@ msgid ""
 msgstr ""
 
 #: templates/account/login.html:6 templates/account/login.html:10
-#: templates/account/login.html:43 templates/partials/top-nav.html:172
-#: templates/partials/top-nav.html:214 templates/socialaccount/login.html:4
+#: templates/account/login.html:43 templates/partials/top-nav.html:178
+#: templates/partials/top-nav.html:220 templates/socialaccount/login.html:4
 msgid "Sign In"
 msgstr "Ingia ndani"
 
@@ -1728,6 +1800,8 @@ msgstr ""
 #: templates/account/password_reset_from_key.html:7
 #: templates/account/password_reset_from_key_done.html:4
 #: templates/account/password_reset_from_key_done.html:7
+#: templates/user/edit-profile.html:22 templates/user/edit-profile.html:167
+#: templates/user/edit-profile.html:170
 msgid "Change Password"
 msgstr ""
 
@@ -1854,19 +1928,107 @@ msgid ""
 "mail address</a>."
 msgstr ""
 
+#: templates/blog-details.html:17
+msgid "Share"
+msgstr ""
+
+#: templates/blog-details.html:55
+msgid "Be the first to leave a comment"
+msgstr ""
+
+#: templates/blog-details.html:59
+msgid "Leave a Comment"
+msgstr ""
+
+#: templates/blog-details.html:60
+msgid "Your email address will not be published. Required fields are marked"
+msgstr ""
+
+#: templates/blog-details.html:71
+msgid "Your Name"
+msgstr ""
+
+#: templates/blog-details.html:84 templates/contact.html:24
+#: templates/contact.html:76 templates/partials/footer.html:89
+#: templates/user/edit-profile.html:67 templates/user/edit-profile.html:200
+msgid "Email"
+msgstr ""
+
+#: templates/blog-details.html:93 templates/contact.html:40
+msgid "Your Subject"
+msgstr ""
+
+#: templates/blog-details.html:101
+msgid "Your Comment"
+msgstr ""
+
+#: templates/blog-details.html:109
+msgid "Send Comment"
+msgstr ""
+
+#: templates/blog-details.html:124
+#, fuzzy
+#| msgid "search/"
+msgid "Search"
+msgstr "tafutiza/"
+
+#: templates/blog-details.html:128
+msgid "Search Here"
+msgstr ""
+
+#: templates/blog.html:67
+msgid "No Blogs Found"
+msgstr ""
+
+#: templates/contact.html:10
+msgid "Get in touch"
+msgstr ""
+
+#: templates/contact.html:16
+msgid "Name"
+msgstr ""
+
+#: templates/contact.html:32
+msgid "Your Phone Number"
+msgstr ""
+
+#: templates/contact.html:48
+msgid "Your Message"
+msgstr ""
+
+#: templates/contact.html:56
+msgid "Send Message"
+msgstr ""
+
+#: templates/contact.html:68
+msgid "Contact informaton"
+msgstr ""
+
+#: templates/contact.html:72 templates/partials/footer.html:85
+msgid "Call"
+msgstr ""
+
+#: templates/contact.html:80 templates/partials/footer.html:94
+msgid "Address"
+msgstr ""
+
 #: templates/faq/index.html:18 templates/forum/community/index.html:18
-#: templates/forum/groups/index.html:18 templates/partials/breadcrum.html:16
-#: templates/partials/footer.html:22 templates/partials/left-sidebar.html:23
-#: templates/partials/top-nav.html:27
+#: templates/forum/groups/index.html:18 templates/forum/index.html:18
+#: templates/forum/question-details.html:18 templates/forum/tags.html:18
+#: templates/partials/breadcrum.html:16 templates/partials/footer.html:22
+#: templates/partials/left-sidebar.html:23 templates/partials/top-nav.html:27
+#: templates/resources/details.html:18 templates/resources/index.html:18
+#: templates/user/users.html:18
 msgid "Home"
 msgstr "Nyumbani"
 
 #: templates/faq/index.html:22 templates/partials/footer.html:46
-#: templates/partials/left-sidebar.html:72
+#: templates/partials/left-sidebar.html:88
 msgid "FAQs"
 msgstr ""
 
 #: templates/faq/index.html:30 templates/partials/search.html:6
+#: templates/resources/details.html:40 templates/user/users.html:30
 msgid "Ask Question"
 msgstr ""
 
@@ -1874,59 +2036,128 @@ msgstr ""
 msgid "No Frequently Asked Questions"
 msgstr ""
 
-#: templates/forum/category-detail.html:16
-#: templates/forum/community/details.html:18
-#: templates/forum/community/posts.html:18
-#: templates/forum/groups/details.html:18 templates/forum/groups/posts.html:18
-#: templates/forum/tag-detail.html:16
-msgid "Created By"
+#: templates/forum/ask-questions.html:23
+msgid "Create a question"
+msgstr ""
+
+#: templates/forum/ask-questions.html:26
+msgid "Title"
+msgstr ""
+
+#: templates/forum/ask-questions.html:31
+msgid "Category"
+msgstr ""
+
+#: templates/forum/ask-questions.html:41
+msgid "Tags (Add comma separated tags to describe what your question is about)"
+msgstr ""
+
+#: templates/forum/ask-questions.html:45
+msgid "Description"
+msgstr ""
+
+#: templates/forum/ask-questions.html:49
+#: templates/forum/question-details.html:265
+msgid "Post your answer"
 msgstr ""
 
 #: templates/forum/category-detail.html:17
-#: templates/forum/community/details.html:19
-#: templates/forum/community/posts.html:19
-#: templates/forum/groups/details.html:19 templates/forum/groups/posts.html:19
+#: templates/forum/community/details.html:18
+#: templates/forum/community/posts.html:18
+#: templates/forum/groups/details.html:18 templates/forum/groups/posts.html:18
 #: templates/forum/tag-detail.html:17
-msgid "Date Created"
+msgid "Created By"
 msgstr ""
 
 #: templates/forum/category-detail.html:18
+#: templates/forum/community/details.html:19
+#: templates/forum/community/posts.html:19
+#: templates/forum/groups/details.html:19 templates/forum/groups/posts.html:19
+#: templates/forum/tag-detail.html:18
+msgid "Date Created"
+msgstr ""
+
+#: templates/forum/category-detail.html:19
 #: templates/forum/community/posts.html:21 templates/forum/groups/posts.html:21
-#: templates/forum/tag-detail.html:19
-#: templates/user/user-ask-questions.html:665
-#: templates/user/user-groups.html:841 templates/user/users.html:826
+#: templates/forum/tag-detail.html:20
+#: templates/user/user-ask-questions.html:633
+#: templates/user/user-groups.html:813
 msgid "Posts"
 msgstr ""
 
+#: templates/forum/category-detail.html:57
+#: templates/forum/community/posts.html:85 templates/forum/groups/posts.html:84
+#: templates/forum/question-details.html:85
+#: templates/forum/questions/featured.html:55
+#: templates/forum/questions/most-answered.html:54
+#: templates/forum/questions/most-recent.html:55
+#: templates/forum/questions/unanswered.html:55
+#: templates/forum/tag-detail.html:63 templates/resources/details.html:56
+msgid "In"
+msgstr ""
+
+#: templates/forum/category-detail.html:92
+#: templates/forum/community/posts.html:120
+#: templates/forum/groups/posts.html:119
+#: templates/forum/question-details.html:120
+#: templates/forum/question-details.html:172
+#: templates/forum/questions/featured.html:89
+#: templates/forum/questions/most-answered.html:89
+#: templates/forum/questions/most-recent.html:89
+#: templates/forum/questions/unanswered.html:89
+#: templates/forum/tag-detail.html:98
+#: templates/resources/partials/right-sidebar.html:66
+#: templates/user/index.html:21 templates/user/index.html:124
+msgid "Answers"
+msgstr ""
+
+#: templates/forum/category-detail.html:97
+#: templates/forum/community/posts.html:125
+#: templates/forum/groups/posts.html:124
+#: templates/forum/question-details.html:125
+#: templates/forum/questions/featured.html:94
+#: templates/forum/questions/most-answered.html:94
+#: templates/forum/questions/most-recent.html:94
+#: templates/forum/questions/unanswered.html:94
+#: templates/forum/tag-detail.html:103
+msgid "Views"
+msgstr ""
+
+#: templates/forum/category-detail.html:135
+#: templates/forum/community/posts.html:163
+#: templates/forum/groups/posts.html:162
+#: templates/forum/question-details.html:163
+#: templates/forum/questions/featured.html:132
+#: templates/forum/questions/most-answered.html:132
+#: templates/forum/questions/most-recent.html:132
+#: templates/forum/questions/unanswered.html:132
+#: templates/forum/tag-detail.html:141
+msgid "Answer"
+msgstr ""
+
+#: templates/forum/category-detail.html:144
+#: templates/forum/groups/posts.html:171 templates/forum/tag-detail.html:150
+msgid "No Questions Found in this Group"
+msgstr ""
+
 #: templates/forum/community/details.html:20
-#: templates/forum/community/index.html:39
+#: templates/forum/community/index.html:39 templates/forum/tags.html:47
+#: templates/user/partials/top-nav.html:18
 msgid "Followers"
-msgstr ""
-
-#: templates/forum/community/details.html:24
-#: templates/forum/community/index.html:41
-#: templates/forum/community/posts.html:25 templates/forum/tag-detail.html:23
-msgid "Unfollow"
-msgstr ""
-
-#: templates/forum/community/details.html:24
-#: templates/forum/community/index.html:41
-#: templates/forum/community/posts.html:25 templates/forum/tag-detail.html:23
-msgid "Follow"
 msgstr ""
 
 #: templates/forum/community/details.html:34
 #: templates/forum/community/posts.html:20
 #: templates/forum/groups/details.html:20
 #: templates/forum/groups/details.html:34 templates/forum/groups/posts.html:20
-#: templates/forum/tag-detail.html:18
+#: templates/forum/tag-detail.html:19
 msgid "Members"
 msgstr ""
 
 #: templates/forum/community/details.html:41
 #: templates/forum/community/details.html:77
 #: templates/forum/groups/details.html:41
-#: templates/forum/groups/details.html:77
+#: templates/forum/groups/details.html:77 templates/user/index.html:28
 msgid "Question"
 msgstr ""
 
@@ -1936,7 +2167,7 @@ msgid "Reached"
 msgstr ""
 
 #: templates/forum/community/details.html:62
-#: templates/forum/groups/details.html:62
+#: templates/forum/groups/details.html:62 templates/user/index.html:49
 #, fuzzy
 #| msgid "About Us"
 msgid "About"
@@ -1978,26 +2209,6 @@ msgstr ""
 msgid "Ask a Question to Community"
 msgstr ""
 
-#: templates/forum/community/posts.html:85 templates/forum/groups/posts.html:84
-msgid "In"
-msgstr ""
-
-#: templates/forum/community/posts.html:120
-#: templates/forum/groups/posts.html:119
-#: templates/resources/partials/right-sidebar.html:66
-msgid "Answers"
-msgstr ""
-
-#: templates/forum/community/posts.html:125
-#: templates/forum/groups/posts.html:124
-msgid "Views"
-msgstr ""
-
-#: templates/forum/community/posts.html:163
-#: templates/forum/groups/posts.html:162
-msgid "Answer"
-msgstr ""
-
 #: templates/forum/community/posts.html:172
 msgid "No Questions Found in this Community"
 msgstr ""
@@ -2012,7 +2223,9 @@ msgstr ""
 
 #: templates/forum/groups/details.html:100
 #: templates/forum/groups/details.html:137
-#: templates/forum/groups/details.html:154
+#: templates/forum/groups/details.html:154 templates/user/index.html:152
+#: templates/user/index.html:171 templates/user/index.html:191
+#: templates/user/index.html:211 templates/user/index.html:231
 msgid "by"
 msgstr ""
 
@@ -2024,7 +2237,8 @@ msgstr ""
 msgid "Post"
 msgstr ""
 
-#: templates/forum/groups/index.html:56 templates/partials/left-sidebar.html:97
+#: templates/forum/groups/index.html:56
+#: templates/partials/left-sidebar.html:105
 msgid "User"
 msgstr ""
 
@@ -2044,8 +2258,108 @@ msgstr ""
 msgid "Ask a Question to Group"
 msgstr ""
 
-#: templates/forum/groups/posts.html:171
-msgid "No Questions Found in this Group"
+#: templates/forum/index.html:22 templates/forum/question-details.html:23
+#: templates/partials/left-sidebar.html:31
+#: templates/resources/partials/right-sidebar.html:62
+#: templates/resources/partials/right-sidebar.html:125
+msgid "Questions"
+msgstr ""
+
+#: templates/forum/index.html:31 templates/index.html:50
+msgid "Recent"
+msgstr ""
+
+#: templates/forum/index.html:36 templates/index.html:55
+msgid "Most Answered"
+msgstr ""
+
+#: templates/forum/index.html:41 templates/index.html:60
+msgid "Unanswered"
+msgstr ""
+
+#: templates/forum/index.html:46 templates/forum/questions/featured.html:137
+#: templates/index.html:65
+msgid "Most Viewed"
+msgstr ""
+
+#: templates/forum/question-details.html:176
+msgid "All answer"
+msgstr ""
+
+#: templates/forum/question-details.html:177
+msgid "Most Votes"
+msgstr ""
+
+#: templates/forum/question-details.html:178
+msgid "Most Recent"
+msgstr ""
+
+#: templates/forum/question-details.html:237
+msgid "Report"
+msgstr ""
+
+#: templates/forum/question-details.html:252
+msgid "No Answers yet, Be the first to dropped an answer"
+msgstr ""
+
+#: templates/forum/question-details.html:259
+msgid "Your Answer"
+msgstr ""
+
+#: templates/forum/question-details.html:270
+msgid "You need to"
+msgstr ""
+
+#: templates/forum/question-details.html:270
+msgid "login"
+msgstr ""
+
+#: templates/forum/question-details.html:270
+msgid "to answer this question"
+msgstr ""
+
+#: templates/forum/questions/featured.html:142
+msgid "No Featured Questions Found"
+msgstr ""
+
+#: templates/forum/questions/most-answered.html:141
+msgid "No Answered Questions Found"
+msgstr ""
+
+#: templates/forum/questions/most-recent.html:141
+msgid "No Recent Questions Found"
+msgstr ""
+
+#: templates/forum/questions/unanswered.html:141
+msgid "No Unanswered Questions Found"
+msgstr ""
+
+#: templates/forum/tags.html:40 templates/user/users.html:66
+msgid "questions"
+msgstr ""
+
+#: templates/forum/tags.html:82
+msgid "No tags found"
+msgstr ""
+
+#: templates/index.html:11
+msgid "Join Our Health Community"
+msgstr ""
+
+#: templates/index.html:11
+msgid "Today"
+msgstr ""
+
+#: templates/index.html:12
+msgid ""
+"HealthLink is a safe and supportive community for people with different "
+"health conditions. Our features include discussion boards, search "
+"functionality, and a resource library. Join us today to connect with others "
+"who share similar experiences."
+msgstr ""
+
+#: templates/index.html:14
+msgid "Get Started"
 msgstr ""
 
 #: templates/openid/login.html:9
@@ -2107,7 +2421,7 @@ msgstr ""
 msgid "Facebook"
 msgstr ""
 
-#: templates/partials/footer.html:67
+#: templates/partials/footer.html:67 templates/user/edit-profile.html:144
 msgid "Instagram"
 msgstr ""
 
@@ -2115,20 +2429,8 @@ msgstr ""
 msgid "Linkedin"
 msgstr ""
 
-#: templates/partials/footer.html:73
+#: templates/partials/footer.html:73 templates/user/edit-profile.html:140
 msgid "Twitter"
-msgstr ""
-
-#: templates/partials/footer.html:85
-msgid "Call"
-msgstr ""
-
-#: templates/partials/footer.html:89
-msgid "Email"
-msgstr ""
-
-#: templates/partials/footer.html:94
-msgid "Address"
 msgstr ""
 
 #: templates/partials/footer.html:114
@@ -2143,48 +2445,57 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: templates/partials/left-sidebar.html:31
-#: templates/resources/partials/right-sidebar.html:62
-#: templates/resources/partials/right-sidebar.html:125
-msgid "Questions"
-msgstr ""
+#: templates/partials/left-sidebar.html:55
+#: templates/resources/partials/right-sidebar.html:70
+#: templates/user/users.html:22
+#, fuzzy
+#| msgid "users/"
+msgid "Users"
+msgstr "Watumiaji/"
 
-#: templates/partials/left-sidebar.html:47
+#: templates/partials/left-sidebar.html:63
 #, fuzzy
 #| msgid "resources/"
 msgid "Resources"
 msgstr "rasilimali/"
 
-#: templates/partials/left-sidebar.html:53
+#: templates/partials/left-sidebar.html:69 templates/resources/details.html:23
+#: templates/resources/index.html:24
 msgid "Articles"
 msgstr ""
 
-#: templates/partials/left-sidebar.html:58
+#: templates/partials/left-sidebar.html:74 templates/resources/index.html:38
 msgid "Documents"
 msgstr ""
 
-#: templates/partials/left-sidebar.html:63
+#: templates/partials/left-sidebar.html:79 templates/resources/index.html:31
 msgid "Videos"
 msgstr ""
 
-#: templates/partials/left-sidebar.html:103
+#: templates/partials/left-sidebar.html:111
 #, fuzzy
 #| msgid "User profile"
 msgid "Profile"
 msgstr "Wasifu wa mtumiaji"
 
-#: templates/partials/left-sidebar.html:108
+#: templates/partials/left-sidebar.html:121
 #, fuzzy
-#| msgid "User profile"
-msgid "Edit profile"
-msgstr "Wasifu wa mtumiaji"
+#| msgid "Health Records"
+msgid "Health records"
+msgstr "Rekodi za Afya"
 
-#: templates/partials/left-sidebar.html:113 templates/partials/top-nav.html:150
-#: templates/partials/top-nav.html:308
+#: templates/partials/left-sidebar.html:126 templates/partials/top-nav.html:150
+#: templates/partials/top-nav.html:314
+msgid "Referrals"
+msgstr ""
+
+#: templates/partials/left-sidebar.html:131 templates/partials/top-nav.html:156
+#: templates/partials/top-nav.html:320
 msgid "Logout"
 msgstr "Toka"
 
-#: templates/partials/search.html:4
+#: templates/partials/search.html:4 templates/resources/details.html:38
+#: templates/user/users.html:28
 msgid "Have a question? Ask or enter a search"
 msgstr ""
 
@@ -2200,33 +2511,150 @@ msgstr "Kurasa"
 msgid "FAQ"
 msgstr "MASWALI YA KAWAIDA"
 
-#: templates/partials/top-nav.html:69 templates/partials/top-nav.html:163
-#: templates/partials/top-nav.html:205 templates/partials/top-nav.html:227
+#: templates/partials/top-nav.html:69 templates/partials/top-nav.html:169
+#: templates/partials/top-nav.html:211 templates/partials/top-nav.html:233
 msgid "Search for..."
 msgstr ""
 
-#: templates/partials/top-nav.html:132 templates/partials/top-nav.html:290
+#: templates/partials/top-nav.html:132 templates/partials/top-nav.html:296
 msgid "User profile"
 msgstr "Wasifu wa mtumiaji"
 
-#: templates/partials/top-nav.html:138 templates/partials/top-nav.html:296
+#: templates/partials/top-nav.html:138 templates/partials/top-nav.html:302
 msgid "Settings"
 msgstr "Vipimo"
 
-#: templates/partials/top-nav.html:144 templates/partials/top-nav.html:302
+#: templates/partials/top-nav.html:144 templates/partials/top-nav.html:308
 msgid "Health Records"
 msgstr "Rekodi za Afya"
 
-#: templates/partials/top-nav.html:177 templates/partials/top-nav.html:219
+#: templates/partials/top-nav.html:183 templates/partials/top-nav.html:225
 msgid "Sign up"
 msgstr "Jisajili"
 
-#: templates/resources/partials/right-sidebar.html:5
-msgid "Ask a question"
+#: templates/privacy.html:8
+msgid ""
+"We at HealthLink are committed to protecting your privacy. This Privacy "
+"Policy explains how we\n"
+"\t\t\t\tcollect, use, and protect your personal information when you use our "
+"platform."
 msgstr ""
 
+#: templates/privacy.html:10
+msgid "Information We Collect"
+msgstr ""
+
+#: templates/privacy.html:11
+msgid ""
+"We collect personal information that you voluntarily provide to us when you "
+"register for an\n"
+"\t\t\t\taccount or use our platform. This may include your name, email "
+"address, health conditions, medications,\n"
+"\t\t\t\ttreatments, and other health-related information. We may also "
+"collect information about your use of our\n"
+"\t\t\t\tplatform, including your IP address, browser type, and device "
+"information."
+msgstr ""
+
+#: templates/privacy.html:18
+msgid "How We Use Your Information"
+msgstr ""
+
+#: templates/privacy.html:19
+msgid ""
+"We use your personal information to provide you with a safe and supportive "
+"community for people\n"
+"\t\t\t\twith different health conditions. This includes allowing you to "
+"connect with other users, participate in\n"
+"\t\t\t\tdiscussions, and access resources. We may also use your information "
+"to personalize your experience,\n"
+"\t\t\t\tprovide customer support, and improve our platform."
+msgstr ""
+
+#: templates/privacy.html:26
+msgid "How We Protect Your Information"
+msgstr ""
+
+#: templates/privacy.html:27
+msgid ""
+"We take reasonable measures to protect your personal information from "
+"unauthorized access, use,\n"
+"\t\t\t\tor disclosure. We use SSL encryption to secure your data during "
+"transmission and store your information\n"
+"\t\t\t\ton secure servers. We also use administrative, physical, and "
+"technical safeguards to protect your\n"
+"\t\t\t\tinformation from unauthorized access."
+msgstr ""
+
+#: templates/privacy.html:34
+msgid "Sharing Your Information"
+msgstr ""
+
+#: templates/privacy.html:35
+msgid ""
+"We do not share your personal information with third parties without your "
+"consent, except as\n"
+"\t\t\t\trequired by law or to protect our legal rights. We may share your "
+"information with our service providers\n"
+"\t\t\t\twho assist us in operating our platform, such as hosting and "
+"maintenance providers."
+msgstr ""
+
+#: templates/privacy.html:41
+msgid "Your Choices"
+msgstr ""
+
+#: templates/privacy.html:42
+msgid ""
+"You can control your personal information by updating your profile settings "
+"and preferences.\n"
+"\t\t\t\tYou can also delete your account at any time. We may retain your "
+"information for a reasonable period to\n"
+"\t\t\t\tcomply with legal or regulatory requirements, resolve disputes, or "
+"enforce our policies."
+msgstr ""
+
+#: templates/privacy.html:48
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Changes to Our Privacy Policy"
+msgstr "Sera ya faragha"
+
+#: templates/privacy.html:49
+msgid ""
+"We may update our Privacy Policy from time to time. We will notify you of "
+"any material changes\n"
+"\t\t\t\tto our policy by email or by posting a notice on our platform. Your "
+"continued use of our platform after\n"
+"\t\t\t\tany changes to our policy will signify your acceptance of the "
+"updated policy."
+msgstr ""
+
+#: templates/privacy.html:55
+msgid ""
+"If you have any questions or concerns about our Privacy Policy, please "
+"contact us at"
+msgstr ""
+
+#: templates/privacy.html:57
+msgid "Phone number"
+msgstr ""
+
+#: templates/resources/index.html:44
 #: templates/resources/partials/right-sidebar.html:13
 msgid "Categories"
+msgstr ""
+
+#: templates/resources/partials/articles.html:50
+msgid "No articles found"
+msgstr ""
+
+#: templates/resources/partials/documents.html:23
+msgid "No documents found"
+msgstr ""
+
+#: templates/resources/partials/right-sidebar.html:5
+msgid "Ask a question"
 msgstr ""
 
 #: templates/resources/partials/right-sidebar.html:17
@@ -2236,12 +2664,6 @@ msgstr ""
 #: templates/resources/partials/right-sidebar.html:47
 msgid "All"
 msgstr ""
-
-#: templates/resources/partials/right-sidebar.html:70
-#, fuzzy
-#| msgid "users/"
-msgid "Users"
-msgstr "Watumiaji/"
 
 #: templates/resources/partials/right-sidebar.html:85
 msgid "Most Liked Questions"
@@ -2257,6 +2679,10 @@ msgstr ""
 
 #: templates/resources/partials/right-sidebar.html:138
 msgid "Trending Tags"
+msgstr ""
+
+#: templates/resources/partials/videos.html:49
+msgid "No videos found"
 msgstr ""
 
 #: templates/socialaccount/authentication_error.html:5
@@ -2343,4 +2769,538 @@ msgstr ""
 msgid ""
 "You are about to use your %(provider_name)s account to login to\n"
 "%(site_name)s. As a final step, please complete the following form:"
+msgstr ""
+
+#: templates/terms.html:8
+msgid ""
+"Welcome to HealthLink. By accessing or using our platform, you agree to be "
+"bound by the\n"
+"\t\t\t\tfollowing terms and conditions. If you do not agree to these terms, "
+"please do not use our platform."
+msgstr ""
+
+#: templates/terms.html:13
+msgid "User Conduct"
+msgstr ""
+
+#: templates/terms.html:14
+msgid ""
+"You agree to use our platform for lawful purposes only and to comply with "
+"all applicable\n"
+"\t\t\t\tlaws and regulations. You must not: "
+msgstr ""
+
+#: templates/terms.html:19
+msgid ""
+"Impersonate or misrepresent your identity or affiliation with any person or "
+"entity."
+msgstr ""
+
+#: templates/terms.html:23
+msgid ""
+"Engage in any activity that disrupts, interferes with, or harms our platform "
+"or its users."
+msgstr ""
+
+#: templates/terms.html:27
+msgid ""
+"Attempt to gain unauthorized access to our platform or its systems or "
+"networks."
+msgstr ""
+
+#: templates/terms.html:31
+msgid ""
+"Collect or store the personal information of other users without their "
+"consent."
+msgstr ""
+
+#: templates/terms.html:34
+msgid "User Content"
+msgstr ""
+
+#: templates/terms.html:35
+msgid ""
+"Our platform allows you to post, upload, or transmit content such as "
+"comments, messages,\n"
+"\t\t\t\tand images. You retain ownership of your content and grant us a non-"
+"exclusive, worldwide, royalty-free,\n"
+"\t\t\t\tand transferable license to use, reproduce, and display your content "
+"on our platform."
+msgstr ""
+
+#: templates/terms.html:38
+msgid ""
+"You are solely responsible for your content and must ensure that it complies "
+"with our\n"
+"\t\t\t\tguidelines and applicable laws. We reserve the right to remove any "
+"content that violates our guidelines\n"
+"\t\t\t\tor that we deem inappropriate, without notice."
+msgstr ""
+
+#: templates/terms.html:44
+msgid "Intellectual Property"
+msgstr ""
+
+#: templates/terms.html:45
+msgid ""
+"Our platform and its content, including text, graphics, images, logos, and "
+"software, are\n"
+"\t\t\t\tthe property of HealthLink and its licensors and are protected by "
+"intellectual property laws. You may\n"
+"\t\t\t\tnot use, copy, or reproduce our platform or its content without our "
+"express written consent."
+msgstr ""
+
+#: templates/terms.html:54
+msgid "Disclaimer of Warranties"
+msgstr ""
+
+#: templates/terms.html:55
+msgid ""
+"Our platform is provided on an \"as is\" and \"as available\" basis. We do "
+"not warrant that\n"
+"\t\t\t\tour platform will be uninterrupted, error-free, or secure, or that "
+"any defects or errors will be\n"
+"\t\t\t\tcorrected. We disclaim all warranties, including but not limited to "
+"implied warranties of\n"
+"\t\t\t\tmerchantability, fitness for a particular purpose, and non-"
+"infringement."
+msgstr ""
+
+#: templates/terms.html:62
+msgid "Limitation of Liability"
+msgstr ""
+
+#: templates/terms.html:63
+msgid ""
+"In no event shall HealthLink or its affiliates, directors, officers, "
+"employees, or agents\n"
+"\t\t\t\tbe liable for any indirect, incidental, special, or consequential "
+"damages arising out of or in\n"
+"\t\t\t\tconnection with your use of our platform, whether based on breach of "
+"contract, tort, or any other legal\n"
+"\t\t\t\ttheory, even if we have been advised of the possibility of such "
+"damages."
+msgstr ""
+
+#: templates/terms.html:69
+msgid "Indemnification"
+msgstr ""
+
+#: templates/terms.html:70
+msgid ""
+"You agree to indemnify and hold harmless HealthLink and its affiliates, "
+"directors,\n"
+"\t\t\t\tofficers, employees, and agents from any claims, damages, expenses, "
+"or liabilities arising out of or in\n"
+"\t\t\t\tconnection with your use of our platform, your content, or your "
+"breach of these Terms of Use."
+msgstr ""
+
+#: templates/terms.html:75
+msgid "Changes to These Terms"
+msgstr ""
+
+#: templates/terms.html:76
+msgid ""
+"We reserve the right to modify or update these Terms of Use at any time, "
+"without notice.\n"
+"\t\t\t\tYour continued use of our platform after any changes to these terms "
+"will signify your acceptance of the\n"
+"\t\t\t\tupdated terms."
+msgstr ""
+
+#: templates/terms.html:81
+msgid ""
+"If you have any questions or concerns about these Terms of Use, please "
+"contact us at"
+msgstr ""
+
+#: templates/user/edit-profile.html:18
+#, fuzzy
+#| msgid "User profile"
+msgid "Edit Profile"
+msgstr "Wasifu wa mtumiaji"
+
+#: templates/user/edit-profile.html:26
+#, fuzzy
+#| msgid "Settings"
+msgid "Email Settings"
+msgstr "Vipimo"
+
+#: templates/user/edit-profile.html:30
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy"
+msgstr "Sera ya faragha"
+
+#: templates/user/edit-profile.html:34
+msgid "Deactivate Account"
+msgstr ""
+
+#: templates/user/edit-profile.html:41
+msgid "Public information"
+msgstr ""
+
+#: templates/user/edit-profile.html:47 templates/user/edit-profile.html:193
+#, fuzzy
+#| msgid "User profile"
+msgid "Profile Picture"
+msgstr "Wasifu wa mtumiaji"
+
+#: templates/user/edit-profile.html:55
+msgid "First Name"
+msgstr ""
+
+#: templates/user/edit-profile.html:59
+msgid "Last Name"
+msgstr ""
+
+#: templates/user/edit-profile.html:71 templates/user/edit-profile.html:214
+msgid "Phone"
+msgstr ""
+
+#: templates/user/edit-profile.html:80
+msgid "Location"
+msgstr ""
+
+#: templates/user/edit-profile.html:84
+#, fuzzy
+#| msgid "users/"
+msgid "Username"
+msgstr "Watumiaji/"
+
+#: templates/user/edit-profile.html:92 templates/user/edit-profile.html:221
+#: templates/user/health_records/index.html:37
+#: templates/user/health_records/index.html:98
+msgid "Gender"
+msgstr ""
+
+#: templates/user/edit-profile.html:95 templates/user/edit-profile.html:100
+#: templates/user/edit-profile.html:105
+msgid "Male"
+msgstr ""
+
+#: templates/user/edit-profile.html:96 templates/user/edit-profile.html:101
+#: templates/user/edit-profile.html:106
+msgid "Female"
+msgstr ""
+
+#: templates/user/edit-profile.html:97 templates/user/edit-profile.html:102
+#: templates/user/edit-profile.html:107
+msgid "Other"
+msgstr ""
+
+#: templates/user/edit-profile.html:112
+#: templates/user/health_records/index.html:38
+#: templates/user/health_records/index.html:99
+msgid "Age"
+msgstr ""
+
+#: templates/user/edit-profile.html:120
+msgid "Language Preference"
+msgstr ""
+
+#: templates/user/edit-profile.html:132
+msgid "LinkedIn"
+msgstr ""
+
+#: templates/user/edit-profile.html:150
+#, fuzzy
+#| msgid "About Us"
+msgid "About me"
+msgstr "Kutuhusu"
+
+#: templates/user/edit-profile.html:157
+msgid "Save changes"
+msgstr ""
+
+#: templates/user/edit-profile.html:178
+#, fuzzy
+#| msgid "Settings"
+msgid "Email settings"
+msgstr "Vipimo"
+
+#: templates/user/edit-profile.html:181
+msgid "Manage your Emails"
+msgstr ""
+
+#: templates/user/edit-profile.html:189
+#, fuzzy
+#| msgid "Settings"
+msgid "Privacy Settings"
+msgstr "Vipimo"
+
+#: templates/user/edit-profile.html:195 templates/user/edit-profile.html:202
+#: templates/user/edit-profile.html:209 templates/user/edit-profile.html:216
+#: templates/user/edit-profile.html:223 templates/user/edit-profile.html:230
+#: templates/user/edit-profile.html:237 templates/user/edit-profile.html:244
+msgid "Visible"
+msgstr ""
+
+#: templates/user/edit-profile.html:196 templates/user/edit-profile.html:203
+#: templates/user/edit-profile.html:210 templates/user/edit-profile.html:217
+#: templates/user/edit-profile.html:224 templates/user/edit-profile.html:231
+#: templates/user/edit-profile.html:238 templates/user/edit-profile.html:245
+msgid "Hidden"
+msgstr ""
+
+#: templates/user/edit-profile.html:207
+msgid "Country"
+msgstr ""
+
+#: templates/user/edit-profile.html:228
+msgid "Social links"
+msgstr ""
+
+#: templates/user/edit-profile.html:235
+msgid "Website"
+msgstr ""
+
+#: templates/user/edit-profile.html:242
+msgid "Biography"
+msgstr ""
+
+#: templates/user/edit-profile.html:249
+msgid "Save"
+msgstr ""
+
+#: templates/user/edit-profile.html:257
+msgid "Delete Account"
+msgstr ""
+
+#: templates/user/edit-profile.html:264
+msgid "Deactivate your account?"
+msgstr ""
+
+#: templates/user/edit-profile.html:270
+msgid "Deactivate"
+msgstr ""
+
+#: templates/user/health_records/add.html:24
+#: templates/user/health_records/edit.html:24
+msgid "Weight"
+msgstr ""
+
+#: templates/user/health_records/add.html:28
+#: templates/user/health_records/edit.html:28
+msgid "Height"
+msgstr ""
+
+#: templates/user/health_records/add.html:36
+#: templates/user/health_records/edit.html:36
+msgid "Heart Rate"
+msgstr ""
+
+#: templates/user/health_records/add.html:44
+#: templates/user/health_records/edit.html:44
+msgid "Systolic BP"
+msgstr ""
+
+#: templates/user/health_records/add.html:48
+#: templates/user/health_records/edit.html:48
+msgid "Diastolic BP"
+msgstr ""
+
+#: templates/user/health_records/add.html:57
+#: templates/user/health_records/edit.html:57
+msgid "Are you disabled?"
+msgstr ""
+
+#: templates/user/health_records/add.html:64
+msgid "Do you smoke?"
+msgstr ""
+
+#: templates/user/health_records/add.html:71
+#: templates/user/health_records/edit.html:81
+msgid "Do you take alcohol?"
+msgstr ""
+
+#: templates/user/health_records/add.html:82
+#: templates/user/health_records/edit.html:97
+msgid "Health Status"
+msgstr ""
+
+#: templates/user/health_records/add.html:86
+#: templates/user/health_records/edit.html:101
+#: templates/user/health_records/index.html:47
+#: templates/user/health_records/index.html:108
+msgid "Allergies"
+msgstr ""
+
+#: templates/user/health_records/add.html:90
+#: templates/user/health_records/edit.html:105
+#: templates/user/health_records/index.html:48
+#: templates/user/health_records/index.html:109
+msgid "Interests"
+msgstr ""
+
+#: templates/user/health_records/add.html:98
+#: templates/user/health_records/edit.html:113
+msgid "Submit"
+msgstr ""
+
+#: templates/user/health_records/index.html:24
+msgid "Health Data"
+msgstr ""
+
+#: templates/user/health_records/index.html:27
+#, fuzzy
+#| msgid "Health Records"
+msgid "Add Health Record"
+msgstr "Rekodi za Afya"
+
+#: templates/user/health_records/index.html:39
+#: templates/user/health_records/index.html:100
+msgid "Height(cm)"
+msgstr ""
+
+#: templates/user/health_records/index.html:40
+#: templates/user/health_records/index.html:101
+msgid "Weight(kg)"
+msgstr ""
+
+#: templates/user/health_records/index.html:41
+#: templates/user/health_records/index.html:102
+msgid "Heart Rate(BPM)"
+msgstr ""
+
+#: templates/user/health_records/index.html:42
+#: templates/user/health_records/index.html:103
+msgid "Systolic/Diastolic BP(mmHg)"
+msgstr ""
+
+#: templates/user/health_records/index.html:43
+#: templates/user/health_records/index.html:104
+msgid "Take Alcohol"
+msgstr ""
+
+#: templates/user/health_records/index.html:44
+#: templates/user/health_records/index.html:105
+msgid "Smoke"
+msgstr ""
+
+#: templates/user/health_records/index.html:45
+#: templates/user/health_records/index.html:106
+msgid "Is disabeled"
+msgstr ""
+
+#: templates/user/health_records/index.html:46
+#: templates/user/health_records/index.html:107
+msgid "Heath Status"
+msgstr ""
+
+#: templates/user/health_records/index.html:49
+#: templates/user/health_records/index.html:110
+msgid "Action"
+msgstr ""
+
+#: templates/user/health_records/index.html:87
+msgid "Edit"
+msgstr ""
+
+#: templates/user/health_records/index.html:93
+msgid "No records found"
+msgstr ""
+
+#: templates/user/index.html:93
+msgid "Followed tags"
+msgstr ""
+
+#: templates/user/index.html:94
+msgid "View all tags"
+msgstr ""
+
+#: templates/user/index.html:100
+msgid "No tags followed"
+msgstr ""
+
+#: templates/user/index.html:106
+msgid "followers"
+msgstr ""
+
+#: templates/user/index.html:107
+msgid "posts"
+msgstr ""
+
+#: templates/user/index.html:116
+msgid "Activities"
+msgstr ""
+
+#: templates/user/index.html:120
+msgid "Posts/Questions"
+msgstr ""
+
+#: templates/user/index.html:157
+msgid "No Posts/Questions"
+msgstr ""
+
+#: templates/user/index.html:176
+msgid "No Answers"
+msgstr ""
+
+#: templates/user/index.html:196
+msgid "No Groups Joined"
+msgstr ""
+
+#: templates/user/index.html:216
+msgid "No Tags Followed"
+msgstr ""
+
+#: templates/user/index.html:236
+msgid "No Communities Followed"
+msgstr ""
+
+#: templates/user/partials/top-nav.html:16
+msgid "Member since"
+msgstr ""
+
+#: templates/user/partials/top-nav.html:17
+msgid "Last seen"
+msgstr ""
+
+#: templates/user/partials/top-nav.html:19
+msgid "Following"
+msgstr ""
+
+#: templates/user/referrals.html:16
+msgid "Spread the word with friends. Earn points."
+msgstr ""
+
+#: templates/user/referrals.html:17
+msgid ""
+"We have a number of ways to help spread the word to your friends and family, "
+"Choose whatever works best for you."
+msgstr ""
+
+#: templates/user/referrals.html:21
+msgid "Send a referral by email."
+msgstr ""
+
+#: templates/user/referrals.html:25
+msgid "Send"
+msgstr ""
+
+#: templates/user/referrals.html:30
+msgid "Copy and paste your referral link anywhere."
+msgstr ""
+
+#: templates/user/referrals.html:34
+msgid "Copy"
+msgstr ""
+
+#: templates/user/referrals.html:43
+msgid "Invitations Sent"
+msgstr ""
+
+#: templates/user/referrals.html:50
+msgid "Pending"
+msgstr ""
+
+#: templates/user/referrals.html:57
+msgid "Completed"
+msgstr ""
+
+#: templates/user/referrals.html:64
+msgid "Earned"
 msgstr ""

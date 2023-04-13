@@ -145,6 +145,12 @@
                                             </a>
                                         </li>
                                         <li>
+                                            <a href="{% url 'users:referals' %}">
+                                                <i class="ri-restart-line"></i>
+                                                {% trans 'Referrals' %}
+                                            </a>
+                                        </li>
+                                        <li>
                                             <a href="{% url 'account_logout' %}">
                                                 <i class="ri-logout-box-r-line"></i>
                                                 {% trans 'Logout' %}
@@ -300,6 +306,12 @@
                                             <a href="{% url 'users:health_records' %}">
                                                 <i class="ri-lightbulb-line"></i>
                                                 {% trans 'Health Records' %}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'users:referals' %}">
+                                                <i class="ri-restart-line"></i>
+                                                {% trans 'Referrals' %}
                                             </a>
                                         </li>
                                         <li>
