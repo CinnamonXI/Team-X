@@ -31,6 +31,7 @@ urlpatterns += i18n_patterns(
     path('users/', include('users.urls')),
     path('blogs/', include('blog.urls')),
     path('forum/', include('discussion.urls')),
+    path('rosetta/', include('rosetta.urls')),
     # prefix_default_language=False
 )
 
