@@ -88,11 +88,11 @@ The application was designed and build by `Team X`:
 
 | Name | Role |
 | --- | --- |
-| Lateefah Belal | Team Lead |
+| Lateefah Bello | Team Lead, Content Creation | 
 | Jeff Odhiambo | Backend Lead |
 | Miriam Adhiambo | Frontend Lead |
 | Miriam Mildred | Frontend |
-| - | Content Creation |
+| Kprone Solomon | Content Creation |
 
 ## 4. Pages that Requires Content
 1. Homepage
@@ -103,6 +103,6 @@ The application was designed and build by `Team X`:
 6. FAQ Page
 7. Resource Library Page
     <!-- Todo list -->
-    - [] we need to add more articles, documents and videos
+    - we need to add more articles, documents and videos
 8. Team X - Blog Page
-    - [] we need to add more articles
+    - we need to add more articles
